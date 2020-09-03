@@ -1,0 +1,30 @@
+footer {
+  background-color: #0e345a;
+  height: 250px;
+  width: 100%;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.8em;
+}
+
+footer .row {
+  padding-top: 20px;
+  height: 100%;
+}
+
+footer .row .col-sm {
+  color: white;
+}
+
+footer .row .col-sm ul {
+  padding-left: 0px;
+  list-style-type: none;
+  text-align: center;
+}
+
+footer .row .col-sm ul li form button {
+  padding: .25rem .4rem;
+  font-size: .875rem;
+  line-height: .5;
+  border-radius: .2rem;
+}
+/*# sourceMappingURL=layout.css.map */
