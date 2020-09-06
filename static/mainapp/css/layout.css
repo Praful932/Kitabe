@@ -1,3 +1,97 @@
+
+html,body{
+  background-color: #fff5d7;
+  height: 100%;
+}
+
+/* nav bar css*/
+.navicon {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  display: inline-block;
+  padding-right: 30px;
+  color: black;
+
+}
+
+.icon-text{
+  color: black;
+}
+
+
+.navbar-toggler {
+  border-color: black;
+  background-color: white;
+}
+
+.head-text{
+  font-family: 'Pacifico', cursive;
+ 
+}
+
+/* -------------------------search bar-----------------------  */
+.book-search{
+  margin-left: 20%;
+  margin-right: 20%;
+  align-items: center;  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  -------------------------------------------------------------------------------fotter css -------------------------------------------------*/
+
+
+/*FOOTER*/
+.footer-content{
+  align-items: center;
+  padding-left:47%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  margin-top: 10%;
+}
+
+footer a {
+  color: #fff;
+  font-size: 14px;
+  transition-duration: 0.2s;
+}
+
+footer a:hover {
+  color: #fa944b;
+  text-decoration: none;
+}
+
+.copy {
+  font-size: 12px;
+  padding: 10px;
+  border-top: 1px solid #ffffff;
+}
+
+
+
+/*
 footer {
   background-color: #0e345a;
   height: 250px;
@@ -27,4 +121,5 @@ footer .row .col-sm ul li form button {
   line-height: .5;
   border-radius: .2rem;
 }
+*/
 /*# sourceMappingURL=layout.css.map */
