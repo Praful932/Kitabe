@@ -1,5 +1,84 @@
 {% extends "mainapp/layout.html" %}
 {% load static %}
-
+{% block head %}
+<link href="{% static 'mainapp/css/index.css' %}" rel="stylesheet">
+{% endblock head %}
 {% block main %}
+<div id="searchdropdown">
+    <input type="text" id="bookName" onkeyup="myFunction()" placeholder="Search for books" title="Type in a name">
+    <div class="dropdown-content" id="search-dropdown">
+    </div>
+</div>
+
+<!-- Trigger the modal with a button -->
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+  
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <p>Some text in the modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+  
+    </div>
+  </div>
 {% endblock %}
+
+{% block script %}
+<script>
+    // add search results
+    function displayResults(books){
+        var searchdiv = document.getElementById('search-dropdown');
+        if(books.length == 0 && searchdiv.childElementCount == 0){
+            var info = document.createElement('a');
+            info.innerHTML = 'No search results match your query';
+            info.setAttribute('href','#');
+            searchdiv.appendChild(info);
+        }
+        else if(searchdiv.childElementCount <= 5){
+            $('#search-dropdown').empty();
+            books.forEach(function(book, index, array){
+                var booktoadd = document.createElement('a');
+                booktoadd.innerHTML = book['original_title'];
+                booktoadd.setAttribute('href','#');
+                searchdiv.appendChild(booktoadd);
+            });
+        }
+    }
+    // get search results
+    function myFunction() {
+        var input = document.getElementById('bookName');
+        var text = input.value.toLowerCase();
+        if (text != '') {
+            $.ajax({
+                data: {
+                    'bookName': text,
+                    'csrfmiddlewaretoken': Cookies.get('csrftoken')
+                },
+                dataType: 'json',
+                url: "{% url 'search_ajax' %}",
+                type: 'POST',
+                success: function (response) {
+                    displayResults(JSON.parse(response['top5_result']));
+                },
+                error: function (response) {
+                    console.log(response);
+                }
+            });
+        }
+        else
+            $('#search-dropdown').empty();
+    }
+</script>
+{% endblock script %}

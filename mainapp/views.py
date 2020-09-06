@@ -1,5 +1,28 @@
 from django.shortcuts import render
-# Create your views here
+from django.http import JsonResponse
+from django.contrib.staticfiles.storage import staticfiles_storage
+import BookRecSystem.settings as settings
+
+import pandas as pd
+import os
+import json
 
 def index(request):
     return render(request, 'mainapp/index.html')
+
+def search_ajax(request):
+    if request.method == "POST" and request.is_ajax():
+        query = request.POST.get('bookName', None)        
+
+        # Production File path
+        # staticfiles_storage.url(file)
+
+        # Development File path
+        book_path = settings.STATICFILES_DIRS[0] + '\\mainapp\\csv\\db.csv'
+
+        df_book = pd.read_csv(book_path)
+        top5_result = df_book[df_book['original_title'].str.contains(query, regex=False, case = False)][:5]
+        top5_result = json.dumps(top5_result.to_dict('records'))
+        
+        return JsonResponse({'success' : True, 'top5_result' : top5_result}, status = 200, )
+    

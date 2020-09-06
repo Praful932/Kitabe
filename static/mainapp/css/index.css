@@ -1,1 +1,33 @@
-/* No CSS *//*# sourceMappingURL=index.css.map */
+#searchdropdown {
+  margin: 50px;
+}
+
+#searchdropdown #bookName {
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#searchdropdown .dropdown-content {
+  display: block;
+  position: absolute;
+  background-color: #f1f1f1;
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  margin-right: 50px;
+}
+
+#searchdropdown .dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+#searchdropdown .dropdown-content a:hover {
+  background-color: #ddd;
+}
+/*# sourceMappingURL=index.css.map */
