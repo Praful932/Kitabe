@@ -30,4 +30,39 @@
 #searchdropdown .dropdown-content a:hover {
   background-color: #ddd;
 }
+
+.modal {
+  line-height: 1.5;
+}
+
+.modal .modal-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1rem 1rem;
+  background-color: #fb3;
+}
+
+.modal .modal-title {
+  padding: .3rem;
+  margin: 0;
+  font-size: 1.15rem;
+  color: #fff;
+}
+
+.modal .close {
+  opacity: 1;
+  padding: 1rem 1rem;
+  margin: -1rem -1rem -1rem auto;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-shadow: 0 1px 0 #fff;
+}
+
+.modal-footer {
+  color: white;
+}
 /*# sourceMappingURL=index.css.map */

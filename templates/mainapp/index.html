@@ -10,48 +10,80 @@
     </div>
 </div>
 
-<!-- Trigger the modal with a button -->
-<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
-
 <!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
+<div class="modal fade" id="bookModal" role="dialog" data-backdrop="true">
     <div class="modal-dialog">
-  
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Modal Header</h4>
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <p class="modal-title">Book Details</p>
+                <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                    <span aria-hidden="true" style="color:white;">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-3 text-center">
+                        <img src=""
+                            class="img-fluid z-depth-1-half" id="bookimage">
+                        <div style="height: 10px;"></div>
+                        <p class="title mb-0" id="booktitle"></p>
+                    </div>
+                    <div class="col-9">
+                        <p id="bookauthors">
+                        </p>
+                        <p class="card-text" id="bookrating">
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <a type="button" class="btn btn-warning">lorem ipsum</a>
+                <a type="button" class="btn btn-warning">lorem ipsum</a>
+            </div>
         </div>
-        <div class="modal-body">
-          <p>Some text in the modal.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-  
+
     </div>
-  </div>
+</div>
 {% endblock %}
 
 {% block script %}
 <script>
+    // display book boostrap modal when clicked
+    function openModal(obj) {
+        var bookName = obj.innerHTML;
+        var isbn = obj.getAttribute('data-isbn');
+        var authors = obj.getAttribute('data-authors');
+        var imageurl = obj.getAttribute('data-imageurl');
+        var averagerating = obj.getAttribute('data-averagerating');
+        $('#booktitle').text(bookName);
+        $('#bookauthors').text(authors);
+        $('#bookimage').attr('src',imageurl);
+        $('#bookrating').text(averagerating);
+        $('#bookModal').modal('show');
+    }
+
     // add search results
-    function displayResults(books){
+    function displayResults(books) {
         var searchdiv = document.getElementById('search-dropdown');
-        if(books.length == 0 && searchdiv.childElementCount == 0){
+        if (books.length == 0 && searchdiv.childElementCount == 0) {
             var info = document.createElement('a');
             info.innerHTML = 'No search results match your query';
-            info.setAttribute('href','#');
+            info.setAttribute('href', '#');
             searchdiv.appendChild(info);
         }
-        else if(searchdiv.childElementCount <= 5){
+        else if (searchdiv.childElementCount <= 5) {
             $('#search-dropdown').empty();
-            books.forEach(function(book, index, array){
+            books.forEach(function (book, index, array) {
                 var booktoadd = document.createElement('a');
                 booktoadd.innerHTML = book['original_title'];
-                booktoadd.setAttribute('href','#');
+                booktoadd.setAttribute('data-isbn', book['isbn']);
+                booktoadd.setAttribute('data-authors', book['authors']);
+                booktoadd.setAttribute('data-imageurl', book['image_url']);
+                booktoadd.setAttribute('data-averagerating', book['average_rating']);
+                booktoadd.setAttribute('href', 'javascript:;');
+                booktoadd.setAttribute('onclick', 'openModal(this)');
                 searchdiv.appendChild(booktoadd);
             });
         }
