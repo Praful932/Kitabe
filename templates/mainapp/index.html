@@ -1,116 +1,368 @@
 {% extends "mainapp/layout.html" %}
 {% load static %}
 {% block head %}
-<link href="{% static 'mainapp/css/index.css' %}" rel="stylesheet">
+<style>
+    .carousel img {
+        width: 100%;
+    }
+
+    .genre-head {
+        font-family: 'Lobster', cursive;
+        font-size: 9%;
+    }
+</style>
 {% endblock head %}
+
 {% block main %}
-<div id="searchdropdown">
-    <input type="text" id="bookName" onkeyup="myFunction()" placeholder="Search for books" title="Type in a name">
-    <div class="dropdown-content" id="search-dropdown">
-    </div>
-</div>
+<!---------------------------------------------------------------   adding Carousel (sliding banner) -------------------------------------------------------------------->
+<!-- carousel 1 -->
 
-<!-- Modal -->
-<div class="modal fade" id="bookModal" role="dialog" data-backdrop="true">
-    <div class="modal-dialog">
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <p class="modal-title">Book Details</p>
-                <button type="button" class="close" data-dismiss="modal" aria-label="close">
-                    <span aria-hidden="true" style="color:white;">×</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-3 text-center">
-                        <img src=""
-                            class="img-fluid z-depth-1-half" id="bookimage">
-                        <div style="height: 10px;"></div>
-                        <p class="title mb-0" id="booktitle"></p>
-                    </div>
-                    <div class="col-9">
-                        <p id="bookauthors">
-                        </p>
-                        <p class="card-text" id="bookrating">
+<section class="slide-window ">
+    <div id="carousel-1" class="carousel slide" data-ride="carousel">
 
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer justify-content-center">
-                <a type="button" class="btn btn-warning">lorem ipsum</a>
-                <a type="button" class="btn btn-warning">lorem ipsum</a>
-            </div>
-        </div>
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-1" data-slide-to="1"></li>
+            <li data-target="#carousel-1" data-slide-to="2"></li>
+            <li data-target="#carousel-1" data-slide-to="3"></li>
+        </ol>
 
-    </div>
-</div>
-{% endblock %}
+        <div class="carousel-inner" role="listbox">
+
+            <div class="carousel-item active">
+                <img class="d-block img-fluid" src="{% static 'mainapp/png/banner/1.png' %}" alt="slide">
+            </div>
+
+            <div class="carousel-item">
+                <img class="d-block img-fluid" src="{% static 'mainapp/png/banner/2.png' %}" alt="Slide">
+            </div>
+
+            <div class="carousel-item">
+                <img class="d-block img-fluid" src="{% static 'mainapp/png/banner/3.png' %}" alt="Slide">
+            </div>
+
+            <div class="carousel-item">
+                <img class="d-block img-fluid" src="{% static 'mainapp/png/banner/4.png' %}" alt="Slide">
+            </div>
+
+        </div><!-- e carousel-inner -->
+
+        <a class="carousel-control-prev" href="#carousel-1" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">prev</span>
+        </a>
+
+        <a class="carousel-control-next" href="#carousel-1" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">next</span>
+        </a>
+
+    </div><!-- e carousel -->
+</section><!-- e section -->
+
+<section class="text-light text-center" style="background-color: #F9812A;">
+    <div class="container">
+        <div class="row">
+
+            <div class="col genre-head">
+                <h1 style="margin-top: 2%">Read Genre Wise</h1>
+            </div><!-- e col -->
+
+        </div><!-- e row -->
+    </div><!-- e container -->
+</section><!-- e section -->
+
+<!-------------------------------------------------------------------   Genre -------------------------------------------------------------------------------- -->
+
+<section class="bg-warning pt-5 mb-5">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3 ">
+
+                <div id="carousel-10" class="carousel slide" data-ride="carousel">
+
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-10" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-10" data-slide-to="1"></li>
+                        <li data-target="#carousel-10" data-slide-to="2"></li>
+                    </ol>
+
+                    <div class="carousel-inner" role="listbox">
+
+                        <div class="carousel-item active">
+                            <img class="d-block img-fluid" src="{% static 'mainapp/png/genre/1.png ' %}" alt="slide">
+                        </div>
+
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="{% static 'mainapp/png/genre/2.png' %}" alt="slide">
+                        </div>
+
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="{% static 'mainapp/png/genre/3.png ' %}" alt="slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="{% static 'mainapp/png/genre/4.png ' %}" alt="slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="{% static 'mainapp/png/genre/5.png' %}" alt="slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="{% static 'mainapp/png/genre/6.png' %}" alt="slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="{% static 'mainapp/png/genre/7.png' %}" alt="slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="{% static 'mainapp/png/genre/8.png' %}" alt="slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="{% static 'mainapp/png/genre/9.png' %}" alt="slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="{% static 'mainapp/png/genre/10.png' %}" alt="slide">
+                        </div>
+
+                    </div><!-- e carousel-inner -->
+
+                    <a class="carousel-control-prev" href="#carousel-10" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">prev</span>
+                    </a>
+
+                    <a class="carousel-control-next" href="#carousel-10" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">next</span>
+                    </a>
+
+                </div><!-- e carousel -->
+
+            </div><!-- e col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3 -->
+
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3 mb-5">
+
+                <div id="carousel-11" class="carousel slide" data-ride="carousel">
+
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-11" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-11" data-slide-to="1"></li>
+                        <li data-target="#carousel-11" data-slide-to="2"></li>
+                    </ol>
+
+                    <div class="carousel-inner" role="listbox">
+
+                        <div class="carousel-item active">
+                            <img class="d-block img-fluid" src="{% static 'mainapp/png/genre/11.png' %}" alt="slide">
+                        </div>
+
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="{% static 'mainapp/png/genre/12.png' %}" alt="slide">
+                        </div>
+
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="{% static 'mainapp/png/genre/13.png' %}" alt="slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="{% static 'mainapp/png/genre/14.png' %}" alt="slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="{% static 'mainapp/png/genre/15.png' %}" alt="slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="{% static 'mainapp/png/genre/16.png' %}" alt="slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="{% static 'mainapp/png/genre/17.png' %}" alt="slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="{% static 'mainapp/png/genre/18.png' %}" alt="slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="{% static 'mainapp/png/genre/19.png' %}" alt="slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="{% static 'mainapp/png/genre/20.png' %}" alt="slide">
+                        </div>
+                    </div><!-- e carousel-inner -->
+
+                    <a class="carousel-control-prev" href="#carousel-11" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">prev</span>
+                    </a>
+
+                    <a class="carousel-control-next" href="#carousel-11" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">next</span>
+                    </a>
+
+                </div><!-- e carousel -->
+
+            </div><!-- e col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3 -->
+
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl3 mb-5">
+
+                <div id="carousel-12" class="carousel slide" data-ride="carousel">
+
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-12" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-12" data-slide-to="1"></li>
+                        <li data-target="#carousel-12" data-slide-to="2"></li>
+                    </ol>
+
+                    <div class="carousel-inner" role="listbox">
+
+                        <div class="carousel-item active">
+                            <img class="d-block img-fluid" src="{% static 'mainapp/png/genre/21.png' %}" alt="slide">
+                        </div>
+
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="{% static 'mainapp/png/genre/22.png' %}" alt="slide">
+                        </div>
+
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="{% static 'mainapp/png/genre/23.png' %}" alt="slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="{% static 'mainapp/png/genre/24.png' %}" alt="slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="{% static 'mainapp/png/genre/25.png' %}" alt="slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="{% static 'mainapp/png/genre/26.png' %}" alt="slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="{% static 'mainapp/png/genre/27.png' %}" alt="slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="{% static 'mainapp/png/genre/28.png' %}" alt="slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="{% static 'mainapp/png/genre/29.png' %}" alt="slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="{% static 'mainapp/png/genre/30.png' %}" alt="slide">
+                        </div>
+
+                    </div><!-- e carousel-inner -->
+
+                    <a class="carousel-control-prev" href="#carousel-12" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">prev</span>
+                    </a>
+
+                    <a class="carousel-control-next" href="#carousel-12" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">next</span>
+                    </a>
+
+                </div><!-- e carousel -->
+
+            </div><!-- e col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3-->
+
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3 mb-5">
+
+                <div id="carousel-13" class="carousel slide" data-ride="carousel">
+
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-13" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-13" data-slide-to="1"></li>
+                        <li data-target="#carousel-13" data-slide-to="2"></li>
+                    </ol>
+
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+                            <img class="d-block img-fluid" src="{% static 'mainapp/png/genre/31.png' %}" alt="slide">
+                        </div>
+
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="{% static 'mainapp/png/genre/32.png' %}" alt="slide">
+                        </div>
+
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="{% static 'mainapp/png/genre/33.png' %}" alt="slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="{% static 'mainapp/png/genre/34.png' %}" alt="slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="{% static 'mainapp/png/genre/35.png' %}" alt="slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="{% static 'mainapp/png/genre/36.png' %}" alt="slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="{% static 'mainapp/png/genre/37.png' %}" alt="slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="{% static 'mainapp/png/genre/38.png' %}" alt="slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="{% static 'mainapp/png/genre/39.png' %}" alt="slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="{% static 'mainapp/png/genre/40.png' %}" alt="slide">
+                        </div>
+
+                    </div><!-- e carousel-inner -->
+
+                    <a class="carousel-control-prev" href="#carousel-13" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">prev</span>
+                    </a>
+
+                    <a class="carousel-control-next" href="#carousel-13" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">next</span>
+                    </a>
+
+                </div><!-- e carousel -->
+
+            </div><!-- e col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3 -->
+
+        </div><!-- e row -->
+    </div><!-- e container -->
+</section><!-- e section -->
+
+{% endblock main %}
 
 {% block script %}
 <script>
-    // display book boostrap modal when clicked
-    function openModal(obj) {
-        var bookName = obj.innerHTML;
-        var isbn = obj.getAttribute('data-isbn');
-        var authors = obj.getAttribute('data-authors');
-        var imageurl = obj.getAttribute('data-imageurl');
-        var averagerating = obj.getAttribute('data-averagerating');
-        $('#booktitle').text(bookName);
-        $('#bookauthors').text(authors);
-        $('#bookimage').attr('src',imageurl);
-        $('#bookrating').text(averagerating);
-        $('#bookModal').modal('show');
-    }
+    /* 1 carousel */
+    $('#carousel-1').carousel({
+        interval: 4000,
+        wrap: true,
+        keyboard: true
+    });
 
-    // add search results
-    function displayResults(books) {
-        var searchdiv = document.getElementById('search-dropdown');
-        if (books.length == 0 && searchdiv.childElementCount == 0) {
-            var info = document.createElement('a');
-            info.innerHTML = 'No search results match your query';
-            info.setAttribute('href', '#');
-            searchdiv.appendChild(info);
-        }
-        else if (searchdiv.childElementCount <= 5) {
-            $('#search-dropdown').empty();
-            books.forEach(function (book, index, array) {
-                var booktoadd = document.createElement('a');
-                booktoadd.innerHTML = book['original_title'];
-                booktoadd.setAttribute('data-isbn', book['isbn']);
-                booktoadd.setAttribute('data-authors', book['authors']);
-                booktoadd.setAttribute('data-imageurl', book['image_url']);
-                booktoadd.setAttribute('data-averagerating', book['average_rating']);
-                booktoadd.setAttribute('href', 'javascript:;');
-                booktoadd.setAttribute('onclick', 'openModal(this)');
-                searchdiv.appendChild(booktoadd);
-            });
-        }
-    }
-    // get search results
-    function myFunction() {
-        var input = document.getElementById('bookName');
-        var text = input.value.toLowerCase();
-        if (text != '') {
-            $.ajax({
-                data: {
-                    'bookName': text,
-                    'csrfmiddlewaretoken': Cookies.get('csrftoken')
-                },
-                dataType: 'json',
-                url: "{% url 'search_ajax' %}",
-                type: 'POST',
-                success: function (response) {
-                    displayResults(JSON.parse(response['top5_result']));
-                },
-                error: function (response) {
-                    console.log(response);
-                }
-            });
-        }
-        else
-            $('#search-dropdown').empty();
-    }
+
+    /* 10 carousel example */
+    $('#carousel-10').carousel({
+        interval: 2000,
+        wrap: true,
+        keyboard: true
+    });
+
+    /* 11 carousel example */
+    $('#carousel-11').carousel({
+        interval: 4000,
+        wrap: true,
+        keyboard: true
+    });
+
+    /* 12 carousel example */
+    $('#carousel-12').carousel({
+        interval: 6000,
+        wrap: true,
+        keyboard: true
+    });
+
+    /* 13 carousel example */
+    $('#carousel-13').carousel({
+        interval: 8000,
+        wrap: true,
+        keyboard: true
+    });
+
 </script>
 {% endblock script %}
