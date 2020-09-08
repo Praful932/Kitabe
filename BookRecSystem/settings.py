@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
+    'mainapp'
 ]
 
 MIDDLEWARE = [
@@ -150,3 +151,19 @@ SOCIALACCOUNT_PROVIDERS = {
         }
     }
 }
+
+
+#media files
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+MEDIA_URL = '/media/'
+
+
+
+#simple mail transfer protocal
+
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'kitabeaurkahaniya@gmail.com'
+EMAIL_HOST_PASSWORD = 'praful@123'

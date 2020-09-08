@@ -1,0 +1,123 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- font awesome ion-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <!-- css -->
+    <link rel="stylesheet" href="{% static 'mainapp/css/layout.css' %}"> 
+
+    {% block head %}{% endblock %}
+    <title>{% block title %}Kitabe{% endblock %}</title>
+    <style>
+        {% block css %}  {% endblock %}
+    </style>
+  </head>
+  <body>
+    <!--------------------------------------------------------------------------    nav bar ------------------------------------------------------------>
+
+
+    <div id="topheader">
+        <nav class="navbar stroke navbar-expand-lg ">
+            <a class="navbar-brand btn btn-raised" href=" "><i class="fa fa-book fa-2x" aria-hidden="true"></i><div class="head-text row">Kitabe</div></a>
+          <form id="search-form" class="form-inline container" role="form" method="post" action="/bookSearch/" target="_blank">
+            <div class="input-group">
+              {% csrf_token %}
+                <input type="text" class="form-control search-form" style="border-radius: 30px 0px 0px 30px;" placeholder="Search">
+                <span class="input-group-btn"><button type="submit" class="btn  search-btn" data-target="#search-form" name="q"><i class="fa fa-search"></i></button></span>
+            </div>
+         </form>
+            
+            <button class="navbar-toggler collapsed navbar-toggler-right" data-toggle="collapse" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"><i class="fa fa-list" aria-hidden="true"></i></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+              <ul class="navbar-nav nav-head ml-auto navfont">
+    
+                    <li class="nav-item active ">
+                    <a class="nav-link "   href="#"  ><div class="icon-text"><div class="row navicon "><i class="fa fa-sign-in fa-2x" aria-hidden="true" ></i></div><div class="row" >Login</div><span class="sr-only">(current)</span></div></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link "   href="#"><div class="icon-text"><div class="row navicon"><i class="fa fa-user fa-2x" aria-hidden="true" ></i></div><div class="row" >Signup</div></div></a>
+                    </li>
+                    
+              </ul>
+            </div>
+        </nav>
+    </div>
+        
+    <!----------------------------------------------------------    end of nav bar  ------------------------------------>
+    
+
+  <!-------------------------------------------------------------- block ------------------------------------------------->
+ 
+ 
+
+  
+
+
+
+
+{% block body %}{%endblock%}
+
+
+
+
+   <!------------------------------------------------------------------- Fotter  --------------------------->
+
+  
+   <footer class="mainfooter" role="contentinfo">
+    <div class="footer-content">
+     <div class="footer-icon">
+      <a href="#"><i class="fa fa-google fa-2x" aria-hidden="true"></i></a>
+      <a href="#"><i class="fa fa-linkedin fa-2x" aria-hidden="true"></i></a>
+      <a href="#"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a>
+     </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 copy">
+          <p class="text-center">&copy; Copyright 2020 - <strong>Kitabe</strong>  All rights reserved.</p>
+      </div>
+  </div>
+  </footer>
+   
+
+
+
+
+
+
+   
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+       
+    // to close the nav bar in small screens 
+
+      $(document).on('click',function(){
+        $('.collapse').collapse('hide');
+    })
+    
+
+        {% block js %}
+        {% endblock %}
+    </script>
+   
+</body>
+</html>
