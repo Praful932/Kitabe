@@ -1,0 +1,53 @@
+{% extends 'mainapp/layout.html' %}
+{% load i18n %}
+{% load static %}
+{% load account socialaccount %}
+{% get_providers as socialaccount_providers %}
+
+{% block title  %}
+Login
+{% endblock title %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'mainapp/css/login.css' %}">
+{% endblock head %}
+
+{% block main %}
+<div class="container account-block ">
+    <div class="h-100 row">
+        <div class="h-100 col-12 col-sm-12 col-xl-8 signin-block">
+            <h3 class="welcome">Welcome Back!</h3>
+            <form method="POST" action="{% url 'account_login' %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="id_login">Username</label><br>
+                    {{ form.login }}<br><br>
+                    {% if redirect_field_value %}
+                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                    {% endif %}
+                    <label for="id_password">Password</label><br>
+                    {{ form.password }}
+                    <br><br>
+                    {% if form.errors %}
+                    {% for field in form %}
+                    {% for error in field.errors %}
+                    <strong>{{ error|escape }}</strong><br><br>
+                    {% endfor %}
+                    {% endfor %}
+                    {% for error in form.non_field_errors %}
+                    <strong>{{ error|escape }}</strong><br><br>
+                    {% endfor %}
+                    {% endif %}
+                    <button class="loginbutton primaryAction" type="submit">{% trans "Sign In" %}</button>
+                    <br>
+                </div>
+            </form>
+            <a href="{% provider_login_url 'google' %}"><button class="googlebutton" >Sign Up with Google</button></a>
+        </div>
+        <div class="h-100 hidden-sm col-xl-4 img-block mw-100"
+            style="background-image : url('{% static "mainapp/png/BookSignUp.png" %}')">
+            <a class="btn-bot" href="{% url 'account_signup' %}">SIGN UP</a>
+        </div>
+    </div>
+</div>
+{% endblock main %}

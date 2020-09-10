@@ -40,4 +40,3 @@ def book_summary_ajax(request):
             booksummary = spantag.text
             break
         return JsonResponse({'success' : True, 'booksummary' : booksummary}, status = 200)
-    
