@@ -1,0 +1,82 @@
+.genre-head,.topbook-head{
+    font-family: 'Lobster', cursive;
+    font-size: 300%;
+    background-color: #D7722C;
+    margin-top:0px;
+    color : white; 
+}
+
+.card-horizontal {
+  display: flex;
+  flex: 1 1 auto;
+}
+.card-img{
+width:100%;
+width: 180px;
+flex-shrink: 0;
+bottom: -35px;
+left: 35px;
+border-radius: 2px;
+box-shadow: -2px 6px 19px 0px #7f818e;
+transition: .3s ease;
+}
+.card-img:hover {
+transform: scale(1.07);
+}
+.card-body-wrap{
+  display:flex;
+}
+.card{
+background-color:black;
+transition:0.5s;
+cursor:pointer;
+}
+.card-title{
+  font-family: 'Roboto Slab', serif;
+  font-size:150%;
+  color:white;
+}
+.card-text{
+  font-family: 'Courgette', cursive;
+  color:white;
+}
+.card:hover{
+transform: scale(1.05);
+box-shadow: 10px 10px 15px rgba(0,0,0,0.1);
+}
+
+
+.card::before, .card::after {
+position: absolute;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+transform: scale3d(0, 0, 1);
+transition: transform .3s ease-out 0s;
+background: rgba(255, 255, 255, 0.1);
+content: '';
+pointer-events: none;
+}
+.card::before {
+transform-origin: left top;
+}
+.card::after {
+transform-origin: right bottom;
+}
+.card:hover::before, .card:hover::after, .card:focus::before, .card:focus::after {
+transform: scale3d(1, 1, 1);
+}
+.see-book{
+text-align: center;
+background-color: black;
+color: #fbadaf;
+font-weight: 600;
+font-size: 14px;
+width: 160px;
+border-radius: 20px;
+}
+
+.see-book:hover {
+    color: #ff6e72;
+    }
