@@ -54,9 +54,19 @@
 
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                     <ul class="navbar-nav nav-head ml-auto navfont">
-
+                        {% if user.is_authenticated %}
                         <li class="nav-item active ">
-                            <a class="nav-link " href="#">
+                            <a class="nav-link " href="{% url 'account_logout' %}">
+                                <div class="icon-text">
+                                    <div class="row navicon "><i class="fa fa-sign-in fa-2x" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="row">Logout</div><span class="sr-only">(current)</span>
+                                </div>
+                            </a>
+                        </li>
+                        {% else %}
+                        <li class="nav-item active ">
+                            <a class="nav-link " href="{% url 'account_login' %}">
                                 <div class="icon-text">
                                     <div class="row navicon "><i class="fa fa-sign-in fa-2x" aria-hidden="true"></i>
                                     </div>
@@ -65,14 +75,14 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="#">
+                            <a class="nav-link " href="{% url 'account_signup' %}">
                                 <div class="icon-text">
                                     <div class="row navicon"><i class="fa fa-user fa-2x" aria-hidden="true"></i></div>
                                     <div class="row">Signup</div>
                                 </div>
                             </a>
                         </li>
-
+                        {% endif %}
                     </ul>
                 </div>
             </nav>
@@ -155,6 +165,7 @@
         }
         $(document).ready(init);
 
+        // get book summary
         function getsummary(bookid) {
             $.ajax({
                 data: {
@@ -191,6 +202,7 @@
                 readOnly: true
             });
             $('#bookModal').modal('show');
+            $('#search-dropdown').empty();
         }
 
         // add search results
@@ -241,6 +253,7 @@
             else
                 $('#search-dropdown').empty();
         }
+
     </script>
     <!-- End Search Bar Script -->
     {% block script %}

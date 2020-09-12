@@ -20,7 +20,7 @@ def search_ajax(request):
         # staticfiles_storage.url(file)
 
         # Development File path
-        book_path = settings.STATICFILES_DIRS[0] + '\\mainapp\\csv\\db.csv'
+        book_path = settings.STATICFILES_DIRS[0] + '\\mainapp\\dataset\\books.csv'
 
         df_book = pd.read_csv(book_path)
         top5_result = df_book[df_book['original_title'].str.contains(query, regex=False, case = False)][:5]

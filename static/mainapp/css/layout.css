@@ -118,22 +118,21 @@ html,body{
 
 /*FOOTER*/
 .footer-content{
-  align-items: center;
-  padding-left:47%;
-  padding-top: 1%;
-  padding-bottom: 1%;
+  padding:15px;
 }
 
 footer {
   background-color: black;
   color: white;
   margin-top: 10%;
+  text-align: center;
 }
 
 footer a {
   color: #fff;
   font-size: 14px;
   transition-duration: 0.2s;
+  padding:3px;
 }
 
 footer a:hover {

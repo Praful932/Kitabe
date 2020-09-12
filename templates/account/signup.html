@@ -1,0 +1,61 @@
+{% extends 'mainapp/layout.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title  %}
+Sign Up
+{% endblock title %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'mainapp/css/signup.css' %}">
+{% endblock head %}
+
+{% block main %}
+<div class="container account-block ">
+    <div class="h-100 row">
+        <div class="h-100 col-12 col-sm-12 col-xl-8 signup-block">
+            <h3 class="welcome">Welcome!</h3>
+            <form method="POST" action="{% url 'account_signup' %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    {% if redirect_field_value %}
+                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                    {% endif %}
+
+                    <label for="id_email">Email</label><br>
+                    {{ form.email }}
+                    <br><br>
+
+                    <label for="id_username">Username</label><br>
+                    {{ form.username }}
+                    <br><br>
+
+                    <label for="id_password1">Password</label><br>
+                    {{ form.password1 }}
+                    <br><br>
+
+                    <label for="id_password2">Password (again)</label><br>
+                    {{ form.password2 }}
+                    <br><br>
+                    {% if form.errors %}
+                    {% for field in form %}
+                    {% for error in field.errors %}
+                    <strong>{{ error|escape }}</strong><br><br>
+                    {% endfor %}
+                    {% endfor %}
+                    {% for error in form.non_field_errors %}
+                    <strong>{{ error|escape }}</strong><br><br>
+                    {% endfor %}
+                    {% endif %}
+                    <button class="signupbutton" type="submit">{% trans "Sign Up" %}</button>
+                    <br>
+                </div>
+            </form>
+        </div>
+        <div class="h-100 hidden-sm col-xl-4 img-block mw-100"
+            style="background-image : url('{% static "mainapp/png/BookSignIn.png" %}')">
+            <a class="btn-bot" href="{% url 'account_login' %}">SIGN IN</a>
+        </div>
+    </div>
+</div>
+{% endblock main %}

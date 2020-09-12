@@ -1,0 +1,66 @@
+.account-block{
+    margin:auto;
+    height:80%;
+    width:70%;
+    background-color: white;
+}
+.signup-block{
+    text-align: center;
+}
+.img-block{
+    color:white;
+    background-size: cover;
+    background-position: center;
+}
+.btn-bot{
+    font-family: 'Fredoka One', cursive;
+    position:absolute; 
+    margin-left:-45px;
+    left:50%;
+    padding: 5px 10px 5px 10px; 
+    border: 2px solid white;
+    border-radius: 25px;
+    bottom:250px;
+    text-decoration:none !important;
+    color:white;
+ }
+.btn-bot:hover{
+    color:black;
+    border: 2px solid black;
+    background-color: rgba(255, 255, 255, 0.891);
+}
+.welcome{
+    font-family: 'Pacifico', cursive;
+    position: relative;
+    top:5%;
+}
+label{
+    font-family: 'Kalam', cursive;
+    font-size:1.2em;
+}
+.form-group{
+    position: relative;
+    display: inline-block;
+    top:40px;    
+}
+#id_username, #id_email, #id_password1, #id_password2{
+    background-color: transparent;
+    border-top:none;
+    border-left:none;
+    border-right: none;
+}
+.signupbutton{
+    font-family: 'Fredoka One', cursive;
+    padding: 5px 10px 5px 10px; 
+    background-color:#09BC8A;
+    color:white;
+    border-radius: 25px;
+}
+strong{
+    color:red;
+}
+@media only screen and (max-width: 1200px) {
+    .img-block {
+      display: none;
+    }
+  }
