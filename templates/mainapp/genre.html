@@ -20,16 +20,17 @@ Genre
 <div class="card-deck col-sm-12 pr-4 pl-4 pb-4">
   {% for book in genre_topbook %}
 
-  <div class="card col-sm-12 col-lg-4 mt-2 ml-2 pl-2 mr-2 pr-4" style="width: 500px;">
+  <div class="card col-sm-12 col-lg-4 mt-2 ml-2 pl-2 mr-2 pr-4" style="width: 300px;">
     <div class="row no-gutters">
         <div class="col-sm-4">
-            <img class="card-img mr-4 mt-2 mb-2" src="{{book.image_url}}" alt="Suresh Dasari Card">
+            <img class="card-img mr-4 mt-2 mb-2" src="{{book.image_url}}" alt="book Card">
         </div>
         <div class="col-sm-8">
             <div class="card-body">
                 <h5 class="card-title">{{book.original_title}}</h5>
                 <p class="card-text"><i>by {{book.authors}}</i></p>
-                <p class="card-text">{{book.average_rating}} average rating</p>    
+                <p class="card-text">{{book.average_rating}} average rating</p> 
+                <div id="rateYo"></div>
                 <a href="#" class="btn mt-2 see-book">See the book</a>
             </div>
     </div>
@@ -46,7 +47,4 @@ Genre
 </div><!-- The final deck is closed here, outside the loop -->
 
 {% endblock main %}
-
-
-
 

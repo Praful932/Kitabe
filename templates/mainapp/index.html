@@ -101,14 +101,7 @@ Home
 			          <div class="carousel-item">
 			            <a href="/business"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/3.png' %}" alt="slide"></a>
                       </div>
-                      
-                      <div class="carousel-item">
-			            <a href="/chicklit"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/4.png' %}" alt="slide"></a>
-                      </div>
-                      <div class="carousel-item">
-			            <a href="/children"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/5.png' %}" alt="slide"></a>
-                      </div>
-                      
+                                
                       <div class="carousel-item">
 			            <a href="/christian"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/6.png' %}" alt="slide"></a>
                       </div>
@@ -168,19 +161,7 @@ Home
                           <div class="carousel-item">
                             <a href="/fiction"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/13.png' %}" alt="slide"></a>
                           </div>
-                          
-                          <div class="carousel-item">
-                            <a href="/gayandleasbian"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/14.png' %}" alt="slide"></a>
-                          </div>
-                          
-                          <div class="carousel-item">
-                            <a href="/graphicnovels"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/15.png' %}" alt="slide"></a>
-                          </div>
-                          
-                          <div class="carousel-item">
-                            <a href="/historicalfiction"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/16.png' %}" alt="slide"></a>
-                          </div>
-                          
+                                  
                           <div class="carousel-item">
                             <a href="/history"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/17.png' %}" alt="slide"></a>
                           </div>
@@ -188,11 +169,7 @@ Home
                           <div class="carousel-item">
 							<a href="/horror"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/18.png' %}" alt="slide"></a>
                           </div>
-                          
-                          <div class="carousel-item">
-                            <a href="/humorandcomedy"></a><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/19.png' %}" alt="slide"></a>
-                          </div>
-                          
+                                
                           <div class="carousel-item">
                             <a href="/manga"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/20.png' %}" alt="slide"></a>
                           </div>
@@ -300,15 +277,7 @@ Home
                           <div class="carousel-item active">
 							<a href="/science"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/31.png' %}" alt="slide"></a>
                           </div>
-                          
-                          <div class="carousel-item">
-                            <a href="/sciencefiction"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/32.png' %}" alt="slide"></a>
-                          </div>
-                          
-                          <div class="carousel-item">
-                            <a href="/selfhelp"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/33.png' %}" alt="slide"></a>
-                          </div>
-                          
+                           
                           <div class="carousel-item">
                             <a href="/suspense"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/34.png' %}" alt="slide"></a>
                           </div>
@@ -327,10 +296,6 @@ Home
                           
                           <div class="carousel-item">
                             <a href="/travel"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/38.png' %}" alt="slide"></a>
-                          </div>
-                          
-                          <div class="carousel-item">
-                            <a href="/youngadult"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/39.png' %}" alt="slide"></a>
                           </div>
                           
                           <div class="carousel-item">
@@ -356,6 +321,74 @@ Home
 		</div><!-- e row -->
 	</div><!-- e container -->
 </section><!-- e section -->
+
+<!---------------------------------------------------------- top book carousel -------------------------------------------------------->
+<!-- 
+<div class="container">
+   
+<div id="demo" class="carousel slide my-3" data-ride="carousel">
+    <ul class="carousel-indicators">
+      <li data-target="#demo" data-slide-to="0" class="active"></li>
+
+       {% for i in range %}
+      <li data-target="#demo" data-slide-to="{{i}}" ></li>
+      {% endfor %}
+    </ul>
+
+   
+    <div class="container carousel-inner">
+
+      <div class="carousel-item  active">
+		<div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mb-5" style="display: inline-block;">
+			<div class="card" style="width: 18rem;">
+			  <img src='{{book.0.image_url}}' class="card-img-top" alt="...">
+			  <div class="card-body">
+				  <h5 class="card-title">{{book.0.authors}}</h5>
+				  <p class="card-text">{{book.0.original_title}}</p>
+				  <a href="#" class="btn btn-primary">Add to Cart</a>
+			  </div>
+			</div>
+		 </div>
+        {% for i in book|slice:"1:"%}
+		<div class="card col-sm-12 col-lg-4 mt-2 ml-2 pl-2 mr-2 pr-4" style="width: 300px;">
+			<div class="row no-gutters">
+				<div class="col-sm-4">
+					<img class="card-img mr-4 mt-2 mb-2" src="{{i.image_url}}" alt="book Card">
+				</div>
+				<div class="col-sm-8">
+					<div class="card-body">
+						<h5 class="card-title">{{i.original_title}}</h5>
+						<p class="card-text"><i>by {{i.authors}}</i></p>
+						<p class="card-text">{{i.average_rating}} average rating</p> 
+						<div id="rateYo"></div>
+						<a href="#" class="btn mt-2 see-book">See the book</a>
+					</div>
+			</div>
+		</div>
+		</div>
+        {% if forloop.counter|divisibleby:3 and forloop.counter > 0 and not forloop.last %}
+      </div><div class="carousel-item ">
+        {% endif %}
+
+        {% endfor %}
+    </div>
+
+
+
+</div>
+</div>
+
+    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#demo" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </a>
+</div>
+
+--->
+
+
 
 <!---------------------------------------------------------------   Top books this week -------------------------------------------------------------------->
 
@@ -505,7 +538,8 @@ Home
 {% endblock main %}
 
 {% block script %}
-<script>
+
+<script type="text/javascript">
      /* 1 carousel */
 $('#carousel-1').carousel({
       interval: 4000,
@@ -563,6 +597,6 @@ $('#carousel-1').carousel({
      wrap: true,
      keyboard: true
  });
-   
+
 </script>
 {% endblock script %}

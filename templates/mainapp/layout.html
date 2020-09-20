@@ -19,6 +19,7 @@
     <!-- font awesome ion-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Rating CSS -->
+     <!-- Reset styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
     <!-- css -->
     <link rel="stylesheet" href="{% static 'mainapp/css/layout.css' %}">
@@ -35,7 +36,7 @@
     <header>
         <div id="topheader">
             <nav class="navbar stroke navbar-expand-lg ">
-                <a class="navbar-brand btn btn-raised" href=" ">
+                <a class="navbar-brand btn btn-raised" href=' '>
                     <div class="head-text row">Kitabe</div>
                 </a>
                 <!-- Search Bar -->
@@ -55,6 +56,14 @@
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                     <ul class="navbar-nav nav-head ml-auto navfont">
                         {% if user.is_authenticated %}
+                        <li class="nav-item active ">
+                            <a class="nav-link " href="/recommend">
+                                <div class="icon-text">
+                                    <div class="row navicon"><i class="fa fa-book fa-2x" aria-hidden="true"></i>                                 </div>
+                                    <div class="row pr-4">Personalised Read</div><span class="sr-only">(current)</span>
+                                </div>
+                            </a>
+                        </li>
                         <li class="nav-item active ">
                             <a class="nav-link " href="{% url 'account_logout' %}">
                                 <div class="icon-text">
@@ -88,7 +97,6 @@
             </nav>
         </div>
     </header>
-
     <!-- Bootstrap modal -->
     <div class="modal fade" id="bookModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
         <div class="modal-dialog">
@@ -130,7 +138,6 @@
     {% block main %}
     {% endblock main %}
 
-
     <footer class="mainfooter" role="contentinfo">
         <div class="footer-content">
             <div class="footer-icon">
@@ -145,7 +152,7 @@
             </div>
         </div>
     </footer>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
         integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
@@ -156,7 +163,6 @@
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
     <!-- Rating JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
-
     <!-- Search Bar Script -->
     <script>
         // clear forms

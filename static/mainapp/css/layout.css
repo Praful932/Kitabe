@@ -12,7 +12,6 @@ html,body{
   display: inline-block;
   padding-right: 20px;
   color: black;
-
 }
 
 .icon-text{
@@ -145,6 +144,8 @@ footer a:hover {
   padding: 10px;
   border-top: 1px solid #ffffff;
 }
+
+
 
 
 
