@@ -77,3 +77,8 @@ strong{
       display: none;
     }
   }
+.forgotpassword{
+    font-size:10px;
+    position: relative;
+    left:62px;
+}
