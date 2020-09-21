@@ -12,39 +12,77 @@ Genre
 
 {% block main %}
 
-{% for key in genre %}
-<h1 class="genre-head text-center pt-3 pb-3">{{ key }} Books</h1>
-{% endfor %}
+<h1 class="genre-head text-center pt-3 pb-3">{{ genre }} Genre</h1>
 
 
 <div class="card-deck col-sm-12 pr-4 pl-4 pb-4">
-  {% for book in genre_topbook %}
+    {% for book in genre_topbook %}
 
-  <div class="card col-sm-12 col-lg-4 mt-2 ml-2 pl-2 mr-2 pr-4" style="width: 300px;">
-    <div class="row no-gutters">
-        <div class="col-sm-4">
-            <img class="card-img mr-4 mt-2 mb-2" src="{{book.image_url}}" alt="book Card">
-        </div>
-        <div class="col-sm-8">
-            <div class="card-body">
-                <h5 class="card-title">{{book.original_title}}</h5>
-                <p class="card-text"><i>by {{book.authors}}</i></p>
-                <p class="card-text">{{book.average_rating}} average rating</p> 
-                <div id="rateYo"></div>
-                <a href="#" class="btn mt-2 see-book">See the book</a>
+    <div class="card col-sm-12 col-lg-4 mt-2 ml-2 pl-2 mr-2 pr-4" style="width: 300px;">
+        <div class="row no-gutters">
+            <div class="col-sm-4">
+                <img class="card-img mr-4 mt-2 mb-2" src="{{book.image_url}}" alt="book Card">
             </div>
+            <div class="col-sm-8">
+                <div class="card-body">
+                    <h5 class="card-title">{{book.original_title}}</h5>
+                    <p class="card-text"><i>by {{book.authors}}</i></p>
+                    <div class="rateYo" data-book-rating-id="{{ book.book_id }}"></div>
+                </div>
+            </div>
+        </div>
+        <a href="javascript:;" onclick='bookDetails(this)' class="btn more-details" data-book-id="{{ book.book_id }}">More Details</a>
     </div>
-</div>
-</div>
 
-      
-  
-      {% if forloop.counter|divisibleby:"3"  %}
-          </div>
-          <div class="card-deck col-sm-12 pr-4 pl-4 pb-4">
-      {% endif %}
-  {% endfor %}
+
+
+    {% if forloop.counter|divisibleby:"3"  %}
+</div>
+<div class="card-deck col-sm-12 pr-4 pl-4 pb-4">
+    {% endif %}
+    {% endfor %}
 </div><!-- The final deck is closed here, outside the loop -->
 
 {% endblock main %}
 
+{% block script %}
+<script>
+    // Reterieve and display book details in Modal
+    function bookDetails(obj){
+        var bookid = obj.getAttribute('data-book-id');
+        $.ajax({
+            data:{
+                'bookid' : bookid,
+                'csrfmiddlewaretoken': Cookies.get('csrftoken')
+            },
+            dataType : 'json',
+            url: "{% url 'book_details' %}",
+            type: 'POST',
+            success: function (response){
+                var book_details = JSON.parse(response['book_details'])[0];
+                console.log(book_details);
+                $('#booksummary').text("");
+                $('#loading').show();
+                var summary = getsummary(bookid);
+                var bookName = book_details.original_title;
+                var authors = book_details.authors;
+                var imageurl = book_details.image_url;
+                var averagerating = book_details.average_rating;
+                $('#booktitle').text(bookName);
+                $('#bookauthors').text(authors);
+                console.log(averagerating);
+                $('#bookimage').attr('src', imageurl);
+                $("#bookrating").rateYo({
+                    rating: averagerating,
+                    readOnly: true
+                });
+                $('#bookModal').modal('show');
+                $('#search-dropdown').empty();
+            },
+            error: function (response) {
+                console.log(response);
+            }
+        });
+    }
+</script>
+{% endblock %}

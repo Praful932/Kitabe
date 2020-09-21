@@ -11,8 +11,6 @@
   flex: 1 1 auto;
 }
 .card-img{
-width:100%;
-width: 180px;
 flex-shrink: 0;
 bottom: -35px;
 left: 35px;
@@ -33,7 +31,7 @@ border-radius: 3px;
 }
 .card-title{
   font-family: 'Roboto Slab', serif;
-  font-size:150%;
+  font-size:100%;
   color:black;
 }
 .card-text{
@@ -67,17 +65,19 @@ transform-origin: right bottom;
 .card:hover::before, .card:hover::after, .card:focus::before, .card:focus::after {
 transform: scale3d(1, 1, 1);
 }
-.see-book{
+.more-details{
 text-align: center;
 background-color: black;
 color: #fbadaf;
 font-weight: 600;
 font-size: 14px;
-width: 160px;
 border-radius: 20px;
+position: absolute;
+bottom:10px;
+right:10px;
 }
 
-.see-book:hover {
+.more-details:hover {
     color: #ff6e72;
     }
 
@@ -100,5 +100,6 @@ border-radius: 20px;
       content: '\2605';
     }
 
-
-    
+.col-sm-8{
+  text-align: right;
+}
