@@ -27,11 +27,17 @@ Genre
                 <div class="card-body">
                     <h5 class="card-title">{{book.original_title}}</h5>
                     <p class="card-text"><i>by {{book.authors}}</i></p>
-                    <div class="rateYo" data-book-rating-id="{{ book.book_id }}"></div>
                 </div>
             </div>
         </div>
-        <a href="javascript:;" onclick='bookDetails(this)' class="btn more-details" data-book-id="{{ book.book_id }}">More Details</a>
+        <a href="javascript:;" onclick='bookDetails(this)' class="btn more-details"
+            data-book-id="{{ book.book_id }}">More Details</a>
+        <div class='rating-block' onmouseover="rateStart(this)" onclick='rateBook(this)' onmouseout='finishRate(this)'
+            data-book-id="{{ book.book_id }}">
+            <div id='button-text-{{ book.book_id }}'>Rate <i class="fa fa-heart" style="color:red"></i> This Book</a>
+            </div>
+            <div class='rateYo' id='rate-{{ book.book_id }}'></div>
+        </div>
     </div>
 
 
@@ -47,20 +53,62 @@ Genre
 
 {% block script %}
 <script>
-    // Reterieve and display book details in Modal
-    function bookDetails(obj){
+    $(function () {
+
+        $(".rateYo").rateYo({
+            rating: 0,
+            starWidth: "20px",
+            fullStar : true
+        });
+
+    });
+    // when hover over rate
+    function rateStart(obj) {
         var bookid = obj.getAttribute('data-book-id');
+        $('#button-text-' + bookid).css('display', 'none');
+        $('#rate-' + bookid).css('display', 'block');
+    }
+    // onclick rate
+    function rateBook(obj) {
+        var bookid = obj.getAttribute('data-book-id');
+        var bookrating = $('#rate-' + bookid).rateYo('rating');
         $.ajax({
-            data:{
+            data : {
                 'bookid' : bookid,
-                'csrfmiddlewaretoken': Cookies.get('csrftoken')
+                'bookrating' : bookrating,
+                'csrfmiddlewaretoken' : Cookies.get('csrftoken')
             },
             dataType : 'json',
+            url: "{% url 'user_rate_book' %}",
+            type : 'POST',
+            success : function(response){
+            },
+            error: function (response){
+                console.log(response);
+            }
+        });
+    }
+    // when hover out rate
+    function finishRate(obj) {
+        var bookid = obj.getAttribute('data-book-id');
+        setTimeout(function(){
+            $('#rate-' + bookid).css('display', 'none');
+            $('#button-text-' + bookid).css('display', 'block');   
+        }, 4000);
+    }
+    // Retrieve and display book details in Modal
+    function bookDetails(obj) {
+        var bookid = obj.getAttribute('data-book-id');
+        $.ajax({
+            data: {
+                'bookid': bookid,
+                'csrfmiddlewaretoken': Cookies.get('csrftoken')
+            },
+            dataType: 'json',
             url: "{% url 'book_details' %}",
             type: 'POST',
-            success: function (response){
+            success: function (response) {
                 var book_details = JSON.parse(response['book_details'])[0];
-                console.log(book_details);
                 $('#booksummary').text("");
                 $('#loading').show();
                 var summary = getsummary(bookid);
@@ -70,7 +118,6 @@ Genre
                 var averagerating = book_details.average_rating;
                 $('#booktitle').text(bookName);
                 $('#bookauthors').text(authors);
-                console.log(averagerating);
                 $('#bookimage').attr('src', imageurl);
                 $("#bookrating").rateYo({
                     rating: averagerating,

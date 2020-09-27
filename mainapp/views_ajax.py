@@ -3,6 +3,7 @@ from django.http import JsonResponse
 from django.contrib.staticfiles.storage import staticfiles_storage
 from mainapp.helpers import genre_wise
 import BookRecSystem.settings as settings
+from mainapp.models import UserRating
 
 from bs4 import BeautifulSoup
 from math import ceil
@@ -17,6 +18,8 @@ import requests
 '''
 book_path = settings.STATICFILES_DIRS[0] + \
             '\\mainapp\\dataset\\books.csv'
+user_ratings_path = settings.STATICFILES_DIRS[0] + \
+                   '\\mainapp\\csv\\userratings.csv'
 
 def search(request):
     '''
@@ -62,3 +65,26 @@ def get_book_details(request):
 
         return JsonResponse({'success': True, 'book_details': book_details}, status=200)
 
+def user_rate_book(request):
+    '''
+        AJAX request when user rates book
+    '''
+    if request.method == 'POST' and request.is_ajax():
+        bookid = request.POST.get('bookid', None)
+        bookrating = request.POST.get('bookrating', None)
+        userid = request.user.id
+        # Using Inbuilt Model
+        # df_user_ratings = pd.read_csv(user_ratings_path)
+        query = UserRating.objects.filter(user = request.user).filter(bookid = bookid)
+        if not query:
+            # Create Rating
+            UserRating.objects.create(user = request.user, bookid = bookid, bookrating = bookrating)
+        else:
+            # Update Rating
+            rating_object = query[0]
+            rating_object.bookrating = bookrating
+            rating_object.save()
+        return JsonResponse({'success': True}, status = 200)
+
+
+        

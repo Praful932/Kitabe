@@ -10,4 +10,5 @@ urlpatterns += [
     path('search_ajax/', views_ajax.search, name='search_ajax'),
     path('book_summary_ajax/', views_ajax.book_summary, name='summary_ajax'),
     path('book_details_ajax/',views_ajax.get_book_details, name = 'book_details'),
+    path('user_rate_book/',views_ajax.user_rate_book, name = 'user_rate_book'),
 ]
