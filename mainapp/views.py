@@ -26,8 +26,8 @@ def index(request):
     df_books['weighted_rating'] = W
     qualified = df_books1.sort_values(
         'weighted_rating', ascending=False).head(250)
-    qual = qualified[['original_title', 'authors',
-                      'average_rating', 'weighted_rating', 'image_url']].head(15)
+    qual = qualified[['book_id','original_title', 'authors',
+                      'average_rating', 'image_url']].head(15)
     books = qual.to_dict('records')
     n = len(df_books1)
     nSlides = n//4 + ceil((n/4)-(n//4))

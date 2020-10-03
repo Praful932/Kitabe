@@ -16,45 +16,27 @@ Home
 <!-- ################### carousel 1   -->
 
 <section class="banner pl-3 pr-3">
-	<div id="carousel-1" class="carousel slide" data-ride="carousel">
-       
-		<ol class="carousel-indicators">
-			<li data-target="#carousel-1" data-slide-to="0" class="active"></li>
-			<li data-target="#carousel-1" data-slide-to="1"></li>
-			<li data-target="#carousel-1" data-slide-to="2"></li>
-			<li data-target="#carousel-1" data-slide-to="3"></li>
-		</ol>
-       
-        <div class="carousel-inner" role="listbox">
+	<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+		<div class="carousel-inner" role="listbox">
 
-          <div class="carousel-item active">
-            <img class="d-block img-fluid" src="{% static 'mainapp/png/banner/1.png' %}" alt="slide">
-          </div>
-          
-          <div class="carousel-item">
-            <img class="d-block img-fluid" src="{% static 'mainapp/png/banner/2.png' %}" alt="Slide">
-          </div>
-          
-          <div class="carousel-item">
-            <img class="d-block img-fluid" src="{% static 'mainapp/png/banner/3.png' %}" alt="Slide">
-          </div>
-          
-          <div class="carousel-item">
-            <img class="d-block img-fluid" src="{% static 'mainapp/png/banner/4.png' %}" alt="Slide">
-          </div>
+			<div class="carousel-item active">
+				<img class="d-block img-fluid" src="{% static 'mainapp/png/banner/1.png' %}" alt="slide">
+			</div>
 
-        </div><!-- e carousel-inner -->
-        
-        <a class="carousel-control-prev" href="#carousel-1" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">prev</span>
-        </a>
-        
-        <a class="carousel-control-next" href="#carousel-1" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">next</span>
-        </a>
-        
+			<div class="carousel-item">
+				<img class="d-block img-fluid" src="{% static 'mainapp/png/banner/2.png' %}" alt="Slide">
+			</div>
+
+			<div class="carousel-item">
+				<img class="d-block img-fluid" src="{% static 'mainapp/png/banner/3.png' %}" alt="Slide">
+			</div>
+
+			<div class="carousel-item">
+				<img class="d-block img-fluid" src="{% static 'mainapp/png/banner/4.png' %}" alt="Slide">
+			</div>
+
+		</div><!-- e carousel-inner -->
+
 	</div><!-- e carousel -->
 </section><!-- e section -->
 
@@ -63,7 +45,7 @@ Home
 <section class="text-center ">
 	<div class="container genre-head">
 		<div class="row">
-			
+
 			<div class="col pt-5 pb-5">
 				<h2>Read Genre Wise</h2>
 			</div><!-- e col -->
@@ -77,317 +59,281 @@ Home
 <section class=" genre-container">
 	<div class="container pt-5 mb-5">
 		<div class="row">
-			
+
 			<div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
-			
+
 				<div id="carousel-2" class="carousel slide" data-ride="carousel">
-			       
-					<ol class="carousel-indicators">
-			          <li data-target="#carousel-2" data-slide-to="0" class="active"></li>
-			          <li data-target="#carousel-2" data-slide-to="1"></li>
-			          <li data-target="#carousel-2" data-slide-to="2"></li>
-			        </ol>
-			       
-			        <div class="carousel-inner" role="listbox">
-			
-			          <div class="carousel-item active">
-                        <a href="{% url 'genre_books' genre='art' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/1.png' %}" alt="slide"></a>
-			          </div>
-			          
-			          <div class="carousel-item">
-						<a href="{% url 'genre_books' genre='biography' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/2.png' %}" alt="slide"></a>
-			          </div>
-			          
-			          <div class="carousel-item">
-			            <a href="{% url 'genre_books' genre='business' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/3.png' %}" alt="slide"></a>
-                      </div>
-                                
-                      <div class="carousel-item">
-			            <a href="{% url 'genre_books' genre='Christian' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/6.png' %}" alt="slide"></a>
-                      </div>
-                      
-                      <div class="carousel-item">
-			            <a href="{% url 'genre_books' genre='Comics' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/7.png' %}" alt="slide"></a>
-                      </div>
-                      
-                      <div class="carousel-item">
-			            <a href="{% url 'genre_books' genre='Contemporary' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/8.png' %}" alt="slide"></a>
-                      </div>
-                      
-                      <div class="carousel-item">
-						<a href="{% url 'genre_books' genre='Cookbooks' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/9.png' %}" alt="slide"></a>
-                      </div>
-                      
-                      <div class="carousel-item">
-			            <a href="{% url 'genre_books' genre='Crime' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/10.png' %}" alt="slide"></a>
-			          </div>
 
-			        </div><!-- e carousel-inner -->
-			        
-			        <a class="carousel-control-prev" href="#carousel-2" role="button" data-slide="prev">
-			          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-			          <span class="sr-only">prev</span>
-			        </a>
-			        
-			        <a class="carousel-control-next" href="#carousel-2" role="button" data-slide="next">
-			          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-			          <span class="sr-only">next</span>
-			        </a>
-			        
+					<ol class="carousel-indicators">
+						<li data-target="#carousel-2" data-slide-to="0" class="active"></li>
+						<li data-target="#carousel-2" data-slide-to="1"></li>
+						<li data-target="#carousel-2" data-slide-to="2"></li>
+					</ol>
+
+					<div class="carousel-inner" role="listbox">
+
+						<div class="carousel-item active">
+							<a href="{% url 'genre_books' genre='art' %}"><img class="d-block img-fluid"
+									src="{% static 'mainapp/png/genre/1.png' %}" alt="slide"></a>
+						</div>
+
+						<div class="carousel-item">
+							<a href="{% url 'genre_books' genre='biography' %}"><img class="d-block img-fluid"
+									src="{% static 'mainapp/png/genre/2.png' %}" alt="slide"></a>
+						</div>
+
+						<div class="carousel-item">
+							<a href="{% url 'genre_books' genre='business' %}"><img class="d-block img-fluid"
+									src="{% static 'mainapp/png/genre/3.png' %}" alt="slide"></a>
+						</div>
+
+						<div class="carousel-item">
+							<a href="{% url 'genre_books' genre='Christian' %}"><img class="d-block img-fluid"
+									src="{% static 'mainapp/png/genre/6.png' %}" alt="slide"></a>
+						</div>
+
+						<div class="carousel-item">
+							<a href="{% url 'genre_books' genre='Comics' %}"><img class="d-block img-fluid"
+									src="{% static 'mainapp/png/genre/7.png' %}" alt="slide"></a>
+						</div>
+
+						<div class="carousel-item">
+							<a href="{% url 'genre_books' genre='Contemporary' %}"><img class="d-block img-fluid"
+									src="{% static 'mainapp/png/genre/8.png' %}" alt="slide"></a>
+						</div>
+
+						<div class="carousel-item">
+							<a href="{% url 'genre_books' genre='Cookbooks' %}"><img class="d-block img-fluid"
+									src="{% static 'mainapp/png/genre/9.png' %}" alt="slide"></a>
+						</div>
+
+						<div class="carousel-item">
+							<a href="{% url 'genre_books' genre='Crime' %}"><img class="d-block img-fluid"
+									src="{% static 'mainapp/png/genre/10.png' %}" alt="slide"></a>
+						</div>
+
+					</div><!-- e carousel-inner -->
+
+					<a class="carousel-control-prev" href="#carousel-2" role="button" data-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="sr-only">prev</span>
+					</a>
+
+					<a class="carousel-control-next" href="#carousel-2" role="button" data-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="sr-only">next</span>
+					</a>
+
 				</div><!-- e carousel -->
-			
+
 			</div><!-- e col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3 -->
-			
+
 			<div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3 mb-5">
-			
+
 				<div id="carousel-3" class="carousel slide" data-ride="carousel">
-			       
+
 					<ol class="carousel-indicators">
-			          <li data-target="#carousel-3" data-slide-to="0" class="active"></li>
-			          <li data-target="#carousel-3" data-slide-to="1"></li>
-			          <li data-target="#carousel-3" data-slide-to="2"></li>
-			        </ol>
-			       
-			        <div class="carousel-inner" role="listbox">
-			
-                        <div class="carousel-item active">
-							<a href="{% url 'genre_books' genre='Ebooks' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/11.png' %}" alt="slide"></a>
-                          </div>
-                          
-                          <div class="carousel-item">
-                            <a href="{% url 'genre_books' genre='Fantasy' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/12.png' %}" alt="slide"></a>
-                          </div>
-                          
-                          <div class="carousel-item">
-                            <a href="{% url 'genre_books' genre='Fiction' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/13.png' %}" alt="slide"></a>
-                          </div>
-                                  
-                          <div class="carousel-item">
-                            <a href="{% url 'genre_books' genre='History' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/17.png' %}" alt="slide"></a>
-                          </div>
-                          
-                          <div class="carousel-item">
-							<a href="{% url 'genre_books' genre='Horror' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/18.png' %}" alt="slide"></a>
-                          </div>
-                                
-                          <div class="carousel-item">
-                            <a href="{% url 'genre_books' genre='Manga' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/20.png' %}" alt="slide"></a>
-                          </div>
-    
-                      
+						<li data-target="#carousel-3" data-slide-to="0" class="active"></li>
+						<li data-target="#carousel-3" data-slide-to="1"></li>
+						<li data-target="#carousel-3" data-slide-to="2"></li>
+					</ol>
+
+					<div class="carousel-inner" role="listbox">
+
+						<div class="carousel-item active">
+							<a href="{% url 'genre_books' genre='Ebooks' %}"><img class="d-block img-fluid"
+									src="{% static 'mainapp/png/genre/11.png' %}" alt="slide"></a>
+						</div>
+
+						<div class="carousel-item">
+							<a href="{% url 'genre_books' genre='Fantasy' %}"><img class="d-block img-fluid"
+									src="{% static 'mainapp/png/genre/12.png' %}" alt="slide"></a>
+						</div>
+
+						<div class="carousel-item">
+							<a href="{% url 'genre_books' genre='Fiction' %}"><img class="d-block img-fluid"
+									src="{% static 'mainapp/png/genre/13.png' %}" alt="slide"></a>
+						</div>
+
+						<div class="carousel-item">
+							<a href="{% url 'genre_books' genre='History' %}"><img class="d-block img-fluid"
+									src="{% static 'mainapp/png/genre/17.png' %}" alt="slide"></a>
+						</div>
+
+						<div class="carousel-item">
+							<a href="{% url 'genre_books' genre='Horror' %}"><img class="d-block img-fluid"
+									src="{% static 'mainapp/png/genre/18.png' %}" alt="slide"></a>
+						</div>
+
+						<div class="carousel-item">
+							<a href="{% url 'genre_books' genre='Manga' %}"><img class="d-block img-fluid"
+									src="{% static 'mainapp/png/genre/20.png' %}" alt="slide"></a>
+						</div>
 
 
 
-			        </div><!-- e carousel-inner -->
-			        
-			        <a class="carousel-control-prev" href="#carousel-3" role="button" data-slide="prev">
-			          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-			          <span class="sr-only">prev</span>
-			        </a>
-			        
-			        <a class="carousel-control-next" href="#carousel-3" role="button" data-slide="next">
-			          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-			          <span class="sr-only">next</span>
-			        </a>
-			        
+
+
+					</div><!-- e carousel-inner -->
+
+					<a class="carousel-control-prev" href="#carousel-3" role="button" data-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="sr-only">prev</span>
+					</a>
+
+					<a class="carousel-control-next" href="#carousel-3" role="button" data-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="sr-only">next</span>
+					</a>
+
 				</div><!-- e carousel -->
-			
+
 			</div><!-- e col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3 -->
-			
+
 			<div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl3 mb-5">
-			
+
 				<div id="carousel-4" class="carousel slide" data-ride="carousel">
-			       
-					<ol class="carousel-indicators">
-			          <li data-target="#carousel-4" data-slide-to="0" class="active"></li>
-			          <li data-target="#carousel-4" data-slide-to="1"></li>
-			          <li data-target="#carousel-4" data-slide-to="2"></li>
-			        </ol>
-			       
-			        <div class="carousel-inner" role="listbox">
-			
-                          <div class="carousel-item active">
-                            <a href="{% url 'genre_books' genre='Memoir' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/21.png' %}" alt="slide"></a>
-                          </div>
-                          
-                          <div class="carousel-item">
-                            <a href="{% url 'genre_books' genre='Music' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/22.png' %}" alt="slide"></a>
-                          </div>
-                          
-                          <div class="carousel-item">
-                            <a href="{% url 'genre_books' genre='Mystery' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/23.png' %}" alt="slide"></a>
-                          </div>
-                          
-                          <div class="carousel-item">
-                            <a href="{% url 'genre_books' genre='Nonfiction' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/24.png' %}" alt="slide"></a>
-                          </div>
-                          
-                          <div class="carousel-item">
-                            <a href="{% url 'genre_books' genre='Paranormal' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/25.png' %}" alt="slide"></a>
-                          </div>
-                          
-                          <div class="carousel-item">
-                            <a href="{% url 'genre_books' genre='Philosophy' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/26.png' %}" alt="slide"></a>
-                          </div>
-                          
-                          <div class="carousel-item">
-                            <a href="{% url 'genre_books' genre='Poetry' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/27.png' %}" alt="slide"></a>
-                          </div>
-                          
-                          <div class="carousel-item">
-                            <a href="{% url 'genre_books' genre='Psychology' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/28.png' %}" alt="slide"></a>
-                          </div>
-                          
-                          <div class="carousel-item">
-							<a href="{% url 'genre_books' genre='Religion' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/29.png' %}" alt="slide"></a>
-                          </div>
-                          
-                          <div class="carousel-item">
-							<a href="{% url 'genre_books' genre='Romance' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/30.png' %}" alt="slide"></a>
-                          </div>
 
-			        </div><!-- e carousel-inner -->
-			        
-			        <a class="carousel-control-prev" href="#carousel-4" role="button" data-slide="prev">
-			          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-			          <span class="sr-only">prev</span>
-			        </a>
-			        
-			        <a class="carousel-control-next" href="#carousel-4" role="button" data-slide="next">
-			          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-			          <span class="sr-only">next</span>
-			        </a>
-			        
+					<ol class="carousel-indicators">
+						<li data-target="#carousel-4" data-slide-to="0" class="active"></li>
+						<li data-target="#carousel-4" data-slide-to="1"></li>
+						<li data-target="#carousel-4" data-slide-to="2"></li>
+					</ol>
+
+					<div class="carousel-inner" role="listbox">
+
+						<div class="carousel-item active">
+							<a href="{% url 'genre_books' genre='Memoir' %}"><img class="d-block img-fluid"
+									src="{% static 'mainapp/png/genre/21.png' %}" alt="slide"></a>
+						</div>
+
+						<div class="carousel-item">
+							<a href="{% url 'genre_books' genre='Music' %}"><img class="d-block img-fluid"
+									src="{% static 'mainapp/png/genre/22.png' %}" alt="slide"></a>
+						</div>
+
+						<div class="carousel-item">
+							<a href="{% url 'genre_books' genre='Mystery' %}"><img class="d-block img-fluid"
+									src="{% static 'mainapp/png/genre/23.png' %}" alt="slide"></a>
+						</div>
+
+						<div class="carousel-item">
+							<a href="{% url 'genre_books' genre='Nonfiction' %}"><img class="d-block img-fluid"
+									src="{% static 'mainapp/png/genre/24.png' %}" alt="slide"></a>
+						</div>
+
+						<div class="carousel-item">
+							<a href="{% url 'genre_books' genre='Paranormal' %}"><img class="d-block img-fluid"
+									src="{% static 'mainapp/png/genre/25.png' %}" alt="slide"></a>
+						</div>
+
+						<div class="carousel-item">
+							<a href="{% url 'genre_books' genre='Philosophy' %}"><img class="d-block img-fluid"
+									src="{% static 'mainapp/png/genre/26.png' %}" alt="slide"></a>
+						</div>
+
+						<div class="carousel-item">
+							<a href="{% url 'genre_books' genre='Poetry' %}"><img class="d-block img-fluid"
+									src="{% static 'mainapp/png/genre/27.png' %}" alt="slide"></a>
+						</div>
+
+						<div class="carousel-item">
+							<a href="{% url 'genre_books' genre='Psychology' %}"><img class="d-block img-fluid"
+									src="{% static 'mainapp/png/genre/28.png' %}" alt="slide"></a>
+						</div>
+
+						<div class="carousel-item">
+							<a href="{% url 'genre_books' genre='Religion' %}"><img class="d-block img-fluid"
+									src="{% static 'mainapp/png/genre/29.png' %}" alt="slide"></a>
+						</div>
+
+						<div class="carousel-item">
+							<a href="{% url 'genre_books' genre='Romance' %}"><img class="d-block img-fluid"
+									src="{% static 'mainapp/png/genre/30.png' %}" alt="slide"></a>
+						</div>
+
+					</div><!-- e carousel-inner -->
+
+					<a class="carousel-control-prev" href="#carousel-4" role="button" data-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="sr-only">prev</span>
+					</a>
+
+					<a class="carousel-control-next" href="#carousel-4" role="button" data-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="sr-only">next</span>
+					</a>
+
 				</div><!-- e carousel -->
-			
+
 			</div><!-- e col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3-->
-			
-			<div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3 mb-5">
-			
-				<div id="carousel-5" class="carousel slide" data-ride="carousel">
-			       
-					<ol class="carousel-indicators">
-			          <li data-target="#carousel-5" data-slide-to="0" class="active"></li>
-			          <li data-target="#carousel-5" data-slide-to="1"></li>
-			          <li data-target="#carousel-5" data-slide-to="2"></li>
-			        </ol>
-			       
-			        <div class="carousel-inner" role="listbox">
-			
-                          <div class="carousel-item active">
-							<a href="{% url 'genre_books' genre='Science' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/31.png' %}" alt="slide"></a>
-                          </div>
-                           
-                          <div class="carousel-item">
-                            <a href="{% url 'genre_books' genre='Suspense' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/34.png' %}" alt="slide"></a>
-                          </div>
-                          
-                          <div class="carousel-item">
-							<a href="{% url 'genre_books' genre='Spirituality' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/35.png' %}" alt="slide"></a>
-                          </div>
-                          
-                          <div class="carousel-item">
-							<a href="{% url 'genre_books' genre='Sports' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/36.png' %}" alt="slide"></a>
-                          </div>
-                          
-                          <div class="carousel-item">
-							<a href="{% url 'genre_books' genre='Thriller' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/37.png' %}" alt="slide"></a>
-                          </div>
-                          
-                          <div class="carousel-item">
-                            <a href="{% url 'genre_books' genre='Travel' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/38.png' %}" alt="slide"></a>
-                          </div>
-                          
-                          <div class="carousel-item">
-                            <a href="{% url 'genre_books' genre='Classics' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/40.png' %}" alt="slide"></a>
-                          </div>
 
-			        </div><!-- e carousel-inner -->
-			        
-			        <a class="carousel-control-prev" href="#carousel-5" role="button" data-slide="prev">
-			          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-			          <span class="sr-only">prev</span>
-			        </a>
-			        
-			        <a class="carousel-control-next" href="#carousel-5" role="button" data-slide="next">
-			          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-			          <span class="sr-only">next</span>
-			        </a>
-			        
+			<div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3 mb-5">
+
+				<div id="carousel-5" class="carousel slide" data-ride="carousel">
+
+					<ol class="carousel-indicators">
+						<li data-target="#carousel-5" data-slide-to="0" class="active"></li>
+						<li data-target="#carousel-5" data-slide-to="1"></li>
+						<li data-target="#carousel-5" data-slide-to="2"></li>
+					</ol>
+
+					<div class="carousel-inner" role="listbox">
+
+						<div class="carousel-item active">
+							<a href="{% url 'genre_books' genre='Science' %}"><img class="d-block img-fluid"
+									src="{% static 'mainapp/png/genre/31.png' %}" alt="slide"></a>
+						</div>
+
+						<div class="carousel-item">
+							<a href="{% url 'genre_books' genre='Suspense' %}"><img class="d-block img-fluid"
+									src="{% static 'mainapp/png/genre/34.png' %}" alt="slide"></a>
+						</div>
+
+						<div class="carousel-item">
+							<a href="{% url 'genre_books' genre='Spirituality' %}"><img class="d-block img-fluid"
+									src="{% static 'mainapp/png/genre/35.png' %}" alt="slide"></a>
+						</div>
+
+						<div class="carousel-item">
+							<a href="{% url 'genre_books' genre='Sports' %}"><img class="d-block img-fluid"
+									src="{% static 'mainapp/png/genre/36.png' %}" alt="slide"></a>
+						</div>
+
+						<div class="carousel-item">
+							<a href="{% url 'genre_books' genre='Thriller' %}"><img class="d-block img-fluid"
+									src="{% static 'mainapp/png/genre/37.png' %}" alt="slide"></a>
+						</div>
+
+						<div class="carousel-item">
+							<a href="{% url 'genre_books' genre='Travel' %}"><img class="d-block img-fluid"
+									src="{% static 'mainapp/png/genre/38.png' %}" alt="slide"></a>
+						</div>
+
+						<div class="carousel-item">
+							<a href="{% url 'genre_books' genre='Classics' %}"><img class="d-block img-fluid"
+									src="{% static 'mainapp/png/genre/40.png' %}" alt="slide"></a>
+						</div>
+
+					</div><!-- e carousel-inner -->
+
+					<a class="carousel-control-prev" href="#carousel-5" role="button" data-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="sr-only">prev</span>
+					</a>
+
+					<a class="carousel-control-next" href="#carousel-5" role="button" data-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="sr-only">next</span>
+					</a>
+
 				</div><!-- e carousel -->
-			
+
 			</div><!-- e col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3 -->
-			
+
 		</div><!-- e row -->
 	</div><!-- e container -->
 </section><!-- e section -->
-
-<!---------------------------------------------------------- top book carousel -------------------------------------------------------->
-<!-- 
-<div class="container">
-   
-<div id="demo" class="carousel slide my-3" data-ride="carousel">
-    <ul class="carousel-indicators">
-      <li data-target="#demo" data-slide-to="0" class="active"></li>
-
-       {% for i in range %}
-      <li data-target="#demo" data-slide-to="{{i}}" ></li>
-      {% endfor %}
-    </ul>
-
-   
-    <div class="container carousel-inner">
-
-      <div class="carousel-item  active">
-		<div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mb-5" style="display: inline-block;">
-			<div class="card" style="width: 18rem;">
-			  <img src='{{book.0.image_url}}' class="card-img-top" alt="...">
-			  <div class="card-body">
-				  <h5 class="card-title">{{book.0.authors}}</h5>
-				  <p class="card-text">{{book.0.original_title}}</p>
-				  <a href="#" class="btn btn-primary">Add to Cart</a>
-			  </div>
-			</div>
-		 </div>
-        {% for i in book|slice:"1:"%}
-		<div class="card col-sm-12 col-lg-4 mt-2 ml-2 pl-2 mr-2 pr-4" style="width: 300px;">
-			<div class="row no-gutters">
-				<div class="col-sm-4">
-					<img class="card-img mr-4 mt-2 mb-2" src="{{i.image_url}}" alt="book Card">
-				</div>
-				<div class="col-sm-8">
-					<div class="card-body">
-						<h5 class="card-title">{{i.original_title}}</h5>
-						<p class="card-text"><i>by {{i.authors}}</i></p>
-						<p class="card-text">{{i.average_rating}} average rating</p> 
-						<div id="rateYo"></div>
-						<a href="#" class="btn mt-2 see-book">See the book</a>
-					</div>
-			</div>
-		</div>
-		</div>
-        {% if forloop.counter|divisibleby:3 and forloop.counter > 0 and not forloop.last %}
-      </div><div class="carousel-item ">
-        {% endif %}
-
-        {% endfor %}
-    </div>
-
-
-
-</div>
-</div>
-
-    <a class="carousel-control-prev" href="#demo" data-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-    </a>
-    <a class="carousel-control-next" href="#demo" data-slide="next">
-        <span class="carousel-control-next-icon"></span>
-    </a>
-</div>
-
---->
-
 
 
 <!---------------------------------------------------------------   Top books this week -------------------------------------------------------------------->
@@ -395,144 +341,83 @@ Home
 <section class="topbook-head text-center ">
 	<div class="container">
 		<div class="row">
-			
+
 			<div class="col">
 				<h2>Top Books This Week</h2>
+				<br>
 			</div><!-- e col -->
 
 		</div><!-- e row -->
 	</div><!-- e container -->
 </section><!-- e section -->
 
-<!-- ################### carousel 7 + 8 + 9 -->
-
 <section class="bg-danger top-books pt-5 mb-5">
 	<div class="container">
-		<div class="row">
-			
-			<div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mb-5">
-			
-				<div id="carousel-7" class="carousel slide" data-ride="carousel">
-			       
-					<ol class="carousel-indicators">
-			          <li data-target="#carousel-7" data-slide-to="0" class="active"></li>
-			          <li data-target="#carousel-7" data-slide-to="1"></li>
-			          <li data-target="#carousel-7" data-slide-to="2"></li>
-			        </ol>
-			       
-			        <div class="carousel-inner" role="listbox">
-			
-			          <div class="carousel-item active">
-			            <img class="d-block img-fluid" src="https://picsum.photos/400/300/?image=464" alt="slide">
-			          </div>
-			          
-			          <div class="carousel-item">
-			            <img class="d-block img-fluid" src="https://picsum.photos/400/300/?image=464" alt="slide">
-			          </div>
-			          
-			          <div class="carousel-item">
-			            <img class="d-block img-fluid" src="https://picsum.photos/400/300/?image=464" alt="slide">
-			          </div>
+		<div id="demo" class="carousel slide" data-ride="carousel">
+			<ul class="carousel-indicators">
+				<li data-target="#demo" data-slide-to="0" class="active"></li>
 
-			        </div><!-- e carousel-inner -->
-			        
-			        <a class="carousel-control-prev" href="#carousel-7" role="button" data-slide="prev">
-			          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-			          <span class="sr-only">prev</span>
-			        </a>
-			        
-			        <a class="carousel-control-next" href="#carousel-7" role="button" data-slide="next">
-			          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-			          <span class="sr-only">next</span>
-			        </a>
-			        
-				</div><!-- e carousel -->
-			
-			</div><!-- e col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 -->
-			
-			<div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mb-5">
-			
-				<div id="carousel-8" class="carousel slide" data-ride="carousel">
-			       
-					<ol class="carousel-indicators">
-			          <li data-target="#carousel-8" data-slide-to="0" class="active"></li>
-			          <li data-target="#carousel-8" data-slide-to="1"></li>
-			          <li data-target="#carousel-8" data-slide-to="2"></li>
-			        </ol>
-			       
-			        <div class="carousel-inner" role="listbox">
-			
-			          <div class="carousel-item active">
-			            <img class="d-block img-fluid" src="https://picsum.photos/400/300/?image=474" alt="slide">
-			          </div>
-			          
-			          <div class="carousel-item">
-			            <img class="d-block img-fluid" src="https://picsum.photos/400/300/?image=474" alt="slide">
-			          </div>
-			          
-			          <div class="carousel-item">
-			            <img class="d-block img-fluid" src="https://picsum.photos/400/300/?image=474" alt="slide">
-			          </div>
+				{% for i in range %}
+				<li data-target="#demo" data-slide-to="{{i}}"></li>
+				{% endfor %}
+			</ul>
 
-			        </div><!-- e carousel-inner -->
-			        
-			        <a class="carousel-control-prev" href="#carousel-8" role="button" data-slide="prev">
-			          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-			          <span class="sr-only">prev</span>
-			        </a>
-			        
-			        <a class="carousel-control-next" href="#carousel-8" role="button" data-slide="next">
-			          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-			          <span class="sr-only">next</span>
-			        </a>
-			        
-				</div><!-- e carousel -->
-			
-			</div><!-- e col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 -->
-			
-			<div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mb-5">
-			
-				<div id="carousel-9" class="carousel slide" data-ride="carousel">
-			       
-					<ol class="carousel-indicators">
-			          <li data-target="#carousel-9" data-slide-to="0" class="active"></li>
-			          <li data-target="#carousel-9" data-slide-to="1"></li>
-			          <li data-target="#carousel-9" data-slide-to="2"></li>
-			        </ol>
-			       
-			        <div class="carousel-inner" role="listbox">
-			
-			          <div class="carousel-item active">
-			            <img class="d-block img-fluid" src="https://picsum.photos/400/300/?image=156" alt="slide">
-			          </div>
-			          
-			          <div class="carousel-item">
-			            <img class="d-block img-fluid" src="https://picsum.photos/400/300/?image=274" alt="slide">
-			          </div>
-			          
-			          <div class="carousel-item">
-			            <img class="d-block img-fluid" src="https://picsum.photos/400/300/?image=244" alt="slide">
-			          </div>
+			<!--Slideshow starts here -->
+			 <div class=" carousel-inner ">
 
-			        </div><!-- e carousel-inner -->
-			        
-			        <a class="carousel-control-prev" href="#carousel-9" role="button" data-slide="prev">
-			          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-			          <span class="sr-only">prev</span>
-			        </a>
-			        
-			        <a class="carousel-control-next" href="#carousel-9" role="button" data-slide="next">
-			          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-			          <span class="sr-only">next</span>
-			        </a>
-			        
-				</div><!-- e carousel -->
-			
-			</div><!-- e col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 -->
-			
-		</div><!-- e row -->
-	</div><!-- e container -->
-</section><!-- e section -->
+				<div class="carousel-item active">
+					{% for book in book %}
+					<div class="card col-sm-6 col-lg-4" style="display:inline-flex;">
+						<div class="row no-gutters">
+							<div class="col-sm-4">
+								<img class="card-img mr-4 mt-2 mb-2" src="{{book.image_url}}" alt="book Card">
+							</div>
+							<div class="col-sm-8">
+								<div class="card-body">
+									<h5 class="card-title">{{book.original_title}}</h5>
+									<p class="card-text"><i>by {{book.authors}}</i></p>
+								</div>
+							</div>
+						</div>
+						<br><br>
+						<a href="javascript:;" onclick='bookDetails(this)' class="btn more-details"
+							data-book-id="{{ book.book_id }}">More Details</a>
+						{% if user.is_authenticated %}
+						<div class='rating-block' onmouseover="rateStart(this)" onclick='rateBook(this)'
+							onmouseout='finishRate(this)' data-book-id="{{ book.book_id }}">
+							<div id='button-text-{{ book.book_id }}'>Rate <i class="fa fa-heart" style="color:red"></i>
+								This Book</a>
+							</div>
+							<div class='rateYo' id='rate-{{ book.book_id }}'></div>
+						</div>
+						{% else %}
+						<div class='rating-block btn' onclick="location.href='{% url 'account_signup' %}'">
+							<div id='button-text'>Login To Rate <i class="fa fa-heart" style="color:red"></i> This
+								Book</a>
+							</div>
+						</div>
+						{% endif %}
+					</div>
+					{% if forloop.counter|divisibleby:3 and forloop.counter > 0 and not forloop.last %}
+				</div>
+				<div class="carousel-item">
+					{% endif %}
+
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+		<a class="carousel-control-prev top-books-carousel" href="#demo" role="button" data-slide="prev">
+			<span class="carousel-control-prev-icon " aria-hidden="true"></span>
+			<span class="sr-only">prev</span>
+		</a>
+
+		<a class="carousel-control-next top-books-carousel" href="#demo" role="button" data-slide="next">
+			<span class="carousel-control-next-icon " aria-hidden="true"></span>
+			<span class="sr-only">next</span>
+		</a>
+	</div>
+</section>
 
 
 {% endblock main %}
@@ -540,63 +425,117 @@ Home
 {% block script %}
 
 <script type="text/javascript">
-     /* 1 carousel */
-$('#carousel-1').carousel({
-      interval: 4000,
-      wrap: true,
-      keyboard: true
- });
- 
- 
- /* 2 carousel */
- $('#carousel-2').carousel({
-      interval: 6000,
-      wrap: true,
-      keyboard: true
- });
- 
- 
- /* 3 carousel */
- $('#carousel-3').carousel({
-     interval: 8000,
-     wrap: true,
-     keyboard: true
- });
 
- /* 4 carousel example with jumbotron */
- $('#carousel-4').carousel({
-     interval: 10000,
-     wrap: true,
-     keyboard: true
- });
+	$(function () {
+		$(".rateYo").rateYo({
+			rating: 0,
+			starWidth: "20px",
+			fullStar: true
+		});
+	});
+	// when hover over rate
+	function rateStart(obj) {
+		var bookid = obj.getAttribute('data-book-id');
+		$('#button-text-' + bookid).css('display', 'none');
+		$('#rate-' + bookid).css('display', 'block');
+	}
+	// onclick rate
+	function rateBook(obj) {
+		var bookid = obj.getAttribute('data-book-id');
+		var bookrating = $('#rate-' + bookid).rateYo('rating');
+		$.ajax({
+			data: {
+				'bookid': bookid,
+				'bookrating': bookrating,
+				'csrfmiddlewaretoken': Cookies.get('csrftoken')
+			},
+			dataType: 'json',
+			url: "{% url 'user_rate_book' %}",
+			type: 'POST',
+			success: function (response) {
+			},
+			error: function (response) {
+				console.log(response);
+			}
+		});
+	}
+	// when hover out rate
+	function finishRate(obj) {
+		var bookid = obj.getAttribute('data-book-id');
+		setTimeout(function () {
+			$('#rate-' + bookid).css('display', 'none');
+			$('#button-text-' + bookid).css('display', 'block');
+		}, 4000);
+	}
+	// Retrieve and display book details in Modal
+	function bookDetails(obj) {
+		var bookid = obj.getAttribute('data-book-id');
+		$.ajax({
+			data: {
+				'bookid': bookid,
+				'csrfmiddlewaretoken': Cookies.get('csrftoken')
+			},
+			dataType: 'json',
+			url: "{% url 'book_details' %}",
+			type: 'POST',
+			success: function (response) {
+				var book_details = JSON.parse(response['book_details'])[0];
+				$('#booksummary').text("");
+				$('#loading').show();
+				var summary = getsummary(bookid);
+				var bookName = book_details.original_title;
+				var authors = book_details.authors;
+				var imageurl = book_details.image_url;
+				var averagerating = book_details.average_rating;
+				$('#booktitle').text(bookName);
+				$('#bookauthors').text(authors);
+				$('#bookimage').attr('src', imageurl);
+				$("#bookrating").rateYo({
+					rating: averagerating,
+					readOnly: true
+				});
+				$('#bookModal').modal('show');
+				$('#search-dropdown').empty();
+			},
+			error: function (response) {
+				console.log(response);
+			}
+		});
+	}
+	/* 2 carousel */
+	$('#carousel-2').carousel({
+		interval: 6000,
+		wrap: true,
+		keyboard: true
+	});
 
- /* 5 carousel example */
- $('#carousel-5').carousel({
-     interval: 6000,
-     wrap: true,
-     keyboard: true
- });
 
- /* 7 carousel example */
- $('#carousel-7').carousel({
-     interval: 4000,
-     wrap: true,
-     keyboard: true
- });
+	/* 3 carousel */
+	$('#carousel-3').carousel({
+		interval: 8000,
+		wrap: true,
+		keyboard: true
+	});
 
- /* 8 carousel example */
- $('#carousel-8').carousel({
-     interval: 6000,
-     wrap: true,
-     keyboard: true
- });
+	/* 4 carousel example with jumbotron */
+	$('#carousel-4').carousel({
+		interval: 10000,
+		wrap: true,
+		keyboard: true
+	});
 
- /* 9 carousel example */
- $('#carousel-9').carousel({
-     interval: 8000,
-     wrap: true,
-     keyboard: true
- });
+	/* 5 carousel example */
+	$('#carousel-5').carousel({
+		interval: 6000,
+		wrap: true,
+		keyboard: true
+	});
+	$('#demo').carousel({
+		interval: 5000,
+		wrap: true,
+		keyboard: true
+	});
 
 </script>
+
 {% endblock script %}

@@ -32,12 +32,19 @@ Genre
         </div>
         <a href="javascript:;" onclick='bookDetails(this)' class="btn more-details"
             data-book-id="{{ book.book_id }}">More Details</a>
+        {% if user.is_authenticated %}
         <div class='rating-block' onmouseover="rateStart(this)" onclick='rateBook(this)' onmouseout='finishRate(this)'
             data-book-id="{{ book.book_id }}">
-            <div id='button-text-{{ book.book_id }}'>Rate <i class="fa fa-heart" style="color:red"></i> This Book</a>
+            <div id='button-text-{{ book.book_id }}' >Rate <i class="fa fa-heart"style="color:red"></i> This Book</a>
             </div>
             <div class='rateYo' id='rate-{{ book.book_id }}'></div>
         </div>
+        {% else %}
+        <div class='rating-block btn' onclick="location.href='{% url 'account_signup' %}'">
+            <div id='button-text'>Login To Rate <i class="fa fa-heart" style="color:red"></i> This Book</a>
+            </div>
+        </div>
+        {% endif %}
     </div>
 
 
@@ -58,7 +65,7 @@ Genre
         $(".rateYo").rateYo({
             rating: 0,
             starWidth: "20px",
-            fullStar : true
+            fullStar: true
         });
 
     });
@@ -73,17 +80,17 @@ Genre
         var bookid = obj.getAttribute('data-book-id');
         var bookrating = $('#rate-' + bookid).rateYo('rating');
         $.ajax({
-            data : {
-                'bookid' : bookid,
-                'bookrating' : bookrating,
-                'csrfmiddlewaretoken' : Cookies.get('csrftoken')
+            data: {
+                'bookid': bookid,
+                'bookrating': bookrating,
+                'csrfmiddlewaretoken': Cookies.get('csrftoken')
             },
-            dataType : 'json',
+            dataType: 'json',
             url: "{% url 'user_rate_book' %}",
-            type : 'POST',
-            success : function(response){
+            type: 'POST',
+            success: function (response) {
             },
-            error: function (response){
+            error: function (response) {
                 console.log(response);
             }
         });
@@ -91,16 +98,16 @@ Genre
     // when hover out rate
     function finishRate(obj) {
         var bookid = obj.getAttribute('data-book-id');
-        setTimeout(function(){
+        setTimeout(function () {
             $('#rate-' + bookid).css('display', 'none');
-            $('#button-text-' + bookid).css('display', 'block');   
+            $('#button-text-' + bookid).css('display', 'block');
         }, 4000);
     }
     // Retrieve and display book details in Modal
     function bookDetails(obj) {
         var bookid = obj.getAttribute('data-book-id');
         $.ajax({
-            data: {
+            data: {￼
                 'bookid': bookid,
                 'csrfmiddlewaretoken': Cookies.get('csrftoken')
             },
@@ -130,6 +137,11 @@ Genre
                 console.log(response);
             }
         });
+
+        //
+
+       
+
     }
 </script>
 {% endblock %}

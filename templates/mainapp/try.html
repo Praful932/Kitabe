@@ -1,0 +1,76 @@
+<div class="container">
+
+	<div id="demo" class="carousel slide my-3" data-ride="carousel">
+		<ul class="carousel-indicators">
+			<li data-target="#demo" data-slide-to="0" class="active"></li>
+
+			{% for i in range %}
+			<li data-target="#demo" data-slide-to="{{i}}"></li>
+			{% endfor %}
+		</ul>
+
+
+		<div class="container carousel-inner">
+
+			<div class="carousel-item  active">
+				<div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mb-5" style="display: inline-block;">
+					<div class="card" style="width: 18rem;">
+						<img src='{{book.0.image_url}}' class="card-img-top" alt="...">
+						<div class="card-body">
+							<h5 class="card-title">{{book.0.authors}}</h5>
+							<p class="card-text">{{book.0.original_title}}</p>
+							<a href="#" class="btn btn-primary">Add to Cart</a>
+						</div>
+					</div>
+				</div>
+				{% for i in book|slice:"1:"%}
+				<div class="card col-sm-12 col-lg-4 mt-2 ml-2 pl-2 mr-2 pr-4" style="width: 300px;">
+					<div class="row no-gutters">
+						<div class="col-sm-4">
+							<img class="card-img mr-4 mt-2 mb-2" src="{{i.image_url}}" alt="book Card">
+						</div>
+						<div class="col-sm-8">
+							<div class="card-body">
+								<h5 class="card-title">{{i.original_title}}</h5>
+								<p class="card-text"><i>by {{i.authors}}</i></p>
+								<p class="card-text">{{i.average_rating}} average rating</p>
+								<div id="rateYo"></div>
+								<a href="#" class="btn mt-2 see-book">See the book</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				{% if forloop.counter|divisibleby:3 and forloop.counter > 0 and not forloop.last %}
+			</div>
+			<div class="carousel-item ">
+				{% endif %}
+
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+
+	<a class="carousel-control-prev" href="#demo" data-slide="prev">
+		<span class="carousel-control-prev-icon"></span>
+	</a>
+	<a class="carousel-control-next" href="#demo" data-slide="next">
+		<span class="carousel-control-next-icon"></span>
+	</a>
+</div>
+
+
+
+<div class="carousel-inner">
+	{% for review in reviews|slice:":3" %}
+		{% if forloop.first %}
+			<div class="active item">
+		{% else %}
+			<div class="item">
+		{% endif %}
+			<blockquote>
+				<p>{{ review.description }}</p>
+			</blockquote>
+			<label>{{ review.business }}</label>
+		</div>
+	{% endfor %}
+</div>
