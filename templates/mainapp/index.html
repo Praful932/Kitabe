@@ -351,23 +351,13 @@ Home
 	</div><!-- e container -->
 </section><!-- e section -->
 
-<section class="bg-danger top-books pt-5 mb-5">
+<section class="bg-danger top-books pt-5 pb-5">
 	<div class="container">
 		<div id="demo" class="carousel slide" data-ride="carousel">
-			<ul class="carousel-indicators">
-				<li data-target="#demo" data-slide-to="0" class="active"></li>
-
-				{% for i in range %}
-				<li data-target="#demo" data-slide-to="{{i}}"></li>
-				{% endfor %}
-			</ul>
-
-			<!--Slideshow starts here -->
-			 <div class=" carousel-inner ">
-
+			<div class=" carousel-inner " class="ml-auto">
 				<div class="carousel-item active">
 					{% for book in book %}
-					<div class="card col-sm-6 col-lg-4" style="display:inline-flex;">
+					<div class="card col-sm-6 col-lg-4 " style="display: inline-flex;">
 						<div class="row no-gutters">
 							<div class="col-sm-4">
 								<img class="card-img mr-4 mt-2 mb-2" src="{{book.image_url}}" alt="book Card">
@@ -400,22 +390,22 @@ Home
 					</div>
 					{% if forloop.counter|divisibleby:3 and forloop.counter > 0 and not forloop.last %}
 				</div>
-				<div class="carousel-item">
+				<div class="carousel-item ">
 					{% endif %}
 
 					{% endfor %}
 				</div>
 			</div>
-		</div>
-		<a class="carousel-control-prev top-books-carousel" href="#demo" role="button" data-slide="prev">
-			<span class="carousel-control-prev-icon " aria-hidden="true"></span>
-			<span class="sr-only">prev</span>
-		</a>
+			<a class="carousel-control-prev top-books-carousel" href="#demo" role="button" data-slide="prev">
+				<span class="carousel-control-prev-icon " aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a>
 
-		<a class="carousel-control-next top-books-carousel" href="#demo" role="button" data-slide="next">
-			<span class="carousel-control-next-icon " aria-hidden="true"></span>
-			<span class="sr-only">next</span>
-		</a>
+			<a class="carousel-control-next top-books-carousel" href="#demo" role="button" data-slide="next">
+				<span class="carousel-control-next-icon " aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>
+		</div>
 	</div>
 </section>
 

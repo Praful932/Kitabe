@@ -29,11 +29,7 @@ def index(request):
     qual = qualified[['book_id','original_title', 'authors',
                       'average_rating', 'image_url']].head(15)
     books = qual.to_dict('records')
-    n = len(df_books1)
-    nSlides = n//4 + ceil((n/4)-(n//4))
-    params = {'no_of_slides': nSlides,
-              'range': range(1, nSlides), 'book': books}
-    return render(request, 'mainapp/index.html', params)
+    return render(request, 'mainapp/index.html',{ 'book':books})
 
 
 def genre_books(request, genre):

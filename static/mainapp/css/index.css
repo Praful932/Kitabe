@@ -21,10 +21,11 @@
     transform: scale(1.05);
   }
 
-.top-books-carousel{
-    padding-top: 85%;
-}
 
+  .top-books-carousel{
+    align-items: center;
+  }
+  
 
 /*---------------------------------------- book card ----------------------------------*/
 
@@ -115,6 +116,5 @@
   }
   .rateYo{
     display:none;
-  }
-
   
+  }
