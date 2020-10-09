@@ -107,7 +107,7 @@ Genre
     function bookDetails(obj) {
         var bookid = obj.getAttribute('data-book-id');
         $.ajax({
-            data: {￼
+            data: {
                 'bookid': bookid,
                 'csrfmiddlewaretoken': Cookies.get('csrftoken')
             },

@@ -16,10 +16,10 @@ import requests
     Production File Path :  staticfiles_storage.url(file)
     Developement File Path : settings.STATICFILES_DIRS[0] + 'app\...\.csv'
 '''
-book_path = settings.STATICFILES_DIRS[0] + \
-            '\\mainapp\\dataset\\books.csv'
-user_ratings_path = settings.STATICFILES_DIRS[0] + \
-                   '\\mainapp\\csv\\userratings.csv'
+book_path = os.path.join(settings.STATICFILES_DIRS[0] + \
+            '/mainapp/dataset/books.csv')
+user_ratings_path = os.path.join(settings.STATICFILES_DIRS[0] + \
+                   '/mainapp/csv/userratings.csv')
 
 def search(request):
     '''
@@ -34,7 +34,6 @@ def search(request):
         top5_result = json.dumps(top5_result.to_dict('records'))
 
         return JsonResponse({'success': True, 'top5_result': top5_result}, status=200)
-
 
 def book_summary(request):
     '''
@@ -62,7 +61,6 @@ def get_book_details(request):
         df_book = pd.read_csv(book_path)
         book_details = df_book[df_book['book_id'] == int(bookid)]
         book_details = json.dumps(book_details.to_dict('records'))
-
         return JsonResponse({'success': True, 'book_details': book_details}, status=200)
 
 def user_rate_book(request):
