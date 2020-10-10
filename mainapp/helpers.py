@@ -20,7 +20,7 @@ def genre_wise(genre, percentile=0.85):
     C = qualified['average_rating'].mean()
     qualified['weighted_rating'] = (R*v + C*m) / (v + m)
     qualified.sort_values('weighted_rating', ascending=False, inplace=True)
-    return qualified[cols].head(15)
+    return qualified[cols].head(16)
     
 
 def count_vectorizer_recommendation(bookid):

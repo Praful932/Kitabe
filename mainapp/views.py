@@ -68,5 +68,5 @@ def book_recommendations(request):
         recommended_books_dict = count_vectorizer_recommendation(bookid)
     else:
         return redirect('index')
-
+    return render(request,'mainapp/recommendation.html',{'books':recommended_books_dict})
 
