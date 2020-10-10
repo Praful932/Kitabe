@@ -153,14 +153,14 @@ SOCIALACCOUNT_PROVIDERS = {
 }
 
 
-#media files
-MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+# media files
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 LOGIN_REDIRECT_URL = 'index'
 LOGOUT_REDIRECT_URL = 'index'
 
-#simple mail transfer protocal
+# simple mail transfer protocal
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587

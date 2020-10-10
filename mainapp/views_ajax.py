@@ -6,7 +6,6 @@ import BookRecSystem.settings as settings
 from mainapp.models import UserRating
 
 from bs4 import BeautifulSoup
-from math import ceil
 import pandas as pd
 import os
 import json
@@ -73,16 +72,14 @@ def user_rate_book(request):
         userid = request.user.id
         # Using Inbuilt Model
         # df_user_ratings = pd.read_csv(user_ratings_path)
-        query = UserRating.objects.filter(user = request.user).filter(bookid = bookid)
+        query = UserRating.objects.filter(user = request.user).filter(bookid =bookid)
         if not query:
             # Create Rating
-            UserRating.objects.create(user = request.user, bookid = bookid, bookrating = bookrating)
+            UserRating.objects.create(user = request.user, bookid =bookid, bookrating =bookrating)
         else:
             # Update Rating
             rating_object = query[0]
             rating_object.bookrating = bookrating
             rating_object.save()
         return JsonResponse({'success': True}, status = 200)
-
-
         
