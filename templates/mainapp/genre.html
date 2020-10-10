@@ -15,20 +15,16 @@ Genre
 <h1 class="genre-head text-center pt-3 pb-3">{{ genre }} Genre</h1>
 
 
-<div class="card-deck col-sm-12 pr-4 pl-4 pb-4">
+<div class="card-deck pr-4 pl-4 pb-4">
     {% for book in genre_topbook %}
 
-    <div class="card col-sm-12 col-lg-4 mt-2 ml-2 pl-2 mr-2 pr-4" style="width: 300px;">
+    <div class="card col-sm-6 col-lg-3 mt-2 ml-2 pl-2 mr-2 pr-4" style="width: 300px;">
         <div class="row no-gutters">
-            <div class="col-sm-4">
-                <img class="card-img mr-4 mt-2 mb-2" src="{{book.image_url}}" alt="book Card">
-            </div>
-            <div class="col-sm-8">
-                <div class="card-body">
+                <img class="card-img  mt-4 " src="{{book.image_url}}" alt="book Card">
+                <div class="card-body text-center">
                     <h5 class="card-title">{{book.original_title}}</h5>
                     <p class="card-text"><i>by {{book.authors}}</i></p>
                 </div>
-            </div>
         </div>
         <a href="javascript:;" onclick='bookDetails(this)' class="btn more-details"
             data-book-id="{{ book.book_id }}">More Details</a>
@@ -49,9 +45,9 @@ Genre
 
 
 
-    {% if forloop.counter|divisibleby:"3"  %}
+    {% if forloop.counter|divisibleby:"4"  %}
 </div>
-<div class="card-deck col-sm-12 pr-4 pl-4 pb-4">
+<div class="card-deck  pr-4 pl-4 pb-4">
     {% endif %}
     {% endfor %}
 </div><!-- The final deck is closed here, outside the loop -->

@@ -17,6 +17,9 @@ left: 35px;
 border-radius: 3px;
 box-shadow: -2px 6px 19px 0px #7f818e;
 transition: .3s ease;
+width: 85%;
+height: 60%;
+margin: 0 auto;
 }
 .card-img:hover {
 transform: scale(1.07);
@@ -28,21 +31,19 @@ transform: scale(1.07);
 transition:0.5s;
 cursor:pointer;
 border-radius: 3px;
+box-shadow: -2px 6px 19px 0px #7f818e;
 }
 .card-title{
-  font-family: 'Roboto Slab', serif;
-  font-size:100%;
-  color:black;
+  font-family: 'Sora', sans-serif;
+  font-size:x-large;
+  color:#D7722C;
 }
 .card-text{
   font-family: 'Courgette', cursive;
   color:black;
+  font-weight: bold;
+  font-size:large;
 }
-.card:hover{
-transform: scale(1.05);
-box-shadow: 10px 10px 15px rgba(0,0,0,0.1);
-}
-
 
 .card::before, .card::after {
 position: absolute;
@@ -70,11 +71,11 @@ transform: scale3d(1, 1, 1);
   background-color: #3D348B;
   color: #fff;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 18px;
   border-radius: 20px;
   position: absolute;
   bottom:10px;
-  right:10px;
+  right:10%;
 }
 .more-details:hover{
   color:white;
@@ -84,12 +85,12 @@ transform: scale3d(1, 1, 1);
   text-align: center;
   background-color: #31c2cf;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 18px;
   border-radius: 20px;
   position: absolute;
   padding:8px;
   bottom:10px;
-  right:32%;
+  left:10%;
 }
 
 .rating-block:hover {
