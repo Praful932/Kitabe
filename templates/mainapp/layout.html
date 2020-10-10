@@ -57,7 +57,7 @@
                     <ul class="navbar-nav nav-head ml-auto navfont">
                         {% if user.is_authenticated %}
                         <li class="nav-item active ">
-                            <a class="nav-link " href="/recommend">
+                            <a class="nav-link " href="{% url 'book_recommendations' %}">
                                 <div class="icon-text">
                                     <div class="row navicon"><i class="fa fa-book fa-2x" aria-hidden="true"></i>                                 </div>
                                     <div class="row pr-4">Personalised Read</div><span class="sr-only">(current)</span>
