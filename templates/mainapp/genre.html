@@ -20,18 +20,18 @@ Genre
 
     <div class="card col-sm-6 col-lg-3 mt-2 ml-2 pl-2 mr-2 pr-4" style="width: 300px;">
         <div class="row no-gutters">
-                <img class="card-img  mt-4 " src="{{book.image_url}}" alt="book Card">
-                <div class="card-body text-center">
-                    <h5 class="card-title">{{book.original_title}}</h5>
-                    <p class="card-text"><i>by {{book.authors}}</i></p>
-                </div>
+            <img class="card-img  mt-4 " src="{{book.image_url}}" alt="book Card">
+            <div class="card-body text-center">
+                <h5 class="card-title">{{book.original_title}}</h5>
+                <p class="card-text"><i>by {{book.authors}}</i></p>
+            </div>
         </div>
         <a href="javascript:;" onclick='bookDetails(this)' class="btn more-details"
             data-book-id="{{ book.book_id }}">More Details</a>
         {% if user.is_authenticated %}
         <div class='rating-block' onmouseover="rateStart(this)" onclick='rateBook(this)' onmouseout='finishRate(this)'
             data-book-id="{{ book.book_id }}">
-            <div id='button-text-{{ book.book_id }}' >Rate <i class="fa fa-heart"style="color:red"></i> This Book</a>
+            <div id='button-text-{{ book.book_id }}'>Rate <i class="fa fa-heart" style="color:red"></i> This Book</a>
             </div>
             <div class='rateYo' id='rate-{{ book.book_id }}'></div>
         </div>
@@ -136,7 +136,7 @@ Genre
 
         //
 
-       
+
 
     }
 </script>
