@@ -25,8 +25,22 @@ Genre
             <div class="book-title">{{book.original_title}}</div>
             <div class="book-author">by {{book.authors}}</div>
             <span class="book-voters">{{book.average_rating}} rating &#11088;</span>
-            <div class="book-see">See The Book</div>
-            <div class="book-see">Rate The Book</div>
+            <a href="javascript:;" onclick='bookDetails(this)' class="btn more-details"
+                data-book-id="{{ book.book_id }}">More Details</a>
+            {% if user.is_authenticated %}
+            <div class='rating-block' onmouseover="rateStart(this)" onclick='rateBook(this)'
+                onmouseout='finishRate(this)' data-book-id="{{ book.book_id }}">
+                <div id='button-text-{{ book.book_id }}'>Rate <i class="fa fa-heart" style="color:red"></i> This
+                    Book</a>
+                </div>
+                <div class='rateYo' id='rate-{{ book.book_id }}'></div>
+            </div>
+            {% else %}
+            <div class='rating-block btn' onclick="location.href='{% url 'account_signup' %}'">
+                <div id='button-text'>Login To Rate <i class="fa fa-heart" style="color:red"></i> This Book</a>
+                </div>
+            </div>
+            {% endif %}
         </div>
     </div>
     {% if forloop.counter|divisibleby:"3"  %}
@@ -37,3 +51,92 @@ Genre
 </div><!-- The final deck is closed here, outside the loop -->
 
 {% endblock main %}
+
+
+{% block script %}
+<script>
+    $(function () {
+
+        $(".rateYo").rateYo({
+            rating: 0,
+            starWidth: "20px",
+            fullStar: true
+        });
+
+    });
+    // when hover over rate
+    function rateStart(obj) {
+        var bookid = obj.getAttribute('data-book-id');
+        $('#button-text-' + bookid).css('display', 'none');
+        $('#rate-' + bookid).css('display', 'block');
+    }
+    // onclick rate
+    function rateBook(obj) {
+        var bookid = obj.getAttribute('data-book-id');
+        var bookrating = $('#rate-' + bookid).rateYo('rating');
+        $.ajax({
+            data: {
+                'bookid': bookid,
+                'bookrating': bookrating,
+                'csrfmiddlewaretoken': Cookies.get('csrftoken')
+            },
+            dataType: 'json',
+            url: "{% url 'user_rate_book' %}",
+            type: 'POST',
+            success: function (response) {
+            },
+            error: function (response) {
+                console.log(response);
+            }
+        });
+    }
+    // when hover out rate
+    function finishRate(obj) {
+        var bookid = obj.getAttribute('data-book-id');
+        setTimeout(function () {
+            $('#rate-' + bookid).css('display', 'none');
+            $('#button-text-' + bookid).css('display', 'block');
+        }, 4000);
+    }
+    // Retrieve and display book details in Modal
+    function bookDetails(obj) {
+        var bookid = obj.getAttribute('data-book-id');
+        $.ajax({
+            data: {
+                'bookid': bookid,
+                'csrfmiddlewaretoken': Cookies.get('csrftoken')
+            },
+            dataType: 'json',
+            url: "{% url 'book_details' %}",
+            type: 'POST',
+            success: function (response) {
+                var book_details = JSON.parse(response['book_details'])[0];
+                $('#booksummary').text("");
+                $('#loading').show();
+                var summary = getsummary(bookid);
+                var bookName = book_details.original_title;
+                var authors = book_details.authors;
+                var imageurl = book_details.image_url;
+                var averagerating = book_details.average_rating;
+                $('#booktitle').text(bookName);
+                $('#bookauthors').text(authors);
+                $('#bookimage').attr('src', imageurl);
+                $("#bookrating").rateYo({
+                    rating: averagerating,
+                    readOnly: true
+                });
+                $('#bookModal').modal('show');
+                $('#search-dropdown').empty();
+            },
+            error: function (response) {
+                console.log(response);
+            }
+        });
+
+        //
+
+
+
+    }
+</script>
+{% endblock %}
