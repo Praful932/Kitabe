@@ -1,0 +1,39 @@
+{% extends "mainapp/layout.html" %}
+{% load static %}
+
+{% block title  %}
+Genre
+{% endblock title %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'mainapp/css/recommendation.css' %}">
+{% endblock head %}
+
+
+{% block main %}
+
+<h1 class="heading text-center pt-3 pb-3">Personalized Read</h1>
+
+
+<div class="card-deck pb-4 mb-5" style="margin: 0 auto;">
+    {% for book in books %}
+    <div class="book-cell">
+        <div class="book-img">
+            <img src="{{book.image_url}}" alt="book-image" class="book-photo cover-img">
+        </div>
+        <div class="book-content">
+            <div class="book-title">{{book.original_title}}</div>
+            <div class="book-author">by {{book.authors}}</div>
+            <span class="book-voters">{{book.average_rating}} rating &#11088;</span>
+            <div class="book-see">See The Book</div>
+            <div class="book-see">Rate The Book</div>
+        </div>
+    </div>
+    {% if forloop.counter|divisibleby:"3"  %}
+</div>
+<div class="card-deck  pb-4  mb-5">
+    {% endif %}
+    {% endfor %}
+</div><!-- The final deck is closed here, outside the loop -->
+
+{% endblock main %}
