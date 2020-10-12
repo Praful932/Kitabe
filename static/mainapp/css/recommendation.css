@@ -143,23 +143,23 @@
   background-color: #3D348B;
   color: #fff;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 15px;
   border-radius: 20px;
   position: absolute;
   bottom: 10px;
-  right: 8%;
+  right: 5%;
 }
 
 .more-details:hover {
   color: white;
 }
 
-.rating-block {
+.rating-block{
   display: inline-block;
   text-align: center;
   background-color: #31c2cf;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 15px;
   border-radius: 20px;
   position: absolute;
   padding: 8px;
