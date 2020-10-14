@@ -25,7 +25,7 @@ Genre
                 <h5 class="card-title">{{book.original_title}}</h5>
                 <p class="card-text"><i>by {{book.authors}}</i></p>
             </div>
-        </div>
+        </div><br>
         <a href="javascript:;" onclick='bookDetails(this)' class="btn more-details"
             data-book-id="{{ book.book_id }}">More Details</a>
         {% if user.is_authenticated %}
