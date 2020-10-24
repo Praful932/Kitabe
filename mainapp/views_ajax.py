@@ -1,7 +1,4 @@
-from django.shortcuts import render
 from django.http import JsonResponse
-from django.contrib.staticfiles.storage import staticfiles_storage
-from mainapp.helpers import genre_wise
 import BookRecSystem.settings as settings
 from mainapp.models import UserRating
 
@@ -15,10 +12,9 @@ import requests
     Production File Path :  staticfiles_storage.url(file)
     Developement File Path : settings.STATICFILES_DIRS[0] + 'app\...\.csv'
 '''
-book_path = os.path.join(settings.STATICFILES_DIRS[0] + \
-            '/mainapp/dataset/books.csv')
-user_ratings_path = os.path.join(settings.STATICFILES_DIRS[0] + \
-                   '/mainapp/csv/userratings.csv')
+book_path = os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/dataset/books.csv')
+user_ratings_path = os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/csv/userratings.csv')
+
 
 def search(request):
     '''
@@ -33,6 +29,7 @@ def search(request):
         top5_result = json.dumps(top5_result.to_dict('records'))
 
         return JsonResponse({'success': True, 'top5_result': top5_result}, status=200)
+
 
 def book_summary(request):
     '''
@@ -62,6 +59,7 @@ def get_book_details(request):
         book_details = json.dumps(book_details.to_dict('records'))
         return JsonResponse({'success': True, 'book_details': book_details}, status=200)
 
+
 def user_rate_book(request):
     '''
         AJAX request when user rates book
@@ -69,17 +67,15 @@ def user_rate_book(request):
     if request.method == 'POST' and request.is_ajax():
         bookid = request.POST.get('bookid', None)
         bookrating = request.POST.get('bookrating', None)
-        userid = request.user.id
         # Using Inbuilt Model
         # df_user_ratings = pd.read_csv(user_ratings_path)
-        query = UserRating.objects.filter(user = request.user).filter(bookid =bookid)
+        query = UserRating.objects.filter(user=request.user).filter(bookid=bookid)
         if not query:
             # Create Rating
-            UserRating.objects.create(user = request.user, bookid =bookid, bookrating =bookrating)
+            UserRating.objects.create(user=request.user, bookid=bookid, bookrating=bookrating)
         else:
             # Update Rating
             rating_object = query[0]
             rating_object.bookrating = bookrating
             rating_object.save()
-        return JsonResponse({'success': True}, status = 200)
-        
+        return JsonResponse({'success': True}, status=200)

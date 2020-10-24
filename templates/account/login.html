@@ -25,7 +25,7 @@ Login
                     {% if redirect_field_value %}
                     <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                     {% endif %}
-                    <label for="id_password">Password</label><br>
+                    <label for="id_password"> Password</label><br>
                     {{ form.password }}<br>
                     <a class="forgotpassword" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
                     <br>
