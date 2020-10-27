@@ -1,140 +1,130 @@
-
-html,body{
-  background-color:peachpuff;
-  height: 100%;
-}
-
-/* nav bar css */
-
-.navbar-toggler {
-  border-color: black;
-  background-color: white;
-}
-
-
-.head-text{
-  font-family: 'Pacifico', cursive;
-}
-
-/* -------------------------search bar-----------------------  */
-.searchbar{
-  font-family: 'Kumbh Sans', sans-serif;
-}
-
-#searchdropdown{
-  margin:0 auto;
-}
-
-@media only screen and (min-width: 600px) {
-  #searchdropdown {
-    margin-left:34%;
-  }
-}
-
-#bookName{
-  border-radius: 25px;
-}
-
-#searchdropdown #bookName {
-  width: 100%;
-  font-size: 16px;
-  padding: 12px 20px 12px 40px;
-  border: 1px solid #ddd;
-}
-
-#searchdropdown .dropdown-content {
-  display: block;
-  position: absolute;
-  background-color: #f1f1f1;
-  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  border-radius: 25px;
-  max-width:262.66px;
-}
-
-#searchdropdown .dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-#searchdropdown .dropdown-content a:hover {
-  background-color: #ddd;
-  border-radius: 25px;
-}
-
-.modal {
-  line-height: 1.5;
-}
-
-.modal .modal-header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  padding: 1rem 1rem;
-  background-color: #ffc107 ;
-}
-
-.modal .modal-title {
-  padding: .3rem;
-  margin: 0;
-  font-size: 1.15rem;
-  color: #fff;
-}
-
-.modal .close {
-  opacity: 1;
-  padding: 1rem 1rem;
-  margin: -1rem -1rem -1rem auto;
-  cursor: pointer;
-  background-color: transparent;
-  border: 0;
-  font-size: 1.5rem;
-  font-weight: 700;
-  text-shadow: 0 1px 0 #fff;
-}
-
-.modal-footer {
-  color: white;
-}
-
-/*  -------------------------------------------------------------------------------fotter css -------------------------------------------------*/
-
-
-/*FOOTER*/
-.footer-content{
-  padding:15px;
-}
-
-footer {
-  background-color: black;
-  color: white;
-  margin-top: 10%;
-  text-align: center;
-}
-
-footer a {
-  color: #fff;
-  font-size: 14px;
-  transition-duration: 0.2s;
-  padding:3px;
-}
-
-footer a:hover {
-  color: #fa944b;
-  text-decoration: none;
-}
-
-.copy {
-  font-size: 12px;
-}
-
-
-
-
-
-/* media query */
-
-
+    html,
+    body {
+        background-color: peachpuff;
+        height: 100%;
+    }
+    /* nav bar css */
+    
+    .navbar-toggler {
+        border-color: black;
+        background-color: white;
+    }
+    
+    .head-text {
+        font-family: 'Pacifico', cursive;
+    }
+    /* -------------------------search bar-----------------------  */
+    
+    .searchbar {
+        font-family: 'Kumbh Sans', sans-serif;
+    }
+    
+    #bookName {
+        border-radius: 25px;
+    }
+    
+    #searchdropdown {
+        padding-left: 40%;
+    }
+    
+    #searchdropdown #bookName {
+        width: 100%;
+        font-size: 16px;
+        padding: 12px 20px 12px 40px;
+        border: 1px solid #ddd;
+    }
+    
+    #searchdropdown .dropdown-content {
+        display: block;
+        position: absolute;
+        background-color: #f1f1f1;
+        -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        border-radius: 25px;
+        max-width: 262.66px;
+    }
+    
+    #searchdropdown .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+    
+    #searchdropdown .dropdown-content a:hover {
+        background-color: #ddd;
+        border-radius: 25px;
+    }
+    
+    .modal {
+        line-height: 1.5;
+    }
+    
+    .modal .modal-header {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        padding: 1rem 1rem;
+        background-color: #ffc107;
+    }
+    
+    .modal .modal-title {
+        padding: .3rem;
+        margin: 0;
+        font-size: 1.15rem;
+        color: #fff;
+    }
+    
+    .modal .close {
+        opacity: 1;
+        padding: 1rem 1rem;
+        margin: -1rem -1rem -1rem auto;
+        cursor: pointer;
+        background-color: transparent;
+        border: 0;
+        font-size: 1.5rem;
+        font-weight: 700;
+        text-shadow: 0 1px 0 #fff;
+    }
+    
+    .modal-footer {
+        color: white;
+    }
+    /*  -------------------------------------------------------------------------------fotter css -------------------------------------------------*/
+    /*FOOTER*/
+    
+    .footer-content {
+        padding: 15px;
+    }
+    
+    footer {
+        background-color: black;
+        color: white;
+        margin-top: 10%;
+        text-align: center;
+    }
+    
+    footer a {
+        color: #fff;
+        font-size: 14px;
+        transition-duration: 0.2s;
+        padding: 3px;
+    }
+    
+    footer a:hover {
+        color: #fa944b;
+        text-decoration: none;
+    }
+    
+    .copy {
+        font-size: 12px;
+    }
+    /* media query */
+    
+    @media screen and (max-width: 500px) {
+        #searchdropdown {
+            margin-left: 0%;
+            padding-left: 0%;
+        }
+    }
