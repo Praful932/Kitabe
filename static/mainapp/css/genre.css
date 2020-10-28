@@ -1,103 +1,143 @@
-.genre-head,.topbook-head{
-    font-family: 'Lobster', cursive;
-    font-size: 300%;
-    background-color: #D7722C;
-    margin-top:0px;
-    color : white; 
-}
-
-.card-horizontal {
-  display: flex;
-  flex: 1 1 auto;
-}
-.card-img{
-flex-shrink: 0;
-bottom: -35px;
-left: 35px;
-border-radius: 3px;
-box-shadow: -2px 6px 19px 0px #7f818e;
-transition: .3s ease;
-width: 85%;
-height: 60%;
-margin: 0 auto;
-}
-.card-img:hover {
-transform: scale(1.07);
-}
-.card-body-wrap{
-  display:flex;
-}
-.card{
-transition:0.5s;
-cursor:pointer;
-border-radius: 3px;
-box-shadow: -2px 6px 19px 0px #7f818e;
-}
-.card-title{
-  font-family: 'Sora', sans-serif;
-  font-size:x-large;
-  color:#D7722C;
-}
-.card-text{
-  font-family: 'Courgette', cursive;
-  color:black;
-  font-weight: bold;
-  font-size:large;
-}
-
-.card::before, .card::after {
-position: absolute;
-top: 0;
-right: 0;
-bottom: 0;
-left: 0;
-transform: scale3d(0, 0, 1);
-transition: transform .3s ease-out 0s;
-
-content: '';
-pointer-events: none;
-}
-.card::before {
-transform-origin: left top;
-}
-.card::after {
-transform-origin: right bottom;
-}
-.card:hover::before, .card:hover::after, .card:focus::before, .card:focus::after {
-transform: scale3d(1, 1, 1);
-}
-.more-details{
-  text-align: center;
-  background-color: #3D348B;
-  color: #fff;
-  font-weight: 600;
-  font-size: 15px;
-  border-radius: 20px;
-  position: absolute;
-  bottom:10px;
-  right:10%;
-}
-.more-details:hover{
-  color:white;
-}
-.rating-block{
-  display: inline-block;
-  text-align: center;
-  background-color: #31c2cf;
-  font-weight: 600;
-  font-size: 15px;
-  border-radius: 20px;
-  position: absolute;
-  padding:8px;
-  bottom:10px;
-  left:10%;
-}
-
-.rating-block:hover {
-  text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
-  transition: all 0.4s ease 0s;
-}
-.rateYo{
-  display:none;
-}
-
+ .genre-head,
+ .topbook-head {
+     font-family: 'Lobster', cursive;
+     font-size: 300%;
+     background-color: #D7722C;
+     margin-top: 0px;
+     color: white;
+ }
+ 
+ .card-horizontal {
+     display: flex;
+     flex: 1 1 auto;
+ }
+ 
+ .card-img {
+     flex-shrink: 0;
+     bottom: -35px;
+     left: 35px;
+     border-radius: 3px;
+     box-shadow: -2px 6px 19px 0px #7f818e;
+     transition: .3s ease;
+     width: 85%;
+     height: 60%;
+     margin: 0 auto;
+ }
+ 
+ .card-img:hover {
+     transform: scale(1.07);
+ }
+ 
+ .card-body-wrap {
+     display: flex;
+ }
+ 
+ .card {
+     transition: 0.5s;
+     cursor: pointer;
+     border-radius: 3px;
+     box-shadow: -2px 6px 19px 0px #7f818e;
+ }
+ 
+ .card-title {
+     font-family: 'Sora', sans-serif;
+     font-size: x-large;
+     color: #D7722C;
+ }
+ 
+ .card-text {
+     font-family: 'Courgette', cursive;
+     color: black;
+     font-weight: bold;
+     font-size: large;
+ }
+ 
+ .card::before,
+ .card::after {
+     position: absolute;
+     top: 0;
+     right: 0;
+     bottom: 0;
+     left: 0;
+     transform: scale3d(0, 0, 1);
+     transition: transform .3s ease-out 0s;
+     content: '';
+     pointer-events: none;
+ }
+ 
+ .card::before {
+     transform-origin: left top;
+ }
+ 
+ .card::after {
+     transform-origin: right bottom;
+ }
+ 
+ .card:hover::before,
+ .card:hover::after,
+ .card:focus::before,
+ .card:focus::after {
+     transform: scale3d(1, 1, 1);
+ }
+ 
+ .more-details {
+     text-align: center;
+     background-color: #3D348B;
+     color: #fff;
+     font-weight: 600;
+     font-size: 15px;
+     border-radius: 20px;
+     position: absolute;
+     bottom: 10px;
+     right: 10%;
+ }
+ 
+ .more-details:hover {
+     color: white;
+ }
+ 
+ .rating-block {
+     display: inline-block;
+     text-align: center;
+     background-color: #31c2cf;
+     font-weight: 600;
+     font-size: 15px;
+     border-radius: 20px;
+     position: absolute;
+     padding: 8px;
+     bottom: 10px;
+     left: 10%;
+ }
+ 
+ .rating-block:hover {
+     text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+     transition: all 0.4s ease 0s;
+ }
+ 
+ .rateYo {
+     display: none;
+ }
+ 
+ .card-deck {
+     padding-left: 5%;
+     padding-right: 5%;
+     padding-bottom: 2%;
+ }
+ 
+ @media screen and (max-width: 600px) {
+     .card-text {
+         margin-bottom: 10px !important;
+     }
+     .rating-block {
+         left: 5%;
+         font-size: 12px;
+     }
+     .more-details {
+         right: 10px;
+         font-size: 12px;
+     }
+     .card-deck {
+         padding-right: 0;
+         padding-left: 15%;
+     }
+ }

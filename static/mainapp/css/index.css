@@ -34,6 +34,10 @@
             padding-top: ;
             padding-bottom: ;
         }
+        
+        .navbar-nav .nav-link {
+            color: black;
+        }
         /*---------------------------------------- book card ----------------------------------*/
         
         .card {
@@ -180,5 +184,10 @@
             .more-details {
                 margin-top: 2px;
                 right: 30px;
+            }
+            .top-books-carousel {
+                align-items: center;
+                margin-left: -13%;
+                margin-right: -9%;
             }
         }
