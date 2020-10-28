@@ -127,4 +127,8 @@
             margin-left: 0%;
             padding-left: 0%;
         }
+        .navbar-nav .nav-link {
+            padding-right: 45%;
+            padding-left: 45%;
+        }
     }
