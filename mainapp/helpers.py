@@ -9,39 +9,12 @@ book_path = os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/dataset/books.
 cosin_sim_path = os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/model_files/cosine_rating_sim.npz')
 book_indices_path = os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/model_files/indices.pkl')
 
-# For SVD
-book_cleaned_path = os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/dataset/books_cleaned.csv')
-rating_pivot_path = os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/model_files/rating_pivot.csv.gz')
-df = pd.read_csv(rating_pivot_path, index_col=0)
-# Pivot table..
-df.columns.name = df.index.name
-df.index.name = df.index[0]
-df_rating_pivot = df.iloc[1:]
-# Rating Predictions
-predictions_path = os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/model_files/predictions.npz')
-predictions_npz = np.load(predictions_path)
-predictions_array = predictions_npz['array1']
-df_predictions = pd.DataFrame(predictions_array, columns=df_rating_pivot.columns)
 
 
 cols = ['original_title', 'authors', 'average_rating', 'image_url', 'book_id']
 
 df_book = pd.read_csv(book_path)
-df_book_cleaned = pd.read_csv(book_cleaned_path)
-
-
-def get_sorted_book_ids(predictions_df, userID, books_df):
-
-    user_index = list(df_rating_pivot.index)
-    # Get current user index
-    pred_user_id = user_index.index(userID)
-
-    # Get and sort the user's predictions
-    user_row_number = pred_user_id
-    sorted_book_ids = predictions_df.iloc[user_row_number].sort_values(ascending=False).index
-
-    return sorted_book_ids
-
+# df_book_cleaned = pd.read_csv(book_cleaned_path)
 
 def get_book_title(bookid):
     '''
@@ -100,28 +73,6 @@ def count_vectorizer_recommendations(bookid):
     book_indices = [i[0] for i in sim_scores]
     bookid_list = get_book_ids(book_indices)
     return bookid_list
-
-
-def svd_recommendations(user_ratings):
-    total_books = df_book_cleaned.shape[0]
-    current_user_rating = np.zeros((1, total_books))
-
-    for rating in user_ratings:
-        bookid = rating.bookid
-        rating = rating.bookrating
-        # Since two separate datasets
-        if bookid < total_books:
-            current_user_rating[0][bookid] = rating
-
-    # Find Closest user with similar rating
-    df_user_rating = pd.DataFrame(current_user_rating, columns=[np.arange(1, total_books + 1)])
-    distance = cdist(df_rating_pivot, df_user_rating, metric='euclidean')
-    closest_user = df_rating_pivot[distance == distance.min()].index[0]
-
-    # Get Sorted Book IDs
-    sorted_book_ids = get_sorted_book_ids(df_predictions, closest_user, df_book_cleaned)
-
-    return sorted_book_ids
 
 
 def get_book_dict(bookid_list):

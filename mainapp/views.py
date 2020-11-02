@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from mainapp.helpers import genre_wise, count_vectorizer_recommendations, get_book_dict, svd_recommendations, get_rated_bookids, combine_ids
+from mainapp.helpers import genre_wise, count_vectorizer_recommendations, get_book_dict, get_rated_bookids, combine_ids
 from mainapp.models import UserRating
 
 import pandas as pd
@@ -61,12 +61,13 @@ def book_recommendations(request):
         already_rated_books = set(get_rated_bookids(user_ratings))
 
         # Get bookids based on Count Vectorizer
-        cv_bookids = set(count_vectorizer_recommendations(bookid))
+        cv_bookids = count_vectorizer_recommendations(bookid)
+        print(cv_bookids)
         # Get Top 10 bookids based on svd
-        svd_bookids = set(svd_recommendations(user_ratings))
+        # svd_bookids = set(svd_recommendations(user_ratings))
 
-        best_bookids = combine_ids(cv_bookids, svd_bookids, already_rated_books)
-        all_books_dict = get_book_dict(best_bookids)
+        # best_bookids = combine_ids(cv_bookids, svd_bookids, already_rated_books)
+        all_books_dict = get_book_dict(cv_bookids)
     else:
         return redirect('index')
     return render(request, 'mainapp/recommendation.html', {'books': all_books_dict})
