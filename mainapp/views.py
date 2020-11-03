@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from mainapp.helpers import genre_wise, count_vectorizer_recommendations, get_book_dict, get_rated_bookids, combine_ids
+from mainapp.helpers import genre_wise, count_vectorizer_recommendations, get_book_dict, get_rated_bookids, combine_ids, embedding_recommendations
 from mainapp.models import UserRating
 
 import pandas as pd
@@ -57,17 +57,18 @@ def book_recommendations(request):
     if best_user_ratings:
         # If one or more book is rated
         bookid = best_user_ratings[0].bookid
-
         already_rated_books = set(get_rated_bookids(user_ratings))
-
         # Get bookids based on Count Vectorizer
-        cv_bookids = count_vectorizer_recommendations(bookid)
-        print(cv_bookids)
-        # Get Top 10 bookids based on svd
-        # svd_bookids = set(svd_recommendations(user_ratings))
+        cv_bookids = set(count_vectorizer_recommendations(bookid))
 
-        # best_bookids = combine_ids(cv_bookids, svd_bookids, already_rated_books)
-        all_books_dict = get_book_dict(cv_bookids)
+        # Shuffle again for randomness for second approach
+        random.shuffle(user_ratings)
+        best_user_ratings = sorted(user_ratings, key=operator.attrgetter('bookrating'), reverse=True)
+        # Get Top 10 bookids based on embedding
+        embedding_bookids = set(embedding_recommendations(best_user_ratings))
+
+        best_bookids = combine_ids(cv_bookids, embedding_bookids, already_rated_books)
+        all_books_dict = get_book_dict(best_bookids)
     else:
         return redirect('index')
     return render(request, 'mainapp/recommendation.html', {'books': all_books_dict})
