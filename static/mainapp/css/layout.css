@@ -98,6 +98,10 @@
         padding: 15px;
     }
     
+    strong {
+        color: red;
+    }
+    
     footer {
         background-color: black;
         color: white;
