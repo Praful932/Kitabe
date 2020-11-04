@@ -119,13 +119,19 @@
     }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 421px) {
     .book-see {
         width: 120px;
         font-size: 13px;
     }
     .book-photo {
         width: 130px;
+    }
+    .more-details {
+        font-size: 13px !important;
+    }
+    .rating-block {
+        font-size: 13px !important;
     }
 }
 
@@ -139,6 +145,7 @@
     position: absolute;
     bottom: 10px;
     right: 5%;
+    position: absolute;
 }
 
 .more-details:hover {
@@ -153,6 +160,7 @@
     border-radius: 20px;
     padding: 8px;
     bottom: 10px;
+    position: absolute;
 }
 
 .more-details {

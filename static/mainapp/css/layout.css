@@ -17,10 +17,20 @@
     .head-text {
         font-family: 'Pacifico', cursive;
     }
+    
+    .model-rate {
+        position: inherit !important;
+        margin-bottom: 12px !important;
+        margin-top: 12px !important;
+    }
     /* -------------------------search bar-----------------------  */
     
     .searchbar {
         font-family: 'Kumbh Sans', sans-serif;
+    }
+    
+    #bookrating {
+        padding-top: 2%;
     }
     
     #bookName {
