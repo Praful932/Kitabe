@@ -51,6 +51,11 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link mr-2" href="{% url 'explore_books' %}">
+                                <i class="fa fa-search fa-2x ml-3" aria-hidden="true"></i><br>Explore
+                            </a>
+                        </li>
                         {% if user.is_authenticated %}
                         <li class="nav-item">
                             <a class="nav-link ml-2" href="{% url 'book_recommendations' %}">
