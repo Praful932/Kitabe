@@ -31,7 +31,9 @@
     font-weight: bold;
 }
 
-#demo {
+#demo,
+#demo2,
+#demo3 {
     padding-left: 4%;
     padding-bottom: 1%;
 }
@@ -62,4 +64,10 @@
 
 .rateYo {
     display: none;
+}
+
+@media (max-width: 420px) {
+    #demo {
+        padding-left: 12%;
+    }
 }
