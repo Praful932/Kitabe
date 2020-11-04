@@ -66,6 +66,11 @@
                         </li>
                         {% else %}
                         <li class="nav-item">
+                            <a class="nav-link" href="{% url 'explore_books' %}">
+                                <i class="fa fa-search fa-2x ml-3" aria-hidden="true"></i><br>Explore
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="{% url 'account_login' %}">
                                 <i class="fa fa-sign-in fa-2x ml-2" aria-hidden="true"></i><br>Login
                             </a>

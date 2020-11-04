@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from mainapp.helpers import genre_wise, count_vectorizer_recommendations, get_book_dict, get_rated_bookids, combine_ids, embedding_recommendations
+from mainapp.helpers import genre_wise, count_vectorizer_recommendations, get_book_dict, get_rated_bookids, combine_ids, embedding_recommendations, select_random_books
 from mainapp.models import UserRating
 from django.contrib import messages
 
@@ -26,7 +26,7 @@ def index(request):
     qual = qualified[['book_id', 'original_title', 'authors',
                       'average_rating', 'image_url']].head(15)
     books = qual.to_dict('records')
-    return render(request, 'mainapp/index.html', {'book': books})
+    return render(request, 'mainapp/index.html', {'books': books})
 
 
 def genre_books(request, genre):
@@ -40,6 +40,11 @@ def genre_books(request, genre):
         'genre_topbook': genre_topbooks,
     }
     return render(request, 'mainapp/genre.html', context)
+
+
+def explore_books(request):
+    sample = select_random_books()
+    return render(request, 'mainapp/explore.html', {'book': sample})
 
 
 @login_required
