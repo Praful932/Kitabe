@@ -2,9 +2,13 @@
     body {
         background-color: peachpuff;
         height: 100%;
+        max-width: 100%;
+        overflow-x: hidden
+    }
+    #navbarNav{
+        float: right;
     }
     /* nav bar css */
-    
     .navbar-toggler {
         border-color: black;
         background-color: white;
@@ -24,7 +28,7 @@
     }
     
     #searchdropdown {
-        padding-left: 40%;
+        margin-left: 38%;
     }
     
     #searchdropdown #bookName {
@@ -131,8 +135,5 @@
             margin-left: 0%;
             padding-left: 0%;
         }
-        .navbar-nav .nav-link {
-            padding-right: 45%;
-            padding-left: 45%;
-        }
+        
     }

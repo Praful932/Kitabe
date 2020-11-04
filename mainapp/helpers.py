@@ -152,4 +152,6 @@ def combine_ids(cv_bookids, embedding_bookids, already_rated):
     print(top_3_cv)
     print(top_6_embed)
     best_bookids = top_3_cv + top_6_embed
+    if len(best_bookids) < 9:
+        best_bookids = best_bookids + cv_bookids[2:(len(9 - len(best_bookids)))]
     return best_bookids
