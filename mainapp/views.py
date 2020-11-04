@@ -40,6 +40,11 @@ def genre_books(request, genre):
     }
     return render(request, 'mainapp/genre.html', context)
 
+def explore_books(request):
+    df_books = pd.read_csv("static/mainapp/dataset/books.csv")   
+    books_selc = df_books.sample(150)
+    books = books_selc.to_dict('records')
+    return render(request,'mainapp/explore.html',{'book':books})
 
 @login_required
 def book_recommendations(request):
