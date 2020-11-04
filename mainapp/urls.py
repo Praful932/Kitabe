@@ -3,6 +3,7 @@ from mainapp import views, views_ajax
 urlpatterns = [
     path('', views.index, name='index'),
     path('genre_books/<genre>', views.genre_books, name='genre_books'),
+    path('explore_books/', views.explore_books, name='explore_books'),
 ]
 
 # Ajax Views

@@ -1,0 +1,73 @@
+.hide {
+    display: none;
+}
+
+.data:hover+.hide {
+    display: block;
+    color: red;
+}
+
+.hide:hover {
+    display: block;
+    color: red;
+}
+
+.cover-img-size {
+    width: 313px;
+    height: 475px;
+}
+
+.content {
+    width: 313px;
+}
+
+.title {
+    font-family: 'Sora', sans-serif;
+    color: #D7722C;
+}
+
+.author {
+    font-family: 'Courgette', cursive;
+    font-weight: bold;
+}
+
+#demo,
+#demo2,
+#demo3 {
+    padding-left: 4%;
+    padding-bottom: 1%;
+}
+
+.more-details {
+    text-align: center;
+    background-color: #3D348B;
+    color: #fff;
+    font-weight: 600;
+    font-size: 15px;
+    border-radius: 20px;
+}
+
+.rating-block {
+    text-align: center;
+    background-color: #31c2cf;
+    font-weight: 600;
+    font-size: 15px;
+    border-radius: 20px;
+    padding: 5px;
+    bottom: 10px;
+}
+
+.rating-block:hover {
+    text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+    transition: all 0.4s ease 0s;
+}
+
+.rateYo {
+    display: none;
+}
+
+@media (max-width: 420px) {
+    #demo {
+        padding-left: 12%;
+    }
+}
