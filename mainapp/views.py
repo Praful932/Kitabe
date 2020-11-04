@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from mainapp.helpers import genre_wise, count_vectorizer_recommendations, get_book_dict, get_rated_bookids, combine_ids, embedding_recommendations
 from mainapp.models import UserRating
+from django.contrib import messages
 
 import pandas as pd
 import random
@@ -54,6 +55,9 @@ def book_recommendations(request):
     user_ratings = list(UserRating.objects.filter(user=request.user).order_by('-bookrating'))
     random.shuffle(user_ratings)
     best_user_ratings = sorted(user_ratings, key=operator.attrgetter('bookrating'), reverse=True)
+    if len(best_user_ratings) < 4:
+        messages.info(request, 'Please rate atleast 5 books')
+        return redirect('index')
     if best_user_ratings:
         # If one or more book is rated
         bookid = best_user_ratings[0].bookid
