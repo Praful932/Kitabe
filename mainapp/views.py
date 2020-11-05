@@ -78,7 +78,7 @@ def book_recommendations(request):
         embedding_bookids = set(embedding_recommendations(best_user_ratings))
 
         best_bookids = combine_ids(cv_bookids, embedding_bookids, already_rated_books)
-        all_books_dict = get_book_dict(cv_bookids)
+        all_books_dict = get_book_dict(best_bookids)
     else:
         return redirect('index')
     return render(request, 'mainapp/recommendation.html', {'books': all_books_dict})

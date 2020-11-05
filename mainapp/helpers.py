@@ -4,10 +4,11 @@ import os
 import pickle
 import BookRecSystem.settings as settings
 
-# For Count Vectorizer
 book_path = os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/dataset/books.csv')
-cosin_sim_path = os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/model_files/tf-idf/cosine_rating_sim.npz')
-book_indices_path = os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/model_files/tf-idf/indices.pkl')
+
+# For Count Vectorizer
+cosin_sim_path = os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/model_files/cv/cosine_rating_sim.npz')
+book_indices_path = os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/model_files/cv/indices.pkl')
 
 # For Embedding
 book_id_map_path = os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/model_files/surprise/book_raw_to_inner_id.pickle')
@@ -142,16 +143,14 @@ def combine_ids(cv_bookids, embedding_bookids, already_rated):
         Returns best bookids combining both approaches
     '''
     cv_bookids = list(cv_bookids.difference(already_rated))
-    top_3_cv = set(cv_bookids[:2])
+    top_3_cv = set(cv_bookids[:3])
     embedding_bookids = embedding_bookids.difference(already_rated)
     embedding_bookids = list(embedding_bookids.difference(top_3_cv))
     top_3_cv = list(top_3_cv)
     top_6_embed = list(embedding_bookids[:7])
-    print(top_3_cv)
-    print(top_6_embed)
     best_bookids = top_3_cv + top_6_embed
     if len(best_bookids) < 9:
-        best_bookids = best_bookids + cv_bookids[2:(9 - len(best_bookids))]
+        best_bookids = best_bookids + cv_bookids[3:(12 - len(best_bookids))]
     return best_bookids
 
 

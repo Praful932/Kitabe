@@ -10,7 +10,7 @@ import requests
 
 '''
     Production File Path :  staticfiles_storage.url(file)
-    Developement File Path : settings.STATICFILES_DIRS[0] + 'app\...\.csv'
+    Developement File Path : settings.STATICFILES_DIRS[0] + 'app/.../file'
 '''
 book_path = os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/dataset/books.csv')
 user_ratings_path = os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/csv/userratings.csv')
