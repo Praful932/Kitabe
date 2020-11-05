@@ -5,7 +5,7 @@
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Sora&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
@@ -46,35 +46,37 @@
                     </div>
                 </div>
                 <!-- End Search Bar -->
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link mr-2" href="{% url 'explore_books' %}">
-                                <i class="fa fa-search fa-2x ml-3" aria-hidden="true"></i><br>Explore
-                            </a>
-                        </li>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav ">
                         {% if user.is_authenticated %}
                         <li class="nav-item">
-                            <a class="nav-link ml-2" href="{% url 'book_recommendations' %}">
+                            <a class="nav-link" href="{% url 'book_recommendations' %}">
                                 <i class="fa fa-book fa-2x ml-3" aria-hidden="true"></i><br>Your Read
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link mr-2" href="{% url 'account_logout' %}">
+                            <a class="nav-link" href="{% url 'account_logout' %}">
                                 <i class="fa fa-sign-in fa-2x ml-3" aria-hidden="true"></i><br>Logout
                             </a>
                         </li>
                         {% else %}
                         <li class="nav-item">
-                            <a class="nav-link mr-2" href="{% url 'account_login' %}">
+                            <a class="nav-link" href="{% url 'explore_books' %}">
+                                <i class="fa fa-search fa-2x ml-3" aria-hidden="true"></i><br>Explore
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'account_login' %}">
                                 <i class="fa fa-sign-in fa-2x ml-2" aria-hidden="true"></i><br>Login
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link mr-2" href="{% url 'account_signup' %}">
+                            <a class="nav-link" href="{% url 'account_signup' %}">
                                 <i class="fa fa-user fa-2x ml-3" aria-hidden="true"></i><br>Signup
                             </a>
                         </li>
@@ -84,6 +86,15 @@
             </nav>
         </div>
     </header>
+    <!-- Messages -->
+    {% for message in messages %}
+    <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        {{ message }}
+    </div>
+    {% endfor %}
     <!-- Bootstrap modal -->
     <div class="modal fade" id="bookModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
         <div class="modal-dialog">
@@ -152,7 +163,7 @@
                 <a href="https://github.com/Praful932/Book-Recommendation-System"><i class="fa fa-github fa-2x"
                         aria-hidden="true"></i></a>
                 <div class=" copy pt-1">
-                <p class="text-center">&copy; Copyright 2020 - <strong>Kitabe</strong> All rights reserved.</p>
+                    <p class="text-center">&copy; Copyright 2020 - <strong>Kitabe</strong> All rights reserved.</p>
                 </div>
             </div>
         </div>

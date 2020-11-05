@@ -152,4 +152,19 @@ def combine_ids(cv_bookids, embedding_bookids, already_rated):
     print(top_3_cv)
     print(top_6_embed)
     best_bookids = top_3_cv + top_6_embed
+    if len(best_bookids) < 9:
+        best_bookids = best_bookids + cv_bookids[2:(len(9 - len(best_bookids)))]
     return best_bookids
+
+
+def select_random_books():
+    df_books1 = df_book.copy()
+    v = df_books1['ratings_count']
+    m = df_books1['ratings_count'].quantile(0.95)
+    R = df_books1['average_rating']
+    C = df_books1['average_rating'].mean()
+    W = (R*v + C*m) / (v + m)
+    df_books1['weighted_rating'] = W
+    qualified = df_books1.sort_values(
+        'weighted_rating', ascending=False)[cols].head(90)
+    return qualified.to_dict('records')
