@@ -5,7 +5,7 @@
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Sora&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
@@ -121,18 +121,23 @@
                             <div id="bookrating"></div>
                             <div>
 
-                            {% if user.is_authenticated %}
-                            <div class='rating-block model-rate' onmouseover="rateStart(this)" onclick='rateBook(this)' onmouseout='finishRate(this)' data-book-id="{{ book.book_id }}">
-                                <div id='button-text-{{ book.book_id }}'>Rate <i class="fa fa-heart" style="color:red"></i> This Book
-                                    </a>
+                                {% if user.is_authenticated %}
+                                <div class='rating-block model-rate' onmouseover="rateStart(this)"
+                                    onclick='rateBook(this)' onmouseout='finishRate(this)'
+                                    data-book-id="{{ book.book_id }}">
+                                    <div id='button-text-{{ book.book_id }}'>Rate <i class="fa fa-heart"
+                                            style="color:red"></i> This Book
+                                        </a>
+                                    </div>
+                                    <div class='rateYo' id='rate-{{ book.book_id }}'></div>
                                 </div>
-                                <div class='rateYo' id='rate-{{ book.book_id }}'></div>
-                            </div>
-                            {% else %}
-                            <div class='rating-block btn model-rate' onclick="location.href='{% url 'account_signup' %}'">
-                                <div id='button-text'>Login To Rate <i class="fa fa-heart" style="color:red"></i> This Book</a></div>
-                            </div>
-                            {% endif %}
+                                {% else %}
+                                <div class='rating-block btn model-rate'
+                                    onclick="location.href='{% url 'account_signup' %}'">
+                                    <div id='button-text'>Login To Rate <i class="fa fa-heart" style="color:red"></i>
+                                        This Book</a></div>
+                                </div>
+                                {% endif %}
                             </div>
                         </div>
 
@@ -279,13 +284,13 @@
         //for rating a book
         $(function () {
 
-        $(".rateYo").rateYo({
-            rating: 0,
-            starWidth: "20px",
-            fullStar: true
-        });
+            $(".rateYo").rateYo({
+                rating: 0,
+                starWidth: "20px",
+                fullStar: true
+            });
 
-    });
+        });
         // when hover over rate
         function rateStart(obj) {
             var bookid = obj.getAttribute('data-book-id');
@@ -321,7 +326,7 @@
             }, 4000);
         }
 
-         // Retrieve and display book details in Modal
+        // Retrieve and display book details in Modal
         function bookDetails(obj) {
             var bookid = obj.getAttribute('data-book-id');
             $.ajax({
@@ -332,7 +337,7 @@
                 dataType: 'json',
                 url: "{% url 'book_details' %}",
                 type: 'POST',
-                success: function(response) {
+                success: function (response) {
                     var book_details = JSON.parse(response['book_details'])[0];
                     $('#booksummary').text("");
                     $('#loading').show();
@@ -351,7 +356,7 @@
                     $('#bookModal').modal('show');
                     $('#search-dropdown').empty();
                 },
-                error: function(response) {
+                error: function (response) {
                     console.log(response);
                 }
             });

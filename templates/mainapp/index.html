@@ -1,11 +1,11 @@
 {% extends "mainapp/layout.html" %}
-{% load static %} 
-{% block title %} Home {% endblock title %} 
+{% load static %}
+{% block title %} Home {% endblock title %}
 {% block head %}
 <link rel="stylesheet" href="{% static 'mainapp/css/index.css' %}">
 {% endblock head %}
- 
- 
+
+
 {% block main %}
 <!---------------------------------------------------------------   adding Carousel (sliding banner) -------------------------------------------------------------------->
 <!-- carousel 1 -->
@@ -77,35 +77,43 @@
                     <div class="carousel-inner" role="listbox">
 
                         <div class="carousel-item active">
-                            <a href="{% url 'genre_books' genre='art' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/1.png' %}" alt="slide"></a>
+                            <a href="{% url 'genre_books' genre='art' %}"><img class="d-block img-fluid"
+                                    src="{% static 'mainapp/png/genre/1.png' %}" alt="slide"></a>
                         </div>
 
                         <div class="carousel-item">
-                            <a href="{% url 'genre_books' genre='biography' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/2.png' %}" alt="slide"></a>
+                            <a href="{% url 'genre_books' genre='biography' %}"><img class="d-block img-fluid"
+                                    src="{% static 'mainapp/png/genre/2.png' %}" alt="slide"></a>
                         </div>
 
                         <div class="carousel-item">
-                            <a href="{% url 'genre_books' genre='business' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/3.png' %}" alt="slide"></a>
+                            <a href="{% url 'genre_books' genre='business' %}"><img class="d-block img-fluid"
+                                    src="{% static 'mainapp/png/genre/3.png' %}" alt="slide"></a>
                         </div>
 
                         <div class="carousel-item">
-                            <a href="{% url 'genre_books' genre='Christian' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/6.png' %}" alt="slide"></a>
+                            <a href="{% url 'genre_books' genre='Christian' %}"><img class="d-block img-fluid"
+                                    src="{% static 'mainapp/png/genre/6.png' %}" alt="slide"></a>
                         </div>
 
                         <div class="carousel-item">
-                            <a href="{% url 'genre_books' genre='Comics' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/7.png' %}" alt="slide"></a>
+                            <a href="{% url 'genre_books' genre='Comics' %}"><img class="d-block img-fluid"
+                                    src="{% static 'mainapp/png/genre/7.png' %}" alt="slide"></a>
                         </div>
 
                         <div class="carousel-item">
-                            <a href="{% url 'genre_books' genre='Contemporary' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/8.png' %}" alt="slide"></a>
+                            <a href="{% url 'genre_books' genre='Contemporary' %}"><img class="d-block img-fluid"
+                                    src="{% static 'mainapp/png/genre/8.png' %}" alt="slide"></a>
                         </div>
 
                         <div class="carousel-item">
-                            <a href="{% url 'genre_books' genre='Cookbooks' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/9.png' %}" alt="slide"></a>
+                            <a href="{% url 'genre_books' genre='Cookbooks' %}"><img class="d-block img-fluid"
+                                    src="{% static 'mainapp/png/genre/9.png' %}" alt="slide"></a>
                         </div>
 
                         <div class="carousel-item">
-                            <a href="{% url 'genre_books' genre='Crime' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/10.png' %}" alt="slide"></a>
+                            <a href="{% url 'genre_books' genre='Crime' %}"><img class="d-block img-fluid"
+                                    src="{% static 'mainapp/png/genre/10.png' %}" alt="slide"></a>
                         </div>
 
                     </div>
@@ -139,28 +147,30 @@
 
                     <div class="carousel-inner" role="listbox">
 
+
                         <div class="carousel-item active">
-                            <a href="{% url 'genre_books' genre='Ebooks' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/11.png' %}" alt="slide"></a>
+                            <a href="{% url 'genre_books' genre='Fantasy' %}"><img class="d-block img-fluid"
+                                    src="{% static 'mainapp/png/genre/12.png' %}" alt="slide"></a>
                         </div>
 
                         <div class="carousel-item">
-                            <a href="{% url 'genre_books' genre='Fantasy' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/12.png' %}" alt="slide"></a>
+                            <a href="{% url 'genre_books' genre='Fiction' %}"><img class="d-block img-fluid"
+                                    src="{% static 'mainapp/png/genre/13.png' %}" alt="slide"></a>
                         </div>
 
                         <div class="carousel-item">
-                            <a href="{% url 'genre_books' genre='Fiction' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/13.png' %}" alt="slide"></a>
+                            <a href="{% url 'genre_books' genre='History' %}"><img class="d-block img-fluid"
+                                    src="{% static 'mainapp/png/genre/17.png' %}" alt="slide"></a>
                         </div>
 
                         <div class="carousel-item">
-                            <a href="{% url 'genre_books' genre='History' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/17.png' %}" alt="slide"></a>
+                            <a href="{% url 'genre_books' genre='Horror' %}"><img class="d-block img-fluid"
+                                    src="{% static 'mainapp/png/genre/18.png' %}" alt="slide"></a>
                         </div>
 
                         <div class="carousel-item">
-                            <a href="{% url 'genre_books' genre='Horror' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/18.png' %}" alt="slide"></a>
-                        </div>
-
-                        <div class="carousel-item">
-                            <a href="{% url 'genre_books' genre='Manga' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/20.png' %}" alt="slide"></a>
+                            <a href="{% url 'genre_books' genre='Manga' %}"><img class="d-block img-fluid"
+                                    src="{% static 'mainapp/png/genre/20.png' %}" alt="slide"></a>
                         </div>
 
 
@@ -199,39 +209,43 @@
                     <div class="carousel-inner" role="listbox">
 
                         <div class="carousel-item active">
-                            <a href="{% url 'genre_books' genre='Memoir' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/21.png' %}" alt="slide"></a>
+                            <a href="{% url 'genre_books' genre='Memoir' %}"><img class="d-block img-fluid"
+                                    src="{% static 'mainapp/png/genre/21.png' %}" alt="slide"></a>
                         </div>
 
                         <div class="carousel-item">
-                            <a href="{% url 'genre_books' genre='Music' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/22.png' %}" alt="slide"></a>
+                            <a href="{% url 'genre_books' genre='Mystery' %}"><img class="d-block img-fluid"
+                                    src="{% static 'mainapp/png/genre/23.png' %}" alt="slide"></a>
                         </div>
 
                         <div class="carousel-item">
-                            <a href="{% url 'genre_books' genre='Mystery' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/23.png' %}" alt="slide"></a>
+                            <a href="{% url 'genre_books' genre='Nonfiction' %}"><img class="d-block img-fluid"
+                                    src="{% static 'mainapp/png/genre/24.png' %}" alt="slide"></a>
                         </div>
 
                         <div class="carousel-item">
-                            <a href="{% url 'genre_books' genre='Nonfiction' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/24.png' %}" alt="slide"></a>
+                            <a href="{% url 'genre_books' genre='Paranormal' %}"><img class="d-block img-fluid"
+                                    src="{% static 'mainapp/png/genre/25.png' %}" alt="slide"></a>
                         </div>
 
                         <div class="carousel-item">
-                            <a href="{% url 'genre_books' genre='Paranormal' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/25.png' %}" alt="slide"></a>
+                            <a href="{% url 'genre_books' genre='Philosophy' %}"><img class="d-block img-fluid"
+                                    src="{% static 'mainapp/png/genre/26.png' %}" alt="slide"></a>
                         </div>
 
                         <div class="carousel-item">
-                            <a href="{% url 'genre_books' genre='Philosophy' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/26.png' %}" alt="slide"></a>
+                            <a href="{% url 'genre_books' genre='Poetry' %}"><img class="d-block img-fluid"
+                                    src="{% static 'mainapp/png/genre/27.png' %}" alt="slide"></a>
                         </div>
 
                         <div class="carousel-item">
-                            <a href="{% url 'genre_books' genre='Poetry' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/27.png' %}" alt="slide"></a>
+                            <a href="{% url 'genre_books' genre='Psychology' %}"><img class="d-block img-fluid"
+                                    src="{% static 'mainapp/png/genre/28.png' %}" alt="slide"></a>
                         </div>
 
                         <div class="carousel-item">
-                            <a href="{% url 'genre_books' genre='Psychology' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/28.png' %}" alt="slide"></a>
-                        </div>
-
-                        <div class="carousel-item">
-                            <a href="{% url 'genre_books' genre='Religion' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/29.png' %}" alt="slide"></a>
+                            <a href="{% url 'genre_books' genre='Religion' %}"><img class="d-block img-fluid"
+                                    src="{% static 'mainapp/png/genre/29.png' %}" alt="slide"></a>
                         </div>
                     </div>
                     <!-- e carousel-inner -->
@@ -265,31 +279,38 @@
                     <div class="carousel-inner" role="listbox">
 
                         <div class="carousel-item active">
-                            <a href="{% url 'genre_books' genre='Science' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/31.png' %}" alt="slide"></a>
+                            <a href="{% url 'genre_books' genre='Science' %}"><img class="d-block img-fluid"
+                                    src="{% static 'mainapp/png/genre/31.png' %}" alt="slide"></a>
                         </div>
 
                         <div class="carousel-item">
-                            <a href="{% url 'genre_books' genre='Suspense' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/34.png' %}" alt="slide"></a>
+                            <a href="{% url 'genre_books' genre='Suspense' %}"><img class="d-block img-fluid"
+                                    src="{% static 'mainapp/png/genre/34.png' %}" alt="slide"></a>
                         </div>
 
                         <div class="carousel-item">
-                            <a href="{% url 'genre_books' genre='Spirituality' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/35.png' %}" alt="slide"></a>
+                            <a href="{% url 'genre_books' genre='Spirituality' %}"><img class="d-block img-fluid"
+                                    src="{% static 'mainapp/png/genre/35.png' %}" alt="slide"></a>
                         </div>
 
                         <div class="carousel-item">
-                            <a href="{% url 'genre_books' genre='Sports' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/36.png' %}" alt="slide"></a>
+                            <a href="{% url 'genre_books' genre='Sports' %}"><img class="d-block img-fluid"
+                                    src="{% static 'mainapp/png/genre/36.png' %}" alt="slide"></a>
                         </div>
 
                         <div class="carousel-item">
-                            <a href="{% url 'genre_books' genre='Thriller' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/37.png' %}" alt="slide"></a>
+                            <a href="{% url 'genre_books' genre='Thriller' %}"><img class="d-block img-fluid"
+                                    src="{% static 'mainapp/png/genre/37.png' %}" alt="slide"></a>
                         </div>
 
                         <div class="carousel-item">
-                            <a href="{% url 'genre_books' genre='Travel' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/38.png' %}" alt="slide"></a>
+                            <a href="{% url 'genre_books' genre='Travel' %}"><img class="d-block img-fluid"
+                                    src="{% static 'mainapp/png/genre/38.png' %}" alt="slide"></a>
                         </div>
 
                         <div class="carousel-item">
-                            <a href="{% url 'genre_books' genre='Classics' %}"><img class="d-block img-fluid" src="{% static 'mainapp/png/genre/40.png' %}" alt="slide"></a>
+                            <a href="{% url 'genre_books' genre='Classics' %}"><img class="d-block img-fluid"
+                                    src="{% static 'mainapp/png/genre/40.png' %}" alt="slide"></a>
                         </div>
 
                     </div>
@@ -356,9 +377,12 @@
                             </div>
                         </div>
                         <br><br>
-                        <a href="javascript:;" onclick='bookDetails(this)' class="btn more-details" data-book-id="{{ book.book_id }}">More Details</a> {% if user.is_authenticated %}
-                        <div class='rating-block' onmouseover="rateStart(this)" onclick='rateBook(this)' onmouseout='finishRate(this)' data-book-id="{{ book.book_id }}">
-                            <div id='button-text-{{ book.book_id }}'>Rate <i class="fa fa-heart" style="color:red"></i> This Book</a>
+                        <a href="javascript:;" onclick='bookDetails(this)' class="btn more-details"
+                            data-book-id="{{ book.book_id }}">More Details</a> {% if user.is_authenticated %}
+                        <div class='rating-block' onmouseover="rateStart(this)" onclick='rateBook(this)'
+                            onmouseout='finishRate(this)' data-book-id="{{ book.book_id }}">
+                            <div id='button-text-{{ book.book_id }}'>Rate <i class="fa fa-heart" style="color:red"></i>
+                                This Book</a>
                             </div>
                             <div class='rateYo' id='rate-{{ book.book_id }}'></div>
                         </div>
