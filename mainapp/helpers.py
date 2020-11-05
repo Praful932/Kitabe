@@ -75,9 +75,7 @@ def get_bookid(raw_id_list):
 
 
 def genre_wise(genre, percentile=0.85):
-    available_genres_books = pd.read_csv("static/mainapp/dataset/genre.csv")
-    df = available_genres_books[available_genres_books['genre'] == genre.lower()]
-    qualified = pd.merge(df_book, df, left_on='book_id', right_on='book_id', how='inner')
+    qualified = df_book[df_book.genre.str.contains(genre.lower())]
     v = qualified['ratings_count']
     m = qualified['ratings_count'].quantile(percentile)
     R = qualified['average_rating']
@@ -153,7 +151,7 @@ def combine_ids(cv_bookids, embedding_bookids, already_rated):
     print(top_6_embed)
     best_bookids = top_3_cv + top_6_embed
     if len(best_bookids) < 9:
-        best_bookids = best_bookids + cv_bookids[2:(len(9 - len(best_bookids)))]
+        best_bookids = best_bookids + cv_bookids[2:(9 - len(best_bookids))]
     return best_bookids
 
 
@@ -166,5 +164,5 @@ def select_random_books():
     W = (R*v + C*m) / (v + m)
     df_books1['weighted_rating'] = W
     qualified = df_books1.sort_values(
-        'weighted_rating', ascending=False)[cols].head(90)
+        'weighted_rating', ascending=False)[cols].sample(90)
     return qualified.to_dict('records')
