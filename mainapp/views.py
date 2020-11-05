@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from mainapp.helpers import genre_wise, count_vectorizer_recommendations, get_book_dict, get_rated_bookids, combine_ids, embedding_recommendations
+from mainapp.helpers import genre_wise, count_vectorizer_recommendations, get_book_dict, get_rated_bookids, combine_ids, embedding_recommendations, select_random_books
 from mainapp.models import UserRating
+from django.contrib import messages
 
 import pandas as pd
 import random
@@ -25,7 +26,7 @@ def index(request):
     qual = qualified[['book_id', 'original_title', 'authors',
                       'average_rating', 'image_url']].head(15)
     books = qual.to_dict('records')
-    return render(request, 'mainapp/index.html', {'book': books})
+    return render(request, 'mainapp/index.html', {'books': books})
 
 
 def genre_books(request, genre):
@@ -40,11 +41,11 @@ def genre_books(request, genre):
     }
     return render(request, 'mainapp/genre.html', context)
 
+
 def explore_books(request):
-    df_books = pd.read_csv("static/mainapp/dataset/books.csv")   
-    books_selc = df_books.sample(150)
-    books = books_selc.to_dict('records')
-    return render(request,'mainapp/explore.html',{'book':books})
+    sample = select_random_books()
+    return render(request, 'mainapp/explore.html', {'book': sample})
+
 
 @login_required
 def book_recommendations(request):
@@ -59,6 +60,9 @@ def book_recommendations(request):
     user_ratings = list(UserRating.objects.filter(user=request.user).order_by('-bookrating'))
     random.shuffle(user_ratings)
     best_user_ratings = sorted(user_ratings, key=operator.attrgetter('bookrating'), reverse=True)
+    if len(best_user_ratings) < 4:
+        messages.info(request, 'Please rate atleast 5 books')
+        return redirect('index')
     if best_user_ratings:
         # If one or more book is rated
         bookid = best_user_ratings[0].bookid
