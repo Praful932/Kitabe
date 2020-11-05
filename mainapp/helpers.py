@@ -166,5 +166,5 @@ def select_random_books():
     W = (R*v + C*m) / (v + m)
     df_books1['weighted_rating'] = W
     qualified = df_books1.sort_values(
-        'weighted_rating', ascending=False)[cols].head(150)
+        'weighted_rating', ascending=False)[cols].head(90)
     return qualified.to_dict('records')
