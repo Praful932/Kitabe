@@ -76,14 +76,23 @@ def get_bookid(raw_id_list):
 
 
 def genre_wise(genre, percentile=0.85):
+    '''
+        Returns top genre books according to a cutoff percentile to be listed in Top Books
+    '''
+    n_books = 16
+    min_genre_book_count = 48
+
     qualified = df_book[df_book.genre.str.contains(genre.lower())]
+    # Imdb Formula
     v = qualified['ratings_count']
     m = qualified['ratings_count'].quantile(percentile)
     R = qualified['average_rating']
     C = qualified['average_rating'].mean()
-    qualified['weighted_rating'] = (R*v + C*m) / (v + m)
+    W = (R*v + C*m) / (v + m)
+    qualified = qualified.assign(weighted_rating=W)
     qualified.sort_values('weighted_rating', ascending=False, inplace=True)
-    return qualified[cols].head(16)
+
+    return qualified[cols].head(min_genre_book_count).sample(n_books)
 
 
 def count_vectorizer_recommendations(bookid):
@@ -96,7 +105,7 @@ def count_vectorizer_recommendations(bookid):
     book_title = book_title.replace(' ', '').lower()
     idx = indices[book_title]
 
-    # Get this books sim with all other books, enum to keep track of book index
+    # Get this books similarity with all other books, enum to keep track of book index
     sim_scores = list(enumerate(cosine_sim[idx]))
     sim_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)
     sim_scores = sim_scores[1:10]
@@ -110,19 +119,22 @@ def embedding_recommendations(sorted_user_ratings):
     '''
         Returns recommended book ids based on embeddings
     '''
-
     best_user_books = []
     similar_bookid_list = []
+    max_user_rating_len = 10
+    # Only keep user rating >= 4
+    threshold = 4
+    top_similiar = 2
 
     for i, rating in enumerate(sorted_user_ratings):
-        if rating.bookrating < 4 or i > 10:
+        if rating.bookrating < threshold or i > max_user_rating_len:
             break
         else:
             best_user_books.append(rating.bookid)
 
     for book in best_user_books:
         raw_id = get_raw_id(book)
-        top_sim_books = [book for book, similiarity in sim_books_dict[raw_id][:2]]
+        top_sim_books = [book for book, similiarity in sim_books_dict[raw_id][:top_similiar]]
         similar_bookid_list.extend(top_sim_books)
 
     similar_bookid_list = get_bookid(similar_bookid_list)
@@ -138,30 +150,55 @@ def get_book_dict(bookid_list):
     return rec_books_dict
 
 
-def combine_ids(cv_bookids, embedding_bookids, already_rated):
+def combine_ids(cv_bookids, embedding_bookids, already_rated, recommendations=9):
     '''
         Returns best bookids combining both approaches
+        Embedding - Top 6
+        CV - Top 3
     '''
     cv_bookids = list(cv_bookids.difference(already_rated))
     top_3_cv = set(cv_bookids[:3])
     embedding_bookids = embedding_bookids.difference(already_rated)
     embedding_bookids = list(embedding_bookids.difference(top_3_cv))
     top_3_cv = list(top_3_cv)
-    top_6_embed = list(embedding_bookids[:7])
+    top_6_embed = list(embedding_bookids[:6])
     best_bookids = top_3_cv + top_6_embed
-    if len(best_bookids) < 9:
-        best_bookids = best_bookids + cv_bookids[3:(12 - len(best_bookids))]
+
+    if len(best_bookids) < recommendations:
+        # If not enough recommendations
+        best_bookids = best_bookids + cv_bookids[3:(recommendations + 3 - len(best_bookids))]
     return best_bookids
 
 
-def select_random_books():
-    df_books1 = df_book.copy()
-    v = df_books1['ratings_count']
-    m = df_books1['ratings_count'].quantile(0.95)
-    R = df_books1['average_rating']
-    C = df_books1['average_rating'].mean()
+def get_books(top_n=400):
+    '''
+        Returns a sample of size 150 of Top N books
+    '''
+    df_books_copy = df_book.copy()
+    v = df_books_copy['ratings_count']
+    m = df_books_copy['ratings_count'].quantile(0.95)
+    R = df_books_copy['average_rating']
+    C = df_books_copy['average_rating'].mean()
     W = (R*v + C*m) / (v + m)
-    df_books1['weighted_rating'] = W
-    qualified = df_books1.sort_values(
-        'weighted_rating', ascending=False)[cols].sample(90)
-    return qualified.to_dict('records')
+    df_books_copy = df_books_copy.assign(weighted_rating=W)
+    qualified = df_books_copy.sort_values(
+        'weighted_rating', ascending=False)[cols].head(top_n)
+
+    return qualified.sample(150).to_dict('records')
+
+
+def top_books_this_week():
+    '''
+        # TODO
+        Currently returns top 15 books of the dataset
+    '''
+    df_books_copy = df_book.copy()
+    v = df_books_copy['ratings_count']
+    m = df_books_copy['ratings_count'].quantile(0.95)
+    R = df_books_copy['average_rating']
+    C = df_books_copy['average_rating'].mean()
+    W = (R*v + C*m) / (v + m)
+    df_books_copy = df_books_copy.assign(weighted_rating=W)
+    qualified = df_books_copy.sort_values(
+        'weighted_rating', ascending=False)[cols]
+    return qualified.head(15)

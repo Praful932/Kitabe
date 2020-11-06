@@ -1,31 +1,18 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from mainapp.helpers import genre_wise, count_vectorizer_recommendations, get_book_dict, get_rated_bookids, combine_ids, embedding_recommendations, select_random_books
+from mainapp.helpers import genre_wise, count_vectorizer_recommendations, get_book_dict, get_rated_bookids, combine_ids, embedding_recommendations, get_books, top_books_this_week
 from mainapp.models import UserRating
 from django.contrib import messages
 
-import pandas as pd
 import random
 import operator
 
 
 def index(request):
     '''
-        Homepage
+        View to render Homepage
     '''
-    df_books = pd.read_csv("static/mainapp/dataset/books.csv")
-    df_books1 = df_books
-    v = df_books1['ratings_count']
-    m = df_books1['ratings_count'].quantile(0.95)
-    R = df_books1['average_rating']
-    C = df_books1['average_rating'].mean()
-    W = (R*v + C*m) / (v + m)
-    df_books['weighted_rating'] = W
-    qualified = df_books1.sort_values(
-        'weighted_rating', ascending=False).head(250)
-    qual = qualified[['book_id', 'original_title', 'authors',
-                      'average_rating', 'image_url']].head(15)
-    books = qual.to_dict('records')
+    books = top_books_this_week().to_dict('records')
     return render(request, 'mainapp/index.html', {'books': books})
 
 
@@ -33,8 +20,8 @@ def genre_books(request, genre):
     '''
         View to render Books in a particular genre
     '''
-    top_genre = genre_wise(genre)
-    genre_topbooks = top_genre.to_dict('records')
+    genre_topbooks = genre_wise(genre)
+    genre_topbooks = genre_topbooks.to_dict('records')
     context = {
         'genre': genre.capitalize(),
         'genre_topbook': genre_topbooks,
@@ -43,7 +30,10 @@ def genre_books(request, genre):
 
 
 def explore_books(request):
-    sample = select_random_books()
+    '''
+        View to Render Explore Page
+    '''
+    sample = get_books()
     return render(request, 'mainapp/explore.html', {'book': sample})
 
 
