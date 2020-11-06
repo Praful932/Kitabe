@@ -5,7 +5,7 @@
 **Kitabe** (*Book in Hindi*) is a Book Recommendation System built for all you Book Lovers📖.
 Simply Rate ⭐ some books and get immediate recommendations 👇 tailored for you.
 
-#Contents
+# Contents
 - Approach 🧐
     - Objective ✍
     - Dataset 🧾
@@ -21,11 +21,11 @@ Simply Rate ⭐ some books and get immediate recommendations 👇 tailored for y
 - License ✍
 
 
-###Objective ✍
+### Objective ✍
 Our objective is to build an application for all Book Lovers ♥ like us out there where all you have to 
 do is rate some of your favorite books and the application will do it's **voodoo magic** 🧙‍♂️ and give you some more books that you may **love😍 to read**.
 
-###Dataset 🧾
+### Dataset 🧾
 The Dataset that we used for this task is the [goodbooks-10k](https://github.com/zygmuntz/goodbooks-10k) dataset. It consists of 10k books with a total of 6 million ratings. That's huge right! 😮. There are some more huge datasets such as [Book-Crossings](http://www2.informatik.uni-freiburg.de/~cziegler/BX/) but they are kinda old 😬.
 
 **Dataset Structure**
@@ -40,14 +40,14 @@ GoodBooks10k
 
 > 🛠 Code for every step can be found in the Jupyter Notebooks Section.
 
-###PreProcessing 🛠
+### PreProcessing 🛠
 Since this is a recommendation problem, we have to make sure that the `books.csv` is as clean as possible and only consider those ratings whose book-id is present, same goes for vice versa.
 
 More Cleaning for `books.csv`
 - Missing Book Image URLs
 - Book & Rating Duplicates
 
-###Model Exploration 🤯
+### Model Exploration 🤯
 For Recommendation Problems there are multiple approaches that are possible:
 - Embedding Matrix
 - Singular Matrix Decomposition
@@ -60,13 +60,13 @@ We used the book embedding as a representation of the books to infer underlying 
 <br>
 - **Term Frequency** - This method is like a helper function to above, it shines where embedding fails. Term Frequency takes into account the tokens in a book title be it the book title itself, the name of authors and also rating. Taking into consideration it finds books which match closely with the tokens in the rated book.
 
-###Final Result 😁
+### Final Result 😁
 The Image says it All.
 
 ![coggle](https://user-images.githubusercontent.com/45713796/98331008-ae95e200-2021-11eb-915b-892854f88a6e.png)
 
 
-###Project Structure 💁‍♀️
+### Project Structure 💁‍♀️
 ```
 Kitabe
 │   
@@ -104,6 +104,8 @@ Kitabe
 ### To Do 🎯
 - [ ] Add User Read Feature
 - [ ] Add User To Read Feature
+- [ ] Add AJAX View Tests
+- [ ] Add Modal Tests
 - [ ] Use a Better Approach than Count Vectorizer
 - [ ] Better Exhaustive Search For Hyperparameters
 - [ ] Add User-User Similarity Recommendations
