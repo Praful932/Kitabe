@@ -160,10 +160,11 @@
         
         @media screen and (max-width: 600px) {
             .genre-head {
-                font-size: 25px;
+                font-size: 29px;
             }
             .heading-genre {
                 padding: 9px 9px;
+                font-size: 29px;
             }
             .genre-container:hover {
                 transform: none;
@@ -177,9 +178,12 @@
                 margin-top: -220px;
                 margin-left: 115px;
             }
+            .card-title {
+                font-size: 18px;
+            }
             .rating-block {
-                padding-top: 2px;
-                right: 38%;
+                padding-top: 1px;
+                right: 50%;
             }
             .more-details {
                 margin-top: 2px;
