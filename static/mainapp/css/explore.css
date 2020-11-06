@@ -13,12 +13,12 @@
 }
 
 .cover-img-size {
-    width: 313px;
-    height: 475px;
+    width: 200px;
+    height: 300px;
 }
 
 .content {
-    width: 313px;
+    width: 200px;
 }
 
 .title {
@@ -34,7 +34,7 @@
 #demo,
 #demo2,
 #demo3 {
-    padding-left: 4%;
+    padding-left: 6.5%;
     padding-bottom: 1%;
 }
 
@@ -43,7 +43,7 @@
     background-color: #3D348B;
     color: #fff;
     font-weight: 600;
-    font-size: 15px;
+    font-size: 12px;
     border-radius: 20px;
 }
 
@@ -51,7 +51,7 @@
     text-align: center;
     background-color: #31c2cf;
     font-weight: 600;
-    font-size: 15px;
+    font-size: 12px;
     border-radius: 20px;
     padding: 5px;
     bottom: 10px;
