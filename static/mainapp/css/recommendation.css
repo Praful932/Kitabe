@@ -114,9 +114,6 @@
     .book-photo {
         width: 180px;
     }
-    .book-voters {
-        display: none;
-    }
 }
 
 @media (max-width: 421px) {
