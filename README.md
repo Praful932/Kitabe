@@ -38,7 +38,7 @@ GoodBooks10k
     ├── to_read.csv       # Contains book-ids marked as to-read by user  
 ```
 
-> 🛠 Code for every step can be found in the Jupyter Notebooks Section.
+> 🛠 Code for every step can be found in the  Notebooks and Files Section.
 
 ### PreProcessing 🛠
 Since this is a recommendation problem, we have to make sure that the `books.csv` is as clean as possible and only consider those ratings whose book-id is present, same goes for vice versa.
