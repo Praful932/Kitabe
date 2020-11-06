@@ -5,10 +5,12 @@
         max-width: 100%;
         overflow-x: hidden
     }
-    #navbarNav{
+    
+    #navbarNav {
         float: right;
     }
     /* nav bar css */
+    
     .navbar-toggler {
         border-color: black;
         background-color: white;
@@ -16,6 +18,10 @@
     
     .head-text {
         font-family: 'Pacifico', cursive;
+    }
+    
+    .img-book {
+        height: 200px !important;
     }
     
     .model-rate {
@@ -145,5 +151,4 @@
             margin-left: 0%;
             padding-left: 0%;
         }
-        
     }

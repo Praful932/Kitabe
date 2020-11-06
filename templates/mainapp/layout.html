@@ -88,7 +88,7 @@
     </header>
     <!-- Messages -->
     {% for message in messages %}
-    <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+    <div class="alert {{ message.tags }} alert-dismissible text-center" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
@@ -134,15 +134,15 @@
                                 {% else %}
                                 <div class='rating-block btn model-rate'
                                     onclick="location.href='{% url 'account_signup' %}'">
-                                    <div id='button-text'>Login To Rate <i class="fa fa-heart" style="color:red"></i>
+                                    <div id='button-text'>Rate <i class="fa fa-heart" style="color:red"></i>
                                         This Book</a></div>
                                 </div>
                                 {% endif %}
                             </div>
                         </div>
 
-                        <div class="col">
-                            <img src="" id="bookimage">
+                        <div class="col-4">
+                            <img class="img-book" src="" id="bookimage">
                         </div>
 
                     </div>

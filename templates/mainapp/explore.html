@@ -39,14 +39,14 @@ Explore
                         </div>
                         {% else %}
                         <div class='rating-block btn' onclick="location.href='{% url 'account_signup' %}'">
-                            <div id='button-text'>Login To Rate <i class="fa fa-heart" style="color:red"></i> This Book</a>
+                            <div id='button-text'>Rate <i class="fa fa-heart" style="color:red"></i> This Book</a>
                             </div>
                         </div>
                         {% endif %}
                     </div>
                 </div>
             </div>
-            {% if forloop.counter|divisibleby:6 and forloop.counter > 0 and not forloop.last %}
+            {% if forloop.counter|divisibleby:5 and forloop.counter > 0 and not forloop.last %}
         </div>
         <div class="carousel-item ">
             {% endif %} {% endfor %}
@@ -89,14 +89,14 @@ Explore
                         </div>
                         {% else %}
                         <div class='rating-block btn' onclick="location.href='{% url 'account_signup' %}'">
-                            <div id='button-text'>Login To Rate <i class="fa fa-heart" style="color:red"></i> This Book</a>
+                            <div id='button-text'>Rate <i class="fa fa-heart" style="color:red"></i> This Book</a>
                             </div>
                         </div>
                         {% endif %}
                     </div>
                 </div>
             </div>
-            {% if forloop.counter|divisibleby:6 and forloop.counter > 0 and not forloop.last %}
+            {% if forloop.counter|divisibleby:5 and forloop.counter > 0 and not forloop.last %}
         </div>
         <div class="carousel-item ">
             {% endif %} {% endfor %}
@@ -138,14 +138,14 @@ Explore
                         </div>
                         {% else %}
                         <div class='rating-block btn' onclick="location.href='{% url 'account_signup' %}'">
-                            <div id='button-text'>Login To Rate <i class="fa fa-heart" style="color:red"></i> This Book</a>
+                            <div id='button-text'>Rate <i class="fa fa-heart" style="color:red"></i> This Book</a>
                             </div>
                         </div>
                         {% endif %}
                     </div>
                 </div>
             </div>
-            {% if forloop.counter|divisibleby:6 and forloop.counter > 0 and not forloop.last %}
+            {% if forloop.counter|divisibleby:5 and forloop.counter > 0 and not forloop.last %}
         </div>
         <div class="carousel-item ">
             {% endif %} {% endfor %}
