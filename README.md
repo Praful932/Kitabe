@@ -6,19 +6,19 @@
 Simply Rate ⭐ some books and get immediate recommendations 👇 tailored for you.
 
 # Contents
-- Approach 🧐
-    - Objective ✍
-    - Dataset 🧾
-    - PreProcessing 🛠
-    - Model Exploration 🤯
-    - Final Result 😁
-- Project Structure 💁‍♀️
-- To Do 🎯
-- Contribute 🧏‍♂️
-- Notebooks and Files 📓
-- References 😇
-- Contributors 🤗
-- License ✍
+- [Approach](#objective) 🧐
+    - [Objective](#objective) ✍
+    - [Dataset](#dataset) 🧾
+    - [PreProcessing](#preprocessing) 🛠
+    - [Model Exploration](#model-exploration) 🤯
+    - [Final Result](#final-result) 😁
+- [Project Structure](#project-structure) 💁‍♀️
+- [To Do](#to-do) 🎯
+- [Contribute](#contribute) 🧏‍♂️
+- [Notebooks and Files](#notebooks-and-files) 📓
+- [References](#references) 😇
+- [Contributors](#contributors) 🤗
+- [License](#license) ✍
 
 
 ### Objective ✍
@@ -37,8 +37,6 @@ GoodBooks10k
     ├── tags.csv          # Contains tag-name associated with tag-id
     ├── to_read.csv       # Contains book-ids marked as to-read by user  
 ```
-
-> 🛠 Code for every step can be found in the Jupyter Notebooks Section.
 
 ### PreProcessing 🛠
 Since this is a recommendation problem, we have to make sure that the `books.csv` is as clean as possible and only consider those ratings whose book-id is present, same goes for vice versa.
@@ -60,8 +58,10 @@ We used the book embedding as a representation of the books to infer underlying 
 <br>
 - **Term Frequency** - This method is like a helper function to above, it shines where embedding fails. Term Frequency takes into account the tokens in a book title be it the book title itself, the name of authors and also rating. Taking into consideration it finds books which match closely with the tokens in the rated book.
 
+> 🛠 Code for every step can be found in the [Notebooks and Files](#notebooks-and-files) Section.
+
 ### Final Result 😁
-The Image says it All.
+The [Image](https://coggle.it/diagram/X6TOUxlMvSl8FBM4/t/dataset/7083ac4f2de39517a4d97cd9d3d211c11af6e65f9a0034c46d613ff0f9cd5) says it All.
 
 ![coggle](https://user-images.githubusercontent.com/45713796/98331008-ae95e200-2021-11eb-915b-892854f88a6e.png)
 
@@ -102,10 +102,11 @@ Kitabe
 ```            
 
 ### To Do 🎯
-- [ ] Add User Read Feature
-- [ ] Add User To Read Feature
+- [ ] Display Top Books Per Week
 - [ ] Add AJAX View Tests
 - [ ] Add Modal Tests
+- [ ] Add User Read Feature
+- [ ] Add User To Read Feature
 - [ ] Use a Better Approach than Count Vectorizer
 - [ ] Better Exhaustive Search For Hyperparameters
 - [ ] Add User-User Similarity Recommendations
@@ -124,4 +125,30 @@ Kitabe
 - [Count Vectorizer](https://www.kaggle.com/sasha18/recommend-books-using-count-tfidf-on-titles)
 - [Books2Rec](https://github.com/dorukkilitcioglu/books2rec)
 
+### Contributors 🤗
+![2](https://contributors-img.web.app/image?repo=Praful932/Kitabe)
+
 ### License
+```
+MIT License
+
+Copyright (c) 2020 Praful Mohanan & Prajakta Mane
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
