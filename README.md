@@ -5,6 +5,8 @@
 **Kitabe** (*Book in Hindi*) is a Book Recommendation System built for all you Book Lovers📖.
 Simply Rate ⭐ some books and get immediate recommendations 👇 tailored for you.
 
+![tailor](https://media.giphy.com/media/P5Jzn475dyLW1p2P3S/giphy.gif)
+
 # Contents
 - [Approach](#objective) 🧐
     - [Objective](#objective) ✍
