@@ -13,7 +13,6 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 from pathlib import Path
 from django.contrib.messages import constants as messages
 import os
-import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,7 +22,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'jfx=_rr-y-vn8#%7jx*ze2qx*n7&81f@pq6d8i_-grxl4ru_&&'
 SECRET_KEY = os.environ.get('KITABE_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -188,4 +186,6 @@ MESSAGE_TAGS = {
 }
 
 # Django Heroku Settings
-django_heroku.settings(locals())
+if '/app' in os.environ['HOME']:
+    import django_heroku
+    django_heroku.settings(locals())
