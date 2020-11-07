@@ -18,7 +18,7 @@ Simply Rate ⭐ some books and get immediate recommendations 👇 tailored for y
 - [Notebooks and Files](#notebooks-and-files-) 📓
 - [References](#references-) 😇
 - [Contributors](#contributors-) 🤗
-- [License](#license) ✍
+- [License](#license-) ✍
 
 
 ### Objective ✍
