@@ -30,7 +30,7 @@ do is rate some of your favorite books and the application will do it's **voodoo
 ### Dataset 🧾
 The Dataset that we used for this task is the [goodbooks-10k](https://github.com/zygmuntz/goodbooks-10k) dataset. It consists of 10k books with a total of 6 million ratings. That's huge right! 😮. There are some more huge datasets such as [Book-Crossings](http://www2.informatik.uni-freiburg.de/~cziegler/BX/) but they are kinda old 😬.
 
-**Dataset Structure**
+**Dataset Structure** 
 ```
 GoodBooks10k 
     ├── books.csv         # Contains book info with book-id                         
