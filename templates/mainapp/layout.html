@@ -24,6 +24,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
     <!-- css -->
     <link rel="stylesheet" href="{% static 'mainapp/css/layout.css' %}">
+    <!-- icon -->
+    <link rel="icon"  href="{% static 'mainapp/png/logo.png' %}"/>
     <title>
         {% block title %}
         {% endblock title %}
@@ -119,26 +121,6 @@
                             </p>
 
                             <div id="bookrating"></div>
-                            <div>
-
-                                {% if user.is_authenticated %}
-                                <div class='rating-block model-rate' onmouseover="rateStart(this)"
-                                    onclick='rateBook(this)' onmouseout='finishRate(this)'
-                                    data-book-id="{{ book.book_id }}">
-                                    <div id='button-text-{{ book.book_id }}'>Rate <i class="fa fa-heart"
-                                            style="color:red"></i> This Book
-                                        </a>
-                                    </div>
-                                    <div class='rateYo' id='rate-{{ book.book_id }}'></div>
-                                </div>
-                                {% else %}
-                                <div class='rating-block btn model-rate'
-                                    onclick="location.href='{% url 'account_signup' %}'">
-                                    <div id='button-text'>Rate <i class="fa fa-heart" style="color:red"></i>
-                                        This Book</a></div>
-                                </div>
-                                {% endif %}
-                            </div>
                         </div>
 
                         <div class="col-4">
