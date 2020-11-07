@@ -6,18 +6,18 @@
 Simply Rate ⭐ some books and get immediate recommendations 👇 tailored for you.
 
 # Contents
-- [Approach](#objective) 🧐
-    - [Objective](#objective) ✍
-    - [Dataset](#dataset) 🧾
-    - [PreProcessing](#preprocessing) 🛠
-    - [Model Exploration](#model-exploration) 🤯
-    - [Final Result](#final-result) 😁
-- [Project Structure](#project-structure) 💁‍♀️
-- [To Do](#to-do) 🎯
-- [Contribute](#contribute) 🧏‍♂️
-- [Notebooks and Files](#notebooks-and-files) 📓
-- [References](#references) 😇
-- [Contributors](#contributors) 🤗
+- [Approach](#objective-) 🧐
+    - [Objective](#objective-) ✍
+    - [Dataset](#dataset-) 🧾
+    - [PreProcessing](#preprocessing-) 🛠
+    - [Model Exploration](#model-exploration-) 🤯
+    - [Final Result](#final-result-) 😁
+- [Project Structure](#project-structure-%EF%B8%8F) 💁‍♀️
+- [To Do](#to-do-) 🎯
+- [Contribute](#contribute-) 🧏‍♂️
+- [Notebooks and Files](#notebooks-and-files-) 📓
+- [References](#references-) 😇
+- [Contributors](#contributors-) 🤗
 - [License](#license) ✍
 
 
@@ -128,7 +128,7 @@ Kitabe
 ### Contributors 🤗
 ![2](https://contributors-img.web.app/image?repo=Praful932/Kitabe)
 
-### License
+### License ✍
 ```
 MIT License
 
