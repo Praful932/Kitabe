@@ -10,8 +10,10 @@ contextlib2==0.6.0
 defusedxml==0.6.0
 distlib==0.3.0
 distro==1.4.0
+dj-database-url==0.5.0
 Django==3.1.1
 django-allauth==0.42.0
+django-heroku==0.3.1
 feather-format==0.4.1
 flake8==3.8.4
 gunicorn==20.0.4
@@ -28,6 +30,7 @@ packaging==20.3
 pandas==1.1.1
 pep517==0.8.2
 progress==1.5
+psycopg2==2.8.6
 pyarrow==1.0.1
 pycodestyle==2.6.0
 pyflakes==2.2.0
@@ -51,3 +54,4 @@ threadpoolctl==2.1.0
 toml==0.10.1
 urllib3==1.25.10
 webencodings==0.5.1
+whitenoise==5.2.0
