@@ -4,6 +4,9 @@ from mainapp import views
 
 
 class HomeTests(TestCase):
+    '''
+        Index View Test Case
+    '''
     def test_home_view_status_code(self):
         url = reverse('index')
         response = self.client.get(url)
@@ -15,6 +18,9 @@ class HomeTests(TestCase):
 
 
 class GenreTestCase(TestCase):
+    '''
+        Genre View Test Case
+    '''
     def test_genre_status_code(self):
         genres = ['art', 'biography', 'business', 'Christian', 'Comics', 'Contemporary', 'Cookbooks', 'Crime',
                   'Fantasy', 'Fiction', 'History', 'Horror', 'Manga', 'Memoir', 'Mystery', 'Nonfiction',
@@ -27,6 +33,9 @@ class GenreTestCase(TestCase):
 
 
 class ExploreTestCase(TestCase):
+    '''
+        Explore View Test Case
+    '''
     def explore_status_code(self):
         url = reverse('explore_books')
         response = self.client.get(url)
