@@ -166,8 +166,8 @@ LOGOUT_REDIRECT_URL = 'index'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'kitabeaurkahaniya@gmail.com'
-EMAIL_HOST_PASSWORD = 'praful@123'
+EMAIL_HOST_USER = os.environ.get('KITABE_EMAIL')
+EMAIL_HOST_PASSWORD = os.environ.get('KITABE_PASS')
 
 # Alluth Settings
 ACCOUNT_AUTHENTICATION_METHOD = "username"
