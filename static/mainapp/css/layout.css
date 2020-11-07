@@ -158,4 +158,15 @@
                     .img-book {
                         height: 140px !important;
                     }
+                    .nav-icon-s {
+                        display: none;
+                    }
+                    .nav-link {
+                        margin-top: -2px;
+                        margin-top: -25px
+                    }
+                    .nav-link:hover {
+                        text-decoration: underline;
+                        font-weight: 100;
+                    }
                 }
