@@ -1,7 +1,6 @@
 from django.http import JsonResponse
 import BookRecSystem.settings as settings
 from mainapp.models import UserRating
-from django.contrib.staticfiles.storage import staticfiles_storage
 from bs4 import BeautifulSoup
 import pandas as pd
 import os
