@@ -24,7 +24,7 @@ See [Demo](#user-content-demo-) 🎥
     - [Final Result](#final-result-) 😁
 - [Project Structure](#project-structure-%EF%B8%8F) 💁‍♀️
 - [To Do](#to-do-) 🎯
-- [Contribute](#contribute-) 🧏‍♂️
+- [Contribute](https://github.com/Praful932/Kitabe/blob/master/CONTRIBUTING.md) 🧏‍♂️
 - [Notebooks and Files](#notebooks-and-files-) 📓
 - [References](#references-) 😇
 - [Contributors](#contributors-) 🤗
@@ -123,8 +123,6 @@ Kitabe
 - [ ] Use a Better Approach than Count Vectorizer
 - [ ] Better Exhaustive Search For Hyperparameters
 - [ ] Add User-User Similarity Recommendations
-
-### Contribute 📝
 
 ### Notebooks and Files 📓
 - [All Dataset & Model Files](https://drive.google.com/drive/folders/1SvuCvfiSxwuF21EvmKyhSkuwjgK7KU6S?usp=sharing)
