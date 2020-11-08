@@ -5,8 +5,8 @@ You are **Awesome!** Thank you for your Interest in Contributing to this Project
 For Contributions we strictly follow [Github Flow](https://guides.github.com/introduction/flow/).
 
 ## Contents
-- Setting Up the Project
-- Contributing
+- [Setting Up the Project](#user-content-setting-up-the-project)
+- [Contributing](#user-content-contributing)
 
 
 ### Setting Up the Project
