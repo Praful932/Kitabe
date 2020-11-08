@@ -3,19 +3,19 @@
 
 
 **Kitabe** (*Book in Hindi*) is a Book Recommendation System built for all you Book Lovers📖.
-Simply Rate ⭐ some books and get immediate recommendations tailored for you 🤩.
-See [Demo](#user-content-demo-).
+Simply Rate ⭐ some books and get immediate recommendations tailored for you 🤩.<br>
+See [Demo](#user-content-demo-) 🎥
 
+[![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://kitabe-app.herokuapp.com/)
 [![Build Status](https://travis-ci.com/Praful932/Kitabe.svg?token=XKcoN48yFyATXWUZ6d8j&branch=master)](https://travis-ci.com/Praful932/Kitabe) 
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/Praful932/Kitabe/blob/master/CONTRIBUTING.md)
 [![HitCount](http://hits.dwyl.com/Praful932/Kitabe.svg)](http://hits.dwyl.com/Praful932/Kitabe)
 [![GitHub license](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) <br>
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Praful932/Edutopia/graphs/commit-activity)
-[![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://kitabe-app.herokuapp.com/)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Praful932/Kitabe/graphs/commit-activity)
 ![GitHub stars](https://img.shields.io/github/stars/Praful932/Kitabe?style=social) ![GitHub forks](https://img.shields.io/github/forks/Praful932/Kitabe?style=social) ![GitHub watchers](https://img.shields.io/github/watchers/Praful932/Kitabe?style=social)
 
 # Contents
-- [Demo](#user-content-demo-)
+- [Demo](#user-content-demo-) 🎥
 - [Approach](#objective-) 🧐
     - [Objective](#objective-) ✍
     - [Dataset](#dataset-) 🧾
@@ -29,8 +29,9 @@ See [Demo](#user-content-demo-).
 - [References](#references-) 😇
 - [Contributors](#contributors-) 🤗
 - [License](#license-) ✍
-<br>
+
 ### Demo 🎥
+
 ![kitabe](https://user-images.githubusercontent.com/45713796/98460071-f6a23980-21c6-11eb-881f-ba0f75896751.gif)
 
 ### Objective ✍
