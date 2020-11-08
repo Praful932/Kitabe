@@ -148,8 +148,8 @@ SITE_ID = 1
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
         'APP': {
-            'client_id': '737769422410-f0kbj5ej7o4eunfpnuuicquud8jcm6b6.apps.googleusercontent.com',
-            'secret': 'DbeCiZ1R-qEsm1WF5z7p4G8r',
+            'client_id': os.environ.get('KITABE_AUTH_ID'),
+            'secret': os.environ.get('KITABE_AUTH_SECRET'),
             'key': ''
         }
     }
