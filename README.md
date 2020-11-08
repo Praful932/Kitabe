@@ -32,7 +32,8 @@ See [Demo](#user-content-demo-) 🎥
 
 ### Demo 🎥
 
-![kitabe](https://user-images.githubusercontent.com/45713796/98460071-f6a23980-21c6-11eb-881f-ba0f75896751.gif)
+![kitabe](https://user-images.githubusercontent.com/45713796/98460071-f6a23980-21c6-11eb-881f-ba0f75896751.gif)<br>
+[Live Application](https://kitabe-app.herokuapp.com/) 🌐
 
 ### Objective ✍
 Our objective is to build an application for all Book Lovers ♥ like us out there where all you have to 
