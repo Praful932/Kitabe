@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.csrf import ensure_csrf_cookie
 from mainapp.helpers import genre_wise, count_vectorizer_recommendations, get_book_dict, get_rated_bookids, combine_ids, embedding_recommendations, get_books, top_books_this_week
 from mainapp.models import UserRating
 from django.contrib import messages
@@ -8,6 +9,7 @@ import random
 import operator
 
 
+@ensure_csrf_cookie
 def index(request):
     '''
         View to render Homepage
@@ -16,6 +18,7 @@ def index(request):
     return render(request, 'mainapp/index.html', {'books': books})
 
 
+@ensure_csrf_cookie
 def genre_books(request, genre):
     '''
         View to render Books in a particular genre
@@ -29,6 +32,7 @@ def genre_books(request, genre):
     return render(request, 'mainapp/genre.html', context)
 
 
+@ensure_csrf_cookie
 def explore_books(request):
     '''
         View to Render Explore Page
@@ -38,6 +42,7 @@ def explore_books(request):
 
 
 @login_required
+@ensure_csrf_cookie
 def book_recommendations(request):
     '''
         View to render book recommendations
