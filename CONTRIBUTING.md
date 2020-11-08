@@ -42,4 +42,5 @@ For Contributions we strictly follow [Github Flow](https://guides.github.com/int
 - **Stage and Commit only the required files.**
 - `git push --set-upstream origin [branch_name]`
 - You'll get a link to Create a Pull Request.
+- If your PR is accepted, it is automatically deployed once merged. :)
 - That's it!
