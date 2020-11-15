@@ -117,7 +117,7 @@ Kitabe
 
 ### To Do 🎯
 - [ ] Display Top Books Per Week
-- [ ] Add AJAX View Tests
+- [X] Add AJAX View Tests
 - [ ] Add Modal Tests
 - [ ] Add User Read Feature
 - [ ] Add User To Read Feature
