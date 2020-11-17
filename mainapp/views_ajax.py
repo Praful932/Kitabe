@@ -1,4 +1,6 @@
 from django.http import JsonResponse
+from django.contrib.auth.decorators import login_required
+from mainapp.helpers import is_bookid_invalid, is_rating_invalid
 import BookRecSystem.settings as settings
 from mainapp.models import UserRating
 from bs4 import BeautifulSoup
@@ -21,7 +23,8 @@ def search(request):
     '''
     if request.method == "POST" and request.is_ajax():
         query = request.POST.get('bookName', None)
-
+        if not query:
+            return JsonResponse({'success': False}, status=200)
         df_book = pd.read_csv(book_path)
         top5_result = df_book[df_book['original_title'].str.contains(
             query, regex=False, case=False)][:5]
@@ -36,11 +39,16 @@ def book_summary(request):
     '''
     if request.method == 'POST' and request.is_ajax():
         bookid = request.POST.get('bookid', None)
+        if is_bookid_invalid(bookid):
+            return JsonResponse({'success': False}, status=200)
         URL = 'https://www.goodreads.com/book/show/' + bookid
         page = requests.get(URL)
         soup = BeautifulSoup(page.content, 'html.parser')
         div_container = soup.find(id='description')
-        booksummary = ""
+
+        if not div_container:
+            return JsonResponse({'success': False}, status=200)
+
         for spantag in div_container.find_all('span'):
             booksummary = spantag.text
             break
@@ -53,12 +61,19 @@ def get_book_details(request):
     '''
     if request.method == 'POST' and request.is_ajax():
         bookid = request.POST.get('bookid', None)
+        if is_bookid_invalid(bookid):
+            return JsonResponse({'success': False}, status=200)
+
         df_book = pd.read_csv(book_path)
         book_details = df_book[df_book['book_id'] == int(bookid)]
+        if not len(book_details):
+            return JsonResponse({'success': False}, status=200)
+
         book_details = json.dumps(book_details.to_dict('records'))
         return JsonResponse({'success': True, 'book_details': book_details}, status=200)
 
 
+@login_required
 def user_rate_book(request):
     '''
         AJAX request when user rates book
@@ -66,8 +81,10 @@ def user_rate_book(request):
     if request.method == 'POST' and request.is_ajax():
         bookid = request.POST.get('bookid', None)
         bookrating = request.POST.get('bookrating', None)
+        if is_bookid_invalid(bookid) or is_rating_invalid(bookrating):
+            return JsonResponse({'success': False}, status=200)
+
         # Using Inbuilt Model
-        # df_user_ratings = pd.read_csv(user_ratings_path)
         query = UserRating.objects.filter(user=request.user).filter(bookid=bookid)
         if not query:
             # Create Rating
