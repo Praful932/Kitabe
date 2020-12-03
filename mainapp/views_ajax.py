@@ -42,9 +42,11 @@ def book_summary(request):
         div_container = soup.find(id='description')
         booksummary = ""
         for spantag in div_container.find_all('span'):
-            booksummary = spantag.text
-            break
-        return JsonResponse({'success': True, 'booksummary': booksummary}, status=200)
+            booksummary += spantag.text
+        booksummary = '.'.join(booksummary.split('.', 2)[:4])
+        if len(booksummary) > 200:
+            booksummary = '.'.join(booksummary.split('.', 2)[:2])
+        return JsonResponse({'success': True, 'booksummary': booksummary + '.'}, status=200)
 
 
 def get_book_details(request):
