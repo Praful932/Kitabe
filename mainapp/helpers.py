@@ -33,6 +33,23 @@ df_book = pd.read_csv(book_path)
 total_books = df_book.shape[0]
 
 
+def is_rating_invalid(rating):
+    if not rating or not rating.isdigit():
+        return True
+    if int(rating) > 5:
+        return True
+    return False
+
+
+def is_bookid_invalid(bookid):
+    if not bookid or not bookid.isdigit():
+        return True
+    elif sum(df_book['book_id'] == int(bookid)) == 0:
+        # If bookid does not exist
+        return True
+    return False
+
+
 def get_book_title(bookid):
     '''
     Returns book title given bookid
