@@ -45,8 +45,8 @@ def book_summary(request):
             booksummary += spantag.text
         booksummary = '.'.join(booksummary.split('.', 2)[:4])
         if len(booksummary) > 200:
-            booksummary = '.'.join(booksummary.split('.', 2)[:2])
-        return JsonResponse({'success': True, 'booksummary': booksummary + '.'}, status=200)
+            booksummary = '.'.join(booksummary.split('.', 2)[:2]) + '.'
+        return JsonResponse({'success': True, 'booksummary': booksummary}, status=200)
 
 
 def get_book_details(request):
