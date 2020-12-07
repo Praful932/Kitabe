@@ -40,13 +40,13 @@ def book_summary(request):
         page = requests.get(URL)
         soup = BeautifulSoup(page.content, 'html.parser')
         div_container = soup.find(id='description')
-        booksummary = ""
+        full_book_summary = ""
         for spantag in div_container.find_all('span'):
-            booksummary += spantag.text
-        booksummary = '.'.join(booksummary.split('.', 2)[:4])
-        if len(booksummary) > 200:
-            booksummary = '.'.join(booksummary.split('.', 2)[:2]) + '.'
-        return JsonResponse({'success': True, 'booksummary': booksummary}, status=200)
+            full_book_summary += spantag.text
+        part_summary = '.'.join(full_book_summary.split('.', 2)[:4])
+        if len(part_summary) > 200:
+            part_summary = '.'.join(part_summary.split('.', 2)[:2]) + '.'
+        return JsonResponse({'success': True, 'booksummary': part_summary}, status=200)
 
 
 def get_book_details(request):
