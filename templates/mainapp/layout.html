@@ -282,6 +282,9 @@
         function rateBook(obj) {
             var bookid = obj.getAttribute('data-book-id');
             var bookrating = $('#rate-' + bookid).rateYo('rating');
+            $('#rating-block-' + bookid).css('transition','background-color 2s ease');
+            $('#rating-block-' + bookid).css('background-color', '#29BF12');
+            console.log('#rating-block-' + bookid);
             $.ajax({
                 data: {
                     'bookid': bookid,
@@ -292,6 +295,7 @@
                 url: "{% url 'user_rate_book' %}",
                 type: 'POST',
                 success: function (response) {
+
                 },
                 error: function (response) {
                     console.log(response);
@@ -304,6 +308,8 @@
             setTimeout(function () {
                 $('#rate-' + bookid).css('display', 'none');
                 $('#button-text-' + bookid).css('display', 'block');
+                $('#rating-block-' + bookid).css('transition','background-color 2s ease');
+                $('#rating-block-' + bookid).css('background-color', '#31c2cf');
             }, 4000);
         }
 

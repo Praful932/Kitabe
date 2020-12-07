@@ -29,7 +29,7 @@ Genre
         <a href="javascript:;" onclick='bookDetails(this)' class="btn more-details"
             data-book-id="{{ book.book_id }}">More Details</a>
         {% if user.is_authenticated %}
-        <div class='rating-block' onmouseover="rateStart(this)" onclick='rateBook(this)' onmouseout='finishRate(this)'
+        <div class='rating-block' id='rating-block-{{ book.book_id }}' onmouseover="rateStart(this)" onclick='rateBook(this)' onmouseout='finishRate(this)'
             data-book-id="{{ book.book_id }}">
             <div id='button-text-{{ book.book_id }}'>Rate <i class="fa fa-heart" style="color:red"></i> This Book</a>
             </div>
