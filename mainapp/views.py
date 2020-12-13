@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import ensure_csrf_cookie
-from mainapp.helpers import genre_wise, count_vectorizer_recommendations, get_book_dict, get_rated_bookids, combine_ids, embedding_recommendations, get_books, top_books_this_week
+from mainapp.helpers import genre_wise, count_vectorizer_recommendations, get_book_dict, get_rated_bookids, combine_ids, embedding_recommendations, get_top_n, popular_among_users
 from mainapp.models import UserRating
 from django.contrib import messages
 
@@ -14,7 +14,7 @@ def index(request):
     '''
         View to render Homepage
     '''
-    books = top_books_this_week().to_dict('records')
+    books = popular_among_users()
     return render(request, 'mainapp/index.html', {'books': books})
 
 
@@ -36,8 +36,10 @@ def genre_books(request, genre):
 def explore_books(request):
     '''
         View to Render Explore Page
+        Renders Top N Books
     '''
-    sample = get_books()
+    N = 150
+    sample = get_top_n().sample(N).to_dict('records')
     return render(request, 'mainapp/explore.html', {'book': sample})
 
 
