@@ -119,11 +119,7 @@ Kitabe
 - [ ] Display Top Books Per Week
 - [X] Add AJAX View Tests
 - [ ] Add Modal Tests
-- [ ] Add User Read Feature
-- [ ] Add User To Read Feature
 - [ ] Use a Better Approach than Count Vectorizer
-- [ ] Better Exhaustive Search For Hyperparameters
-- [ ] Add User-User Similarity Recommendations
 
 ### Notebooks and Files 📓
 - [All Dataset & Model Files](https://drive.google.com/drive/folders/1SvuCvfiSxwuF21EvmKyhSkuwjgK7KU6S?usp=sharing)
