@@ -116,9 +116,9 @@ Kitabe
 ```            
 
 ### To Do 🎯
-- [ ] Display Top Books Per Week
+- [X] Display Popular Books Among Users
 - [X] Add AJAX View Tests
-- [ ] Add Modal Tests
+- [X] Add Model Tests
 - [ ] Add User Read Feature
 - [ ] Add User To Read Feature
 - [ ] Use a Better Approach than Count Vectorizer

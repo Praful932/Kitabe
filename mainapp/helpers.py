@@ -2,7 +2,10 @@ import pandas as pd
 import numpy as np
 import os
 import pickle
+import operator
+import random
 import BookRecSystem.settings as settings
+import mainapp.models
 
 book_path = os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/dataset/books.csv')
 
@@ -187,10 +190,10 @@ def combine_ids(cv_bookids, embedding_bookids, already_rated, recommendations=9)
     return best_bookids
 
 
-def get_books(top_n=400):
-    '''
-        Returns a sample of size 150 of Top N books
-    '''
+def get_top_n(top_n=400):
+    """
+        Returns a sample of top N books
+    """
     df_books_copy = df_book.copy()
     v = df_books_copy['ratings_count']
     m = df_books_copy['ratings_count'].quantile(0.95)
@@ -200,22 +203,30 @@ def get_books(top_n=400):
     df_books_copy = df_books_copy.assign(weighted_rating=W)
     qualified = df_books_copy.sort_values(
         'weighted_rating', ascending=False)[cols].head(top_n)
+    return qualified.sample(top_n)
 
-    return qualified.sample(150).to_dict('records')
 
-
-def top_books_this_week():
+def popular_among_users(N=15):
     '''
-        # TODO
-        Currently returns top 15 books of the dataset
+        Returns Popular Books Among Users in the
+        rating range 4-5.
+        If enough books are not available, top books are
+        sampled randomly.
     '''
-    df_books_copy = df_book.copy()
-    v = df_books_copy['ratings_count']
-    m = df_books_copy['ratings_count'].quantile(0.95)
-    R = df_books_copy['average_rating']
-    C = df_books_copy['average_rating'].mean()
-    W = (R*v + C*m) / (v + m)
-    df_books_copy = df_books_copy.assign(weighted_rating=W)
-    qualified = df_books_copy.sort_values(
-        'weighted_rating', ascending=False)[cols]
-    return qualified.head(15)
+    all_ratings = list(mainapp.models.UserRating.objects.all().order_by('-bookrating'))
+    random.shuffle(all_ratings)
+    best_user_ratings = sorted(all_ratings, key=operator.attrgetter('bookrating'), reverse=True)
+
+    filtered_books = set()
+    for i, rating in enumerate(best_user_ratings):
+        if rating.bookrating >= 4:
+            filtered_books.add((rating.bookid))
+        elif rating.bookrating < 4 or len(filtered_books) == N:
+            break
+
+    remaining_books_nos = N - len(filtered_books)
+    if remaining_books_nos >= 0:
+        rem_books = get_top_n(2*N)['book_id'].tolist()
+        filtered_books = list(filtered_books) + list((set(rem_books) - filtered_books))[:remaining_books_nos]
+
+    return get_book_dict(filtered_books)
