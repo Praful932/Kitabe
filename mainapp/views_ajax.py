@@ -42,10 +42,13 @@ def book_summary(request):
         div_container = soup.find(id='description')
         full_book_summary = ""
         for spantag in div_container.find_all('span'):
-            full_book_summary += spantag.text
-        part_summary = '.'.join(full_book_summary.split('.', 2)[:4])
-        if len(part_summary) > 200:
-            part_summary = '.'.join(part_summary.split('.', 2)[:2]) + '.'
+            try:
+                # When text is too long, consider till last complete sentence
+                full_book_summary += spantag.text[:spantag.text.rindex('.')] + '. '
+            except ValueError:
+                full_book_summary += spantag.text + ' '
+            break
+        part_summary = ' '.join(full_book_summary.split()[:65]) + ' . . .'
         return JsonResponse({'success': True, 'booksummary': part_summary}, status=200)
 
 
