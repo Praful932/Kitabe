@@ -45,14 +45,18 @@ def book_summary(request):
         page = requests.get(URL)
         soup = BeautifulSoup(page.content, 'html.parser')
         div_container = soup.find(id='description')
-
+        full_book_summary = ""
         if not div_container:
             return JsonResponse({'success': False}, status=200)
-
         for spantag in div_container.find_all('span'):
-            booksummary = spantag.text
+            try:
+                # When text is too long, consider till last complete sentence
+                full_book_summary += spantag.text[:spantag.text.rindex('.')] + '. '
+            except ValueError:
+                full_book_summary += spantag.text + ' '
             break
-        return JsonResponse({'success': True, 'booksummary': booksummary}, status=200)
+        part_summary = ' '.join(full_book_summary.split()[:65]) + ' . . .'
+        return JsonResponse({'success': True, 'booksummary': part_summary}, status=200)
 
 
 def get_book_details(request):
