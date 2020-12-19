@@ -14,7 +14,7 @@ Genre
 
 <h1 class="genre-head text-center pt-3 pb-3">{{ genre }} Genre</h1>
 
-
+<div style="padding-top:40px">
 <div class="card-deck ">
     {% for book in genre_topbook %}
 
@@ -51,5 +51,6 @@ Genre
     {% endif %}
     {% endfor %}
 </div><!-- The final deck is closed here, outside the loop -->
+</div>
 
 {% endblock main %}

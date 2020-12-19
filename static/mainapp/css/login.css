@@ -1,84 +1,99 @@
-.account-block{
-    margin:auto;
-    height:80%;
-    width:70%;
+.account-block {
+    margin: auto;
+    height: 80%;
+    width: 70%;
     background-color: white;
 }
-.signin-block{
+
+.signin-block {
     text-align: center;
 }
-.img-block{
-    color:white;
+
+.img-block {
+    color: white;
     background-size: cover;
     background-position: center;
 }
-.btn-bot{
+
+.btn-bot {
     font-family: 'Fredoka One', cursive;
-    position:absolute; 
-    margin-left:-45px;
-    left:50%;
-    padding: 5px 10px 5px 10px; 
+    position: absolute;
+    margin-left: -45px;
+    left: 50%;
+    padding: 5px 10px 5px 10px;
     border: 2px solid white;
     border-radius: 25px;
-    bottom:25px;
-    text-decoration:none !important;
-    color:white;
- }
-.btn-bot:hover{
-    color:black;
+    bottom: 25px;
+    text-decoration: none !important;
+    color: white;
+}
+
+.btn-bot:hover {
+    color: black;
     border: 2px solid black;
     background-color: rgba(255, 255, 255, 0.891);
 }
-.welcome{
+
+.welcome {
     font-family: 'Pacifico', cursive;
     position: relative;
-    top:12%;
+    top: 12%;
 }
-label{
+
+label {
     font-family: 'Kalam', cursive;
-    font-size:1.2em;
+    font-size: 1.2em;
 }
-.form-group{
+
+.form-group {
     position: relative;
     display: inline-block;
-    top:110px;    
+    top: 110px;
 }
-#id_login, #id_password{
+
+#id_login,
+#id_password {
     background-color: transparent;
-    border-top:none;
-    border-left:none;
+    border-top: none;
+    border-left: none;
     border-right: none;
 }
-.loginbutton{
+
+.loginbutton {
     font-family: 'Fredoka One', cursive;
-    padding: 5px 10px 5px 10px; 
-    background-color:#09BC8A;
-    color:white;
+    padding: 5px 10px 5px 10px;
+    background-color: #09BC8A;
+    color: white;
     border-radius: 25px;
 }
-.googlebutton{
+
+.googlebutton {
     position: relative;
     top: 110px;
-    background-color:#F25F5C;
+    background-color: #F25F5C;
     font-family: 'Fredoka One', cursive;
-    color:white;
-    padding: 5px 10px 5px 10px; 
+    color: white;
+    padding: 5px 10px 5px 10px;
     border-radius: 25px;
     text-decoration: none !important;
 }
-.googlebutton:hover{
-    color:white;
+
+.googlebutton:hover {
+    color: white;
 }
-strong{
-    color:red;
+
+strong {
+    color: red;
 }
+
 @media only screen and (max-width: 1200px) {
     .img-block {
-      display: none;
+        display: none;
     }
-  }
-.forgotpassword{
-    font-size:10px;
+}
+
+.forgotpassword {
+    font-size: 10px;
     position: relative;
-    left:62px;
+    left: 62px;
 }
