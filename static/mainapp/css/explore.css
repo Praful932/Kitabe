@@ -70,6 +70,10 @@
         display: none;
     }
     
+    .small-screen {
+        display: none;
+    }
+    
     @media (max-width: 420px) {
         .cover-img-size {
             margin-left: 53px;
@@ -85,5 +89,11 @@
         }
         .more-details {
             margin-left: 9%;
+        }
+        .large-screen {
+            display: none;
+        }
+        .small-screen {
+            display: inline;
         }
     }
