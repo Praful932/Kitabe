@@ -13,6 +13,42 @@ Explore
 
 {% block main %}
 
+    <div class="large-screen" style="width:1200px; margin:0 auto;">
+            {% for book in book %}
+            <div class="wrapper" style="display:inline-flex;">
+                <div>
+                    <div class="data">
+                        <div class="cover-img">
+                            <img class=" cover-img-size" src="{{book.image_url}}" alt="book Card">
+                        </div>
+                        <div class="content text-center">
+                            <div class="title">{{ book.original_title }}</div>
+                            <div class="author">by {{ book.authors}}</div>
+                        </div>
+                    </div>
+                    <div class="hide text-center">
+                        <a href="javascript:;" onclick='bookDetails(this)' class="btn more-details" data-book-id="{{ book.book_id }}">More Details</a> 
+                        {% if user.is_authenticated %}
+                        <div class='rating-block' id='rating-block-{{ book.book_id }}' onmouseover="rateStart(this)" onclick='rateBook(this)' onmouseout='finishRate(this)' data-book-id="{{ book.book_id }}">
+                            <div id='button-text-{{ book.book_id }}'>Rate <i class="fa fa-heart" style="color:red"></i> This Book
+                                </a>
+                            </div>
+                            <div class='rateYo' id='rate-{{ book.book_id }}'></div>
+                        </div>
+                        {% else %}
+                        <div class='rating-block btn' onclick="location.href='{% url 'account_signup' %}'">
+                            <div id='button-text'>Rate <i class="fa fa-heart" style="color:red"></i> This Book</a>
+                            </div>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+<!------------------------------------------- for small screens ------------------------------------------------------------------------>
+<div class="small-screen">
 <div id="demo" class="carousel slide" data-ride="carousel"> <!------------------------------------- carousel first row -------------------------->
     <div class=" carousel-inner " class="ml-auto">
         <div class="carousel-item active">
@@ -160,5 +196,7 @@ Explore
         <span class="sr-only">Next</span>
     </a>
 </div>
+</div>
+
 
 {% endblock main %}
