@@ -371,8 +371,8 @@
                             </div>
                             <div class="col-sm-8">
                                 <div class="card-body">
-                                    <div class="card-title">{{book.original_title}}</div>
-                                    <p class="card-text"><i>by {{book.authors}}</i></p>
+                                    <div class="card-title">{{book.original_title|truncatechars:60 }}</div>
+                                    <p class="card-text"><i>by {{book.authors|truncatechars:20}}</i></p>
                                 </div>
                             </div>
                         </div>
