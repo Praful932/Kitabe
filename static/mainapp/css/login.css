@@ -1,84 +1,87 @@
-.account-block{
-    margin:auto;
-    height:80%;
-    width:70%;
-    background-color: white;
+.account-block {
+  margin: auto;
+  height: 80%;
+  width: 70%;
+  background-color: white;
 }
-.signin-block{
-    text-align: center;
+.signin-block {
+  text-align: center;
 }
-.img-block{
-    color:white;
-    background-size: cover;
-    background-position: center;
+.img-block {
+  color: white;
+  background-size: cover;
+  background-position: center;
 }
-.btn-bot{
-    font-family: 'Fredoka One', cursive;
-    position:absolute; 
-    margin-left:-45px;
-    left:50%;
-    padding: 5px 10px 5px 10px; 
-    border: 2px solid white;
-    border-radius: 25px;
-    bottom:25px;
-    text-decoration:none !important;
-    color:white;
- }
-.btn-bot:hover{
-    color:black;
-    border: 2px solid black;
-    background-color: rgba(255, 255, 255, 0.891);
+.btn-bot {
+  font-family: "Fredoka One", cursive;
+  position: absolute;
+  margin-left: -45px;
+  left: 50%;
+  padding: 5px 10px 5px 10px;
+  border: 2px solid white;
+  border-radius: 10px;
+  bottom: 25px;
+  text-decoration: none !important;
+  color: white;
 }
-.welcome{
-    font-family: 'Pacifico', cursive;
-    position: relative;
-    top:12%;
+.btn-bot:hover {
+  color: black;
+  border: 2px solid black;
+  background-color: rgba(255, 255, 255, 0.891);
 }
-label{
-    font-family: 'Kalam', cursive;
-    font-size:1.2em;
+.welcome {
+  font-family: "Pacifico", cursive;
+  position: relative;
+  top: 12%;
 }
-.form-group{
-    position: relative;
-    display: inline-block;
-    top:110px;    
+label {
+  font-family: "Kalam", cursive;
+  font-size: 1.2em;
 }
-#id_login, #id_password{
-    background-color: transparent;
-    border-top:none;
-    border-left:none;
-    border-right: none;
+.form-group {
+  position: relative;
+  display: inline-block;
+  top: 110px;
 }
-.loginbutton{
-    font-family: 'Fredoka One', cursive;
-    padding: 5px 10px 5px 10px; 
-    background-color:#09BC8A;
-    color:white;
-    border-radius: 25px;
+#id_login,
+#id_password {
+  background-color: transparent;
+  border-top: none;
+  border-left: none;
+  border-right: none;
 }
-.googlebutton{
-    position: relative;
-    top: 110px;
-    background-color:#F25F5C;
-    font-family: 'Fredoka One', cursive;
-    color:white;
-    padding: 5px 10px 5px 10px; 
-    border-radius: 25px;
-    text-decoration: none !important;
+.loginbutton {
+  font-family: "Fredoka One", cursive;
+  padding: 5px 10px 5px 10px;
+  background-color: #09bc8a;
+  color: white;
+  border: 2px solid white;
+  border-radius: 10px;
 }
-.googlebutton:hover{
-    color:white;
+.googlebutton {
+  position: relative;
+  top: 110px;
+  background-color: #f25f5c;
+  font-family: "Fredoka One", cursive;
+  color: white;
+  padding: 5px 10px 5px 10px;
+  border: 2px solid white;
+  border-radius: 10px;
+  text-decoration: none !important;
 }
-strong{
-    color:red;
+.googlebutton:hover {
+  color: white;
+}
+strong {
+  color: red;
 }
 @media only screen and (max-width: 1200px) {
-    .img-block {
-      display: none;
-    }
+  .img-block {
+    display: none;
   }
-.forgotpassword{
-    font-size:10px;
-    position: relative;
-    left:62px;
+}
+.forgotpassword {
+  font-size: 10px;
+  position: relative;
+  left: 62px;
 }

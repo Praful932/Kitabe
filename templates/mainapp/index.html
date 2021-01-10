@@ -12,10 +12,9 @@
 
 <!-- ################### carousel 1   -->
 
-<section class="banner pl-3 pr-3">
+<section class="banner">
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner" role="listbox">
-
             <div class="carousel-item active">
                 <img class="d-block img-fluid" src="{% static 'mainapp/png/banner/1.png' %}" alt="slide">
             </div>
@@ -379,8 +378,8 @@
                         <br><br>
                         <a href="javascript:;" onclick='bookDetails(this)' class="btn more-details"
                             data-book-id="{{ book.book_id }}">More Details</a> {% if user.is_authenticated %}
-                        <div class='rating-block' id='rating-block-{{ book.book_id }}' onmouseover="rateStart(this)" onclick='rateBook(this)'
-                            onmouseout='finishRate(this)' data-book-id="{{ book.book_id }}">
+                        <div class='rating-block' id='rating-block-{{ book.book_id }}' onmouseover="rateStart(this)"
+                            onclick='rateBook(this)' onmouseout='finishRate(this)' data-book-id="{{ book.book_id }}">
                             <div id='button-text-{{ book.book_id }}'>Rate <i class="fa fa-heart" style="color:red"></i>
                                 This Book</a>
                             </div>
