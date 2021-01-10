@@ -1,197 +1,191 @@
-        /* ---------------------- carousel -------------------------------------*/
-        
-        .carousel img {
-            width: 100%;
-        }
-        
-        .genre-head,
-        .topbook-head {
-            font-family: 'Lobster', cursive;
-        }
-        
-        .heading-genre {
-            padding: 30px 30px;
-            font-size: 47px;
-        }
-        
-        .genre-container,
-        .top-books {
-            background-color: #153450;
-            box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
-        }
-        
-        .genre-container:hover {
-            transform: scale(1.05);
-        }
-        
-        .top-books-carousel {
-            align-items: center;
-            margin-left: -13%;
-            margin-right: -13%;
-        }
-        
-        .heading-genre {
-            padding-top: ;
-            padding-bottom: ;
-        }
-        
-        .navbar-nav .nav-link {
-            color: black;
-        }
-        /*---------------------------------------- book card ----------------------------------*/
-        
-        .card {
-            transition: 0.5s;
-            cursor: pointer;
-            border-radius: 3px;
-            height: 300px;
-            display: inline-flex;
-        }
-        
-        .card-img {
-            flex-shrink: 0;
-            bottom: -35px;
-            left: 35px;
-            border-radius: 3px;
-            box-shadow: -2px 6px 19px 0px #7f818e;
-            transition: .3s ease;
-            height: 212px;
-            width: 100px;
-        }
-        
-        .card-title {
-            font-family: 'Sora', sans-serif;
-            font-size: x-large;
-            color: #D7722C;
-        }
-        
-        .card-img:hover {
-            transform: scale(1.07);
-        }
-        
-        .card-body-wrap {
-            display: flex;
-        }
-        
-        .card-text {
-            font-family: 'Courgette', cursive;
-            color: black;
-            font-weight: bold;
-            font-size: large;
-        }
-        
-        .card:hover {
-            transform: scale(1.02);
-            box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .card::before,
-        .card::after {
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            transform: scale3d(0, 0, 1);
-            transition: transform .3s ease-out 0s;
-            content: '';
-            pointer-events: none;
-        }
-        
-        .card::before {
-            transform-origin: left top;
-        }
-        
-        .card::after {
-            transform-origin: right bottom;
-        }
-        
-        .card:hover::before,
-        .card:hover::after,
-        .card:focus::before,
-        .card:focus::after {
-            transform: scale3d(1, 1, 1);
-        }
-        
-        .more-details {
-            text-align: center;
-            background-color: #3D348B;
-            color: #fff;
-            font-weight: 600;
-            font-size: 14px;
-            border-radius: 20px;
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-        }
-        
-        .more-details:hover {
-            color: white;
-        }
-        
-        .rating-block {
-            display: inline-block;
-            text-align: center;
-            background-color: #31c2cf;
-            font-weight: 600;
-            font-size: 14px;
-            border-radius: 20px;
-            position: absolute;
-            padding: 8px;
-            bottom: 10px;
-            right: 35%;
-        }
-        
-        .rating-block:hover {
-            text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
-            transition: all 0.4s ease 0s;
-        }
-        
-        .rateYo {
-            display: none;
-        }
-        
-        @media only screen and (min-width:996px) {
-            .col-md-3point9 {
-                max-width: 33%;
-            }
-        }
-        /* media query*/
-        
-        @media screen and (max-width: 600px) {
-            .genre-head {
-                font-size: 29px;
-            }
-            .heading-genre {
-                padding: 9px 9px;
-                font-size: 29px;
-            }
-            .genre-container:hover {
-                transform: none;
-            }
-            /* card image */
-            .card-img {
-                height: 240px;
-                width: 120px !important;
-            }
-            .card-body {
-                margin-top: -220px;
-                margin-left: 115px;
-            }
-            .card-title {
-                font-size: 18px;
-            }
-            .rating-block {
-                padding-top: 1px;
-                right: 50%;
-            }
-            .more-details {
-                margin-top: 2px;
-                right: 30px;
-            }
-            .top-books-carousel {
-                align-items: center;
-                margin-left: -9%;
-                margin-right: -9%;
-            }
-        }
+/* ---------------------- carousel -------------------------------------*/
+
+.carousel img {
+  width: 100%;
+}
+
+.genre-head,
+.topbook-head {
+  font-family: "Lobster", cursive;
+}
+
+.heading-genre {
+  padding: 30px 30px;
+  font-size: 47px;
+}
+
+.genre-container,
+.top-books {
+  background-color: #153450;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+}
+
+.genre-container:hover {
+  transform: scale(1.05);
+}
+
+.top-books-carousel {
+  align-items: center;
+  margin-left: -13%;
+  margin-right: -13%;
+}
+
+.navbar-nav .nav-link {
+  color: black;
+}
+/*---------------------------------------- book card ----------------------------------*/
+
+.card {
+  transition: 0.5s;
+  cursor: pointer;
+  border-radius: 3px;
+  height: 300px;
+  display: inline-flex;
+}
+
+.card-img {
+  flex-shrink: 0;
+  bottom: -35px;
+  left: 35px;
+  border-radius: 3px;
+  box-shadow: -2px 6px 19px 0px #7f818e;
+  transition: 0.3s ease;
+  height: 200px;
+  width: 100px;
+}
+
+.card-title {
+  font-family: "Sora", sans-serif;
+  font-size: x-large;
+  color: #d7722c;
+}
+
+.card-img:hover {
+  transform: scale(1.07);
+}
+
+.card-body-wrap {
+  display: flex;
+}
+
+.card-text {
+  font-family: "Courgette", cursive;
+  color: black;
+  font-weight: bold;
+  font-size: large;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card::before,
+.card::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: scale3d(0, 0, 1);
+  transition: transform 0.3s ease-out 0s;
+  content: "";
+  pointer-events: none;
+}
+
+.card::before {
+  transform-origin: left top;
+}
+
+.card::after {
+  transform-origin: right bottom;
+}
+
+.card:hover::before,
+.card:hover::after,
+.card:focus::before,
+.card:focus::after {
+  transform: scale3d(1, 1, 1);
+}
+
+.more-details {
+  text-align: center;
+  background-color: #3d348b;
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 20px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.more-details:hover {
+  color: white;
+}
+
+.rating-block {
+  display: inline-block;
+  text-align: center;
+  background-color: #31c2cf;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 20px;
+  position: absolute;
+  bottom: 10px;
+  right: 35%;
+}
+
+.rating-block:hover {
+  text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+  transition: all 0.4s ease 0s;
+}
+
+.rateYo {
+  display: none;
+}
+
+@media only screen and (min-width: 996px) {
+  .col-md-3point9 {
+    max-width: 33%;
+  }
+}
+/* media query*/
+
+@media screen and (max-width: 600px) {
+  .genre-head {
+    font-size: 29px;
+  }
+  .heading-genre {
+    padding: 9px 9px;
+    font-size: 29px;
+  }
+  .genre-container:hover {
+    transform: none;
+  }
+  /* card image */
+  .card-img {
+    height: 240px;
+    width: 120px !important;
+  }
+  .card-body {
+    margin-top: -220px;
+    margin-left: 115px;
+  }
+  .card-title {
+    font-size: 18px;
+  }
+  .rating-block {
+    padding-top: 1px;
+    right: 50%;
+  }
+  .more-details {
+    margin-top: 2px;
+    right: 30px;
+  }
+  .top-books-carousel {
+    align-items: center;
+    margin-left: -9%;
+    margin-right: -9%;
+  }
+}

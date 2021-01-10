@@ -4,7 +4,7 @@
 {% load account socialaccount %}
 {% get_providers as socialaccount_providers %}
 
-{% block title  %}
+{% block title %}
 Login
 {% endblock title %}
 
@@ -20,14 +20,15 @@ Login
             <form method="POST" action="{% url 'account_login' %}">
                 {% csrf_token %}
                 <div class="form-group">
-                    <label for="id_login">Username</label><br>
+                    <!-- <label for="id_login">Username</label><br> -->
                     {{ form.login }}<br><br>
                     {% if redirect_field_value %}
                     <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                     {% endif %}
-                    <label for="id_password"> Password</label><br>
+                    <!-- <label for="id_password"> Password</label><br> -->
                     {{ form.password }}<br>
-                    <a class="forgotpassword" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+                    <a class="forgotpassword" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?"
+                        %}</a>
                     <br>
                     {% if form.errors %}
                     {% for field in form %}
@@ -43,10 +44,10 @@ Login
                     <br>
                 </div>
             </form>
-            <a href="{% provider_login_url 'google' %}"><button class="googlebutton" >Sign Up with Google</button></a>
+            <a href="{% provider_login_url 'google' %}"><button class="googlebutton">Sign Up with Google</button></a>
         </div>
-        <div class="h-100 hidden-sm col-xl-4 img-block mw-100"
-            style="background-image : url('{% static "mainapp/png/BookSignUp.png" %}')">
+        <div class="h-100 hidden-sm col-xl-4 img-block mw-100" style="background-image : url('{% static "
+            mainapp/png/BookSignUp.png" %}')">
             <a class="btn-bot" href="{% url 'account_signup' %}">SIGN UP</a>
         </div>
     </div>

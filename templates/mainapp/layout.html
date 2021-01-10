@@ -25,7 +25,7 @@
     <!-- css -->
     <link rel="stylesheet" href="{% static 'mainapp/css/layout.css' %}">
     <!-- icon -->
-    <link rel="icon"  href="{% static 'mainapp/png/logo.png' %}"/>
+    <link rel="icon" href="{% static 'mainapp/png/logo.png' %}" />
     <title>
         {% block title %}
         {% endblock title %}
@@ -57,29 +57,29 @@
                     <ul class="navbar-nav text-center">
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'explore_books' %}">
-                                <i class="nav-icon-s fa fa-search fa-2x ml-3" aria-hidden="true"></i><br>Explore
+                                <i class="nav-icon-s fa fa-globe fa-2x" aria-hidden="true"></i><br>Explore
                             </a>
                         </li>
                         {% if user.is_authenticated %}
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'book_recommendations' %}">
-                                <i class="nav-icon-s fa fa-book fa-2x ml-3" aria-hidden="true"></i><br>Your Read
+                                <i class="nav-icon-s fa fa-book fa-2x" aria-hidden="true"></i><br>Your Read
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'account_logout' %}">
-                                <i class="nav-icon-s fa fa-sign-in fa-2x ml-3" aria-hidden="true"></i><br>Logout
+                                <i class="nav-icon-s fa fa-sign-in fa-2x" aria-hidden="true"></i><br>Logout
                             </a>
                         </li>
                         {% else %}
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'account_login' %}">
-                                <i class="nav-icon-s fa fa-sign-in fa-2x ml-2" aria-hidden="true"></i><br>Login
+                                <i class="nav-icon-s fa fa-sign-in fa-2x" aria-hidden="true"></i><br>Login
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'account_signup' %}">
-                                <i class="nav-icon-s fa fa-user fa-2x ml-3" aria-hidden="true"></i><br>Signup
+                                <i class="nav-icon-s fa fa-user fa-2x" aria-hidden="true"></i><br>Signup
                             </a>
                         </li>
                         {% endif %}
@@ -146,8 +146,7 @@
             <div class="footer-icon">
                 <a href="mailto:kitabeaurkahaniya@gmail.com" target="_blank"><i class="fa fa-google fa-2x"
                         aria-hidden="true"></i></a>
-                <a href="https://github.com/Praful932/Kitabe"><i class="fa fa-github fa-2x"
-                        aria-hidden="true"></i></a>
+                <a href="https://github.com/Praful932/Kitabe"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a>
                 <div class=" copy pt-1">
                     <p class="text-center">&copy; Copyright 2020 - <strong>Kitabe</strong> All rights reserved.</p>
                 </div>
@@ -238,6 +237,7 @@
             }
         }
         // get search results
+
         function myFunction() {
             var input = document.getElementById('bookName');
             var text = input.value.toLowerCase();
@@ -262,6 +262,12 @@
                 $('#search-dropdown').empty();
         }
 
+        $("#bookName").focus(function () {
+            $('#search-dropdown').show();
+        }).blur(function () {
+            $('#search-dropdown').hide(150);
+        })
+
         //for rating a book
         $(function () {
 
@@ -282,7 +288,7 @@
         function rateBook(obj) {
             var bookid = obj.getAttribute('data-book-id');
             var bookrating = $('#rate-' + bookid).rateYo('rating');
-            $('#rating-block-' + bookid).css('transition','background-color 2s ease');
+            $('#rating-block-' + bookid).css('transition', 'background-color 2s ease');
             $('#rating-block-' + bookid).css('background-color', '#29BF12');
             console.log('#rating-block-' + bookid);
             $.ajax({
@@ -308,7 +314,7 @@
             setTimeout(function () {
                 $('#rate-' + bookid).css('display', 'none');
                 $('#button-text-' + bookid).css('display', 'block');
-                $('#rating-block-' + bookid).css('transition','background-color 2s ease');
+                $('#rating-block-' + bookid).css('transition', 'background-color 2s ease');
                 $('#rating-block-' + bookid).css('background-color', '#31c2cf');
             }, 4000);
         }
