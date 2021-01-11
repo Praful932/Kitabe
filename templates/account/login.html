@@ -27,8 +27,7 @@ Login
                     {% endif %}
                     <!-- <label for="id_password"> Password</label><br> -->
                     {{ form.password }}<br>
-                    <a class="forgotpassword" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?"
-                        %}</a>
+                    <a class="forgotpassword" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
                     <br>
                     {% if form.errors %}
                     {% for field in form %}
