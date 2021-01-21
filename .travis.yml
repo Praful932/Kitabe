@@ -8,3 +8,6 @@ install:
 script:
   - flake8
   - python manage.py test
+
+env:
+  - KITABE_SECRET_KEY="RANDOM_KEY"

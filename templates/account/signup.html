@@ -2,7 +2,7 @@
 {% load i18n %}
 {% load static %}
 
-{% block title  %}
+{% block title %}
 Sign Up
 {% endblock title %}
 
@@ -21,20 +21,12 @@ Sign Up
                     {% if redirect_field_value %}
                     <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                     {% endif %}
-
-                    <label for="id_email">Email</label><br>
                     {{ form.email }}
                     <br><br>
-
-                    <label for="id_username">Username</label><br>
                     {{ form.username }}
                     <br><br>
-
-                    <label for="id_password1">Password</label><br>
                     {{ form.password1 }}
                     <br><br>
-
-                    <label for="id_password2">Password (again)</label><br>
                     {{ form.password2 }}
                     <br><br>
                     {% if form.errors %}
@@ -52,8 +44,7 @@ Sign Up
                 </div>
             </form>
         </div>
-        <div class="h-100 hidden-sm col-xl-4 img-block mw-100"
-            style="background-image : url('{% static "mainapp/png/BookSignIn.png" %}')">
+        <div class="h-100 hidden-sm col-xl-4 img-block mw-100" style="background-image : url('{% static "mainapp/png/BookSignIn.png" %}')">
             <a class="btn-bot" href="{% url 'account_login' %}">SIGN IN</a>
         </div>
     </div>
