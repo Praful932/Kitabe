@@ -14,6 +14,8 @@ See [Demo](#user-content-demo-) 🎥
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Praful932/Kitabe/graphs/commit-activity)
 ![GitHub stars](https://img.shields.io/github/stars/Praful932/Kitabe?style=social) ![GitHub forks](https://img.shields.io/github/forks/Praful932/Kitabe?style=social) ![GitHub watchers](https://img.shields.io/github/watchers/Praful932/Kitabe?style=social)
 
+For Contributing 💜 and setting Up head [here](https://github.com/Praful932/Kitabe/blob/master/CONTRIBUTING.md).
+
 # Contents
 - [Demo](#user-content-demo-) 🎥
 - [Approach](#objective-) 🧐
