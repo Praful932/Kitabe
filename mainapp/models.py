@@ -9,12 +9,6 @@ import os
 book_path = os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/dataset/books.csv')
 df_book = pd.read_csv(book_path)
 
-# class UserProfile(models.Model):
-#     user = models.OneToOneField(User, on_delete=models.CASCADE)
-
-#     def __str__(self):
-#         return f'{self.user.username} Profile'
-
 
 class UserRating(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user_rating')

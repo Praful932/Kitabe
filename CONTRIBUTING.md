@@ -40,7 +40,9 @@ For Contributions we strictly follow [Github Flow](https://guides.github.com/int
 - Fix if any test fails.
 - Still in branch `[branch_name].`
 - **Stage and Commit only the required files.**
-- `git push --set-upstream origin [branch_name]`
-- You'll get a link to Create a Pull Request.
+- `git push origin [branch_name] -u`
+- Browse [here](https://github.com/Praful932/Kitabe) and create a PR from your branch with the appropriate required details.
 - If your PR is accepted, it is automatically deployed once merged. :)
 - That's it!
+
+**Tip**: To keep your Fork Repo all branches updated with Upstream use [this](https://upriver.github.io/).
