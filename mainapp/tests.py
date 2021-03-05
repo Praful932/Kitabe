@@ -9,13 +9,20 @@ class HomeTests(TestCase):
     '''
         Index View Test Case
     '''
+    def setUp(self):
+        self.url = reverse('index')
 
     def test_home_view_status_code(self):
-        url = reverse('index')
-        response = self.client.get(url)
+        '''
+            Index View Status Code
+        '''
+        response = self.client.get(self.url)
         self.assertEquals(response.status_code, 200)
 
     def test_home_url_resolves_home_view(self):
+        '''
+            Root URL Status Code
+        '''
         view = resolve('/')
         self.assertEquals(view.func, views.index)
 
@@ -25,12 +32,17 @@ class GenreTestCase(TestCase):
         Genre View Test Case
     '''
 
+    def setUp(self):
+        self.genres = ['art', 'biography', 'business', 'Christian', 'Comics', 'Contemporary', 'Cookbooks', 'Crime',
+                       'Fantasy', 'Fiction', 'History', 'Horror', 'Manga', 'Memoir', 'Mystery', 'Nonfiction',
+                       'Paranormal', 'Philosophy', 'Poetry', 'Psychology', 'Religion', 'Science', 'Suspense',
+                       'Spirituality', 'Sports', 'Thriller', 'Travel', 'Classics']
+
     def test_genre_status_code(self):
-        genres = ['art', 'biography', 'business', 'Christian', 'Comics', 'Contemporary', 'Cookbooks', 'Crime',
-                  'Fantasy', 'Fiction', 'History', 'Horror', 'Manga', 'Memoir', 'Mystery', 'Nonfiction',
-                  'Paranormal', 'Philosophy', 'Poetry', 'Psychology', 'Religion', 'Science', 'Suspense',
-                  'Spirituality', 'Sports', 'Thriller', 'Travel', 'Classics']
-        for genre in genres:
+        '''
+            All Genre Tests
+        '''
+        for genre in self.genres:
             url = reverse('genre_books', kwargs={'genre': genre})
             response = self.client.get(url)
             self.assertEquals(response.status_code, 200)
@@ -41,9 +53,14 @@ class ExploreTestCase(TestCase):
         Explore View Test Case
     '''
 
+    def setUp(self):
+        self.url = reverse('explore_books')
+
     def test_explore_status_code(self):
-        url = reverse('explore_books')
-        response = self.client.get(url)
+        '''
+            Explore View Status Code
+        '''
+        response = self.client.get(self.url)
         self.assertEquals(response.status_code, 200)
 
 
