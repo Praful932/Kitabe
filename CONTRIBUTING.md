@@ -11,7 +11,8 @@ For Contributions we strictly follow [Github Flow](https://guides.github.com/int
 
 ### Setting Up the Project
 - The Project works seamlessly on Python version `3.8.6`
-- `git clone https://github.com/Praful932/Kitabe.git` - Clone the Repo Directly
+- [Fork](https://docs.github.com/en/github/getting-started-with-github/fork-a-repo#fork-an-example-repository) the Repository
+- `git clone https://github.com/[YOUR-USERNAME]/Kitabe.git` - Clone Your Forked copy
 - `cd Kitabe/`
 - `git checkout -b [branch_name]` - Create a new branch
 - `pip install virtualenv` - If you don't have virtualenv already installed
