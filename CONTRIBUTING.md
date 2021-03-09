@@ -33,7 +33,7 @@ For Contributions we strictly follow [Github Flow](https://guides.github.com/int
 ### Contributing
 - Please go through [Github Flow](https://guides.github.com/introduction/flow/), if not already. :)
 - Take up an [Issue](https://github.com/Praful932/Kitabe/issues) or [Raise](https://github.com/Praful932/Kitabe/issues/new) one.
-- Discuss your proposed changes.
+- Discuss your proposed changes & Get assigned.
 - If your changes are approved, do the changes in branch `[branch_name]`.
 - Run tests
 - `flake8`, `python manage.py test` 
