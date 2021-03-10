@@ -60,8 +60,8 @@ Explore
             <div class="carousel-item active">
                 {% for book in book|slice:":50"%}
                 <div class="wrapper" style="display:inline-flex;">
-                    <div>
-                        <div class="data">
+                    <div class="card">
+                        <div class="card-top">
                             <div class="cover-img">
                                 <img class=" cover-img-size" src="{{book.image_url}}" alt="book Card">
                             </div>
@@ -70,7 +70,7 @@ Explore
                                 <div class="author">by {{ book.authors}}</div>
                             </div>
                         </div>
-                        <div class="hide text-center">
+                        <div class="hide card-body text-center">
                             <a href="javascript:;" onclick='bookDetails(this)' class="btn more-details"
                                 data-book-id="{{ book.book_id }}">More Details</a>
                             {% if user.is_authenticated %}
