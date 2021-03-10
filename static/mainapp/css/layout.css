@@ -6,6 +6,12 @@ body {
   overflow-x: hidden;
 }
 
+.fixed{
+  position:sticky;
+  z-index: 1;
+  top: 0px;
+  padding: 3px;
+}
 #navbarNav {
   float: right;
 }
