@@ -5,7 +5,12 @@ body {
   max-width: 100%;
   overflow-x: hidden;
 }
-
+.sticky{
+  position: sticky;
+  top: 0px;
+  padding: 5px;  
+  border: 2px solid #4caf50;
+}
 #navbarNav {
   float: right;
 }
