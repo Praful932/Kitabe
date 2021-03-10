@@ -1,3 +1,7 @@
+body{
+  transition: linear;
+}
+
 .hide {
   display: none;
 }
