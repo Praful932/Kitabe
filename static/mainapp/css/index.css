@@ -198,7 +198,7 @@
   z-index: 99; 
   border: none; 
   outline: none; 
-  background-color: #2eb8b8; 
+  background-color: #ff0077; 
   color: white; 
   cursor: pointer; 
   padding: 15px;
@@ -207,5 +207,5 @@
 }
 
 #myBtn:hover {
-  background-color: #bf80ff;
+  background-color: #ff6666;
 }
