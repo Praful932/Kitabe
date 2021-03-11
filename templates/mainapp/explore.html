@@ -12,7 +12,24 @@ Explore
 
 
 {% block main %}
-
+/* -----------------------------------------------------------Top Button-------------------------------------------------------------------------*/
+	<script>
+	window.onscroll = function() {scrollFunction()};
+     function scrollFunction() {
+     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+         document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+    }
+    function topFunction() {
+       document.body.scrollTop = 0; // For Safari
+       document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
+	 
+	</script>
+	<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	
 <div class="large-screen" style="width:1200px; margin:0 auto;">
     <div class="centre">
         {% for book in book %}

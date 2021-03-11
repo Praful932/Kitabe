@@ -38,7 +38,23 @@
     <!-- e carousel -->
 </section>
 <!-- e section -->
-
+/* -----------------------------------------------------------Top Button-------------------------------------------------------------------------*/
+	<script>
+	window.onscroll = function() {scrollFunction()};
+     function scrollFunction() {
+     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+         document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+    }
+    function topFunction() {
+       document.body.scrollTop = 0; // For Safari
+       document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
+	 
+	</script>
+	<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 <!---------------------------------------------------------------   Genre wise  -------------------------------------------------------------------->
 
 <section class="text-center ">
@@ -56,7 +72,6 @@
     <!-- e container -->
 </section>
 <!-- e section -->
-<button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-angle-up"></i> </button> 
 
 
 <section class=" genre-container">
