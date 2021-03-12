@@ -17,18 +17,12 @@ body {
   align-items: center !important;
 }
 .navbrandimg{
-  width: 100px;
+  width: 120px;
 }
 
 .navbar-toggler {
   border-color: black;
   background-color: white;
-}
-
-.head-text {
-  font-family: "Pacifico", cursive;
-  font-size: 1.05rem;
-  padding-left: 0.5rem;
 }
 
 .img-book {
@@ -166,9 +160,11 @@ footer a:hover {
   }
   .navbar-brand {
     width: 8px;
+    margin-right: 28px;
+    padding-left: 0;
   }
   .navbrandimg{
-    width: 50px;
+    width: 70px;
     padding-right: 5px;
   }
   .img-book {
