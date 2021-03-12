@@ -79,3 +79,4 @@ def book_recommendations(request):
     else:
         return redirect('index')
     return render(request, 'mainapp/recommendation.html', {'books': all_books_dict})
+    
