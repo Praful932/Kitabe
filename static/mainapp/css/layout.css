@@ -16,6 +16,9 @@ body {
   flex-direction: column !important;
   align-items: center !important;
 }
+.navbrandimg{
+  width: 100px;
+}
 
 .navbar-toggler {
   border-color: black;
@@ -163,6 +166,10 @@ footer a:hover {
   }
   .navbar-brand {
     width: 8px;
+  }
+  .navbrandimg{
+    width: 50px;
+    padding-right: 5px;
   }
   .img-book {
     height: 140px !important;
