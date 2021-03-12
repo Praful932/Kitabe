@@ -120,6 +120,7 @@
                             <p id="bookauthors">
                             </p>
 
+<<<<<<< HEAD
                             <!-- Rating Block -->
 
                             <div class="ratings" id="rate">
@@ -132,6 +133,9 @@
                                     <button type="submit" class="fa fa-star star-btn" id="fifth"></button>
                                 </form>
                             </div>
+=======
+                            <div id="bookrating"></div>
+>>>>>>> 91c168d1bcd5888c835fc48bf3ff3e0ac05064b7
                         </div>
 
                         <div class="col-4">
@@ -329,6 +333,7 @@
                 $('#rating-block-' + bookid).css('background-color', '#31c2cf');
             }, 4000);
         }
+<<<<<<< HEAD
         var book__id;
         var avg__rat;
 
@@ -342,11 +347,16 @@
                 }
             }
         }
+=======
+>>>>>>> 91c168d1bcd5888c835fc48bf3ff3e0ac05064b7
 
         // Retrieve and display book details in Modal
         function bookDetails(obj) {
             var bookid = obj.getAttribute('data-book-id');
+<<<<<<< HEAD
             book__id = bookid;
+=======
+>>>>>>> 91c168d1bcd5888c835fc48bf3ff3e0ac05064b7
             $.ajax({
                 data: {
                     'bookid': bookid,
@@ -364,7 +374,10 @@
                     var authors = book_details.authors;
                     var imageurl = book_details.image_url;
                     var averagerating = book_details.average_rating;
+<<<<<<< HEAD
                     avg__rat = averagerating;
+=======
+>>>>>>> 91c168d1bcd5888c835fc48bf3ff3e0ac05064b7
                     $('#booktitle').text(bookName);
                     $('#bookauthors').text(authors);
                     $('#bookimage').attr('src', imageurl);
@@ -374,7 +387,10 @@
                     });
                     $('#bookModal').modal('show');
                     $('#search-dropdown').empty();
+<<<<<<< HEAD
                     rateStars(averagerating);
+=======
+>>>>>>> 91c168d1bcd5888c835fc48bf3ff3e0ac05064b7
                 },
                 error: function (response) {
                     console.log(response);
@@ -382,6 +398,7 @@
             });
         }
 
+<<<<<<< HEAD
         // Rating Stars in Modal
 
         const one = document.getElementById("first");
@@ -468,6 +485,8 @@
         }
  
 
+=======
+>>>>>>> 91c168d1bcd5888c835fc48bf3ff3e0ac05064b7
     </script>
     <!-- End Search Bar Script -->
     {% block script %}
