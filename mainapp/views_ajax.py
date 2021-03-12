@@ -87,10 +87,7 @@ def user_rate_book(request):
         bookrating = request.POST.get('bookrating', None)
         if is_bookid_invalid(bookid) or is_rating_invalid(bookrating):
             return JsonResponse({'success': False}, status=200)
-<<<<<<< HEAD
-=======
 
->>>>>>> 91c168d1bcd5888c835fc48bf3ff3e0ac05064b7
         # Using Inbuilt Model
         query = UserRating.objects.filter(user=request.user).filter(bookid=bookid)
         if not query:
@@ -99,10 +96,7 @@ def user_rate_book(request):
         else:
             # Update Rating
             rating_object = query[0]
-<<<<<<< HEAD
             print(rating_object)
-=======
->>>>>>> 91c168d1bcd5888c835fc48bf3ff3e0ac05064b7
             rating_object.bookrating = bookrating
             rating_object.save()
         return JsonResponse({'success': True}, status=200)

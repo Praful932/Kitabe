@@ -22,20 +22,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-<<<<<<< HEAD
-SECRET_KEY = "RANDOM_KEY"
-=======
-SECRET_KEY = os.environ.get('KITABE_SECRET_KEY')
->>>>>>> 91c168d1bcd5888c835fc48bf3ff3e0ac05064b7
+SECRET_KEY = "SATYAM"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-<<<<<<< HEAD
 ALLOWED_HOSTS = ['kitabe-app.herokuapp.com', '127.0.0.1', 'localhost']
-=======
-ALLOWED_HOSTS = ['kitabe-app.herokuapp.com']
->>>>>>> 91c168d1bcd5888c835fc48bf3ff3e0ac05064b7
 
 
 # Application definition
