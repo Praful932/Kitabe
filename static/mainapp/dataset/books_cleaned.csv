@@ -1,0 +1,779 @@
+,Unnamed: 0,book_id,isbn13,authors,original_title,average_rating,ratings_count,image_url
+1,1,3,9780439554930.0,"J.K. Rowling, Mary GrandPré",Harry Potter and the Philosopher's Stone,4.44,4602479,https://images.gr-assets.com/books/1474154022m/3.jpg
+2,2,2657,9780061120080.0,Harper Lee,To Kill a Mockingbird,4.25,3198671,https://images.gr-assets.com/books/1361975680m/2657.jpg
+3,3,4671,9780743273560.0,F. Scott Fitzgerald,The Great Gatsby,3.89,2683664,https://images.gr-assets.com/books/1490528560m/4671.jpg
+5,5,5907,9780618260300.0,J.R.R. Tolkien,The Hobbit or There and Back Again,4.25,2071616,https://images.gr-assets.com/books/1372847500m/5907.jpg
+6,6,5107,9780316769170.0,J.D. Salinger,The Catcher in the Rye,3.79,2044241,https://images.gr-assets.com/books/1398034300m/5107.jpg
+7,7,960,9781416524790.0,Dan Brown,Angels & Demons,3.85,2001311,https://images.gr-assets.com/books/1303390735m/960.jpg
+8,8,1885,9780679783270.0,Jane Austen,Pride and Prejudice,4.24,2035490,https://images.gr-assets.com/books/1320399351m/1885.jpg
+11,11,5470,9780451524940.0,"George Orwell, Erich Fromm, Celâl Üster",Nineteen Eighty-Four,4.14,1956832,https://images.gr-assets.com/books/1348990566m/5470.jpg
+12,12,7613,9780452284240.0,George Orwell,Animal Farm: A Fairy Story,3.87,1881700,https://images.gr-assets.com/books/1424037542m/7613.jpg
+16,16,5,9780439655480.0,"J.K. Rowling, Mary GrandPré, Rufus Beck",Harry Potter and the Prisoner of Azkaban,4.53,1832823,https://images.gr-assets.com/books/1499277281m/5.jpg
+17,17,34,9780618346260.0,J.R.R. Tolkien,The Fellowship of the Ring,4.34,1766803,https://images.gr-assets.com/books/1298411339m/34.jpg
+19,19,2,9780439358070.0,"J.K. Rowling, Mary GrandPré",Harry Potter and the Order of the Phoenix,4.46,1735368,https://images.gr-assets.com/books/1387141547m/2.jpg
+22,22,6,9780439139600.0,"J.K. Rowling, Mary GrandPré",Harry Potter and the Goblet of Fire,4.53,1753043,https://images.gr-assets.com/books/1361482611m/6.jpg
+24,24,968,9780307277670.0,Dan Brown,The Da Vinci Code,3.79,1447148,https://images.gr-assets.com/books/1303252999m/968.jpg
+25,25,1,9780439785970.0,"J.K. Rowling, Mary GrandPré",Harry Potter and the Half-Blood Prince,4.54,1678823,https://images.gr-assets.com/books/1361039191m/1.jpg
+26,26,7624,9780140283330.0,William Golding,Lord of the Flies,3.64,1605019,https://images.gr-assets.com/books/1327869409m/7624.jpg
+30,30,890,9780142000670.0,John Steinbeck,Of Mice and Men,3.84,1467496,https://images.gr-assets.com/books/1437235233m/890.jpg
+31,31,930,9780739326220.0,Arthur Golden,Memoirs of a Geisha,4.08,1300209,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+33,33,865,9780061122420.0,"Paulo Coelho, Alan R. Clarke",O Alquimista,3.82,1299566,https://images.gr-assets.com/books/1483412266m/865.jpg
+34,34,3636,9780385732550.0,Lois Lowry,The Giver,4.12,1296825,https://images.gr-assets.com/books/1342493368m/3636.jpg
+40,40,1934,9780451529300.0,Louisa May Alcott,Little Women,4.04,1257121,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+43,43,4214,9780770430080.0,Yann Martel,Life of Pi,3.88,1003228,https://images.gr-assets.com/books/1320562005m/4214.jpg
+46,46,4381,9780307347980.0,Ray Bradbury,Fahrenheit 451,3.97,570498,https://images.gr-assets.com/books/1351643740m/4381.jpg
+51,51,11,9780345391800.0,Douglas Adams,The Hitchhiker's Guide to the Galaxy,4.2,936782,https://images.gr-assets.com/books/1327656754m/11.jpg
+52,52,5129,9780060929880.0,Aldous Huxley,Brave New World,3.97,1022601,https://images.gr-assets.com/books/1487389574m/5129.jpg
+55,55,2956,9780142437180.0,"Mark Twain, John Seelye, Guy Cardwell",The Adventures of Huckleberry Finn,3.8,953758,https://images.gr-assets.com/books/1405973850m/2956.jpg
+57,57,1618,9781400032720.0,Mark Haddon,The Curious Incident of the Dog in the Night-Time,3.85,867553,https://images.gr-assets.com/books/1479863624m/1618.jpg
+59,59,6185,9780393978900.0,"Emily Brontë, Richard J. Dunn",Wuthering Heights,3.82,899195,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+61,61,4981,9780385333850.0,Kurt Vonnegut Jr.,"Slaughterhouse-Five, or The Children's Crusade: A Duty-Dance with Death ",4.06,846488,https://images.gr-assets.com/books/1440319389m/4981.jpg
+73,73,5139,9780307275550.0,Lauren Weisberger,The Devil Wears Prada,3.7,665930,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+74,74,1381,9780143039950.0,"Homer, Robert Fagles, E.V. Rieu, Frédéric Mugler, Bernard Knox",Ὀδύσσεια,3.73,670326,https://images.gr-assets.com/books/1390173285m/1381.jpg
+76,76,7445,9780743247540.0,Jeannette Walls,The Glass Castle,4.24,621099,https://images.gr-assets.com/books/1400930557m/7445.jpg
+77,77,1953,9780141439600.0,"Charles Dickens, Richard Maxwell, Hablot Knight Browne",A Tale of Two Cities,3.81,637412,https://images.gr-assets.com/books/1344922523m/1953.jpg
+78,78,7677,9780307348140.0,Michael Crichton,Jurassic Park,3.96,447833,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+81,81,1617,9780374500020.0,"Elie Wiesel, Marion Wiesel",Un di Velt Hot Geshvign,4.3,691231,https://images.gr-assets.com/books/1473495285m/1617.jpg
+86,86,1202,9780061234000.0,"Steven D. Levitt, Stephen J. Dubner",Freakonomics: A Rogue Economist Explores the Hidden Side of Everything,3.93,524191,https://images.gr-assets.com/books/1327909092m/1202.jpg
+87,87,2998,9780517189600.0,Frances Hodgson Burnett,The Secret Garden,4.12,639357,https://images.gr-assets.com/books/1327873635m/2998.jpg
+88,88,320,9780060531040.0,"Gabriel García Márquez, Gregory Rabassa",Cien años de soledad,4.04,490565,https://images.gr-assets.com/books/1327881361m/320.jpg
+89,89,5297,9780375751520.0,"Oscar Wilde, Jeffrey Eugenides",The Picture of Dorian Gray,4.06,590014,https://images.gr-assets.com/books/1424596966m/5297.jpg
+94,94,7244,9780060786500.0,Barbara Kingsolver,The Poisonwood Bible,4.02,546502,https://images.gr-assets.com/books/1412242487m/7244.jpg
+95,95,4137,9780349113910.0,David Sedaris,Me Talk Pretty One Day,3.97,495736,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+97,97,7126,9780140449270.0,"Alexandre Dumas, Robin Buss",Le Comte de Monte-Cristo,4.21,555822,https://images.gr-assets.com/books/1309203605m/7126.jpg
+98,98,6288,9780307265430.0,Cormac McCarthy,The Road,3.95,504793,https://images.gr-assets.com/books/1439197219m/6288.jpg
+100,101,3473,9780446693810.0,Nicholas Sparks,A Walk to Remember,4.15,546948,https://images.gr-assets.com/books/1385738968m/3473.jpg
+101,102,9416,9780440241420.0,Sophie Kinsella,Confessions of a Shopaholic,3.61,543658,https://images.gr-assets.com/books/1327872404m/9416.jpg
+106,107,6900,9780751529810.0,"Mitch Albom, Saulius Dagys",Tuesdays with Morrie,4.06,556518,https://images.gr-assets.com/books/1423763749m/6900.jpg
+107,108,2187,9780312422160.0,Jeffrey Eugenides,Middlesex,3.98,488243,https://images.gr-assets.com/books/1437029776m/2187.jpg
+110,111,7763,9780143038090.0,Amy Tan,The Joy Luck Club,3.9,515090,https://images.gr-assets.com/books/1304978653m/7763.jpg
+115,117,1420,9780521618750.0,"William Shakespeare, Richard Andrews, Rex Gibson","The Tragicall Historie of Hamlet, Prince of Denmark",4.0,515820,https://images.gr-assets.com/books/1351051208m/1420.jpg
+117,119,2612,9780316346630.0,Malcolm Gladwell,The Tipping Point: How Little Things Can Make a Big Difference,3.92,490504,https://images.gr-assets.com/books/1473396980m/2612.jpg
+120,122,2165,9780684830490.0,Ernest Hemingway,The Old Man and the Sea,3.73,520630,https://images.gr-assets.com/books/1329189714m/2165.jpg
+121,123,4395,9780142000660.0,John Steinbeck,The Grapes of Wrath,3.92,322321,https://images.gr-assets.com/books/1352912927m/4395.jpg
+122,124,3431,9781401308580.0,Mitch Albom,The Five People You Meet in Heaven,3.9,449501,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+123,125,8127,9780451528830.0,L.M. Montgomery,Anne of Green Gables,4.23,502247,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+131,133,5043,9780451207140.0,Ken Follett,The Pillars of the Earth,4.29,462517,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+133,135,976,9780671027380.0,Dan Brown,Deception Point,3.67,455610,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+136,138,2865,9780452287020.0,Tracy Chevalier,Girl with a Pearl Earring,3.85,467577,https://images.gr-assets.com/books/1327197580m/2865.jpg
+138,140,4989,9780312353770.0,Anita Diamant,The Red Tent,4.16,424981,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+140,142,5526,9780446528050.0,Nicholas Sparks,Dear John,4.01,441062,https://images.gr-assets.com/books/1397749854m/5526.jpg
+142,144,8852,9780743477110.0,William Shakespeare,The Tragedy of Macbeth,3.88,496018,https://images.gr-assets.com/books/1459795224m/8852.jpg
+146,148,6310,9780142403880.0,"Roald Dahl, Quentin Blake",Charlie and the Chocolate Factory,4.1,453959,https://images.gr-assets.com/books/1309211401m/6310.jpg
+148,150,2623,9780192833590.0,Charles Dickens,Great Expectations,3.75,459247,https://images.gr-assets.com/books/1327920219m/2623.jpg
+154,157,4407,9780747263750.0,Neil Gaiman,American Gods,4.11,378019,https://images.gr-assets.com/books/1258417001m/4407.jpg
+158,161,6969,9780141439590.0,"Jane Austen, Fiona Stafford",Emma,3.99,459826,https://images.gr-assets.com/books/1373627931m/6969.jpg
+164,167,7144,9780143058140.0,"Fyodor Dostoyevsky, David McDuff",Преступление и наказание,4.18,380903,https://images.gr-assets.com/books/1382846449m/7144.jpg
+165,168,6514,9780061148510.0,Sylvia Plath,The Bell Jar,3.98,401605,https://images.gr-assets.com/books/1473890514m/6514.jpg
+175,179,33,9780618640160.0,J.R.R. Tolkien,The Lord of the Rings,4.47,389054,https://images.gr-assets.com/books/1411114164m/33.jpg
+182,186,5759,9780393327340.0,Chuck Palahniuk,Fight Club,4.2,365349,https://images.gr-assets.com/books/1357128997m/5759.jpg
+189,194,5326,9781561797460.0,Charles Dickens,A Christmas Carol,4.02,394540,https://images.gr-assets.com/books/1406512317m/5326.jpg
+192,197,6853,9780312362090.0,Janet Evanovich,One for the Money,4.03,391007,https://images.gr-assets.com/books/1316730230m/6853.jpg
+196,201,6867,9780385721790.0,Ian McEwan,Atonement,3.88,347006,https://images.gr-assets.com/books/1320449708m/6867.jpg
+205,210,7869,9780752864330.0,Robert Ludlum,The Bourne Identity,3.98,327122,https://images.gr-assets.com/books/1335860740m/7869.jpg
+207,212,4406,9780142000660.0,John Steinbeck,East of Eden,4.35,320919,https://images.gr-assets.com/books/1441547516m/4406.jpg
+209,214,5359,9780385339090.0,John Grisham,The Client,3.97,320083,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+212,217,2156,9780192802640.0,"Jane Austen, James Kinsley, Deidre Shauna Lynch",Persuasion,4.13,365425,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+215,220,9712,9781400034680.0,"Gabriel García Márquez, Edith Grossman",El amor en los tiempos del cólera,3.89,283806,https://images.gr-assets.com/books/1327124987m/9712.jpg
+218,223,1898,9780385494790.0,Jon Krakauer,Into Thin Air: A Personal Account of the Mt. Everest Disaster,4.11,291258,https://images.gr-assets.com/books/1463384482m/1898.jpg
+221,226,8908,9780307346600.0,Max Brooks,World War Z: An Oral History of the Zombie War,4.01,312969,https://images.gr-assets.com/books/1386328204m/8908.jpg
+226,231,2839,9780439366780.0,Katherine Paterson,Bridge to Terabithia,3.98,337644,https://images.gr-assets.com/books/1327880087m/2839.jpg
+229,234,1622,9780743477540.0,"William Shakespeare, Barbara A. Mowat, Paul Werstine, Catherine Belsey",A Midsummer Night's Dream,3.94,334241,https://images.gr-assets.com/books/1327874534m/1622.jpg
+230,235,4588,9780618711660.0,Jonathan Safran Foer,Extremely Loud and Incredibly Close,3.97,294726,https://images.gr-assets.com/books/1327879967m/4588.jpg
+236,241,662,9780452011880.0,"Ayn Rand, Leonard Peikoff",Atlas Shrugged,3.68,283295,https://images.gr-assets.com/books/1405868167m/662.jpg
+238,243,1232,9780143034900.0,"Carlos Ruiz Zafón, Lucia Graves",La sombra del viento,4.24,263685,https://images.gr-assets.com/books/1344545047m/1232.jpg
+240,245,4865,9780671723650.0,Dale Carnegie,How to Win Friends and Influence People,4.13,282623,https://images.gr-assets.com/books/1442726934m/4865.jpg
+244,249,3876,9780743297330.0,Ernest Hemingway,The Sun Also Rises,3.83,284988,https://images.gr-assets.com/books/1331828228m/3876.jpg
+248,253,6334,9781400078780.0,Kazuo Ishiguro,Never Let Me Go,3.8,294123,https://images.gr-assets.com/books/1353048590m/6334.jpg
+252,257,6952,9780552995870.0,"Laura Esquivel, Thomas  Christensen, Carol Christensen",Como agua para chocolate,3.94,263199,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+253,258,1103,9780812968060.0,Lisa See,Snow Flower and the Secret Fan,4.05,280475,https://images.gr-assets.com/books/1327880508m/1103.jpg
+266,271,2122,9780451191150.0,"Ayn Rand, Leonard Peikoff",The Fountainhead,3.85,244545,https://images.gr-assets.com/books/1491163636m/2122.jpg
+272,277,295,9780753453800.0,Robert Louis Stevenson,Treasure Island,3.82,268012,https://images.gr-assets.com/books/1485248909m/295.jpg
+275,280,4948,9780241003010.0,Eric Carle,The Very Hungry Caterpillar,4.29,296952,https://images.gr-assets.com/books/1327878225m/4948.jpg
+277,282,2493,9780451528550.0,"H.G. Wells, Greg Bear, Carlo Pagetti",The Time Machine,3.87,276076,https://images.gr-assets.com/books/1327942880m/2493.jpg
+282,287,5203,9780671021010.0,Wally Lamb,She's Come Undone,3.84,259576,https://images.gr-assets.com/books/1408313457m/5203.jpg
+287,292,3412,9780380018180.0,Colleen McCullough,The Thorn Birds,4.22,255651,https://images.gr-assets.com/books/1391416796m/3412.jpg
+291,296,4894,9780091883770.0,"Spencer Johnson, Kenneth H. Blanchard",Who Moved My Cheese?,3.74,237272,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+292,297,9791,9780307279460.0,Bill Bryson,A Walk in the Woods,4.05,250192,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+299,304,9717,9780571224390.0,"Milan Kundera, Michael Henry Heim",Nesnesitelná lehkost bytí,4.08,205279,https://images.gr-assets.com/books/1265401884m/9717.jpg
+300,305,4473,9780552135400.0,John Irving,A Prayer for Owen Meany,4.22,226964,https://images.gr-assets.com/books/1260470010m/4473.jpg
+310,315,6689,9780375814240.0,"Roald Dahl, Quentin Blake",James and the Giant Peach,3.99,270402,https://images.gr-assets.com/books/1320412586m/6689.jpg
+312,317,13,9780345453750.0,Douglas Adams,The Ultimate Hitchhiker's Guide: Five Complete Novels and One Story,4.37,222842,https://images.gr-assets.com/books/1404613595m/13.jpg
+315,320,1371,9780140275360.0,"Homer, Robert Fagles, Frédéric Mugler, Bernard Knox",Ἰλιάς,3.83,241088,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+322,328,7745,9780679785900.0,"Hunter S. Thompson, Ralph Steadman",Fear and Loathing in Las Vegas: A Savage Journey to the Heart of the American Dream,4.08,232489,https://images.gr-assets.com/books/1394204569m/7745.jpg
+326,332,6149,9781400033420.0,Toni Morrison,Beloved,3.77,233825,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+332,338,7082,9780345404470.0,"Philip K. Dick, Roger Zelazny",Do Androids Dream of Electric Sheep?,4.08,223828,https://images.gr-assets.com/books/1435458683m/7082.jpg
+336,342,5805,9781401207920.0,"Alan Moore, David   Lloyd",V for Vendetta,4.25,210682,https://images.gr-assets.com/books/1343668985m/5805.jpg
+337,343,2203,9780743223130.0,David McCullough,John Adams,4.05,215780,https://images.gr-assets.com/books/1478144278m/2203.jpg
+342,348,350,9780441788380.0,Robert A. Heinlein,Stranger in a Strange Land,3.91,220301,https://images.gr-assets.com/books/1156897088m/350.jpg
+344,350,6319,9780141311370.0,"Roald Dahl, Quentin Blake",The BFG,4.22,245855,https://images.gr-assets.com/books/1327872673m/6319.jpg
+345,351,21,9780767908180.0,Bill Bryson,A Short History of Nearly Everything,4.19,191535,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+346,352,1852,9780439227150.0,Jack London,The Call of the Wild,3.83,223932,https://images.gr-assets.com/books/1452291694m/1852.jpg
+352,358,5168,9780446672210.0,Billie Letts,Where the Heart Is,4.0,208333,https://images.gr-assets.com/books/1327959469m/5168.jpg
+354,360,1241,9780307276900.0,James Frey,A Million Little Pieces,3.62,184241,https://images.gr-assets.com/books/1483206985m/1241.jpg
+359,365,50,9780689840920.0,Gary Paulsen,Hatchet,3.68,222553,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+362,368,7784,9780679889110.0,Dr. Seuss,The Lorax,4.35,226564,https://images.gr-assets.com/books/1327879938m/7784.jpg
+368,374,343,9780140120840.0,"Patrick Süskind, John E. Woods",Das Parfum. Die Geschichte eines Mörders,4.0,178135,https://images.gr-assets.com/books/1409112276m/343.jpg
+369,375,1097,9780060838580.0,Eric Schlosser,Fast Food Nation : The Dark Side of the All-American Meal,3.73,179347,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+375,381,4980,9780385334200.0,Kurt Vonnegut Jr.,Breakfast of Champions,4.08,178154,https://images.gr-assets.com/books/1327934446m/4980.jpg
+377,383,5826,9780060838720.0,Ann Patchett,Bel Canto,3.92,192330,https://images.gr-assets.com/books/1352997328m/5826.jpg
+378,384,1842,9780739467350.0,Jared Diamond,"Guns, Germs, and Steel: The Fates of Human Societies",4.0,171558,https://images.gr-assets.com/books/1453215833m/1842.jpg
+379,385,9375,9780375508420.0,Fannie Flagg,Fried Green Tomatoes at the Whistle Stop Cafe,4.26,207508,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+385,392,6327,9780590032490.0,"Roald Dahl, Quentin Blake",The Witches,4.17,221431,https://images.gr-assets.com/books/1351707720m/6327.jpg
+389,396,3478,9780446676080.0,Nicholas Sparks,Message in a Bottle,3.95,185116,https://images.gr-assets.com/books/1163789140m/3478.jpg
+399,406,4929,9781400079280.0,"Haruki Murakami, Philip Gabriel",海辺のカフカ [Umibe no Kafuka],4.13,167593,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+405,412,9777,9780679457310.0,Arundhati Roy,The God of Small Things,3.91,165378,https://images.gr-assets.com/books/1436217001m/9777.jpg
+408,415,3869,9780553380160.0,"Stephen Hawking, Cao Chi, Phạm Văn Thiều",A Brief History of Time: From the Big Bang to Black Holes,4.12,165628,https://images.gr-assets.com/books/1333578746m/3869.jpg
+411,418,830,9780553380960.0,Neal Stephenson,Snow Crash,4.02,175883,https://images.gr-assets.com/books/1477624625m/830.jpg
+430,437,1078,9781416500190.0,Pearl S. Buck,The Good Earth,3.97,182220,https://images.gr-assets.com/books/1312497600m/1078.jpg
+431,438,2784,9780140135150.0,John Berger,Ways of Seeing,3.75,155658,https://images.gr-assets.com/books/1464018308m/2784.jpg
+432,439,5364,9780385335970.0,Diana Gabaldon,Dragonfly in Amber,4.31,178110,https://images.gr-assets.com/books/1456114344m/5364.jpg
+440,447,4069,9780807014300.0,Viktor E. Frankl,…trotzdem Ja zum Leben sagen: Ein Psychologe erlebt das Konzentrationslager,4.33,171281,https://images.gr-assets.com/books/1467136625m/4069.jpg
+444,451,7069,9780345915600.0,John Irving,The World According to Garp,4.07,167106,https://images.gr-assets.com/books/1447234581m/7069.jpg
+446,453,2932,9780375757330.0,"Daniel Defoe, Gerald McCann, Virginia Woolf","The Life and Strange Surprising Adventures of Robinson Crusoe of York, Mariner",3.66,178188,https://images.gr-assets.com/books/1403180114m/2932.jpg
+451,458,5113,9780316769020.0,J.D. Salinger,Franny and Zooey,3.98,152906,https://images.gr-assets.com/books/1355037988m/5113.jpg
+453,460,4934,9780374528380.0,"Fyodor Dostoyevsky, Richard Pevear, Larissa Volokhonsky",Братья Карамазовы,4.3,155838,https://images.gr-assets.com/books/1427728126m/4934.jpg
+455,462,7670,9780060541810.0,Michael Crichton,The Andromeda Strain,3.87,173186,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+457,464,2547,9780001000390.0,Kahlil Gibran,The Prophet,4.22,142641,https://images.gr-assets.com/books/1355046521m/2547.jpg
+460,467,7967,9780812550760.0,Orson Scott Card,Speaker for the Dead,4.04,164287,https://images.gr-assets.com/books/1295660894m/7967.jpg
+463,470,4953,9780375725780.0,Dave Eggers,A Heartbreaking Work of Staggering Genius,3.68,145459,https://images.gr-assets.com/books/1327714834m/4953.jpg
+464,471,1295,9780553381670.0,Jean M. Auel,The Clan of the Cave Bear,4.02,176062,https://images.gr-assets.com/books/1385331302m/1295.jpg
+465,472,3685,9780439228910.0,Anna Sewell,Black Beauty,3.94,183255,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+466,473,656,9780192833980.0,"Leo Tolstoy, Henry Gifford, Aylmer Maude, Louise Maude",Война и миръ,4.11,168037,https://images.gr-assets.com/books/1413215930m/656.jpg
+469,476,7061,9781400034770.0,Alexander McCall Smith,The No. 1 Ladies' Detective Agency,3.75,180320,https://images.gr-assets.com/books/1459953654m/7061.jpg
+475,482,1869,9780805063900.0,Barbara Ehrenreich,Nickel and Dimed: On (Not) Getting By in America,3.6,152786,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+478,485,6534,9780743477150.0,Patricia Cornwell,Post-Mortem:  A Mystery Introducing Dr. Kay Scarpetta,4.01,167379,https://images.gr-assets.com/books/1341835831m/6534.jpg
+481,488,3590,9780192835090.0,Arthur Conan Doyle,The Adventures of Sherlock Holmes,4.29,139816,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+483,490,3985,9780312283000.0,Michael Chabon,The Amazing Adventures of Kavalier & Clay,4.17,147717,https://images.gr-assets.com/books/1479660066m/3985.jpg
+496,503,7733,9780141439500.0,"Jonathan Swift, Robert DeMaria Jr.",Gulliver’s Travels,3.55,168727,https://images.gr-assets.com/books/1427829692m/7733.jpg
+507,514,3008,9780142437020.0,"Frances Hodgson Burnett, Nancy Bond",A Little Princess,4.2,199872,https://images.gr-assets.com/books/1327868556m/3008.jpg
+513,520,629,9780060589460.0,Robert M. Pirsig,Zen and the Art of Motorcycle Maintenance,3.76,139411,https://images.gr-assets.com/books/1410136019m/629.jpg
+514,521,8909,9780375759240.0,"H.G. Wells, Arthur C. Clarke",The War of the Worlds,3.8,159752,https://images.gr-assets.com/books/1320391644m/8909.jpg
+517,524,3109,9781594200820.0,Michael Pollan,The Omnivore's Dilemma,4.17,133271,https://images.gr-assets.com/books/1393804353m/3109.jpg
+519,526,3462,9780446696130.0,Nicholas Sparks,The Rescue,4.1,142092,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+526,533,2175,9780192840390.0,"Gustave Flaubert, Margaret Mauldon, Malcolm Bowie, Mark Overstall",Madame Bovary,3.64,158877,https://images.gr-assets.com/books/1335676143m/2175.jpg
+527,534,378,9780394820380.0,"Norton Juster, Jules Feiffer",The Phantom Tollbooth,4.22,178432,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+536,544,1274,9780060574220.0,John Gray,"Men Are from Mars, Women Are from Venus Book of Days: 365 Inspirations to Enrich Your Relationships",3.52,113915,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+538,546,7669,9780099244720.0,Michael Crichton,Timeline,3.83,148563,https://images.gr-assets.com/books/1405420745m/7669.jpg
+548,556,3682,9780689875340.0,Libba Bray,A Great and Terrible Beauty,3.79,173613,https://images.gr-assets.com/books/1284558475m/3682.jpg
+557,565,5148,9780743253970.0,John Knowles,A Separate Peace,3.56,155901,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+558,566,5349,9780385339600.0,John Grisham,The Rainmaker,3.91,137412,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+559,567,3836,9780142437230.0,"Miguel de Cervantes Saavedra, Roberto González Echevarría, John Rutherford",Don Quijote de La Mancha,3.85,134931,https://images.gr-assets.com/books/1364958765m/3836.jpg
+561,569,8695,9780345418920.0,Douglas Adams,The Restaurant at the End of the Universe,4.22,153838,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+573,581,7332,9780618391110.0,"J.R.R. Tolkien, Christopher Tolkien, Ted Nasmith",The Silmarillion,3.87,134106,https://images.gr-assets.com/books/1336502583m/7332.jpg
+574,582,5094,9780451210850.0,Stephen King,The Drawing of the Three,4.23,139052,https://images.gr-assets.com/books/1370918050m/5094.jpg
+580,588,8921,9780451528020.0,"Arthur Conan Doyle, Anne Perry",The Hound of the Baskervilles,4.09,154517,https://images.gr-assets.com/books/1355929358m/8921.jpg
+587,595,5166,9780375706780.0,Chris Bohjalian,Midwives,3.97,133155,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+591,599,1431,9780061124270.0,"Paulo Coelho, Margaret Jull Costa",Veronika decide morrer,3.69,111856,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+600,608,93,9780753454950.0,"Johanna Spyri, Angelo  Rinaldi, Beverly Cleary",Heidi,3.97,144497,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+603,611,5064,9780525950070.0,Ken Follett,World Without End,4.23,128715,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+606,615,2696,9780140424390.0,"Geoffrey Chaucer, Nevill Coghill",Tales of Caunterbury,3.48,148480,https://images.gr-assets.com/books/1261208589m/2696.jpg
+613,622,2526,9780156007760.0,"José Saramago, Giovanni Pontiero",Ensaio Sobre a Cegueira,4.08,98738,https://images.gr-assets.com/books/1327866409m/2526.jpg
+618,627,3805,9781841156740.0,Jonathan Franzen,The Corrections,3.78,117657,https://images.gr-assets.com/books/1355011305m/3805.jpg
+620,629,7672,9780060541840.0,Michael Crichton,Congo,3.55,129811,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+622,631,5439,9780618101370.0,Jhumpa Lahiri,Interpreter of Maladies,4.12,110651,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+623,632,2767,9780060838650.0,Howard Zinn,A People's History of the United States: 1492 to Present,4.07,137372,https://images.gr-assets.com/books/1494279423m/2767.jpg
+626,635,2744,9780060515200.0,Neil Gaiman,Anansi Boys,4.0,137639,https://images.gr-assets.com/books/1479778049m/2744.jpg
+629,638,9328,9780553383800.0,"Isabel Allende, Magda Bogin",La casa de los espíritus,4.2,119930,https://images.gr-assets.com/books/1358615501m/9328.jpg
+634,643,7494,9780446611080.0,James Patterson,Suzanne's Diary for Nicholas,4.16,121398,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+640,649,1005,9781585424340.0,Napoleon Hill,Think and Grow Rich,4.17,87445,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+641,650,8337,9780060885370.0,"Laura Ingalls Wilder, Garth Williams",Little House In The Big Woods,4.16,165127,https://images.gr-assets.com/books/1475195170m/8337.jpg
+643,652,3463,9780446696140.0,Nicholas Sparks,A Bend in the Road,4.02,116800,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+645,654,1067,9780743226720.0,David McCullough,1776,4.06,130293,https://images.gr-assets.com/books/1306787560m/1067.jpg
+648,657,9742,9780307237700.0,Barack Obama,The Audacity of Hope: Thoughts on Reclaiming the American Dream,3.69,110873,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+662,671,4687,9780786226740.0,John Irving,The Cider House Rules,4.1,124876,https://images.gr-assets.com/books/1327962519m/4687.jpg
+666,675,1430,9780060589290.0,"Paulo Coelho, Margaret Jull Costa",Onze minutos,3.69,102206,https://images.gr-assets.com/books/1358266987m/1430.jpg
+667,676,4009,9780316767730.0,J.D. Salinger,Nine Stories,4.19,105138,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+676,686,2880,9781591164420.0,Tite Kubo,BLEACH―ブリーチ―　1,4.21,120004,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+677,687,9539,9780812513740.0,Robert Jordan,The Shadow Rising,4.21,122524,https://images.gr-assets.com/books/1470841890m/9539.jpg
+681,691,2373,9780451188460.0,Jeffery Deaver,The Bone Collector,4.18,120541,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+685,695,5308,9780142000690.0,John Steinbeck,The Pearl of the World,3.41,133264,https://images.gr-assets.com/books/1437234939m/5308.jpg
+693,703,9822,9780689862200.0,Robert C. O'Brien,Mrs. Frisby and the Rats of NIMH,4.13,135978,https://images.gr-assets.com/books/1351191064m/9822.jpg
+697,708,6708,9781577314810.0,Eckhart Tolle,The Power of Now,4.1,104549,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+704,715,8694,9780345418910.0,Douglas Adams,"Life, the Universe and Everything",4.19,131562,https://images.gr-assets.com/books/1333577589m/8694.jpg
+713,724,9532,9780765342410.0,Orson Scott Card,Ender's Shadow,4.3,115521,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+731,742,5211,9781400030650.0,Rohinton Mistry,A Fine Balance,4.34,99252,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+740,751,6596,9781878424500.0,Miguel Ruiz,"The Four Agreements: A Practical Guide to Personal Freedom, A Toltec Wisdom Book",4.12,97016,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+743,754,3980,9780744583270.0,E.L. Konigsburg,From the Mixed-Up Files of Mrs. Basil E. Frankweiler,4.15,134537,https://images.gr-assets.com/books/1327784751m/3980.jpg
+745,756,4271,9780140285670.0,Nick Hornby,About a Boy,3.79,101999,https://images.gr-assets.com/books/1382004144m/4271.jpg
+747,759,7770,9780007173690.0,Dr. Seuss,"One Fish, Two Fish, Red Fish, Blue Fish",4.12,117582,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+755,767,5096,9780340829780.0,"Stephen King, Dave McKean",Wizard and Glass,4.24,105026,https://images.gr-assets.com/books/1327946510m/5096.jpg
+758,770,5479,9780060776090.0,"Aldous Huxley, Christopher Hitchens",Brave New World/Brave New World Revisited,4.16,108124,https://images.gr-assets.com/books/1331315450m/5479.jpg
+765,778,6294,9780064410340.0,Diana Wynne Jones,Howl's Moving Castle,4.3,123945,https://images.gr-assets.com/books/1407450489m/6294.jpg
+772,785,1554,9781580495940.0,"Sophocles, J.E. Thomas",Οἰδίπους Τύραννος,3.67,119496,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+774,787,5659,9780143039100.0,"Kenneth Grahame, Gillian Avery",The Wind in the Willows,3.98,124612,https://images.gr-assets.com/books/1423183570m/5659.jpg
+775,789,3087,9781420925430.0,E.M. Forster,A Room with a View,3.91,109994,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+779,793,5355,9780385339670.0,John Grisham,The Chamber,3.76,102715,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+783,798,8648,9780312861870.0,Orson Scott Card,Xenocide,3.77,104467,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+790,805,5472,9780151010260.0,"George Orwell, Christopher Hitchens",Animal Farm & 1984,4.26,116197,https://images.gr-assets.com/books/1327959366m/5472.jpg
+791,806,5161,9780140286270.0,Jacquelyn Mitchard,The Deep End of the Ocean,3.84,102733,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+798,814,1625,9780743482780.0,William Shakespeare,"Twelfth Night; or, What You Will",3.97,119607,https://images.gr-assets.com/books/1416628008m/1625.jpg
+800,816,902,9780142401200.0,Ellen Raskin,The Westing Game,4.03,117108,https://images.gr-assets.com/books/1356850909m/902.jpg
+810,826,3867,9780393328620.0,Nicole Krauss,The History of Love,3.91,98379,https://images.gr-assets.com/books/1327911009m/3867.jpg
+813,829,2199,9780743270760.0,"Doris Kearns Goodwin, Suzanne Toren",Team of Rivals: The Political Genius of Abraham Lincoln,4.3,102923,https://images.gr-assets.com/books/1347278868m/2199.jpg
+835,851,870,9781591169210.0,"Hiromu Arakawa, Akira Watanabe",鋼の錬金術師 1,4.49,93990,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+837,853,7815,9781400078430.0,Joan Didion,The Year of Magical Thinking,3.86,94590,https://images.gr-assets.com/books/1327878638m/7815.jpg
+843,859,4965,9780142001430.0,Geraldine Brooks,Year of Wonders: A Novel of the Plague,4.0,104283,https://images.gr-assets.com/books/1327936622m/4965.jpg
+845,861,667,9780452281260.0,Ayn Rand,Anthem,3.62,95620,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+847,863,8073,9780689707490.0,"Judi Barrett, Ron Barrett",Cloudy with a Chance of Meatballs,4.15,104677,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+854,870,6427,9780140255550.0,Janet Evanovich,Two for the Dough,4.11,116171,https://images.gr-assets.com/books/1330926461m/6427.jpg
+858,874,7603,9780812971060.0,Azar Nafisi,Reading Lolita in Tehran: A Memoir in Books,3.57,94696,https://images.gr-assets.com/books/1397751318m/7603.jpg
+861,877,7354,9780743225430.0,Annie Proulx,The Shipping News,3.83,103151,https://images.gr-assets.com/books/1469036074m/7354.jpg
+877,894,4978,9781416516930.0,"Stephen King, Bernie Wrightson",Wolves of the Calla,4.17,98182,https://images.gr-assets.com/books/1419360231m/4978.jpg
+884,901,4136,9780316191300.0,David Sedaris,Holidays on Ice,3.95,82591,https://images.gr-assets.com/books/1328330843m/4136.jpg
+893,910,9420,9780385338710.0,Sophie Kinsella,Shopaholic and Baby,3.77,98130,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+894,911,5091,9781416524530.0,Stephen King,The Dark Tower,4.27,93296,https://images.gr-assets.com/books/1372296329m/5091.jpg
+896,913,9418,9780440241810.0,Sophie Kinsella,Shopaholic Abroad,3.75,93498,https://images.gr-assets.com/books/1266449959m/9418.jpg
+897,914,5544,9780393316050.0,Richard Feynman,"Surely You're Joking, Mr. Feynman! Adventures of a Curious Character",4.29,91625,https://images.gr-assets.com/books/1348445281m/5544.jpg
+899,916,3579,76783609419.0,L.M. Montgomery,The Complete Anne of Green Gables Boxed Set,4.42,92142,https://images.gr-assets.com/books/1267721500m/3579.jpg
+900,917,7588,9780142437350.0,"James Joyce, Seamus Deane",A Portrait of the Artist as a Young Man,3.6,92569,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+903,921,5350,9780385339100.0,John Grisham,The Partner,3.89,86870,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+904,922,30,9780345538380.0,J.R.R. Tolkien,The Hobbit and The Lord of the Rings,4.59,90907,https://images.gr-assets.com/books/1346072396m/30.jpg
+909,927,1911,9780374292800.0,Thomas L. Friedman,The World Is Flat: A Brief History of the Twenty-first Century,3.66,78271,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+932,951,6854,9780312966100.0,Janet Evanovich,Three to Get Deadly,4.14,113400,https://images.gr-assets.com/books/1311727539m/6854.jpg
+941,960,3711,9780375703870.0,Zadie Smith,White Teeth,3.75,82474,https://images.gr-assets.com/books/1374739885m/3711.jpg
+949,969,8698,9780330491240.0,Douglas Adams,"So Long, and Thanks for All the Fish",4.08,93774,https://images.gr-assets.com/books/1369563116m/8698.jpg
+959,979,7214,9780785263710.0,Donald Miller,Blue Like Jazz: Nonreligious Thoughts on Christian Spirituality,3.92,82090,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+965,985,4631,9780099285040.0,Ernest Hemingway,A Moveable Feast,4.04,69992,https://images.gr-assets.com/books/1427463201m/4631.jpg
+971,991,5351,9780385339090.0,John Grisham,The Street Lawyer,3.81,80577,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+976,996,365,9780671746730.0,Douglas Adams,Dirk Gently's Holistic Detective Agency,3.97,89569,https://images.gr-assets.com/books/1404697381m/365.jpg
+987,1007,5093,9781416521500.0,"Stephen King, Darrel Anderson",Song of Susannah,3.98,84957,https://images.gr-assets.com/books/1372296326m/5093.jpg
+991,1011,5348,9780440234750.0,John Grisham,The Testament,3.83,80377,https://images.gr-assets.com/books/1403174228m/5348.jpg
+996,1017,9419,9780440241900.0,Sophie Kinsella,Shopaholic Ties the Knot,3.77,88139,https://images.gr-assets.com/books/1371383294m/9419.jpg
+997,1018,5890,9780141439620.0,"Wilkie Collins, Matthew Sweet",The Woman in White,3.98,93134,https://images.gr-assets.com/books/1295661017m/5890.jpg
+1000,1021,6422,9780312966970.0,Janet Evanovich,Four to Score,4.17,106871,https://images.gr-assets.com/books/1311983211m/6422.jpg
+1006,1027,5797,9780141439840.0,"William Makepeace Thackeray, John Carey",Vanity Fair: A Novel Without a Hero,3.76,91323,https://images.gr-assets.com/books/1344386439m/5797.jpg
+1007,1028,4982,9781857988840.0,Kurt Vonnegut Jr.,The Sirens of Titan,4.16,72493,https://images.gr-assets.com/books/1419363185m/4982.jpg
+1011,1032,1633,9780142000280.0,David    Allen,Getting Things Done: How To Achieve Stress-free Productivity,3.98,75665,https://images.gr-assets.com/books/1312474060m/1633.jpg
+1026,1048,706,9780713998950.0,"Jon Stewart, Ben Karlin, David Javerbaum, Rich Bloomquist, Steve Bodow, Tim Carvell, Eric Drysdale, J.R. Havlan, Scott Jacobson, Tom Johnson, Rob Kutner, Chris Regan, Jason Reich, Jason Ross, Stephen Colbert, Samantha Bee, Rob Corddry, Brendan Hay, Ed Helms",America (The Book): A Citizen's Guide to Democracy Inaction,4.02,74511,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+1035,1057,106,9780441172700.0,Frank Herbert,Dune Messiah,3.86,82580,https://images.gr-assets.com/books/1392528394m/106.jpg
+1044,1068,8650,9780752224410.0,Michael Crichton,The Lost World,3.72,83389,https://images.gr-assets.com/books/1386864575m/8650.jpg
+1067,1093,816,9780060512800.0,Neal Stephenson,Cryptonomicon,4.25,72683,https://images.gr-assets.com/books/1327931476m/816.jpg
+1070,1096,5204,9780452282830.0,Joyce Carol Oates,We Were the Mulvaneys,3.7,77251,https://images.gr-assets.com/books/1309282868m/5204.jpg
+1076,1102,6858,9780312976280.0,Janet Evanovich,Hot Six,4.18,99329,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+1079,1105,1301,9780393324820.0,Michael   Lewis,Moneyball: The Art of Winning an Unfair Game,4.24,66406,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+1085,1111,2052,9780394758280.0,Raymond Chandler,The Big Sleep,4.04,84489,https://images.gr-assets.com/books/1371584712m/2052.jpg
+1086,1112,4799,9780142000690.0,John Steinbeck,Cannery Row,4.02,81598,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+1092,1118,6656,9780679433130.0,"Dante Alighieri, Allen Mandelbaum, Eugenio Montale",La Divina Commedia,4.06,74130,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+1105,1131,6423,9780330371230.0,Janet Evanovich,High Five,4.17,92737,https://images.gr-assets.com/books/1270849101m/6423.jpg
+1128,1156,1428,9780061122100.0,"Paulo Coelho, Alan R. Clarke",Na margem do rio Piedra eu sentei e chorei,3.57,62106,https://images.gr-assets.com/books/1466877798m/1428.jpg
+1137,1165,3273,9780312304360.0,Alan Brennert,Moloka'i,4.15,75307,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+1144,1173,771,9780375708110.0,Brian Greene,"The Elegant Universe: Superstrings, Hidden Dimensions, and the Quest for the Ultimate Theory",4.06,32626,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+1146,1175,6424,9780312980150.0,Janet Evanovich,Seven Up,4.15,94506,https://images.gr-assets.com/books/1311720512m/6424.jpg
+1151,1180,6425,9780312983860.0,"Janet Evanovich, Lorelei King",Hard Eight,4.17,93057,https://images.gr-assets.com/books/1479699438m/6425.jpg
+1157,1186,4952,9781932416640.0,Dave Eggers,What Is the What: The Autobiography of Valentino Achak Deng,4.16,59333,https://images.gr-assets.com/books/1328837457m/4952.jpg
+1164,1193,5354,9780385339670.0,John Grisham,The Brethren,3.71,69351,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+1180,1209,112,9780441104020.0,Frank Herbert,Children of Dune,3.9,74133,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+1188,1217,9557,9780099448470.0,"Haruki Murakami, Philip Gabriel",スプートニクの恋人 [Supūtoniku no Koibito],3.82,62229,https://images.gr-assets.com/books/1486764070m/9557.jpg
+1190,1219,8600,9781592402040.0,Lynne Truss,"Eats, Shoots and Leaves",3.86,79117,https://images.gr-assets.com/books/1473392595m/8600.jpg
+1205,1234,9014,9780451196710.0,"Richard Bachman, Stephen King",The Long Walk,4.11,71775,https://images.gr-assets.com/books/1309212400m/9014.jpg
+1209,1238,5413,9780385516490.0,"Stephen King, Jerry N. Uelsmann",Salem's Lot The Illustrated Edition,4.25,72797,https://images.gr-assets.com/books/1320478491m/5413.jpg
+1216,1245,9566,9781842430220.0,Tom Robbins,Still Life with Woodpecker,4.04,56802,https://images.gr-assets.com/books/1308749778m/9566.jpg
+1218,1247,1110,9780385340540.0,John Grisham,The Broker,3.77,65428,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+1227,1257,5191,9780316601960.0,Anita Shreve,The Pilot's Wife,3.5,71777,https://images.gr-assets.com/books/1435011220m/5191.jpg
+1233,1263,5171,9780345439110.0,Christina Schwarz,Drowning Ruth,3.73,67768,https://images.gr-assets.com/books/1390180160m/5171.jpg
+1236,1266,3586,9781593082050.0,"Arthur Conan Doyle, Kyle Freeman","Sherlock Holmes: The Complete Novels and Stories, Vol 2",4.46,66857,https://images.gr-assets.com/books/1347663158m/3586.jpg
+1245,1275,6295,9780872863100.0,"Allen Ginsberg, William Carlos Williams",Howl and Other Poems,4.14,71968,https://images.gr-assets.com/books/1327870926m/6295.jpg
+1248,1278,360,9780345418780.0,Douglas Adams,Mostly Harmless,3.96,72426,https://images.gr-assets.com/books/1320725132m/360.jpg
+1264,1294,7779,9780679800030.0,Dr. Seuss,Horton Hears a Who!,4.16,80883,https://images.gr-assets.com/books/1327924655m/7779.jpg
+1296,1327,5157,9780385333140.0,Anna Quindlen,Black and Blue,3.86,67753,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+1297,1328,5346,9780385339680.0,John Grisham,The Last Juror,3.85,63114,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+1301,1332,599,9780743236010.0,Chuck Klosterman,"Sex, Drugs, and Cocoa Puffs: A Low Culture Manifesto",3.75,56548,https://images.gr-assets.com/books/1380742001m/599.jpg
+1316,1347,5356,9780385339650.0,John Grisham,The King of Torts,3.67,61835,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+1323,1354,3464,9780446696520.0,Nicholas Sparks,True Believer,3.8,62840,https://images.gr-assets.com/books/1385739017m/3464.jpg
+1338,1369,7996,9781862301380.0,Brian Jacques,Redwall,4.11,73918,https://images.gr-assets.com/books/1327877368m/7996.jpg
+1343,1374,9417,9780440241910.0,Sophie Kinsella,Shopaholic and Sister,3.64,69007,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+1348,1379,5084,9781400043460.0,"Julia Child, Alex Prud'Homme",My Life in France,4.16,63100,https://images.gr-assets.com/books/1395564378m/5084.jpg
+1356,1387,28,9780380727510.0,Bill Bryson,Notes from a Small Island,3.91,66947,https://images.gr-assets.com/books/1479653223m/28.jpg
+1361,1392,7714,9780486282220.0,George Bernard Shaw,Pygmalion,3.9,70079,https://images.gr-assets.com/books/1453757285m/7714.jpg
+1365,1396,3388,9780679763970.0,Louis de Bernières,Captain Corelli's Mandolin,3.95,57583,https://images.gr-assets.com/books/1479680795m/3388.jpg
+1367,1398,24,9780767903870.0,Bill Bryson,Down Under,4.05,58688,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+1392,1424,1848,9780743246990.0,Jung Chang,Wild Swans: Three Daughters of China,4.23,60193,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+1406,1438,8682,9781842430350.0,Tom Robbins,Jitterbug Perfume,4.24,48277,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+1409,1441,1427,9780060832810.0,"Paulo Coelho, Margaret Jull Costa",O Zahir,3.56,50921,https://images.gr-assets.com/books/1493044059m/1427.jpg
+1422,1454,827,9780553380960.0,Neal Stephenson,The Diamond Age,4.19,61836,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+1424,1456,7728,9781580493890.0,"Sophocles, J.E. Thomas",Ἀντιγόνη,3.6,67608,https://images.gr-assets.com/books/1486701308m/7728.jpg
+1446,1478,6192,9780143036370.0,J.M. Coetzee,Disgrace,3.83,50422,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+1449,1481,6976,9780143036690.0,Sue Monk Kidd,The Mermaid Chair,3.1,62760,https://images.gr-assets.com/books/1388259308m/6976.jpg
+1464,1497,7675,9780099303750.0,Michael Crichton,Disclosure,3.76,57818,https://images.gr-assets.com/books/1398678136m/7675.jpg
+1466,1499,5246,9780142437800.0,Edith Wharton,Ethan Frome,3.35,72421,https://images.gr-assets.com/books/1389822254m/5246.jpg
+1467,1500,5205,9780385720110.0,"Jane Hamilton, Frank  Muller, C.J. Critt",A Map of the World,3.78,61347,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+1469,1503,7442,9780553380640.0,Tom Wolfe,The Electric Kool-Aid Acid Test,3.92,54848,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+1470,1504,7437,9780802140180.0,"William S. Burroughs, James Grauerholz, Barry  Miles",The Naked Lunch,3.46,55473,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+1472,1506,5360,9780385337940.0,John Grisham,A Painted House,3.67,59974,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+1491,1525,7667,9780099556310.0,Michael Crichton,Airframe,3.66,59229,https://images.gr-assets.com/books/1405420599m/7667.jpg
+1495,1529,122,9780345410050.0,Bryce Courtenay,The Power of One,4.34,57312,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+1503,1537,6440,9780140436590.0,Walter Scott,Ivanhoe,3.75,65828,https://images.gr-assets.com/books/1405336818m/6440.jpg
+1523,1557,3507,9780312349490.0,Janet Evanovich,Twelve Sharp,4.14,74747,https://images.gr-assets.com/books/1316727699m/3507.jpg
+1541,1576,9534,9780812565960.0,Orson Scott Card,Shadow of the Hegemon,3.93,58991,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+1543,1579,5196,9780440235590.0,Maeve Binchy,Tara Road,3.88,60154,https://images.gr-assets.com/books/1403194637m/5196.jpg
+1550,1587,6759,9780316921180.0,David Foster Wallace,Infinite Jest,4.31,46742,https://images.gr-assets.com/books/1446876799m/6759.jpg
+1554,1592,6693,9780375822070.0,"Roald Dahl, Quentin Blake",Fantastic Mr Fox,4.03,66015,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+1565,1605,5187,9780385265710.0,Jane Hamilton,The Book of Ruth,3.82,56842,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+1566,1606,9593,9780385333870.0,Kurt Vonnegut Jr.,Galápagos,3.87,48330,https://images.gr-assets.com/books/1355012643m/9593.jpg
+1567,1607,7661,9780060872980.0,Michael Crichton,Next,3.48,53487,https://images.gr-assets.com/books/1358010468m/7661.jpg
+1572,1612,1171,9780140143450.0,Michael   Lewis,Liar's Poker: Rising Through the Wreckage on Wall Street,4.16,22315,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+1586,1626,9010,9780806527280.0,Tucker Max,I Hope They Serve Beer in Hell,3.51,46092,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+1588,1629,9592,9780385334140.0,Kurt Vonnegut Jr.,Mother Night,4.21,52249,https://images.gr-assets.com/books/1344621657m/9592.jpg
+1597,1638,9300,9780099489990.0,Marian Keyes,Watermelon,3.79,55841,https://images.gr-assets.com/books/1345767584m/9300.jpg
+1601,1642,5454,9780385731060.0,Ann Brashares,The Second Summer of the Sisterhood,3.78,67357,https://images.gr-assets.com/books/1467700995m/5454.jpg
+1608,1649,357,9780671742520.0,Douglas Adams,The Long Dark Tea-Time of the Soul,4.05,59276,https://images.gr-assets.com/books/1388257271m/357.jpg
+1613,1655,5352,9780385339600.0,John Grisham,The Summons,3.68,53304,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+1619,1661,2666,9780553381340.0,Tom Wolfe,The Bonfire of the Vanities,3.81,52062,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+1628,1670,4866,9780671035980.0,Dale Carnegie,How to Stop Worrying and Start Living,4.08,46797,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+1635,1678,6259,9780679776820.0,Sebastian Faulks,Birdsong,4.07,49930,https://images.gr-assets.com/books/1349952101m/6259.jpg
+1639,1682,5176,9780345443280.0,Sue Miller,While I Was Gone,3.67,52244,https://images.gr-assets.com/books/1495632082m/5176.jpg
+1659,1703,264,9780141439630.0,"Henry James, Patricia Crick",The Portrait of a Lady,3.76,55019,https://images.gr-assets.com/books/1502148606m/264.jpg
+1664,1709,4325,9780142401750.0,Sarah Dessen,Dreamland,3.91,64082,https://images.gr-assets.com/books/1385861832m/4325.jpg
+1672,1717,2794,9780060913080.0,Thomas Pynchon,The Crying of Lot 49,3.7,48692,https://images.gr-assets.com/books/1375727632m/2794.jpg
+1681,1726,5174,9780743466520.0,Ann-Marie MacDonald,Fall on Your Knees,3.95,50446,https://images.gr-assets.com/books/1481449709m/5174.jpg
+1686,1731,6420,9780312986350.0,Janet Evanovich,Visions of Sugar Plums,3.68,62726,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+1690,1735,5509,9780671662350.0,"Miep Gies, Alison Leslie Gold",Anne Frank Remembered,4.26,50412,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+1709,1754,4008,9780060527990.0,"Paulo Coelho, Amanda Hopkinson, Nick Caistor",O Demônio e a Srta. Prym,3.59,42286,https://images.gr-assets.com/books/1359082264m/4008.jpg
+1716,1762,9844,9780812972350.0,Curtis Sittenfeld,Prep,3.36,50598,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+1726,1772,760,9780307278490.0,"Gabriel García Márquez, Edith Grossman",Memoria de mis putas tristes,3.59,33534,https://images.gr-assets.com/books/1327484658m/760.jpg
+1776,1824,9915,9780679781490.0,Bret Easton Ellis,Less Than Zero,3.58,45978,https://images.gr-assets.com/books/1443060100m/9915.jpg
+1781,1829,9301,9780060090390.0,Marian Keyes,Rachel's Holiday,3.93,48663,https://images.gr-assets.com/books/1407709261m/9301.jpg
+1790,1838,4143,9780316779420.0,David Sedaris,Barrel Fever: Stories and Essays,3.78,44679,https://images.gr-assets.com/books/1453273003m/4143.jpg
+1795,1843,3679,9780143037740.0,Zadie Smith,On Beauty,3.68,44317,https://images.gr-assets.com/books/1495961870m/3679.jpg
+1802,1851,4659,9780345469010.0,John Irving,A Widow for One Year,3.74,45051,https://images.gr-assets.com/books/1375776653m/4659.jpg
+1804,1853,6687,9780142404130.0,"Roald Dahl, Quentin Blake","Charlie and the Great Glass Elevator: The Further Adventures of Charlie Bucket and Willy Wonka, Chocolate-Maker Extraordinaire",3.64,62359,https://images.gr-assets.com/books/1309211607m/6687.jpg
+1813,1863,3102,9780486424540.0,E.M. Forster,Howards End,3.95,52006,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+1819,1870,8253,9780060885430.0,"Laura Ingalls Wilder, Garth Williams",Little Town on the Prairie,4.18,63615,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+1830,1881,475,9780143036560.0,Jared Diamond,Collapse: How Societies Chose to Fail or Succeed,3.92,44238,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+1836,1887,25,9780767903820.0,Bill Bryson,Notes from a Big Country,3.89,44610,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+1844,1895,5345,9780385517230.0,John Grisham,The Innocent Man,3.79,43793,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+1856,1908,249,9780802131780.0,Henry Miller,Tropic of Cancer,3.71,45518,https://images.gr-assets.com/books/1408753140m/249.jpg
+1861,1913,5306,9780142000700.0,John Steinbeck,Travels with Charley: In Search of America,4.07,45856,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+1869,1921,5015,9781400076190.0,Ian McEwan,Saturday,3.61,45567,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+1881,1933,7572,9781842430250.0,Tom Robbins,Even Cowgirls Get the Blues,3.74,40840,https://images.gr-assets.com/books/1336172455m/7572.jpg
+1882,1934,6138,9780375757850.0,"Wilkie Collins, Carolyn G. Heilbrun",The Moonstone,3.9,50322,https://images.gr-assets.com/books/1403192382m/6138.jpg
+1887,1939,6531,9780751530480.0,Patricia Cornwell,Point of Origin,4.02,48683,https://images.gr-assets.com/books/1399629118m/6531.jpg
+1905,1959,5527,9780156004800.0,Robert Penn Warren,All the King’s Men,4.08,42821,https://images.gr-assets.com/books/1342193852m/5527.jpg
+1906,1960,5452,9780553375930.0,Ann Brashares,Girls in Pants: The Third Summer of the Sisterhood,3.82,56485,https://images.gr-assets.com/books/1320473346m/5452.jpg
+1926,1980,6539,9780425201440.0,Patricia Cornwell,The Body Farm,4.04,51115,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+1938,1993,5190,9780345435160.0,Elizabeth Berg,Open House,3.68,48639,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+1948,2003,9590,9780385333470.0,Kurt Vonnegut Jr.,"God Bless You, Mr Rosewater or Pearls before Swine",3.94,40353,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+1983,2040,2152,9780452286540.0,Karen Joy Fowler,The Jane Austen Book Club,3.07,53128,https://images.gr-assets.com/books/1309282966m/2152.jpg
+1988,2046,1375,9780147712550.0,"Homer, Robert Fagles, Bernard Knox",Ἰλιάς ; Ὀδύσσεια,4.03,47825,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+1990,2048,6882,9780061120660.0,Henri Charrière,Papillon,4.23,39073,https://images.gr-assets.com/books/1327865561m/6882.jpg
+2012,2071,4985,9780385333500.0,Kurt Vonnegut Jr.,Welcome to the Monkey House,4.13,40071,https://images.gr-assets.com/books/1381107552m/4985.jpg
+2014,2073,2279,9780671869200.0,David McCullough,Truman,4.15,53088,https://images.gr-assets.com/books/1364681969m/2279.jpg
+2016,2075,7788,9780807218730.0,"Dr. Seuss, Various",The Cat in the Hat and Other Dr. Seuss Favorites,4.41,46279,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+2028,2089,6150,9780743261950.0,Alan Paton,"Cry, The Beloved Country",3.87,47389,https://images.gr-assets.com/books/1344182368m/6150.jpg
+2030,2092,4268,9783426615360.0,Nick Hornby,How to Be Good,3.18,37497,https://images.gr-assets.com/books/1327935893m/4268.jpg
+2053,2116,5038,9780765340740.0,Terry Goodkind,The Pillars of Creation,3.67,43424,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+2054,2117,4122,9780060566100.0,"James C. Collins, Jerry I. Porras",Built to Last: Successful Habits of Visionary Companies,3.98,39618,https://images.gr-assets.com/books/1412047084m/4122.jpg
+2073,2137,5517,9780375508330.0,Lorraine Hansberry,A Raisin in the Sun,3.72,44237,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+2082,2146,4912,9780006551810.0,Frank McCourt,Tis: A Memoir,3.66,40726,https://images.gr-assets.com/books/1375947803m/4912.jpg
+2097,2161,5453,9780385729370.0,Ann Brashares,Forever in Blue: The Fourth Summer of the Sisterhood,3.8,56113,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+2100,2165,9370,9781842430350.0,Tom Robbins,Skinny Legs and All,4.03,32991,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+2104,2170,27,9780380713810.0,Bill Bryson,Neither Here Nor There: Travels in Europe,3.88,42170,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+2120,2186,4806,9780802714630.0,"Dava Sobel, Neil Armstrong",Longitude,3.95,38151,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+2142,2209,998,9780671015210.0,"Thomas J. Stanley, William D. Danko",The Millionaire Next Door: The Surprising Secrets of America's Wealthy,4.0,43937,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+2145,2212,26,9780060920080.0,Bill Bryson,The Lost Continent: Travels in Small-Town America,3.83,40254,https://images.gr-assets.com/books/1404042682m/26.jpg
+2148,2215,8248,9780060885410.0,"Laura Ingalls Wilder, Garth Williams",By the Shores of Silver Lake,4.16,51640,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+2157,2227,431,9780143039840.0,"Paul Auster, Art Spiegelman",The New York Trilogy,3.92,34730,https://images.gr-assets.com/books/1386924429m/431.jpg
+2159,2229,5114,9780316766940.0,J.D. Salinger,"Raise High the Roof Beam, Carpenters / Seymour: An Introduction",4.11,36751,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+2160,2230,7455,9780446617680.0,Candace Bushnell,Sex and the City,3.37,39710,https://images.gr-assets.com/books/1344270731m/7455.jpg
+2183,2254,1715,9780140447900.0,"Ovid, David Raeburn, Denis Feeney",Metamorphoses,4.03,42590,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+2195,2266,6520,9781594481960.0,James Frey,My Friend Leonard,3.83,34996,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+2248,2323,2255,9781932073200.0,Dan Millman,Way of the Peaceful Warrior: A Book That Changes Lives,4.13,34136,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+2258,2335,9517,9780375714660.0,"Marjane Satrapi, Anjali Singh",Persepolis 2,4.23,45718,https://images.gr-assets.com/books/1327865598m/9517.jpg
+2280,2357,1303,9780140280200.0,"Robert Greene, Joost Elffers",The 48 Laws of Power,4.18,37613,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+2294,2371,2442,9780061020610.0,Terry Pratchett,Witches Abroad,4.2,47875,https://images.gr-assets.com/books/1403326937m/2442.jpg
+2296,2373,117,9780441328000.0,Frank Herbert,Heretics of Dune,3.83,40415,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+2303,2380,2715,9780142001620.0,Mark Kurlansky,Salt: A World History,3.73,39402,https://images.gr-assets.com/books/1414608893m/2715.jpg
+2310,2388,3758,9780142002020.0,Ian Fleming,Casino Royale,3.73,39150,https://images.gr-assets.com/books/1497801490m/3758.jpg
+2324,2403,4004,9780722534880.0,"Paulo Coelho, Alan R. Clarke",O Diário de um Mago,3.64,28283,https://images.gr-assets.com/books/1307909268m/4004.jpg
+2349,2428,6614,9780786887070.0,Candace Bushnell,Lipstick Jungle,3.39,35792,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+2355,2434,9597,9780385333790.0,Kurt Vonnegut Jr.,Player Piano,3.85,34362,https://images.gr-assets.com/books/1488041609m/9597.jpg
+2358,2438,8282,9780060885430.0,"Laura Ingalls Wilder, Garth Williams","The Long Winter (Little House, #6)",4.16,54443,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+2365,2446,8647,9781841492060.0,Orson Scott Card,Shadow of the Giant,3.98,37479,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+2374,2455,5357,9780099481680.0,John Grisham,Skipping Christmas,3.47,39486,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+2378,2459,5197,9780375702710.0,Ernest J. Gaines,A Lesson Before Dying,3.93,40651,https://images.gr-assets.com/books/1405866945m/5197.jpg
+2391,2473,7668,9780606298230.0,Michael Crichton,Rising Sun,3.61,38179,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+2398,2480,8732,9780141962820.0,John Steinbeck,The Red Pony,3.42,37535,https://images.gr-assets.com/books/1391231816m/8732.jpg
+2400,2482,5159,9780425169700.0,Alice Hoffman,Here on Earth,3.68,38954,https://images.gr-assets.com/books/1388299278m/5159.jpg
+2407,2489,9303,9780060090370.0,Marian Keyes,Lucy Sullivan is Getting Married,3.74,38473,https://images.gr-assets.com/books/1407707569m/9303.jpg
+2411,2494,4135,9780446578840.0,Amy Sedaris,I Like You: Hospitality Under the Influence,3.87,34212,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+2416,2499,6667,9780141311400.0,"Roald Dahl, Quentin Blake",Boy: Tales of Childhood,4.09,38240,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+2436,2520,5167,9780446678450.0,Lalita Tademy,Cane River,4.04,38013,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+2442,2526,2265,9780425179610.0,"Lance Armstrong, Sally Jenkins",It's Not About the Bike: My Journey Back to Life,3.72,31963,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+2462,2547,5720,9780425170340.0,Tom Clancy,Rainbow Six,4.07,35278,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+2473,2558,4898,9781591396190.0,"W. Chan Kim, Renée Mauborgne",Blue Ocean Strategy: How to Create Uncontested Market Space and Make Competition Irrelevant,3.86,30665,https://images.gr-assets.com/books/1416445924m/4898.jpg
+2479,2565,6709,9781577311960.0,Eckhart Tolle,"Practicing the Power of Now: Essential Teachings, Meditations, and Exercises from The Power of Now",4.25,29256,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+2483,2569,9809,9780156453810.0,"Italo Calvino, William Weaver",Le città invisibili,4.19,32253,https://images.gr-assets.com/books/1468623303m/9809.jpg
+2507,2594,3873,9780517223120.0,Karen Armstrong,"A History of God: The 4,000-Year Quest of Judaism, Christianity, and Islam",3.85,32506,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+2509,2596,5932,9780143039970.0,"Pablo Neruda, W.S. Merwin, Cristina García",Veinte poemas de amor y una canción desesperada,4.33,31606,https://images.gr-assets.com/books/1447622711m/5932.jpg
+2517,2604,6588,9780446610220.0,James Patterson,The Big Bad Wolf,3.97,37060,https://images.gr-assets.com/books/1388328154m/6588.jpg
+2521,2608,6690,9780375814260.0,"Roald Dahl, Quentin Blake",Danny: The Champion of the World,4.07,39802,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+2522,2610,1192,9781400052580.0,Giada De Laurentiis,Everyday Italian: 125 Simple and Delicious Recipes,3.97,32751,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+2523,2611,6537,9780425204700.0,Patricia Cornwell,From Potter's Field,4.02,41377,https://images.gr-assets.com/books/1309209800m/6537.jpg
+2533,2623,8962,9780316905720.0,Darren Shan,"Cirque Du Freak (Cirque du Freak, #1) ",4.07,38753,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+2542,2632,4979,9780812977360.0,Kurt Vonnegut Jr.,A Man Without a Country,4.07,29859,https://images.gr-assets.com/books/1330997432m/4979.jpg
+2572,2667,9912,9780679781490.0,Bret Easton Ellis,The Rules of Attraction,3.71,29456,https://images.gr-assets.com/books/1468426907m/9912.jpg
+2583,2678,105,9780441102680.0,Frank Herbert,Chapterhouse: Dune,3.89,34822,https://images.gr-assets.com/books/1260954505m/105.jpg
+2585,2680,3476,9780142000200.0,Gwyn Hyman Rubio,Icy Sparks,3.68,34128,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+2609,2705,5344,9780321107210.0,Charles Dickens,Hard Times: For These Times,3.5,34675,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+2629,2725,1319,9780446691440.0,"Steven Pressfield, Robert McKee",The War of Art: Break Through the Blocks and Win Your Inner Creative Battles,4.07,31399,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+2653,2749,3110,9780743260050.0,Sarah Vowell,Assassination Vacation,3.98,32176,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+2658,2754,4005,9780722536540.0,Paulo Coelho,O Monte Cinco,3.61,26060,https://images.gr-assets.com/books/1358268472m/4005.jpg
+2669,2765,3483,9780670037770.0,Marisha Pessl,Special Topics in Calamity Physics,3.7,29369,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+2691,2787,9302,9780060731490.0,Marian Keyes,The Other Side of the Story,3.77,32185,https://images.gr-assets.com/books/1407107814m/9302.jpg
+2707,2804,8953,9780439286060.0,Rodman Philbrick,Freak the Mighty,3.98,34587,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+2713,2810,9838,9780316159420.0,"Åsne Seierstad, Ingrid Christopherson",Bokhandleren i Kabul,3.76,30531,https://images.gr-assets.com/books/1388611939m/9838.jpg
+2721,2818,4983,9780791071690.0,"Harold Bloom, Terry Southern, David H. Goldsmith, James Lundquist, Lawrence R. Broer, Peter J. Reed, Loree Rackstraw, William S. Doxey, Jerome Klinkowitz, Richard Giannone, John L. Simons, Leonard Mustazza, Zoltan Ab di-Nagy, Peter Freese, Wendy B. Faris",Kurt Vonnegut's Cat Cradle,4.35,27519,https://images.gr-assets.com/books/1297118346m/4983.jpg
+2731,2828,4538,9780689862210.0,E.L. Konigsburg,The View from Saturday,3.74,36803,https://images.gr-assets.com/books/1476944774m/4538.jpg
+2747,2844,8155,9780312353260.0,Barbara Taylor Bradford,A Woman of Substance,4.16,31309,https://images.gr-assets.com/books/1330029941m/8155.jpg
+2757,2854,9298,9780060086240.0,Marian Keyes,Last Chance Saloon,3.78,32255,https://images.gr-assets.com/books/1407708818m/9298.jpg
+2760,2857,7723,9781593080300.0,"Franz Kafka, Jason Baker, Donna Freed",Die Verwandlung und andere Erzählungen,4.01,29817,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+2762,2859,3049,9780451528190.0,"Unknown, Burton Raffel, Neil D. Isaacs",Gawayn and þe Grene Knyȝt,3.68,36477,https://images.gr-assets.com/books/1309282183m/3049.jpg
+2763,2860,4921,9780140621330.0,Jerome K. Jerome,Three Men in a Boat (To Say Nothing of the Dog),3.9,30250,https://images.gr-assets.com/books/1392791656m/4921.jpg
+2765,2862,6419,9780312306340.0,Janet Evanovich,Plum Lovin',3.7,43643,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+2767,2864,9570,9781842431290.0,Tom Robbins,Another Roadside Attraction,3.97,25777,https://images.gr-assets.com/books/1327866271m/9570.jpg
+2782,2880,2517,9780375706850.0,"Orhan Pamuk, Erdağ M. Göknar",Benim Adım Kırmızı,3.83,27314,https://images.gr-assets.com/books/1374015288m/2517.jpg
+2801,2899,9595,9780385334240.0,Kurt Vonnegut Jr.,Slapstick,3.87,27371,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+2804,2902,7493,9780375705240.0,Joseph J. Ellis,Founding Brothers: The Revolutionary Generation,3.92,31610,https://images.gr-assets.com/books/1388791106m/7493.jpg
+2816,2915,3467,9780375828260.0,Jeanne DuPrau,The People of Sparks,3.65,40859,https://images.gr-assets.com/books/1397931991m/3467.jpg
+2817,2916,5954,9780374506840.0,"Hermann Hesse, Ursule Molinaro",Narziß und Goldmund,4.19,25544,https://images.gr-assets.com/books/1374680750m/5954.jpg
+2824,2923,4954,9781400033550.0,Dave Eggers,You Shall Know Our Velocity!,3.62,23985,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+2836,2936,3698,9780143039020.0,"Graham Greene, Robert  Stone",The Quiet American,3.96,30395,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+2838,2938,6541,9780425213380.0,Patricia Cornwell,Cause of Death,3.93,35742,https://images.gr-assets.com/books/1327632787m/6541.jpg
+2848,2948,3465,9780446694860.0,"Nicholas Sparks, Micah Sparks",Three Weeks with My Brother,4.01,32208,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+2852,2952,2159,9780452287080.0,John Perkins,Confessions of an Economic Hit Man,3.83,19726,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+2855,2955,4625,9780684843320.0,Ernest Hemingway,The Complete Short Stories of Ernest Hemingway,4.28,28129,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+2859,2960,9594,9780099267550.0,Kurt Vonnegut Jr.,Timequake,3.71,23562,https://images.gr-assets.com/books/1405784951m/9594.jpg
+2866,2967,9943,9780842300520.0,Francine Rivers,The Atonement Child,4.26,29250,https://images.gr-assets.com/books/1406513472m/9943.jpg
+2867,2968,6862,9780385494240.0,Ian McEwan,Amsterdam,3.41,30469,https://images.gr-assets.com/books/1403191209m/6862.jpg
+2919,3022,7039,9780349116660.0,Alexander McCall Smith,Tears of the Giraffe,3.95,35205,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+2922,3026,9601,9780385333510.0,Kurt Vonnegut Jr.,Bluebeard,4.02,27011,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+2948,3053,119,9780618212900.0,Gary Russell,The Lord of the Rings: The Art of The Fellowship of the Ring,4.59,24340,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+2952,3057,8252,9780060885380.0,"Laura Ingalls Wilder, Garth Williams",Farmer Boy,4.05,39863,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+2958,3063,4035,9780446677130.0,Scott Turow,The Burden of Proof,4.05,29103,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+2963,3069,3977,9780553572940.0,Dan Simmons,Endymion,4.14,30664,https://images.gr-assets.com/books/1329611385m/3977.jpg
+2970,3076,4708,9780743451500.0,F. Scott Fitzgerald,The Beautiful and Damned,3.75,26597,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+2986,3094,5347,9780099468200.0,John Grisham,Bleachers,3.46,27719,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+2996,3104,5181,9780671042580.0,Bret Lott,Jewel (Oprah's Book Club),3.64,31851,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+3019,3127,4477,9780312421700.0,"Atul Gawande, Susanne Kuhlmann-Krieg",Complications: A Surgeon's Notes on an Imperfect Science,4.23,26267,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+3025,3133,823,9780060593090.0,Neal Stephenson,Quicksilver,3.92,27675,https://images.gr-assets.com/books/1377095669m/823.jpg
+3031,3139,7805,9780141185260.0,Vladimir Nabokov,Pale Fire,4.19,26377,https://images.gr-assets.com/books/1388155863m/7805.jpg
+3033,3141,5338,9780140439050.0,"Charles Dickens, Michael Slater",A Christmas Carol and Other Christmas Writings,4.13,28675,https://images.gr-assets.com/books/1388952779m/5338.jpg
+3046,3154,6751,9780316156110.0,David Foster Wallace,Consider the Lobster,4.25,26551,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+3056,3165,6174,9780684826810.0,"Primo Levi, Stuart J. Woolf, Philip Roth",Se questo è un uomo,4.28,25625,https://images.gr-assets.com/books/1414374949m/6174.jpg
+3090,3200,4796,9780143039490.0,"John Steinbeck, Susan Shillinglaw",The Winter of our Discontent,3.99,28050,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+3105,3215,1362,9780140449080.0,"Herodotus, Aubrey de Sélincourt, John M. Marincola",Ἰστορίαι,3.97,28870,https://images.gr-assets.com/books/1399225547m/1362.jpg
+3112,3223,6870,9780099481250.0,Ian McEwan,Enduring Love,3.62,26390,https://images.gr-assets.com/books/1313656531m/6870.jpg
+3126,3238,8680,9780553379330.0,Tom Robbins,Fierce Invalids Home From Hot Climates,4.01,22847,https://images.gr-assets.com/books/1327866336m/8680.jpg
+3141,3253,6538,9780425192730.0,Patricia Cornwell,Portrait of a Killer: Jack The Ripper - Case Closed,3.44,28506,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+3159,3271,5128,9780060595180.0,Aldous Huxley,The Doors of Perception & Heaven and Hell,3.96,24213,https://images.gr-assets.com/books/1375947566m/5128.jpg
+3163,3275,5180,9780425162450.0,Sheri Reynolds,The Rapture of Canaan,3.8,30267,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+3170,3282,4264,9781573226880.0,Nick Hornby,Fever Pitch,3.72,25374,https://images.gr-assets.com/books/1426114203m/4264.jpg
+3193,3305,3061,9780395530080.0,"Kimon Nicolaides, Mamie Harmon",The Natural Way to Draw,3.88,30880,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+3198,3310,67,9780061159180.0,Edward P. Jones,The Known World,3.82,26550,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+3231,3346,9555,9780679750540.0,"Haruki Murakami, Jay Rubin, Alfred Birnbaum",象の消滅 [Zō no shōmetsu],3.88,23950,https://images.gr-assets.com/books/1391384346m/9555.jpg
+3248,3364,703,9781400079490.0,Philip Roth,The Plot Against America,3.71,26262,https://images.gr-assets.com/books/1327711853m/703.jpg
+3258,3374,4820,9780670037600.0,Nathaniel Philbrick,"Mayflower: A Story of Courage, Community, and War",3.86,25752,https://images.gr-assets.com/books/1474488130m/4820.jpg
+3260,3376,6462,9781400032530.0,Joseph J. Ellis,His Excellency: George Washington,3.9,27178,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+3264,3381,8965,9780316905720.0,Darren Shan,"The Vampire's Assistant (Cirque du Freak, #2) ",4.12,29943,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+3266,3383,8765,9780307264560.0,Nora Ephron,I Feel Bad About My Neck: And Other Thoughts on Being a Woman,3.65,29749,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+3268,3385,415,9780143039940.0,Thomas Pynchon,Gravity's Rainbow,4.03,24990,https://images.gr-assets.com/books/1414969925m/415.jpg
+3275,3392,3686,9780060572150.0,Ann Patchett,Truth & Beauty: A Friendship,3.94,26344,https://images.gr-assets.com/books/1410140355m/3686.jpg
+3283,3401,597,9780743264460.0,Chuck Klosterman,Killing Yourself to Live: 85% of a True Story,3.85,23015,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+3285,3403,9589,9780425161300.0,Kurt Vonnegut Jr.,Hocus Pocus,3.81,23046,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+3330,3449,6748,9780316925280.0,David Foster Wallace,A Supposedly Fun Thing I'll Never Do Again: Essays and Arguments,4.28,23272,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+3341,3460,2615,9780060522000.0,Clayton M. Christensen,The Innovator's Dilemma: The Revolutionary Book that Will Change the Way You Do Business (Collins Business Essentials),4.0,21997,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+3367,3490,9820,9780375759310.0,Wallace Stegner,Crossing to Safety,4.16,25578,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+3371,3494,2095,9780553802020.0,Stephen Hawking,The Universe in a Nutshell,4.13,23596,https://images.gr-assets.com/books/1159814395m/2095.jpg
+3374,3497,5296,9780486414230.0,Oscar Wilde,An Ideal Husband,4.03,29952,https://images.gr-assets.com/books/1417045098m/5296.jpg
+3422,3549,10,9780439827610.0,J.K. Rowling,"Harry Potter Collection (Harry Potter, #1-6)",4.73,24618,https://images.gr-assets.com/books/1328867351m/10.jpg
+3430,3557,7797,9780007169980.0,"Theo LeSieg, Roy McKie",Ten Apples Up on Top,4.11,28034,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+3432,3559,4645,9780684862220.0,Ernest Hemingway,The Snows of Kilimanjaro and Other Stories,3.88,21365,https://images.gr-assets.com/books/1400889884m/4645.jpg
+3436,3563,9475,9780439474290.0,Jenny Nimmo,Midnight for Charlie Bone,3.79,32917,https://images.gr-assets.com/books/1328868798m/9475.jpg
+3442,3569,9827,9780385333760.0,James Clavell,King Rat,4.1,25071,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+3452,3579,5182,9780140244820.0,Mary McGarry Morris,Songs in Ordinary Time,3.68,27034,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+3457,3584,4701,9780385520520.0,Mark Haddon,A Spot of Bother,3.46,23676,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+3462,3589,7673,9780060891560.0,Michael Crichton,Eaters of the Dead,3.64,24885,https://images.gr-assets.com/books/1388369310m/7673.jpg
+3543,3675,9282,9780440235160.0,Nicholas Evans,The Smoke Jumper,4.05,25668,https://images.gr-assets.com/books/1403193693m/9282.jpg
+3559,3691,9531,9780786837880.0,"Dave Barry, Ridley Pearson, Greg Call",Peter and the Shadow Thieves,4.15,29555,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+3567,3699,4692,9780751503890.0,Noah Gordon,The Physician,4.35,19310,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+3610,3743,4909,9780743243780.0,Frank McCourt,Teacher Man,3.73,23736,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+3634,3771,6697,9780060759960.0,Rebecca Wells,Little Altars Everywhere,3.55,25045,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+3641,3778,9646,9780156421170.0,"George Orwell, Lionel Trilling",Homage to Catalonia,4.14,22227,https://images.gr-assets.com/books/1394868278m/9646.jpg
+3646,3783,6613,9780802138260.0,Candace Bushnell,Four Blondes,2.8,22278,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+3649,3787,3562,9780553233700.0,L.M. Montgomery,Emily of New Moon,4.09,33317,https://images.gr-assets.com/books/1327883976m/3562.jpg
+3661,3799,7035,9781400031370.0,Alexander McCall Smith,Morality for Beautiful Girls,3.97,29574,https://images.gr-assets.com/books/1379303019m/7035.jpg
+3668,3807,3895,9780609602200.0,"Ina Garten, Melanie Acevedo",The Barefoot Contessa Cookbook,4.21,22497,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+3674,3814,5508,9780140369270.0,"Ruud van der Rol, Rian Verhoeven, Anna Quindlen, Anne Frank, Tony Langham, Plym Peters",Anne Frank: Beyond the Diary - A Photographic Remembrance,4.25,22725,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+3688,3828,9503,9780345464020.0,Amy Tan,Saving Fish from Drowning: A Novel,3.41,24579,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+3708,3850,29,9780380715440.0,Bill Bryson,The Mother Tongue: English and How It Got That Way,3.95,24133,https://images.gr-assets.com/books/1388209925m/29.jpg
+3722,3865,5575,9780446609400.0,James Patterson,Virgin,3.87,25426,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+3730,3874,5695,9780679734510.0,"Fyodor Dostoyevsky, Richard Pevear, Larissa Volokhonsky",Бесы,4.26,20615,https://images.gr-assets.com/books/1386958613m/5695.jpg
+3741,3885,2094,9780553804360.0,"Stephen Hawking, Leonard Mlodinow",A Briefer History of Time,4.19,19838,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+3751,3896,4656,9780345463160.0,John Irving,The Fourth Hand,3.3,23277,https://images.gr-assets.com/books/1375776688m/4656.jpg
+3753,3898,8957,9780316905730.0,Darren Shan,"Tunnels of Blood (Cirque du Freak, #3) ",4.14,26287,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+3757,3902,3882,9781400082540.0,Rachael Ray,Rachael Ray 365: No Repeats--A Year of Deliciously Different Dinners (A 30-Minute Meal Cookbook),3.68,21573,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+3769,3915,1519,9780140443330.0,"Aeschylus, Robert Fagles, William Bedell Stanford",Ὀρέστεια,3.99,24588,https://images.gr-assets.com/books/1391822282m/1519.jpg
+3780,3926,1426,9780060527980.0,Paulo Coelho,Manual do guerreiro da luz,3.69,19063,https://images.gr-assets.com/books/1359135200m/1426.jpg
+3803,3952,6572,9780440182930.0,John Saul,Suffer the Children,3.9,24533,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+3842,3992,36,9780618391000.0,"Chris   Smith, Christopher Lee, Richard Taylor",The Lord of the Rings: Weapons and Warfare,4.53,18788,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+3845,3995,7194,9780156032830.0,"Arturo Pérez-Reverte, Sonia Soto",El club Dumas,3.82,24090,https://images.gr-assets.com/books/1327896341m/7194.jpg
+3849,3999,3378,9780349108390.0,Douglas Coupland,Generation X: Tales for an Accelerated Culture,3.73,20030,https://images.gr-assets.com/books/1485623844m/3378.jpg
+3862,4013,7036,9780349117040.0,Alexander McCall Smith,The Kalahari Typing School for Men,3.99,26837,https://images.gr-assets.com/books/1380393680m/7036.jpg
+3870,4021,4600,9780689861130.0,Sandra Boynton,"Moo, Baa, La La La!",4.19,26065,https://images.gr-assets.com/books/1451996462m/4600.jpg
+3877,4028,880,9780812974610.0,Robert   Harris,Pompeii,3.79,22734,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+3893,4044,5693,9780553381010.0,"Anton Chekhov, Richard Pevear, Larissa Volokhonsky",Рассказы и Повести,4.36,23027,https://images.gr-assets.com/books/1491936310m/5693.jpg
+3906,4057,668,9780451187840.0,"Ayn Rand, Leonard Peikoff",We the Living,3.89,20994,https://images.gr-assets.com/books/1306188481m/668.jpg
+3922,4074,9567,9781842430360.0,Tom Robbins,Half Asleep in Frog Pajamas,3.73,17053,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+3961,4113,9784,9780486424580.0,D.H. Lawrence,Women in Love,3.66,22372,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+3969,4123,3717,9780385722220.0,Chuck Palahniuk,Stranger Than Fiction: True Stories,3.56,18091,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+3985,4141,9833,9781400044610.0,"Haruki Murakami, Philip Gabriel, Jay Rubin"," めくらやなぎと、眠る女 [Mekurayanagi to, nemuru onna]",3.83,19216,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+3989,4145,9355,9780345479720.0,John Irving,Until I Find You,3.61,20784,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+4033,4190,5787,9780142437890.0,"Jorge Luis Borges, Andrew Hurley",El Aleph,4.39,16590,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+4034,4192,2054,9780394757680.0,Raymond Chandler,The Long Goodbye,4.23,22503,https://images.gr-assets.com/books/1388225584m/2054.jpg
+4035,4193,2050,9780394758280.0,Raymond Chandler,"Farewell, My Lovely",4.17,21864,https://images.gr-assets.com/books/1465778099m/2050.jpg
+4056,4216,4835,9780670886590.0,"Salman Rushdie, Paul Birkbeck",Haroun and the Sea of Stories,4.01,19221,https://images.gr-assets.com/books/1419913148m/4835.jpg
+4091,4251,2748,9780060987050.0,Douglas Coupland,Microserfs,3.88,19516,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+4095,4255,8960,9780316905750.0,Darren Shan,"Vampire Mountain (Cirque du Freak, #4) ",4.16,23847,https://images.gr-assets.com/books/1255813254m/8960.jpg
+4098,4258,9598,9780385334170.0,Kurt Vonnegut Jr.,Deadeye Dick,3.8,19212,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+4116,4277,1591,9780872206040.0,"Aristophanes, Sarah Ruden",Λυσιστράτη,3.84,25758,https://images.gr-assets.com/books/1335892524m/1591.jpg
+4135,4297,3764,9780142002070.0,Ian Fleming,"From Russia, with Love",3.88,19802,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+4151,4315,7983,9780142501530.0,"Brian Jacques, Gary Chalk",Salamandastron,4.05,23723,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+4159,4323,3832,9780743219570.0,P.D. James,Cover Her Face,3.94,22941,https://images.gr-assets.com/books/1298412294m/3832.jpg
+4173,4338,275,9780375700520.0,"Marguerite Duras, Barbara Bray, Maxine Hong Kingston",L'Amant,3.76,18947,https://images.gr-assets.com/books/1423329337m/275.jpg
+4175,4340,3690,9780142437310.0,"Graham Greene, John Updike",The Power and the Glory,3.99,21315,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+4183,4348,3648,9780307264190.0,Claire Messud,The Emperor's Children,2.93,15362,https://images.gr-assets.com/books/1320497348m/3648.jpg
+4230,4400,5186,9780375705040.0,Edwidge Danticat,"Breath, Eyes, Memory ",3.86,22123,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+4243,4414,6628,9780143037230.0,Jasper Fforde,The Big Over Easy,3.92,24870,https://images.gr-assets.com/books/1432412758m/6628.jpg
+4248,4419,1624,9780865471180.0,Beryl Markham,West with the Night,4.18,19738,https://images.gr-assets.com/books/1368204688m/1624.jpg
+4259,4430,8676,9780684845780.0,"Anthony Robbins, Kenneth H. Blanchard, Jason Winters",Unlimited Power : The New Science Of Personal Achievement,4.21,18588,https://images.gr-assets.com/books/1419212761m/8676.jpg
+4285,4456,1305,9780553383680.0,Steven Pressfield,Gates of Fire: An Epic Novel of the Battle of Thermopylae,4.4,17952,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+4296,4468,7186,9780192836380.0,"Alexandre Dumas fils, David Coward",La Dame aux camélias,3.97,13562,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+4332,4508,9799,9780571219350.0,Jonathan Lethem,The Fortress of Solitude,3.87,15100,https://images.gr-assets.com/books/1418677318m/9799.jpg
+4340,4516,6530,9780425204210.0,Patricia Cornwell,Trace,3.76,23287,https://images.gr-assets.com/books/1310723816m/6530.jpg
+4365,4543,6819,9780375724500.0,David Mitchell,Ghostwritten,4.06,17900,https://images.gr-assets.com/books/1320415093m/6819.jpg
+4375,4555,2873,9780452284450.0,Tracy Chevalier,The Virgin Blue,3.65,23484,https://images.gr-assets.com/books/1395581883m/2873.jpg
+4402,4583,9569,9781842431020.0,Tom Robbins,Villa Incognito,3.65,14206,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+4414,4595,3974,9780316017440.0,Dan Simmons,The Terror,4.0,21225,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+4433,4615,900,9780060554740.0,Neil Strauss,The Game,3.73,16698,https://images.gr-assets.com/books/1410129471m/900.jpg
+4441,4623,8967,9780316000960.0,Darren Shan,"Trials of Death (Cirque du Freak, #5) ",4.25,22157,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+4458,4643,903,9780808553040.0,Zilpha Keatley Snyder,The Egypt Game,3.81,26657,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+4494,4679,7329,9780261102160.0,"J.R.R. Tolkien, Christopher Tolkien",Unfinished Tales of Númenor and Middle-Earth,3.93,18402,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+4501,4686,3692,9780099478420.0,Graham Greene,The Heart of the Matter,3.98,19149,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+4521,4706,6528,9780425210280.0,Patricia Cornwell,Predator,3.67,21668,https://images.gr-assets.com/books/1310552145m/6528.jpg
+4527,4712,1849,9780446579670.0,Nelson DeMille,Wild Fire,3.99,18529,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+4535,4721,4516,9788423648990.0,Carlos Ruiz Zafón,Marina,3.99,18260,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+4539,4725,4591,9780060894080.0,Matt Ridley,Genome: The Autobiography of a Species in 23 Chapters,4.02,17684,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+4547,4733,9530,9780965925080.0,Robert Kurson,Shadow Divers: The True Adventure of Two Americans Who Risked Everything to Solve One of the Last Mysteries of World War II,4.26,16917,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+4555,4741,3304,9780060535030.0,"Isabel Allende, Margaret Sayers Peden",La ciudad de las bestias,3.69,15497,https://images.gr-assets.com/books/1331488122m/3304.jpg
+4578,4766,359,9780345455290.0,Douglas Adams,The Salmon of Doubt: Hitchhiking the Galaxy One Last Time,3.92,20177,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+4582,4770,6753,9780349111890.0,David Foster Wallace,Brief Interviews with Hideous Men,3.88,15555,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+4619,4807,647,9780312421430.0,Naomi Klein,No Logo,3.86,18792,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+4621,4809,7748,9780446698220.0,Hunter S. Thompson,Fear and Loathing on the Campaign Trail '72,4.1,15306,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+4627,4815,4031,9780375727280.0,Bret Easton Ellis,Lunar Park,3.6,16431,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+4643,4833,424,9780374521720.0,Joan Didion,Slouching Towards Bethlehem: Essays,4.24,17787,https://images.gr-assets.com/books/1327952074m/424.jpg
+4647,4837,446,9780312426230.0,Paul Auster,The Brooklyn Follies,3.81,15635,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+4654,4844,5158,9780375703060.0,Kaye Gibbons,A Virtuous Woman,3.67,21311,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+4656,4846,8968,9780316000970.0,Darren Shan,"The Vampire Prince (Cirque Du Freak, #6)",4.23,20877,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+4670,4860,8088,9780515138820.0,Robin McKinley,Sunshine,3.85,27918,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+4674,4865,2368,9780671447540.0,David McCullough,Mornings on Horseback,4.1,18321,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+4726,4920,9913,9780375703840.0,Bret Easton Ellis,Glamorama,3.47,14947,https://images.gr-assets.com/books/1403179508m/9913.jpg
+4732,4926,9804,9780156106800.0,"Italo Calvino, Archibald Colquhoun",Il barone rampante,4.06,13221,https://images.gr-assets.com/books/1344432724m/9804.jpg
+4735,4929,5367,9780380809070.0,Roger Zelazny,The Great Book of Amber,4.31,20748,https://images.gr-assets.com/books/1165519096m/5367.jpg
+4765,4962,6526,9780399153940.0,Patricia Cornwell,Book of the Dead,3.63,20962,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+4768,4965,8964,9781577780720.0,"D.C. Talk, The Voice of the Martyrs","Jesus Freaks: DC Talk and The Voice of the Martyrs - Stories of Those Who Stood for Jesus, the Ultimate Jesus Freaks",4.2,17602,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+4785,4983,822,9780060733350.0,Neal Stephenson,The Confusion,4.24,17381,https://images.gr-assets.com/books/1407706997m/822.jpg
+4794,4992,428,9780374529950.0,"Joan Didion, David Thomson",Play It as It Lays,3.86,17411,https://images.gr-assets.com/books/1327935636m/428.jpg
+4797,4995,4006,9780722533950.0,"Paulo Coelho, Alan R. Clarke",As Valkírias,3.3,14364,https://images.gr-assets.com/books/1414013931m/4006.jpg
+4808,5006,4987,9780385333900.0,Kurt Vonnegut Jr.,Jailbird,3.81,15643,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+4810,5008,3973,9780380817920.0,Dan Simmons,Ilium,4.01,19242,https://images.gr-assets.com/books/1390894862m/3973.jpg
+4819,5017,7679,9780060092570.0,Michael Crichton,The Terminal Man,3.34,19072,https://images.gr-assets.com/books/1461056182m/7679.jpg
+4860,5059,7973,9780345482400.0,Orson Scott Card,Enchantment,3.89,21889,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+4864,5063,5872,9780140236230.0,Pat Barker,Regeneration,4.03,17126,https://images.gr-assets.com/books/1365925619m/5872.jpg
+4958,5162,8963,9780316000990.0,Darren Shan,"Hunters of the Dusk (Cirque Du Freak, #7)",4.17,19326,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+4968,5173,3581,9780553212420.0,Arthur Conan Doyle,"Sherlock Holmes: The Complete Novels and Stories, Volume I",4.45,17950,https://images.gr-assets.com/books/1320490450m/3581.jpg
+4980,5186,2879,9781421506140.0,Tite Kubo,Bleach―ブリーチ― 15,4.41,17078,https://images.gr-assets.com/books/1417981626m/2879.jpg
+4992,5198,7993,9780142302390.0,"Brian Jacques, Gary Chalk",Mariel of Redwall,3.96,21214,https://images.gr-assets.com/books/1299761476m/7993.jpg
+4993,5199,5752,9780142003340.0,Steven Pinker,The Blank Slate: The Modern Denial of Human Nature,4.07,15647,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+5010,5217,3656,9781400097030.0,John Banville,The Sea,3.49,16558,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+5018,5225,8966,9780316106540.0,Darren Shan,"Allies of the Night (Cirque Du Freak, Book 8)",4.19,18649,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+5022,5229,6554,9780553297260.0,John Saul,Darkness,3.92,17338,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+5104,5316,5175,9780380794870.0,Pearl Cleage,What Looks Like Crazy on an Ordinary Day,3.7,17853,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+5117,5329,8952,9780316016670.0,Darren Shan,"Killers of the Dawn (Cirque Du Freak, #9)",4.22,18194,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+5135,5347,6194,9780140283360.0,J.M. Coetzee,Waiting for the Barbarians,3.94,14830,https://images.gr-assets.com/books/1330879044m/6194.jpg
+5139,5351,4630,9780684859230.0,Ernest Hemingway,To Have and Have Not,3.57,16074,https://images.gr-assets.com/books/1400886825m/4630.jpg
+5140,5352,5062,9780451219600.0,Ken Follett,Jackdaws,3.91,17489,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+5167,5379,5179,9780671774680.0,Melinda Haynes,Mother of Pearl,3.67,17378,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+5169,5381,7682,9780553129200.0,Michael Crichton,The Great Train Robbery,3.84,17309,https://images.gr-assets.com/books/1328309104m/7682.jpg
+5199,5412,3300,9780061161540.0,"Isabel Allende, Margaret Sayers Peden",Inés del alma mía,3.9,13539,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+5206,5419,5130,9780060085490.0,Aldous Huxley,Island,3.87,14440,https://images.gr-assets.com/books/1375947541m/5130.jpg
+5216,5429,4373,9780060856270.0,Loung Ung,First They Killed My Father: A Daughter of Cambodia Remembers,4.29,17459,https://images.gr-assets.com/books/1407105580m/4373.jpg
+5229,5443,3381,9781582344160.0,Douglas Coupland,Hey Nostradamus!,3.72,14645,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+5244,5458,7053,9780375422710.0,Alexander McCall Smith,In the Company of Cheerful Ladies,4.07,19839,https://images.gr-assets.com/books/1422951731m/7053.jpg
+5245,5459,8296,9780060885460.0,"Laura Ingalls Wilder, Garth Williams",The First Four Years,3.88,24180,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+5254,5469,5289,9780007144360.0,"Oscar Wilde, Merlin Holland",Collected Works,4.45,10835,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+5321,5540,304,9780375760140.0,"George Eliot, Edmund White",Daniel Deronda,3.82,17723,https://images.gr-assets.com/books/1320432000m/304.jpg
+5350,5569,6820,9780812966920.0,David Mitchell,number9dream,3.92,13726,https://images.gr-assets.com/books/1320540682m/6820.jpg
+5351,5570,3384,9780060987330.0,Douglas Coupland,Girlfriend in a Coma,3.61,14576,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+5374,5594,9914,9780330339190.0,Bret Easton Ellis,The Informers,3.39,12898,https://images.gr-assets.com/books/1374684746m/9914.jpg
+5388,5608,7911,9781416916180.0,Margaret Sidney,Five Little Peppers and How They Grew,4.03,19780,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+5407,5629,5548,9780393320920.0,Richard Feynman,What Do You Care What Other People Think? Further Adventures of a Curious Character,4.28,14948,https://images.gr-assets.com/books/1297913068m/5548.jpg
+5416,5639,8725,9780375758740.0,Ruth Reichl,Comfort Me with Apples: More Adventures at the Table,4.02,16021,https://images.gr-assets.com/books/1339885200m/8725.jpg
+5451,5675,5160,9780375500720.0,Maya Angelou,The Heart of a Woman,4.19,15962,https://images.gr-assets.com/books/1417404078m/5160.jpg
+5459,5684,1627,9780743271320.0,Annie Proulx,Brokeback Mountain,3.93,19871,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+5491,5723,7663,9780451210630.0,"Jeffery Hudson, Michael Crichton",A Case of Need,3.6,14109,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+5499,5732,348,9780345413990.0,Robert A. Heinlein,The Door into Summer,4.0,15298,https://images.gr-assets.com/books/1342241886m/348.jpg
+5503,5737,3103,9780393310320.0,E.M. Forster,Maurice,4.02,16301,https://images.gr-assets.com/books/1361934128m/3103.jpg
+5507,5741,6426,9780060584030.0,Janet Evanovich,Motor Mouth,3.66,20983,https://images.gr-assets.com/books/1479699584m/6426.jpg
+5525,5760,5809,9782020418780.0,Thomas Pynchon,V.,3.97,13485,https://images.gr-assets.com/books/1328110787m/5809.jpg
+5543,5778,8951,9780316016650.0,Darren Shan,"The Lake of Souls (Cirque Du Freak, #10)",4.19,16803,https://images.gr-assets.com/books/1255988654m/8951.jpg
+5583,5821,3763,9780142003240.0,Ian Fleming,Live and Let Die,3.62,14230,https://images.gr-assets.com/books/1327953982m/3763.jpg
+5608,5848,1897,9780385488180.0,Jon Krakauer,Eiger Dreams: Ventures Among Men and Mountains,3.97,14010,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+5626,5866,4652,9780684822770.0,Ernest Hemingway,In Our Time,3.8,14912,https://images.gr-assets.com/books/1369859426m/4652.jpg
+5628,5868,7201,9780312997110.0,Jeffrey Archer,As The Crow Flies,4.05,14415,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+5633,5874,9957,9780099468390.0,Ian McEwan,The Cement Garden,3.57,14418,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+5646,5888,5936,9780374529600.0,"Pablo Neruda, Ilan Stavans",The Poetry of Pablo Neruda,4.44,14596,https://images.gr-assets.com/books/1417605511m/5936.jpg
+5647,5889,2872,9780452283210.0,Tracy Chevalier,Falling Angels,3.55,18465,https://images.gr-assets.com/books/1327995250m/2872.jpg
+5668,5910,7073,9780345915630.0,John Irving,A Son of the Circus,3.61,14878,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+5681,5923,7058,9780375422740.0,Alexander McCall Smith,The Good Husband of Zebra Drive,4.06,18329,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+5695,5937,3858,9780767915750.0,Sarah Macdonald,Holy Cow: An Indian Adventure,3.51,13627,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+5759,6002,9762,9781400045370.0,"Byron Katie, Stephen Mitchell",Loving What Is: Four Questions That Can Change Your Life,4.15,12568,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+5802,6046,6750,9780142002420.0,David Foster Wallace,The Broom of the System,3.84,13011,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+5812,6057,3368,9780321344760.0,Steve Krug,Don't Make Me Think! A common sense approach to web usability,4.24,7296,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+5866,6116,7628,9781551113810.0,"Ford Madox Ford, Kenneth Womack, William Baker",The Good Soldier,3.72,14471,https://images.gr-assets.com/books/1389213508m/7628.jpg
+5920,6171,6551,9780142437290.0,"Saul Bellow, Philip Roth",Herzog,3.79,14324,https://images.gr-assets.com/books/1386924221m/6551.jpg
+5925,6176,5755,9780060958340.0,Steven Pinker,The Language Instinct: How the Mind Creates Language,4.05,12870,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+5932,6183,7432,9780312426220.0,Jacqueline Winspear,Pardonable Lies,4.09,17947,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+5953,6205,8949,9780316156290.0,Darren Shan,"Lord of the Shadows (Cirque Du Freak, #11)",4.22,15794,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+5961,6213,3885,9780898214970.0,"Janet Briggs, Beth Wittlinger",The Taste of Home Cookbook,4.25,14469,https://images.gr-assets.com/books/1309198140m/3885.jpg
+5969,6221,7520,9781416516320.0,Brad Thor,Path of the Assassin,4.17,12652,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+5991,6245,7968,9780812524260.0,Orson Scott Card,"Red Prophet (Tales of Alvin Maker, #2)",3.78,16704,https://images.gr-assets.com/books/1379147136m/7968.jpg
+6013,6267,9650,9781421808310.0,George Orwell,Burmese Days,3.84,12119,https://images.gr-assets.com/books/1415573403m/9650.jpg
+6038,6292,2915,9780440227500.0,Gary Paulsen,The River,3.77,14198,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+6042,6296,5053,9780451208700.0,Ken Follett,The Man from St. Petersburg,3.84,13193,https://images.gr-assets.com/books/1411331808m/5053.jpg
+6063,6319,250,9780802151830.0,Henry Miller,Tropic of Capricorn,3.85,12082,https://images.gr-assets.com/books/1417652073m/250.jpg
+6093,6350,1875,9780679724700.0,"Michel Foucault, Robert Hurley",Histoire de la sexualité 1. La Volonté de savoir,4.03,12565,https://images.gr-assets.com/books/1486236798m/1875.jpg
+6101,6358,7531,9780375760910.0,Laurie Notaro,The Idiot Girls' Action-Adventure Club: True Tales from a Magnificent and Clumsy Life,3.89,15198,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+6111,6368,7184,9780192838440.0,"Alexandre Dumas, David Coward, Auguste Maquet",Vingt ans après,4.01,14539,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+6113,6370,447,9780140115860.0,Paul Auster,Moon Palace,3.99,12170,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+6137,6394,698,9780307263940.0,Anne Tyler,Digging to America,3.53,15484,https://images.gr-assets.com/books/1327901292m/698.jpg
+6140,6397,7979,9780142400300.0,Brian Jacques,The Bellmaker,3.95,17476,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+6142,6399,5849,9780330487190.0,V.S. Naipaul,A House for Mr. Biswas,3.82,13073,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+6153,6411,2137,9780312424080.0,Michael Cunningham,A Home at the End of the World,3.89,13228,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+6159,6417,4955,9781400095570.0,Dave Eggers,How We Are Hungry,3.75,11282,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+6193,6455,840,9780465067110.0,Donald A. Norman,The Psychology of Everyday Things,4.18,11838,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+6213,6475,2142,9780849945110.0,Ted Dekker,Blink,4.17,12037,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+6287,6555,8948,9780316156300.0,Darren Shan,"Sons of Destiny (Cirque Du Freak, Book 12)",4.22,14997,https://images.gr-assets.com/books/1344270002m/8948.jpg
+6316,6587,3759,9780142002050.0,Ian Fleming,Goldfinger,3.8,13267,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+6328,6600,6678,9780141311420.0,"Roald Dahl, Quentin Blake",Going Solo,4.04,14086,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+6373,6647,3447,9780618709860.0,Tim O'Brien,In the Lake of the Woods,3.78,12441,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+6399,6674,8696,9780345371980.0,"Douglas Adams, Mark Carwardine",Last Chance to See,4.33,13860,https://images.gr-assets.com/books/1327867839m/8696.jpg
+6433,6712,7926,9780385732960.0,Sydney Taylor,All-of-a-Kind Family,4.23,18383,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+6438,6718,291,9780806501900.0,"Kahlil Gibran, Anthony R. Ferris",الأجنحة المتكسرة,3.93,5611,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+6459,6741,6671,9780375814240.0,Roald Dahl,The Wonderful Story Of Henry Sugar And Six More,4.15,13419,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+6465,6748,1307,9780553295410.0,"Margaret Weis, Tracy Hickman",Fire Sea,4.05,14707,https://images.gr-assets.com/books/1325422748m/1307.jpg
+6474,6757,7909,9780064400960.0,"Maud Hart Lovelace, Lois Lenski",Betsy-Tacy,4.07,18024,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+6523,6808,4986,9780743422000.0,Kurt Vonnegut Jr.,"God Bless You, Dr. Kevorkian",3.83,11543,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+6541,6826,5368,9780141009830.0,Kathleen Winsor,Forever Amber,3.98,13286,https://images.gr-assets.com/books/1350464965m/5368.jpg
+6563,6849,7998,9780142401420.0,Brian Jacques,Outcast of Redwall,3.9,15874,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+6565,6851,1191,9780307238280.0,"Giada De Laurentiis, Victoria Pearson",Giada's Family Dinners,3.99,12061,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+6586,6873,4662,9780684842510.0,"F. Scott Fitzgerald, Matthew J. Bruccoli",The Short Stories of F. Scott Fitzgerald,4.23,11525,https://images.gr-assets.com/books/1400891315m/4662.jpg
+6599,6889,3750,9780142002060.0,Ian Fleming,Moonraker,3.7,12016,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+6613,6906,9454,9780198245970.0,"Georg Wilhelm Friedrich Hegel, A.V. Miller, John Niemeyer Findlay",Phänomenologie des Geistes,3.91,11744,https://images.gr-assets.com/books/1425522818m/9454.jpg
+6620,6913,4507,9780553803080.0,Julie Gregory,Sickened,3.72,11860,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+6643,6936,7981,9780142402450.0,"Brian Jacques, Allan Curless",The Long Patrol,4.1,15343,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+6678,6973,5553,9780465023930.0,Richard Feynman,Six Easy Pieces: Essentials of Physics Explained by Its Most Brilliant Teacher,4.19,11867,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+6692,6988,8492,9781581345260.0,Frank E. Peretti,Prophet,3.92,11708,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+6701,6997,5055,9780451211480.0,Ken Follett,Night over Water,3.78,12329,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+6744,7041,5552,9780691024170.0,Richard Feynman,QED: The Strange Theory of Light and Matter,4.23,10438,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+6774,7072,9013,9781592289450.0,Slavomir Rawicz,The Long Walk: The True Story of a Trek to Freedom,4.18,10188,https://images.gr-assets.com/books/1417980460m/9013.jpg
+6792,7091,2528,9780156010600.0,"José Saramago, Margaret Jull Costa",Todos os Nomes,3.88,9520,https://images.gr-assets.com/books/1327955213m/2528.jpg
+6817,7117,98,9780761129580.0,"Heidi Murkoff, Sharon Mazel, Heidi Murkoff, Arlene Eisenberg, Sandee Hathaway, Mark D. Widome",What to Expect the First Year,3.86,10807,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+6859,7165,2371,9780844662920.0,David McCullough,The Johnstown Flood,4.11,11691,https://images.gr-assets.com/books/1313667349m/2371.jpg
+6869,7175,3379,9781582342150.0,Douglas Coupland,All Families Are Psychotic,3.69,10461,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+6990,7304,3888,9781933615010.0,"America's Test Kitchen, Carl Tremblay, Daniel J. Van Ackere",The America's Test Kitchen Family Cookbook,4.31,12081,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+6999,7313,355,9780345316510.0,Robert A. Heinlein,Job: A Comedy of Justice,3.77,14592,https://images.gr-assets.com/books/1438043968m/355.jpg
+7035,7353,2183,9780140447970.0,"Gustave Flaubert, Robert Baldick, Geoffrey Wall",L'Éducation sentimentale,3.83,11642,https://images.gr-assets.com/books/1327788473m/2183.jpg
+7068,7391,952,9781881273650.0,"Gary Chapman, D. Ross Campbell",The Five Love Languages of Children,4.21,9744,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+7085,7408,4950,9780618711670.0,Amitav Ghosh,The Hungry Tide,3.91,9722,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+7086,7409,8646,9780385337630.0,Mary Lawson,Crow Lake,3.85,12220,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+7167,7494,9998,9780679733780.0,"Kōbō Abe, E. Dale Saunders",砂の女 [Suna no onna],3.91,11467,https://images.gr-assets.com/books/1361254930m/9998.jpg
+7176,7504,6193,9780099479150.0,J.M. Coetzee,Life & Times of Michael K.,3.85,10647,https://images.gr-assets.com/books/1327203650m/6193.jpg
+7186,7514,5481,9780060898530.0,Aldous Huxley,Brave New World Revisited,3.93,11073,https://images.gr-assets.com/books/1410136964m/5481.jpg
+7192,7523,7707,9780451530100.0,"George Bernard Shaw, Alan Jay Lerner",Pygmalion and My Fair Lady (50th Anniversary Edition) (Signet Classics (Paperback)),4.24,13318,https://images.gr-assets.com/books/1327891970m/7707.jpg
+7213,7545,4830,9780679783480.0,Salman Rushdie,Shalimar the Clown,3.86,10396,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+7214,7546,8745,9780688172370.0,"Waris Dirie, Cathleen Miller",Desert Flower: The Extraordinary Journey of a Desert Nomad,4.09,9609,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+7216,7549,4076,9781861977170.0,"Tom Peters, Robert H. Waterman Jr.",In Search of Excellence,3.91,9469,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+7225,7558,9654,9780451209440.0,Erica Jong,Fear of Flying,3.44,13061,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+7228,7561,6694,9780140568200.0,"Roald Dahl, Quentin Blake",The Giraffe and the Pelly and Me,3.8,14180,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+7314,7653,7081,9780765309420.0,John Scalzi,The Android's Dream,3.97,11476,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+7315,7654,3291,9780743217190.0,Isabel Allende,Cuentos de Eva Luna,3.96,10862,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+7316,7655,7579,9780767901570.0,Lama Surya Das,Awakening the Buddha Within : Tibetan Wisdom for the Western World,4.18,9912,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+7344,7687,7062,9780375758230.0,Adam Gopnik,Paris to the Moon,3.75,11065,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+7349,7692,3757,9780142002030.0,Ian Fleming,Dr. No,3.76,10569,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+7368,7712,1990,9780140436140.0,"Charles Dickens, Patricia Ingham, Hablot Knight Browne",The Life and Adventures of Martin Chuzzlewit,3.82,11784,https://images.gr-assets.com/books/1334392783m/1990.jpg
+7371,7716,5845,9780330487150.0,V.S. Naipaul,A Bend in the River,3.77,11011,https://images.gr-assets.com/books/1353691563m/5845.jpg
+7382,7729,2068,9780684824710.0,Daniel C. Dennett,Darwin's Dangerous Idea: Evolution and the Meanings of Life,4.03,11090,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+7387,7735,4813,9780060540940.0,Gavin Menzies,1421: The Year China Discovered America,3.58,10200,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+7430,7781,3972,9780380817930.0,Dan Simmons,Olympos,3.93,11393,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+7431,7782,3872,9780802715520.0,Tom Standage,A History of the World in 6 Glasses,3.74,10473,https://images.gr-assets.com/books/1415681601m/3872.jpg
+7444,7797,5946,9780679772670.0,Michael Ondaatje,In the Skin of a Lion,3.88,11289,https://images.gr-assets.com/books/1405864361m/5946.jpg
+7445,7799,5559,9785559608470.0,"Jack Welch, John A. Byrne, Mike Barnicle",Jack: Straight from the Gut,3.79,9781,https://images.gr-assets.com/books/1297699934m/5559.jpg
+7470,7825,7980,9780142401450.0,Brian Jacques,The Pearls of Lutra,3.99,15605,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+7477,7832,676,9780375755190.0,Billy Collins,Sailing Alone Around the Room: New and Selected Poems,4.24,10999,https://images.gr-assets.com/books/1403183272m/676.jpg
+7508,7868,2530,9780156005200.0,"José Saramago, Giovanni Pontiero",Memorial do Convento,3.9,5321,https://images.gr-assets.com/books/1483229660m/2530.jpg
+7637,8010,665,9780451163940.0,"Ayn Rand, Nathaniel Branden",The Virtue of Selfishness: A New Concept of Egoism,3.47,10198,https://images.gr-assets.com/books/1425001997m/665.jpg
+7667,8041,2372,9780743262130.0,David McCullough,"The Path Between the Seas: The Creation of the Panama Canal, 1870-1914",4.19,9349,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+7681,8055,4660,9780345417960.0,John Irving,The 158-Pound Marriage,3.22,10532,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+7726,8102,7999,9780142501080.0,Brian Jacques,Marlfox,3.99,13426,https://images.gr-assets.com/books/1311702426m/7999.jpg
+7745,8125,4599,9780786886330.0,Glen David Gold,Carter Beats the Devil,4.09,10000,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+7763,8145,3760,9780142002060.0,Ian Fleming,Diamonds are Forever,3.59,10205,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+7764,8146,2978,9780060594530.0,James Hilton,Lost Horizon,3.9,10907,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+7773,8156,2049,9780394758270.0,Raymond Chandler,The High Window,4.08,11080,https://images.gr-assets.com/books/1466754245m/2049.jpg
+7779,8163,6328,9780142302260.0,"Roald Dahl, Quentin Blake",Revolting Rhymes,4.13,12674,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+7786,8170,3762,9780142003250.0,Ian Fleming,On Her Majesty's Secret Service,3.94,11612,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+7823,8209,2677,9780486287590.0,Jonathan Swift,A Modest Proposal and Other Satirical Works,4.04,12499,https://images.gr-assets.com/books/1264316062m/2677.jpg
+7830,8217,2067,9780670034730.0,Daniel C. Dennett,Breaking the Spell: Religion as a Natural Phenomenon,3.89,8381,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+7841,8228,1823,9780743233220.0,Jon Ronson,Them: Adventures with Extremists,3.94,9081,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+7844,8231,621,9780767923830.0,David Bach,The Automatic Millionaire: A Powerful One-Step Plan to Live and Finish Rich,3.9,10091,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+7875,8265,9865,9780099592420.0,Salman Rushdie,The Moor's Last Sigh,3.92,9459,https://images.gr-assets.com/books/1359386233m/9865.jpg
+7894,8284,8087,9780441012400.0,Robin McKinley,Deerskin,3.88,15982,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+7895,8285,4339,9780679735250.0,Michael Herr,Dispatches,4.24,10383,https://images.gr-assets.com/books/1343099128m/4339.jpg
+7918,8309,5942,9780375724370.0,Michael Ondaatje,Anil's Ghost,3.54,11184,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+7922,8315,4099,9780201616220.0,"Andrew Hunt, Dave Thomas",The Pragmatic Programmer: From Journeyman to Master,4.31,9416,https://images.gr-assets.com/books/1401432508m/4099.jpg
+7963,8360,4261,9781573223560.0,Nick Hornby,31 Songs,3.56,8999,https://images.gr-assets.com/books/1417984618m/4261.jpg
+7985,8383,4364,9780375703410.0,Suketu Mehta,Maximum City: Bombay Lost and Found,3.91,7894,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+8003,8402,5417,9780517219030.0,Stephen King,Three Complete Novels: Carrie/Salem's Lot/The Shining,4.52,11063,https://images.gr-assets.com/books/1376725117m/5417.jpg
+8007,8406,7252,9780060539090.0,"Jenna Jameson, Neil Strauss",How to Make Love Like a Porn Star: A Cautionary Tale,3.75,9531,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+8078,8481,400,9780140156040.0,Don DeLillo,Libra,3.98,10195,https://images.gr-assets.com/books/1327935630m/400.jpg
+8083,8486,8172,9781401202520.0,"Mark Waid, Alfred Gough, Miles Millar, Dave McCaig, Gerry Alanguilan, Leinil Francis Yu",Superman: Birthright 1-12,4.12,9253,https://images.gr-assets.com/books/1343584198m/8172.jpg
+8105,8512,8089,9780441005830.0,Robin McKinley,Rose Daughter,3.77,15696,https://images.gr-assets.com/books/1398552029m/8089.jpg
+8113,8520,1524,9780521010760.0,"Aeschylus, Judith Affleck, Philip de May, Patricia E. Easterling, John     Harrison",Ἀγαμέμνων,3.82,11515,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+8128,8535,4887,9780465016910.0,"Alice  Miller, Ruth Ward",Das Drama des begabten Kindes und die Suche nach dem wahren Selbst: eine Um- und Fortschreibung,4.09,9563,https://images.gr-assets.com/books/1339395245m/4887.jpg
+8134,8541,5068,9780330489680.0,Graham Swift,Last Orders,3.68,9349,https://images.gr-assets.com/books/1457623323m/5068.jpg
+8145,8552,4633,9780743253420.0,Ernest Hemingway,Islands in the Stream,3.86,9608,https://images.gr-assets.com/books/1400891142m/4633.jpg
+8185,8595,7987,9780142501090.0,Brian Jacques,The Legend of Luke,3.99,12658,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+8259,8671,5052,9780451216720.0,Ken Follett,Code to Zero,3.64,9071,https://images.gr-assets.com/books/1309209804m/5052.jpg
+8300,8714,7780,9780679434480.0,"Dr. Seuss, Maurice Sendak, Audrey Geisel",The Secret Art of Dr. Seuss,4.05,8461,https://images.gr-assets.com/books/1320429156m/7780.jpg
+8308,8723,4530,9780143035370.0,Helen Fielding,Olivia Joules And The Overactive Imagination,3.1,10687,https://images.gr-assets.com/books/1408588694m/4530.jpg
+8311,8726,7199,9780060586380.0,Ann-Marie MacDonald,The Way the Crow Flies,4.08,10227,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+8326,8741,6159,9780802141900.0,Sherman Alexie,Reservation Blues,3.98,9919,https://images.gr-assets.com/books/1398195783m/6159.jpg
+8363,8780,3710,9780375703870.0,Zadie Smith,The Autograph Man,3.14,8317,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+8368,8785,7433,9780805078980.0,Jacqueline Winspear,Messenger of Truth,3.99,12454,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+8403,8821,5571,9780865475880.0,"William McDonough, Michael Braungart",Cradle to Cradle: Remaking the Way We Make Things,4.1,7625,https://images.gr-assets.com/books/1417605547m/5571.jpg
+8408,8826,8515,9780345427050.0,"Monty Roberts, Lucy Grealy, Lawrence Scanlan",The Man Who Listens to Horses,4.1,9021,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+8409,8827,6749,9780316010760.0,David Foster Wallace,Oblivion,4.07,9196,https://images.gr-assets.com/books/1311905400m/6749.jpg
+8420,8839,9648,9780141183720.0,George Orwell,Keep the Aspidistra Flying,3.87,9599,https://images.gr-assets.com/books/1331244097m/9648.jpg
+8446,8866,1032,9780345479170.0,"Donald J. Trump, Tony Schwartz",Trump: The Art of the Deal,3.66,8768,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+8470,8892,7785,9780007158520.0,Dr. Seuss,I Can Read with My Eyes Shut!,4.17,13821,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+8487,8911,4657,9780345418000.0,John Irving,The Water-Method Man,3.34,9725,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+8496,8921,3028,9780517548230.0,Henry Hazlitt,Economics in One Lesson,4.22,9028,https://images.gr-assets.com/books/1320423284m/3028.jpg
+8506,8932,3446,9780767904420.0,Tim O'Brien,Going After Cacciato,3.9,9188,https://images.gr-assets.com/books/1399498199m/3446.jpg
+8521,8947,386,9780393329410.0,Nick Flynn,Another Bullshit Night in Suck City: A Memoir,3.77,8441,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+8630,9067,449,9780312264000.0,Paul Auster,Timbuktu,3.66,8272,https://images.gr-assets.com/books/1355142497m/449.jpg
+8662,9100,3559,9780385413720.0,Thomas L. Friedman,From Beirut to Jerusalem,4.1,8057,https://images.gr-assets.com/books/1328295618m/3559.jpg
+8665,9103,1824,9780743270600.0,Jon Ronson,The Men Who Stare at Goats,3.58,8245,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+8674,9113,6872,9780679749840.0,Ian McEwan,The Comfort of Strangers,3.44,8843,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+8679,9118,9864,9780312255000.0,Salman Rushdie,The Ground Beneath Her Feet,3.77,8673,https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+8683,9123,4984,9780099282970.0,Kurt Vonnegut Jr.,Bagombo Snuff Box,3.72,7407,https://images.gr-assets.com/books/1327353727m/4984.jpg
+8710,9150,8914,9780375700450.0,John Keegan,The First World War,4.0,9162,https://images.gr-assets.com/books/1403194704m/8914.jpg

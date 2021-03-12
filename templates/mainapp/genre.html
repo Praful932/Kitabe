@@ -1,0 +1,55 @@
+{% extends "mainapp/layout.html" %}
+{% load static %}
+
+{% block title  %}
+Genre
+{% endblock title %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'mainapp/css/genre.css' %}">
+{% endblock head %}
+
+
+{% block main %}
+
+<h1 class="genre-head text-center pt-3 pb-3">{{ genre }} Genre</h1>
+
+
+<div class="card-deck ">
+    {% for book in genre_topbook %}
+
+    <div class="card col-sm-12 col-lg-3 " style="width: 300px;">
+        <div class="row no-gutters">
+            <img class="card-img  mt-4 " src="{{book.image_url}}" alt="book Card">
+            <div class="card-body text-center">
+                <h5 class="card-title">{{book.original_title}}</h5>
+                <p class="card-text"><i>by {{book.authors}}</i></p>
+            </div>
+        </div><br>
+        <a href="javascript:;" onclick='bookDetails(this)' class="btn more-details"
+            data-book-id="{{ book.book_id }}">More Details</a>
+        {% if user.is_authenticated %}
+        <div class='rating-block' id='rating-block-{{ book.book_id }}' onmouseover="rateStart(this)" onclick='rateBook(this)' onmouseout='finishRate(this)'
+            data-book-id="{{ book.book_id }}">
+            <div id='button-text-{{ book.book_id }}'>Rate <i class="fa fa-heart" style="color:red"></i> This Book</a>
+            </div>
+            <div class='rateYo' id='rate-{{ book.book_id }}'></div>
+        </div>
+        {% else %}
+        <div class='rating-block btn' onclick="location.href='{% url 'account_signup' %}'">
+            <div id='button-text'>Rate <i class="fa fa-heart" style="color:red"></i> This Book</a>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+
+
+    {% if forloop.counter|divisibleby:"4"  %}
+</div>
+<div class="card-deck  ">
+    {% endif %}
+    {% endfor %}
+</div><!-- The final deck is closed here, outside the loop -->
+
+{% endblock main %}
