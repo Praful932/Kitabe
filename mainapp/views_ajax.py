@@ -99,4 +99,3 @@ def user_rate_book(request):
             rating_object.bookrating = bookrating
             rating_object.save()
         return JsonResponse({'success': True}, status=200)
-        
