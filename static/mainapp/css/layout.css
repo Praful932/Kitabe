@@ -17,7 +17,7 @@ body {
   align-items: center !important;
 }
 .navbrandimg{
-  width: 120px;
+  width: 94px;
 }
 
 .navbar-toggler {
@@ -164,7 +164,7 @@ footer a:hover {
     padding-left: 0;
   }
   .navbrandimg{
-    width: 70px;
+    width: 65px;
     padding-right: 5px;
   }
   .img-book {
