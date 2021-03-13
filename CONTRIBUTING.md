@@ -22,7 +22,7 @@ For Contributions we strictly follow [Github Flow](https://guides.github.com/int
 - `python manage.py migrate` - Make Migrations
 - Open `BookRecSystem/settings.py`
 - Set `SECRET_KEY = "RANDOM_KEY"`
-- Set `ALLOWED_HOSTS = ['kitabe-app.herokuapp.com', '127.0.0.1']`
+- Set `ALLOWED_HOSTS = ['kitabe-app.herokuapp.com', '127.0.0.1', 'localhost']`
 - `python manage.py runserver` - You're good to Go!!
 
 #### Optional
