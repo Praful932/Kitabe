@@ -96,7 +96,6 @@ def user_rate_book(request):
         else:
             # Update Rating
             rating_object = query[0]
-            print(rating_object)
             rating_object.bookrating = bookrating
             rating_object.save()
         return JsonResponse({'success': True}, status=200)
