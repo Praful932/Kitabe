@@ -37,6 +37,7 @@
 <body>
 
     <header>
+	<a name='top'>
         <div id="topheader">
             <nav class="navbar navbar-expand-md navbar-light">
                 <a class="navbar-brand head-text" href="/">Kitabe</a>
@@ -136,12 +137,23 @@
         </div>
     </div>
     </div>
-
+	<script>
+    document.body.addEventListener('scroll',()=>{
+    if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}) 
+	</script>
+	<a href='#top'>
+	<button  id="myBtn" title="Go to top"><i class="fa fa-angle-up"></i></button></a>
     <!-- End boostrap modal -->
     {% block main %}
     {% endblock main %}
 
     <footer class="mainfooter" role="contentinfo">
+	
         <div class="footer-content">
             <div class="footer-icon">
                 <a href="mailto:kitabeaurkahaniya@gmail.com" target="_blank"><i class="fa fa-google fa-2x"

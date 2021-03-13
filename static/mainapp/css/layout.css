@@ -179,3 +179,25 @@ footer a:hover {
     font-weight: 100;
   }
 }
+body {
+	scroll-behavior:smooth;
+}
+#myBtn {
+  display:none;	
+  position: fixed; 
+  bottom: 20px;  
+  right: 30px; 
+  z-index: 100; 
+  border: none; 
+  outline: none; 
+  background-color: #ff0077; 
+  color: white; 
+  cursor: pointer; 
+  padding: 0.3rem 1.2rem 0.3rem 1.2rem;
+  border-radius: 25rem;
+  font-size: 2rem;
+}
+
+#myBtn:hover {
+  background-color: #ff6666;
+}
