@@ -2,7 +2,7 @@
 {% load static %}
 <html lang="en">
 
-<head>
+<head>     
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
@@ -35,8 +35,8 @@
 </head>
 
 <body>
-
     <header>
+	<a name='top'>
         <div id="topheader">
             <nav class="navbar navbar-expand-md navbar-light">
                 <a class="navbar-brand" href="/"><img class="navbrandimg" src="{% static 'mainapp/png/brand-img.png' %}"></a>
@@ -136,12 +136,15 @@
         </div>
     </div>
     </div>
-
+	
+	<a href='#top'>
+	<button  id="topBtn" title="Go to top"><i class="fa fa-angle-up"></i></button></a>
     <!-- End boostrap modal -->
     {% block main %}
     {% endblock main %}
 
     <footer class="mainfooter" role="contentinfo">
+	
         <div class="footer-content">
             <div class="footer-icon">
                 <a href="mailto:kitabeaurkahaniya@gmail.com" target="_blank"><i class="fa fa-google fa-2x"
@@ -165,7 +168,7 @@
     <!-- Rating JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
     <!-- Search Bar Script -->
-    <script>
+    <script>    
         // clear forms
         function init() {
             document.getElementById('bookName').value = "";
@@ -267,7 +270,6 @@
         }).blur(function () {
             $('#search-dropdown').hide(150);
         })
-
         //for rating a book
         $(function () {
 
@@ -354,7 +356,13 @@
                 }
             });
         }
-
+	 document.body.addEventListener('scroll',()=>{
+    if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
+        document.getElementById("topBtn").style.display = "block";
+    } else {
+        document.getElementById("topBtn").style.display = "none";
+    }
+     });  
     </script>
     <!-- End Search Bar Script -->
     {% block script %}
