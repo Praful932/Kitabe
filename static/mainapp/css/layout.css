@@ -187,16 +187,16 @@ body {
   display:none;	
   position: fixed; 
   bottom: 1rem;  
-  right: 2rem; 
+  right: 1.5rem; 
   z-index: 100; 
   border: 0.1rem solid white; 
   outline: none; 
   background-color: black; 
   color: white; 
   cursor: pointer; 
-  padding: 0.2rem 0.9rem 0.2rem 0.9rem;
-  border-radius: 25rem;
-  font-size: 1.4rem;
+  padding: 0.2rem 0.8rem 0.2rem 0.8rem;
+  border-radius: 30rem;
+  font-size: 1.2rem;
 }
 @media screen and (min-width:800px){
 #topBtn:hover {
