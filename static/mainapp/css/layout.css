@@ -198,6 +198,11 @@ body {
   border-radius: 30rem;
   font-size: 1.2rem;
 }
+@media screen and (max-width: 600px) {
+	#topBtn {
+		right: 1rem;
+	}
+}	
 @media screen and (min-width:800px){
 #topBtn:hover {
   background-color: #ff6666;
