@@ -182,7 +182,7 @@ footer a:hover {
 body {
 	scroll-behavior:smooth;
 }
-#myBtn {
+#topBtn {
   display:none;	
   position: fixed; 
   bottom: 20px;  
@@ -198,6 +198,6 @@ body {
   font-size: 2rem;
 }
 
-#myBtn:hover {
+#topBtn:hover {
   background-color: #ff6666;
 }
