@@ -186,8 +186,8 @@ body {
 #topBtn {
   display:none;	
   position: fixed; 
-  bottom: 20px;  
-  right: 30px; 
+  bottom: 1rem;  
+  right: 2rem; 
   z-index: 100; 
   border: 0.1rem solid white; 
   outline: none; 
@@ -198,7 +198,8 @@ body {
   border-radius: 25rem;
   font-size: 1.4rem;
 }
-
+@media screen and (min-width:800px){
 #topBtn:hover {
   background-color: #ff6666;
+}
 }
