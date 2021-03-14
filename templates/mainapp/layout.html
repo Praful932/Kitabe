@@ -2,7 +2,7 @@
 {% load static %}
 <html lang="en">
 
-<head>
+<head>     
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
@@ -35,11 +35,11 @@
 </head>
 
 <body>
-
     <header>
+	<a name='top'>
         <div id="topheader">
             <nav class="navbar navbar-expand-md navbar-light">
-                <a class="navbar-brand" href="/"><img class="navbrandimg" src="{% static 'mainapp/png/brand-img.png' %}"></a>
+                <a class="navbar-brand head-text" href="/">Kitabe</a>
                 <!-- Search Bar -->
                 <div class="searchbar" id="searchdropdown">
                     <input type="text" id="bookName" onkeyup="myFunction()" placeholder="Search for books"
@@ -55,6 +55,11 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul class="navbar-nav text-center">
+					    <li class="nav-item">
+                            <a class="nav-link" href="/">
+                                <i class="nav-icon-s fa fa-home fa-2x" aria-hidden="true"></i><br>Home
+                            </a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'explore_books' %}">
                                 <i class="nav-icon-s fa fa-globe fa-2x" aria-hidden="true"></i><br>Explore
@@ -136,12 +141,12 @@
         </div>
     </div>
     </div>
-
     <!-- End boostrap modal -->
     {% block main %}
     {% endblock main %}
 
     <footer class="mainfooter" role="contentinfo">
+	
         <div class="footer-content">
             <div class="footer-icon">
                 <a href="mailto:kitabeaurkahaniya@gmail.com" target="_blank"><i class="fa fa-google fa-2x"
@@ -165,7 +170,7 @@
     <!-- Rating JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
     <!-- Search Bar Script -->
-    <script>
+    <script>    
         // clear forms
         function init() {
             document.getElementById('bookName').value = "";
@@ -267,7 +272,6 @@
         }).blur(function () {
             $('#search-dropdown').hide(150);
         })
-
         //for rating a book
         $(function () {
 
@@ -353,8 +357,7 @@
                     console.log(response);
                 }
             });
-        }
-
+        } 
     </script>
     <!-- End Search Bar Script -->
     {% block script %}
