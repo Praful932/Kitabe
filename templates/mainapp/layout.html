@@ -137,15 +137,7 @@
         </div>
     </div>
     </div>
-	<script>
-    document.body.addEventListener('scroll',()=>{
-    if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
-        document.getElementById("myBtn").style.display = "block";
-    } else {
-        document.getElementById("myBtn").style.display = "none";
-    }
-}) 
-	</script>
+	
 	<a href='#top'>
 	<button  id="myBtn" title="Go to top"><i class="fa fa-angle-up"></i></button></a>
     <!-- End boostrap modal -->
@@ -177,7 +169,7 @@
     <!-- Rating JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
     <!-- Search Bar Script -->
-    <script>
+    <script>    
         // clear forms
         function init() {
             document.getElementById('bookName').value = "";
@@ -279,7 +271,14 @@
         }).blur(function () {
             $('#search-dropdown').hide(150);
         })
-
+		// For top button
+        document.body.addEventListener('scroll',()=>{
+    if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+     }) 
         //for rating a book
         $(function () {
 
