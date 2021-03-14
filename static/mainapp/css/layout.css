@@ -182,20 +182,21 @@ footer a:hover {
 body {
 	scroll-behavior:smooth;
 }
+
 #topBtn {
   display:none;	
   position: fixed; 
   bottom: 20px;  
   right: 30px; 
   z-index: 100; 
-  border: none; 
+  border: 0.1rem solid white; 
   outline: none; 
-  background-color: #ff0077; 
+  background-color: black; 
   color: white; 
   cursor: pointer; 
-  padding: 0.3rem 1.2rem 0.3rem 1.2rem;
+  padding: 0.2rem 0.9rem 0.2rem 0.9rem;
   border-radius: 25rem;
-  font-size: 2rem;
+  font-size: 1.4rem;
 }
 
 #topBtn:hover {

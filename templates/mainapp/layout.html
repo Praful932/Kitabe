@@ -2,7 +2,7 @@
 {% load static %}
 <html lang="en">
 
-<head>
+<head>     
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
@@ -35,7 +35,6 @@
 </head>
 
 <body>
-
     <header>
 	<a name='top'>
         <div id="topheader">
@@ -271,14 +270,6 @@
         }).blur(function () {
             $('#search-dropdown').hide(150);
         })
-		// For top button
-        document.body.addEventListener('scroll',()=>{
-    if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
-        document.getElementById("myBtn").style.display = "block";
-    } else {
-        document.getElementById("myBtn").style.display = "none";
-    }
-     }) 
         //for rating a book
         $(function () {
 
@@ -365,7 +356,13 @@
                 }
             });
         }
-
+	 document.body.addEventListener('scroll',()=>{
+    if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
+        document.getElementById("topBtn").style.display = "block";
+    } else {
+        document.getElementById("topBtn").style.display = "none";
+    }
+     });  
     </script>
     <!-- End Search Bar Script -->
     {% block script %}
