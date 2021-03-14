@@ -36,14 +36,14 @@ For Contributions we strictly follow [Github Flow](https://guides.github.com/int
 - Install requirements -
   `pip install -r requirements.txt`
 
-- Make Migrations -
-  `python manage.py migrate`
-
 - Open `BookRecSystem/settings.py`
 
 - Set `SECRET_KEY = "RANDOM_KEY"`
 
 - Set `ALLOWED_HOSTS = ['kitabe-app.herokuapp.com', '127.0.0.1', 'localhost']`
+
+- Make Migrations -
+  `python manage.py migrate`
 
 - `python manage.py runserver` - You're good to Go!!
 
