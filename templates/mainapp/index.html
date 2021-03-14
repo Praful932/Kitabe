@@ -7,6 +7,58 @@
 
 
 {% block main %}
+
+<!-- preloader -->
+<div class="preloader-container preloader-display-none">
+    <div class="spinner">
+        <div class="rec">
+            <div class="rect1"><img src="{% static 'mainapp/png/book.svg' %}" alt="book"></div>
+            <div class="rect2"><img src="{% static 'mainapp/png/book.svg' %}" alt="book"></div>
+            <div class="rect3"><img src="{% static 'mainapp/png/book.svg' %}" alt="book"></div>
+            <div class="rect4"><img src="{% static 'mainapp/png/book.svg' %}" alt="book"></div>
+            <div class="rect5"><img src="{% static 'mainapp/png/book.svg' %}" alt="book"></div>
+        </div>
+        <div class="stand"> </div>
+    </div>
+</div>
+<script>
+     function createCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+    }
+    
+    function readCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+    }
+          
+    window.addEventListener('load', function() {
+        if (readCookie('referer') == null) { 
+            //no cookie is present, the preloader is displayed and cookie is created 
+             let preloader = document.querySelector(".preloader-container");
+             preloader.classList.remove("preloader-display-none");
+             setInterval(() => {
+                let preloader = document.querySelector(".preloader-container");
+             preloader.classList.add("preloader-display-none");
+             }, 1260);
+            createCookie('referer',1,0);
+        
+        }   
+    });
+
+</script>
+
 <!---------------------------------------------------------------   adding Carousel (sliding banner) -------------------------------------------------------------------->
 <!-- carousel 1 -->
 
