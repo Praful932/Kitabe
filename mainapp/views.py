@@ -88,17 +88,15 @@ def read_books(request):
     view to render the already rated books of user
     '''
     user_ratings = list(UserRating.objects.filter(user=request.user).order_by('-bookrating'))
-    random.shuffle(user_ratings)
-    best_user_ratings = sorted(user_ratings, key=operator.attrgetter('bookrating'), reverse=True)
     if len(user_ratings) == 0:
         messages.info(request, 'Please rate some books')
         return redirect('index')
-    if best_user_ratings:
-       rated_books = set(get_rated_bookids(best_user_ratings))
+    if user_ratings:
+       rated_books = set(get_rated_bookids(user_ratings))
        books = get_book_dict(rated_books)
        num = len(books)
+       #Add pagination to the page showing 10 books
        paginator = Paginator(books, 10) 
-
        page_number = request.GET.get('page')
        page_obj = paginator.get_page(page_number)
     else:

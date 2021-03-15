@@ -12,8 +12,6 @@ Library
 
 <h1 class="genre-head text-center pt-3 pb-3">Library({{num}})</h1>
 
-
-
     {% for book in page_obj %}
 
     <div class="card  mb-4" style="max-width:700px;">
@@ -24,8 +22,7 @@ Library
         <div class="text-center col-md-8">
             <div class="card-body">
                 <h5 class=" card-title">{{book.original_title}}</h5>
-                <p class=" card-text"><i>by {{book.authors}}</i></p>
-                
+                <p class=" card-text"><i>by {{book.authors}}</i></p>          
                 <a href="javascript:;" onclick='bookDetails(this)' class=" btn more-details"
             data-book-id="{{ book.book_id }}">More Details</a>
             <div class=" rating-block" id="rating-block-{{ book.book_id }}" onmouseover="rateStart(this)" onclick='rateBook(this)' onmouseout='finishRate(this)'
@@ -35,8 +32,7 @@ Library
             <div class='rateYo' id='rate-{{ book.book_id }}'></div>
         </div>
             </div>
-        </div><br>
-        
+        </div><br>       
             </div>
     </div>
     {% endfor %}
@@ -49,7 +45,6 @@ Library
             <li  class="page-item "><span class="btn des">
                 Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
             </span></li>
-    
             {% if page_obj.has_next %}
             <li class="page-item "><a class = "btn link" href="?page={{ page_obj.next_page_number }}"> Next &raquo;</a></li>
             {% endif %}
