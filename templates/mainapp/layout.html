@@ -36,9 +36,10 @@
 
 <body>
     <header>
+	<a name='top'>
         <div id="topheader">
             <nav class="navbar navbar-expand-md navbar-light">
-				<a class="navbar-brand" href="/"><img class="navbrandimg" src="{% static 'mainapp/png/brand-img.png' %}"></a>
+                <a class="navbar-brand" href="/"><img class="navbrandimg" src="{% static 'mainapp/png/brand-img.png' %}"></a>
                 <!-- Search Bar -->
                 <div class="searchbar" id="searchdropdown">
                     <input type="text" id="bookName" onkeyup="myFunction()" placeholder="Search for books"
@@ -140,6 +141,9 @@
         </div>
     </div>
     </div>
+	
+	<a href='#top'>
+	<button  id="topBtn" title="Go to top"><i class="fa fa-angle-up"></i></button></a>
     <!-- End boostrap modal -->
     {% block main %}
     {% endblock main %}
@@ -357,6 +361,13 @@
                 }
             });
         }
+	 document.body.addEventListener('scroll',()=>{
+    if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
+        document.getElementById("topBtn").style.display = "block";
+    } else {
+        document.getElementById("topBtn").style.display = "none";
+    }
+     });  
     </script>
     <!-- End Search Bar Script -->
     {% block script %}
