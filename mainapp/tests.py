@@ -210,6 +210,7 @@ class UserRateBookTestCase(TestCase):
         self.assertEquals(rating.user, self.user)
         self.client.logout()
 
+
 class RatedBooksTestCase(TestCase):
     '''
     Read books view test case
@@ -219,28 +220,25 @@ class RatedBooksTestCase(TestCase):
         self.user = User.objects.create_user(username='test_user', email='qwe@gmail.com')
         self.user.set_password('foopassword')
         self.user.save()
-       
         self.url = reverse('read_books')
-        
+
     def test_redirect_if_not_rated(self):
         '''
         Test if the read_books redirects accordingly when no book
         is rated
         '''
-        login = self.client.login(username='test_user', password='foopassword')
+        self.client.login(username='test_user', password='foopassword')
         response = self.client.get(self.url)
         self.assertRedirects(response, reverse('index'))
         self.client.logout()
-        
+
     def test_read_book_status_code(self):
         '''
         Test the status code of read_books when book has been rated
         '''
-        self.userRating = UserRating.objects.create(user = self.user, bookid = '2', bookrating = '4')
+        self.userRating = UserRating.objects.create(user=self.user, bookid='2', bookrating='4')
         self.userRating.save()
         self.client.login(username='test_user', password='foopassword')
-        response = self.client.get(self.url)  
+        response = self.client.get(self.url)
         self.assertEquals(response.status_code, 200)
         self.client.logout()
-
-

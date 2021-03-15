@@ -81,6 +81,7 @@ def book_recommendations(request):
         return redirect('index')
     return render(request, 'mainapp/recommendation.html', {'books': all_books_dict})
 
+
 @login_required
 @ensure_csrf_cookie
 def read_books(request):
@@ -92,14 +93,13 @@ def read_books(request):
         messages.info(request, 'Please rate some books')
         return redirect('index')
     if user_ratings:
-       rated_books = set(get_rated_bookids(user_ratings))
-       books = get_book_dict(rated_books)
-       num = len(books)
-       #Add pagination to the page showing 10 books
-       paginator = Paginator(books, 10) 
-       page_number = request.GET.get('page')
-       page_obj = paginator.get_page(page_number)
+        rated_books = set(get_rated_bookids(user_ratings))
+        books = get_book_dict(rated_books)
+        num = len(books)
+        # Add pagination to the page showing 10 books
+        paginator = Paginator(books, 10)
+        page_number = request.GET.get('page')
+        page_obj = paginator.get_page(page_number)
     else:
         return redirect('index')
-    return render (request,'mainapp/read.html', {'page_obj': page_obj,
-    'num': num} )
+    return render(request, 'mainapp/read.html', {'page_obj': page_obj, 'num': num})
