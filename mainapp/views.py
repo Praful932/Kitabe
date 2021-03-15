@@ -4,6 +4,7 @@ from django.views.decorators.csrf import ensure_csrf_cookie
 from mainapp.helpers import genre_wise, count_vectorizer_recommendations, get_book_dict, get_rated_bookids, combine_ids, embedding_recommendations, get_top_n, popular_among_users
 from mainapp.models import UserRating
 from django.contrib import messages
+from django.core.paginator import Paginator
 
 import random
 import operator
@@ -79,3 +80,28 @@ def book_recommendations(request):
     else:
         return redirect('index')
     return render(request, 'mainapp/recommendation.html', {'books': all_books_dict})
+
+@login_required
+@ensure_csrf_cookie
+def read_books(request):
+    '''
+    view to render the already rated books of user
+    '''
+    user_ratings = list(UserRating.objects.filter(user=request.user).order_by('-bookrating'))
+    random.shuffle(user_ratings)
+    best_user_ratings = sorted(user_ratings, key=operator.attrgetter('bookrating'), reverse=True)
+    if len(user_ratings) == 0:
+        messages.info(request, 'Please rate some books')
+        return redirect('index')
+    if best_user_ratings:
+       rated_books = set(get_rated_bookids(best_user_ratings))
+       books = get_book_dict(rated_books)
+       num = len(books)
+       paginator = Paginator(books, 10) 
+
+       page_number = request.GET.get('page')
+       page_obj = paginator.get_page(page_number)
+    else:
+        return redirect('index')
+    return render (request,'mainapp/read.html', {'page_obj': page_obj,
+    'num': num} )
