@@ -21,43 +21,6 @@
         <div class="stand"> </div>
     </div>
 </div>
-<script>
-     function createCookie(name,value,days) {
-    if (days) {
-        var date = new Date();
-        date.setTime(date.getTime()+(days*24*60*60*1000));
-        var expires = "; expires="+date.toGMTString();
-    }
-    else var expires = "";
-    document.cookie = name+"="+value+expires+"; path=/";
-    }
-    
-    function readCookie(name) {
-    var nameEQ = name + "=";
-    var ca = document.cookie.split(';');
-    for(var i=0;i < ca.length;i++) {
-        var c = ca[i];
-        while (c.charAt(0)==' ') c = c.substring(1,c.length);
-        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-    }
-    return null;
-    }
-          
-    window.addEventListener('load', function() {
-        if (readCookie('referer') == null) { 
-            //no cookie is present, the preloader is displayed and cookie is created 
-             let preloader = document.querySelector(".preloader-container");
-             preloader.classList.remove("preloader-display-none");
-             setInterval(() => {
-                let preloader = document.querySelector(".preloader-container");
-             preloader.classList.add("preloader-display-none");
-             }, 1260);
-            createCookie('referer',1,0);
-        
-        }   
-    });
-
-</script>
 
 <!---------------------------------------------------------------   adding Carousel (sliding banner) -------------------------------------------------------------------->
 <!-- carousel 1 -->
@@ -468,7 +431,43 @@
 {% endblock main %} {% block script %}
 
 <script type="text/javascript">
-    /* 2 carousel */
+  /* preloader */
+    function createCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+    }
+    
+    function readCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+    }
+          
+    window.addEventListener('load', function() {
+        if (readCookie('referer') == null) { 
+            //no cookie is present, the preloader is displayed and cookie is created 
+             let preloader = document.querySelector(".preloader-container");
+             preloader.classList.remove("preloader-display-none");
+             setInterval(() => {
+                let preloader = document.querySelector(".preloader-container");
+             preloader.classList.add("preloader-display-none");
+             }, 1260);
+            createCookie('referer',1,0);
+        
+        }   
+    });
+
+   /* 2 carousel */
     $('#carousel-2').carousel({
         interval: 6000,
         wrap: true,
