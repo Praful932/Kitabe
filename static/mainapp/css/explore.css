@@ -103,14 +103,6 @@
   color: #d7722c;
 }
 
-/* .card-text {
-  font-family: "Courgette", cursive;
-  color: black;
-  font-weight: bold;
-  font-size: 15px;
-  padding-bottom: 1px;
-} */
-
 .card::before,
 .card::after {
   position: absolute;
@@ -174,6 +166,11 @@
 }
 
 .card-text {
+  font-family: "Courgette", cursive;
+  color: black;
+  font-weight: bold;
+  font-size: 15px;
+  padding-bottom: 1px;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -203,5 +200,8 @@
   }
   .small-screen {
     display: inline;
+  }
+  .card {
+    margin: auto;
   }
 }
