@@ -36,9 +36,9 @@
   }
 
   .card-text {
-    font-family: "Pacifico", cursive;
+    font-family: "Courgette", cursive;
     color: black;
-    font-weight: normal;
+    font-weight: bold;
     font-size: 1rem;
     padding-bottom: 25px;
   }

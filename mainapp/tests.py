@@ -212,9 +212,7 @@ class UserRateBookTestCase(TestCase):
 
 
 class RatedBooksTestCase(TestCase):
-    '''
-    Read books view test case
-    '''
+    """Already Read Books View Test Case"""
     def setUp(self):
         self.client = Client()
         self.user = User.objects.create_user(username='test_user', email='qwe@gmail.com')
@@ -223,19 +221,15 @@ class RatedBooksTestCase(TestCase):
         self.url = reverse('read_books')
 
     def test_redirect_if_not_rated(self):
-        '''
-        Test if the read_books redirects accordingly when no book
-        is rated
-        '''
+        """Test if the read_books redirects accordingly when no book
+        is rated"""
         self.client.login(username='test_user', password='foopassword')
         response = self.client.get(self.url)
         self.assertRedirects(response, reverse('index'))
         self.client.logout()
 
     def test_read_book_status_code(self):
-        '''
-        Test the status code of read_books when book has been rated
-        '''
+        """Test the status code of read_books when book has been rated"""
         self.userRating = UserRating.objects.create(user=self.user, bookid='2', bookrating='4')
         self.userRating.save()
         self.client.login(username='test_user', password='foopassword')
