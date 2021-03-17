@@ -32,16 +32,33 @@
 .welcome {
   font-family: "Pacifico", cursive;
   position: relative;
-  top: 5%;
+  top: 8%;
+  left: 8%;
+  border-radius: 50px;
+  font-size: 3rem;
+  background-color: #ffdab9;
+  width: 80%;
 }
 label {
   font-family: "Kalam", cursive;
   font-size: 1.2em;
 }
 .form-group {
+  border: 3px solid #ffdab9;
+  padding: 12%;
   position: relative;
   display: inline-block;
-  top: 40px;
+  top: 70px;
+  background:#000;
+  opacity: 0.4;
+  color: black;
+  font-weight: bold;
+
+}
+.form-group:hover{
+  background:#ffdab9;
+  opacity: 1;
+
 }
 #id_username,
 #id_email,
@@ -54,15 +71,30 @@ label {
 }
 .signupbutton {
   font-family: "Fredoka One", cursive;
-  padding: 5px 10px 5px 10px;
-  background-color: #09bc8a;
-  color: white;
+  padding: 8px 10px 5px 10px;
+  font-size:1rem;
   border: 2px solid white;
-  border-radius: 10px;
+  box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.5);
+  border:3px solid #fff;
+  color:#fff;
+  background:rgba(1,1,1,0.5);
+  border-radius: 15px;
+  outline:none;
+}
+.signupbutton:hover{
+  background-color: black;
+  color: #ffdab9;
 }
 strong {
   color: red;
 }
+
+::placeholder {
+  color: #fff;
+  font-weight: normal;
+  opacity: 1;
+}
+
 @media only screen and (max-width: 1200px) {
   .img-block {
     display: none;
