@@ -45,14 +45,11 @@ label {
 }
 .form-group {
   border: 3px solid #ffdab9;
-  padding: 12%;
+  padding: 10%;
   position: relative;
   display: inline-block;
-  top: 70px;
-  background:#000;
-  opacity: 0.4;
+  top: 60px;
   color: black;
-  font-weight: bold;
 
 }
 #id_username,
@@ -62,7 +59,6 @@ label {
   border-top: none;
   border-left: none;
   border-right: none;
-  font-weight:bold;
   color: #000;
 }
 .signupbutton {
@@ -73,7 +69,7 @@ label {
   box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.5);
   border:3px solid #fff;
   color:#fff;
-  background:rgba(1,1,1,0.5);
+  background:rgba(1,1,1);
   border-radius: 15px;
   outline:none;
 }
