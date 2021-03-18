@@ -35,6 +35,7 @@
 </head>
 
 <body>
+    <h1>{{ bookid }}</h1>
     <header>
 	<a name='top'>
         <div id="topheader">
@@ -125,7 +126,10 @@
                             <p id="bookauthors">
                             </p>
 
-                            <div id="bookrating"></div>
+                            <div class='rating-block-modal' id='rating-block-{{ book.book_id }}' onmouseover="startRating(this)" 
+                            onclick='rateBook(this)' onmouseout='finishRates(this)' data-book-id="{{ book.book_id }}">
+                                <div class='rateYo' id='rate-{{ book.book_id }}' style="display: block"></div>
+                            </div>
                         </div>
 
                         <div class="col-4">
@@ -199,6 +203,9 @@
                 }
             })
         }
+
+        var book__id;
+
         // display book boostrap modal when clicked
         function openModal(obj) {
             $('#booksummary').text("");
@@ -212,9 +219,8 @@
             $('#booktitle').text(bookName);
             $('#bookauthors').text(authors);
             $('#bookimage').attr('src', imageurl);
-            $("#bookrating").rateYo({
-                rating: averagerating,
-                readOnly: true
+            $(".rateYo").rateYo({
+                rating: averagerating
             });
             $('#bookModal').modal('show');
             $('#search-dropdown').empty();
@@ -280,11 +286,17 @@
 
             $(".rateYo").rateYo({
                 rating: 0,
-                starWidth: "20px",
+                starWidth: "25px",
                 fullStar: true
             });
 
         });
+
+        function startRating(obj) {
+            var bookid = obj.getAttribute('data-book-id');
+            $('#rate-' + bookid).css('display', 'block');
+        }
+
         // when hover over rate
         function rateStart(obj) {
             var bookid = obj.getAttribute('data-book-id');
@@ -294,13 +306,11 @@
         // onclick rate
         function rateBook(obj) {
             var bookid = obj.getAttribute('data-book-id');
-            var bookrating = $('#rate-' + bookid).rateYo('rating');
-            $('#rating-block-' + bookid).css('transition', 'background-color 2s ease');
-            $('#rating-block-' + bookid).css('background-color', '#29BF12');
-            console.log('#rating-block-' + bookid);
+            var bookrating = $('#rate-' + book__id).rateYo('rating');
+            $('#rating-block-' + book__id).css('transition', '2s ease');
             $.ajax({
                 data: {
-                    'bookid': bookid,
+                    'bookid': book__id,
                     'bookrating': bookrating,
                     'csrfmiddlewaretoken': Cookies.get('csrftoken')
                 },
@@ -315,6 +325,15 @@
                 }
             });
         }
+        
+        // When Hover out Rate for Modal
+        function finishRates(obj) {
+            var bookid = obj.getAttribute('data-book-id');
+            setTimeout(function () {
+                $('#rating-block-' + book__id).css('transition', '2s ease');
+            }, 4000);
+        }
+
         // when hover out rate
         function finishRate(obj) {
             var bookid = obj.getAttribute('data-book-id');
@@ -329,6 +348,7 @@
         // Retrieve and display book details in Modal
         function bookDetails(obj) {
             var bookid = obj.getAttribute('data-book-id');
+            book__id = bookid;
             $.ajax({
                 data: {
                     'bookid': bookid,
