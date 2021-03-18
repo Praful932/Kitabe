@@ -58,17 +58,13 @@ label {
   color: black;
   font-weight: bold;
 }
-.form-group:hover{
-  background:#ffdab9;
-  opacity: 1;
-
-}
 #id_login,
 #id_password {
-  background-color: transparent;
   border-top: none;
   border-left: none;
   border-right: none;
+  color: #000;
+  font-weight:bold;
 }
 .loginbutton {
   font-family: "Fredoka One", cursive;
@@ -85,8 +81,10 @@ label {
   outline:none;
 }
 .loginbutton:hover{
-  background-color: black;
-  color: #ffdab9;
+  background-color: #ffdab9;
+  color:black;
+  border: 3px solid black;
+
 }
 .googlebutton {
   position: relative;
@@ -111,7 +109,9 @@ strong {
   }
 }
 ::placeholder{
-  color: #fff;
+  color: #000;
+  font-weight: normal;
+
 }
 .forgotpassword {
   font-size: 15px;

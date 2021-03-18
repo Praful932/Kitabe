@@ -55,19 +55,15 @@ label {
   font-weight: bold;
 
 }
-.form-group:hover{
-  background:#ffdab9;
-  opacity: 1;
-
-}
 #id_username,
 #id_email,
 #id_password1,
 #id_password2 {
-  background-color: transparent;
   border-top: none;
   border-left: none;
   border-right: none;
+  font-weight:bold;
+  color: #000;
 }
 .signupbutton {
   font-family: "Fredoka One", cursive;
@@ -82,17 +78,17 @@ label {
   outline:none;
 }
 .signupbutton:hover{
-  background-color: black;
-  color: #ffdab9;
+  background-color: #ffdab9;
+  color:black;
+  border: 3px solid black;
 }
 strong {
   color: red;
 }
 
 ::placeholder {
-  color: #fff;
+  color: #000;
   font-weight: normal;
-  opacity: 1;
 }
 
 @media only screen and (max-width: 1200px) {
