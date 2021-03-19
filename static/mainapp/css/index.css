@@ -134,6 +134,7 @@
   position: absolute;
   bottom: 10px;
   right: 35%;
+  padding: 6px 12px;
 }
 
 .rating-block:hover {

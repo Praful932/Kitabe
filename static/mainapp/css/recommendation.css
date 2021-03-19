@@ -158,6 +158,8 @@
   padding: 5px;
   bottom: 10px;
   position: absolute;
+  padding-left: 18px;
+  padding-right: 18px;
 }
 
 .more-details {
