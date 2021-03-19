@@ -213,14 +213,8 @@
   }
 }
 
-@media (max-width: 370px){
-  .card, .card-deck{ 
-    margin-left: -1%;
-  }
-}
-
 @media (max-width: 390px){
   .card, .card-deck{ 
-    margin-left: -0.5%;
+    margin-left: -1.5%;
   }
 }
