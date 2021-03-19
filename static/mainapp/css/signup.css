@@ -7,6 +7,20 @@
 .signup-block {
   text-align: center;
 }
+.googlebutton {
+  position: relative;
+  top: 50px;
+  background-color: #f25f5c;
+  font-family: "Fredoka One", cursive;
+  color: white;
+  padding: 5px 10px 5px 10px;
+  border: 2px solid white;
+  border-radius: 10px;
+  text-decoration: none !important;
+}
+.googlebutton:hover {
+  color: white;
+}
 .img-block {
   color: white;
   background-size: cover;
