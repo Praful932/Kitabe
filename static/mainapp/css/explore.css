@@ -157,7 +157,7 @@
   position: absolute;
   padding: 8px;
   bottom: 10px;
-  left: 10%;
+  left: 7%;
 }
 
 .rating-block:hover {
@@ -201,7 +201,7 @@
   .small-screen {
     display: inline;
   }
-  .card{
+  .card, .card-deck{ 
     margin: auto;
   }
   .cover-img-size{
@@ -210,5 +210,17 @@
   }
   .row{
     margin-bottom: 5%;
+  }
+}
+
+@media (max-width: 370px){
+  .card, .card-deck{ 
+    margin-left: -1%;
+  }
+}
+
+@media (max-width: 390px){
+  .card, .card-deck{ 
+    margin-left: -0.5%;
   }
 }
