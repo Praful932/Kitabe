@@ -30,7 +30,7 @@ For Contributions we strictly follow [Github Flow](https://guides.github.com/int
   `virtualenv bookenv`
 
 - Activate the environment -
-  - For Linux/Unix OS : `source bookenv/Scripts/activate`
+  - For Linux/Unix OS : `source bookenv/bin/activate`
   - For Windows OS: `bookenv\Scripts\activate`
 
 - Install requirements -
