@@ -85,7 +85,7 @@ def book_recommendations(request):
 @login_required
 @ensure_csrf_cookie
 def read_books(request):
-    """View To Render The Already Rated Books Of User"""
+    """View To Render Library Page"""
     user_ratings = list(UserRating.objects.filter(user=request.user).order_by('-bookrating'))
     if len(user_ratings) == 0:
         messages.info(request, 'Please rate some books')
