@@ -126,8 +126,8 @@
                             <p id="bookauthors">
                             </p>
 
-                            <div class='rating-block-modal' id='rating-block-{{ book.book_id }}' onmouseover="startRating(this)" 
-                            onclick='rateBook(this)' onmouseout='finishRates(this)' data-book-id="{{ book.book_id }}">
+                            <div class='rating-block-modal' id='rating-block-{{ book.book_id }}' onmouseover="startRatingModal(this)" 
+                            onclick='rateBookModal(this)' onmouseout='finishRatesModal(this)' data-book-id="{{ book.book_id }}">
                                 <div class='rateYo' id='rate-{{ book.book_id }}' style="display: block"></div>
                             </div>
                         </div>
@@ -286,13 +286,14 @@
 
             $(".rateYo").rateYo({
                 rating: 0,
-                starWidth: "25px",
+                starWidth: "20px",
                 fullStar: true
             });
 
         });
 
-        function startRating(obj) {
+
+        function startRatingModal(obj) {
             var bookid = obj.getAttribute('data-book-id');
             $('#rate-' + bookid).css('display', 'block');
         }
@@ -304,7 +305,7 @@
             $('#rate-' + bookid).css('display', 'block');
         }
         // onclick rate
-        function rateBook(obj) {
+        function rateBookModal(obj) {
             var bookid = obj.getAttribute('data-book-id');
             var bookrating = $('#rate-' + book__id).rateYo('rating');
             $('#rating-block-' + book__id).css('transition', '2s ease');
@@ -325,9 +326,31 @@
                 }
             });
         }
+
+        function rateBook(obj) {
+            var bookid = obj.getAttribute('data-book-id');
+            var bookrating = $('#rate-' + bookid).rateYo('rating');
+            $('#rating-block-' + bookid).css('transition', '2s ease');
+            $.ajax({
+                data: {
+                    'bookid': bookid,
+                    'bookrating': bookrating,
+                    'csrfmiddlewaretoken': Cookies.get('csrftoken')
+                },
+                dataType: 'json',
+                url: "{% url 'user_rate_book' %}",
+                type: 'POST',
+                success: function (response) {
+
+                },
+                error: function (response) {
+                    console.log(response);
+                }
+            });
+        }
         
         // When Hover out Rate for Modal
-        function finishRates(obj) {
+        function finishRatesModal(obj) {
             var bookid = obj.getAttribute('data-book-id');
             setTimeout(function () {
                 $('#rating-block-' + book__id).css('transition', '2s ease');
