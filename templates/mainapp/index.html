@@ -439,7 +439,7 @@
             createCookie('referer',1,0);
          }
 
-         else {
+         if (readCookie('referer') != null) {
 
             $('.preloader-container').hide()
          }
