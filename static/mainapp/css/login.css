@@ -63,11 +63,11 @@ label {
 }
 .loginbutton {
   font-family: "Fredoka One", cursive;
-  font-family: "Fredoka One", cursive;
+  margin-top: 10%;
   padding: 8px 10px 5px 10px;
+  margin-bottom: 20%;
   font-size:1rem;
   border: 2px solid white;
-  margin-top: 40px;
   box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.5);
   border:3px solid #fff;
   color:#fff;
@@ -81,15 +81,18 @@ label {
   border: 3px solid black;
 }
 .googlebutton {
-  position: relative;
-  top: 70px;
+  position: absolute;
+  bottom:5%;
+  transform: translate(-50%,-50%);
   background-color: #f25f5c;
   font-family: "Fredoka One", cursive;
   color: white;
   padding: 5px 10px 5px 10px;
   border: 2px solid white;
-  border-radius: 10px;
+  border-radius: 15px;
   text-decoration: none !important;
+  box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.5);
+  border:3px solid #fff;
 }
 .googlebutton:hover {
   color: white;
