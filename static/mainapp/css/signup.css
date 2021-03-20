@@ -9,7 +9,7 @@
 }
 .googlebutton {
   position: relative;
-  top: 50px;
+  top: 70px;
   background-color: #f25f5c;
   font-family: "Fredoka One", cursive;
   color: white;
@@ -59,7 +59,7 @@ label {
 }
 .form-group {
   border: 3px solid #ffdab9;
-  padding: 10%;
+  padding: 10% 10% 5% 10%;
   position: relative;
   display: inline-block;
   top: 60px;
