@@ -39,7 +39,7 @@
     font-family: "Courgette", cursive;
     color: black;
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 1.25rem;
     padding-bottom: 25px;
   }
   .card::before,
@@ -89,7 +89,6 @@
     font-size: 1rem;
     border-radius: 20px;
     padding: 8px;
-    width:150px;
   }
   
   .rating-block:hover {
@@ -152,6 +151,5 @@
       font-size: 12px;
       position: absolute;
       bottom: 10px;
-      width:120px;
     }
   }
