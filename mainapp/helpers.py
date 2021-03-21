@@ -213,7 +213,6 @@ def most_common_genre_recommendations(best_bookids, already_rated, n):
     for book in books:
         genre_frequency.extend(df_book[df_book['book_id'] == book]['genre'].values[0].split(", "))
     most_common_genre = Counter(genre_frequency).most_common(1)[0][0]
-    
     return list(islice(genre_data[most_common_genre].keys(), n))
 
 
