@@ -46,7 +46,7 @@ label {
 }
 .form-group {
   border: 3px solid #ffdab9;
-  padding: 10%;
+  padding: 14% 10% 10% 10%;
   position: relative;
   display: inline-block;
   top: 60px;
@@ -63,10 +63,10 @@ label {
 }
 .loginbutton {
   font-family: "Fredoka One", cursive;
-  margin-top: 10%;
   padding: 8px 10px 5px 10px;
-  margin-bottom: 20%;
   font-size:1rem;
+  margin-bottom: 15%;
+  margin-top: 9%;
   border: 2px solid white;
   box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.5);
   border:3px solid #fff;
@@ -81,9 +81,7 @@ label {
   border: 3px solid black;
 }
 .googlebutton {
-  position: absolute;
-  bottom:5%;
-  transform: translate(-50%,-50%);
+  position: relative;
   background-color: #f25f5c;
   font-family: "Fredoka One", cursive;
   color: white;
@@ -93,6 +91,8 @@ label {
   text-decoration: none !important;
   box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.5);
   border:3px solid #fff;
+  
+bottom: 3%;
 }
 .googlebutton:hover {
   color: white;
@@ -105,6 +105,19 @@ strong {
     display: none;
   }
 }
+@media only screen and (max-width: 600px) {
+  .loginbutton {
+    font-family: "Fredoka One", cursive;
+    padding: 8px 10px 5px 10px;
+    font-size:1rem;
+    margin-bottom: 30%;
+    margin-top: 9%;
+   }
+   .welcome {
+     font-size: 2rem;
+     }
+}
+
 ::placeholder{
   color: #000;
   font-weight: normal;
