@@ -1,9 +1,12 @@
 import pandas as pd
 import numpy as np
 import os
+import math
 import pickle
 import operator
 import random
+from itertools import islice
+from collections import Counter
 import BookRecSystem.settings as settings
 import mainapp.models
 
@@ -19,6 +22,9 @@ book_raw_map_path = os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/model_
 book_embed_path = os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/model_files/surprise/book_embedding.npy')
 sim_books_path = os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/model_files/surprise/sim_books.pickle')
 
+# For Similar-Genre books
+sim_genre_books_path = os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/model_files/genre_dictionary.pickle')
+
 with open(book_id_map_path, 'rb') as handle:
     book_raw_to_inner_id = pickle.load(handle)
 
@@ -29,6 +35,8 @@ book_embedding = np.load(book_embed_path)
 with open(sim_books_path, 'rb') as handle:
     sim_books_dict = pickle.load(handle)
 
+with open(sim_genre_books_path, 'rb') as handle:
+    genre_data = pickle.load(handle)
 
 cols = ['original_title', 'authors', 'average_rating', 'image_url', 'book_id']
 
@@ -74,7 +82,7 @@ def get_rated_bookids(user_ratings):
     '''
     already_rated = []
     for rating in user_ratings:
-        book_id = rating.bookrating
+        book_id = rating.bookid
         already_rated.append(book_id)
     return already_rated
 
@@ -186,9 +194,22 @@ def combine_ids(cv_bookids, embedding_bookids, already_rated, recommendations=9)
 
     if len(best_bookids) < recommendations:
         # If not enough recommendations
-        best_bookids = best_bookids + cv_bookids[3:(recommendations + 3 - len(best_bookids))]
+        two_n = (recommendations - len(best_bookids))
+        n1, n2 = math.ceil(two_n/2), math.floor(two_n/2)
+        best_bookids_remain = cv_bookids[3: n1+3]
+        genre_recomm_bookids = most_common_genre_recommendations(best_bookids, already_rated, n2)
+        best_bookids = best_bookids + best_bookids_remain + genre_recomm_bookids
     return best_bookids
 
+def most_common_genre_recommendations(best_bookids, already_rated, n=9):
+    #Final list of bookids to be recommended
+    books = set(best_bookids+list(already_rated))
+
+    genre_frequency = []
+    for book in books:
+        genre_frequency.extend(df_book[df_book['book_id'] == book]['genre'].values[0].split(", "))
+    most_common_genre = Counter(genre_frequency).most_common(1)[0][0]
+    return list(islice(genre_data[most_common_genre].keys(), n))
 
 def get_top_n(top_n=400):
     """
