@@ -1,3 +1,91 @@
+/*---------------------------------------- preloader ----------------------------------*/
+.preloader-container
+
+{   position: fixed; 
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    background-color: #FFDAB9;
+    z-index:99;
+}
+
+.spinner {
+  width: 270px;
+  height: 45px;
+  text-align: center;
+}
+
+.rect1, .rect2, .rect3, .rect4, .rect5 {
+  height: 45px;
+  width: 12px;
+  display: inline-block;
+  -webkit-animation: updown 1.2s infinite;
+  animation: updown 1.2s ease infinite;
+}
+
+.stand 
+{
+  width: 90px;
+  height:9px;
+  background: #000;
+  display: block;
+  border-radius: 15px;
+  margin: auto;
+}
+
+.spinner .rect2 {
+  -webkit-animation-delay: -1.1s;
+  animation-delay: -1.1s;
+}
+
+.spinner .rect3 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+.spinner .rect4 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+
+.spinner .rect5 {
+  -webkit-animation-delay: -0.8s;
+  animation-delay: -0.8s;
+}
+
+  @keyframes updown {
+    0% {
+      transform: translateY(0%);
+    }
+
+    40% {
+      transform: translateY(-100%);
+    }
+
+    100% {
+      transform: translateY(0%);
+    }
+  }
+
+  @-webkit-keyframes updown {
+    0% {
+      transform: translateY(0%);
+    }
+
+    40% {
+      transform: translateY(100%);
+    }
+
+    100% {
+      transform: translateY(0%);
+    }
+  }
+
 /* ---------------------- carousel -------------------------------------*/
 
 .carousel img {
