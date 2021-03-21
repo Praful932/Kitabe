@@ -201,6 +201,7 @@ def combine_ids(cv_bookids, embedding_bookids, already_rated, recommendations=9)
         best_bookids = best_bookids + best_bookids_remain + genre_recomm_bookids
     return best_bookids
 
+
 def most_common_genre_recommendations(best_bookids, already_rated, n):
     '''
         Returns n top rated of the most_common_genre among all lists taken as input
@@ -214,6 +215,7 @@ def most_common_genre_recommendations(best_bookids, already_rated, n):
     most_common_genre = Counter(genre_frequency).most_common(1)[0][0]
     
     return list(islice(genre_data[most_common_genre].keys(), n))
+
 
 def get_top_n(top_n=400):
     """
