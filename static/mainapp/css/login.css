@@ -91,9 +91,15 @@ label {
   text-decoration: none !important;
   box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.5);
   border:3px solid #fff;
-  
-bottom: 3%;
+  bottom: 3%;
 }
+.forgotpassword {
+  font-size: 15px;
+  position: relative;
+  left: 62px;
+  top: 10px;
+}
+
 .googlebutton:hover {
   color: white;
 }
@@ -105,6 +111,23 @@ strong {
     display: none;
   }
 }
+@media only screen and (max-width: 900px) {
+  
+    .form-group {
+     border: 3px solid #ffdab9;
+     padding: 10% 5% 15% 5%;
+    }
+    .account-block {
+      margin: auto;
+      height: 70%;
+      background-color: white;
+    }
+    .forgotpassword{
+      left: 35%;
+    }
+  
+}
+
 @media only screen and (max-width: 600px) {
   .loginbutton {
     font-family: "Fredoka One", cursive;
@@ -116,16 +139,24 @@ strong {
    .welcome {
      font-size: 2rem;
      }
+     .form-group {
+      border: 3px solid #ffdab9;
+      padding: 7% 5% 5% 5%;
+     }
+     .forgotpassword {
+      font-size: 16px;
+      position: relative;
+      left:30px;
+      top: 10px;
+    }
+    .loginbutton{
+      margin-bottom: 35%;
+    }
+    
 }
 
 ::placeholder{
   color: #000;
   font-weight: normal;
 
-}
-.forgotpassword {
-  font-size: 15px;
-  position: relative;
-  left: 62px;
-  top: 10px;
 }
