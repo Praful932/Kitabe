@@ -125,10 +125,16 @@
                             <p id="bookauthors">
                             </p>
 
-                            <div class='rating-block-modal' id='rating-block-{{ book.book_id }}' onmouseover="startRatingModal(this)" 
-                            onclick='rateBookModal(this)' onmouseout='finishRatesModal(this)' data-book-id="{{ book.book_id }}">
-                                <div class='rateYo' id='rate-{{ book.book_id }}' style="display: block"></div>
+                            {% if user.is_authenticated %}
+                            <div class='rating-block-modal' id='rating-block-' onmouseover="startRatingModal(this)" 
+                            onclick='rateBookModal(this)' onmouseout='finishRatesModal(this)'>
+                                <div id='rateYo' class="rate-" style="display: block"></div>
                             </div>
+                            {% else %}
+                            <div class="prompt-login">
+                                <p>Please <a href="{% url 'account_signup' %}">Login</a> to Continue Rating</p>
+                            </div>
+                            {% endif %}
                         </div>
 
                         <div class="col-4">
@@ -218,7 +224,7 @@
             $('#booktitle').text(bookName);
             $('#bookauthors').text(authors);
             $('#bookimage').attr('src', imageurl);
-            $(".rateYo").rateYo({
+            $("#rateYo").rateYo({
                 rating: averagerating
             });
             $('#bookModal').modal('show');
@@ -283,7 +289,7 @@
         //for rating a book
         $(function () {
 
-            $(".rateYo").rateYo({
+            $("#rateYo").rateYo({
                 rating: 0,
                 starWidth: "20px",
                 fullStar: true
@@ -306,7 +312,7 @@
         // onclick rate
         function rateBookModal(obj) {
             var bookid = obj.getAttribute('data-book-id');
-            var bookrating = $('#rate-' + book__id).rateYo('rating');
+            var bookrating = $('#rateYo').rateYo('rating');
             $('#rating-block-' + book__id).css('transition', '2s ease');
             $.ajax({
                 data: {
@@ -352,7 +358,7 @@
         function finishRatesModal(obj) {
             var bookid = obj.getAttribute('data-book-id');
             setTimeout(function () {
-                $('#rating-block-' + book__id).css('transition', '2s ease');
+                $('#rating-block-').css('transition', '2s ease');
             }, 4000);
         }
 
@@ -391,7 +397,7 @@
                     $('#booktitle').text(bookName);
                     $('#bookauthors').text(authors);
                     $('#bookimage').attr('src', imageurl);
-                    $("#bookrating").rateYo({
+                    $("#rateYo").rateYo({
                         rating: averagerating,
                         readOnly: true
                     });
