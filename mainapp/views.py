@@ -58,7 +58,7 @@ def book_recommendations(request):
     random.shuffle(user_ratings)
     best_user_ratings = sorted(user_ratings, key=operator.attrgetter('bookrating'), reverse=True)
 
-    if len(best_user_ratings) < 5:
+    if len(best_user_ratings) <= 4:
         messages.info(request, 'Please rate atleast 5 books')
         return redirect('index')
     if best_user_ratings:

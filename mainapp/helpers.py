@@ -22,9 +22,6 @@ book_raw_map_path = os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/model_
 book_embed_path = os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/model_files/surprise/book_embedding.npy')
 sim_books_path = os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/model_files/surprise/sim_books.pickle')
 
-# For Similar-Genre books
-sim_genre_books_path = os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/model_files/genre_dictionary.pickle')
-
 with open(book_id_map_path, 'rb') as handle:
     book_raw_to_inner_id = pickle.load(handle)
 
@@ -34,9 +31,6 @@ book_embedding = np.load(book_embed_path)
 
 with open(sim_books_path, 'rb') as handle:
     sim_books_dict = pickle.load(handle)
-
-with open(sim_genre_books_path, 'rb') as handle:
-    genre_data = pickle.load(handle)
 
 cols = ['original_title', 'authors', 'average_rating', 'image_url', 'book_id']
 
@@ -103,12 +97,12 @@ def get_bookid(raw_id_list):
     return bookid_list
 
 
-def genre_wise(genre, percentile=0.85):
+def genre_wise(genre, n_books=16, percentile=0.85):
     '''
         Returns top genre books according to a cutoff percentile to be listed in Top Books
     '''
-    n_books = 16
     min_genre_book_count = 48
+    cols = ['average_rating', 'book_id']
 
     qualified = df_book[df_book.genre.str.contains(genre.lower())]
     # Imdb Formula
@@ -120,7 +114,7 @@ def genre_wise(genre, percentile=0.85):
     qualified = qualified.assign(weighted_rating=W)
     qualified.sort_values('weighted_rating', ascending=False, inplace=True)
 
-    return qualified[cols].head(min_genre_book_count).sample(n_books)
+    return qualified[cols].head(min_genre_book_count).sample(int(2*n_books))
 
 
 def count_vectorizer_recommendations(bookid):
@@ -196,13 +190,14 @@ def combine_ids(cv_bookids, embedding_bookids, already_rated, recommendations=9)
         # If not enough recommendations
         two_n = (recommendations - len(best_bookids))
         n1, n2 = math.ceil(two_n/2), math.floor(two_n/2)
-        best_bookids_remain = cv_bookids[3: n1+3]
-        genre_recomm_bookids = most_common_genre_recommendations(best_bookids, already_rated, n2)
+        best_bookids_remain = cv_bookids[3: 6+n1]
+        best_bookids_remain = list(set(best_bookids_remain).difference(set(best_bookids)))[:n1]
+        genre_recomm_bookids = most_common_genre_recommendations(best_bookids, already_rated, best_bookids_remain, n2)
         best_bookids = best_bookids + best_bookids_remain + genre_recomm_bookids
     return best_bookids
 
 
-def most_common_genre_recommendations(best_bookids, already_rated, n):
+def most_common_genre_recommendations(best_bookids, already_rated, best_bookids_remain, n):
     '''
         Returns n top rated of the most_common_genre among all lists taken as input
     '''
@@ -213,7 +208,13 @@ def most_common_genre_recommendations(best_bookids, already_rated, n):
     for book in books:
         genre_frequency.extend(df_book[df_book['book_id'] == book]['genre'].values[0].split(", "))
     most_common_genre = Counter(genre_frequency).most_common(1)[0][0]
-    return list(islice(genre_data[most_common_genre].keys(), n))
+    
+    genre_recommendations = {}
+    while len(genre_recommendations)<n:
+        genre_recommendations = set(genre_wise(most_common_genre, n).book_id.to_numpy())
+        genre_recommendations = genre_recommendations.difference(books | set(best_bookids_remain))
+    genre_recommendations = list(genre_recommendations)
+    return genre_recommendations[:n]
 
 
 def get_top_n(top_n=400):
