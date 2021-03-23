@@ -5,7 +5,6 @@ import math
 import pickle
 import operator
 import random
-from itertools import islice
 from collections import Counter
 import BookRecSystem.settings as settings
 import mainapp.models
@@ -208,11 +207,10 @@ def most_common_genre_recommendations(best_bookids, already_rated, best_bookids_
     for book in books:
         genre_frequency.extend(df_book[df_book['book_id'] == book]['genre'].values[0].split(", "))
     most_common_genre = Counter(genre_frequency).most_common(1)[0][0]
-    
     genre_recommendations = {}
     while len(genre_recommendations)<n:
         genre_recommendations = set(genre_wise(most_common_genre, n).book_id.to_numpy())
-        genre_recommendations = genre_recommendations.difference(books | set(best_bookids_remain))
+        genre_recommendations = genre_recommendations.difference( books | set(best_bookids_remain ))
     genre_recommendations = list(genre_recommendations)
     return genre_recommendations[:n]
 
