@@ -15,23 +15,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Kalam&display=swap" rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!-- font awesome ion-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Rating CSS -->
     <!-- Reset styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
     <!-- css -->
-    <link rel="stylesheet" href="{% static 'mainapp/css/layout.css' %}">
+    <link rel="stylesheet" href="/static/mainapp/css/layout.css">
     <!-- icon -->
-    <link rel="icon" href="{% static 'mainapp/png/logo.png' %}" />
-
-
-
-
-
+    <link rel="icon" href="/static/mainapp/png/logo.png" />
     <title>
-        {% block title %} {% endblock title %}
+        Home
     </title>
-    {% block head %} {% endblock head %}
+
+    <link rel="stylesheet" href="/static/mainapp/css/index.css">
+
 </head>
 
 <body>
@@ -43,7 +41,7 @@
                     <!-- Search Bar -->
                     <div class="searchbar" id="searchdropdown">
 
-                        <input type="text" id="bookName" onkeyup="myFunction()" placeholder="&#xf002; Search for books" title="Type in a name" style="outline: none; @import url(https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css);">
+                        <input type="text" id="bookName" onkeyup="myFunction()" placeholder="&#xf002;     Search for books" title="Type in a name" style="outline: none; font-family: FontAwesome, Kumbh sans; ">
                         <div class="dropdown-content" id="search-dropdown">
                         </div>
                     </div>
@@ -364,7 +362,7 @@
     </script>
     <!-- End Search Bar Script -->
     {% block script %} {% endblock script %}
-    
+
 
 </body>
 
