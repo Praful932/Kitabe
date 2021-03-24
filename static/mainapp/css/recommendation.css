@@ -1,135 +1,134 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
-@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
-* {
-  outline: none;
-  box-sizing: border-box;
+.hide {
+  display: none;
 }
 
-.heading {
-  font-family: "Lobster", cursive;
-  font-size: 300%;
-  background-color: #d7722c;
-  margin-top: 0px;
-  color: white;
-}
-
-.cover-img {
-  max-width: 100%;
-}
-
-.book-cell {
-  position: relative;
+.centre {
   display: flex;
-  padding: 25px;
-  width: 33.33%;
-  height: 250px;
-  background-color: #133050;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1rem;
 }
 
-.book-photo {
-  width: 180px;
+.data:hover + .hide {
+  display: block;
+  color: red;
+}
+
+.hide:hover {
+  display: block;
+  color: red;
+}
+
+.cover-img-size {
+  width: 200px;
+  height: 300px;
+  margin-right: 22px;
+  margin-top: 2px;
+  margin-bottom: 4px;
+}
+
+.content {
+  width: 200px;
+}
+
+.title {
+  font-family: "Sora", sans-serif;
+  color: #d7722c;
+}
+
+.author {
+  font-family: "Courgette", cursive;
+  font-weight: bold;
+}
+
+#demo,
+#demo2,
+#demo3 {
+  padding-left: 6.5%;
+  padding-bottom: 1%;
+}
+
+
+.rateYo {
+  margin-left: auto;
+  margin-right: auto;
+  display: none;
+}
+
+.small-screen {
+  display: none;
+}
+
+.card-deck {
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 2%;
+}
+
+.card {
+  transition: 0.5s;
+  cursor: pointer;
+  border-radius: 3px;
+  box-shadow: -2px 6px 19px 0px #7f818e;
+}
+
+.card-img {
   flex-shrink: 0;
   bottom: -35px;
   left: 35px;
-  border-radius: 2px;
+  border-radius: 3px;
   box-shadow: -2px 6px 19px 0px #7f818e;
   transition: 0.3s ease;
+  width: 85%;
+  height: 60%;
+  margin: 0 auto;
 }
 
-.book-photo:hover {
-  transform: scale(1.03);
+.card-img:hover {
+  transform: scale(1.07);
 }
 
-.book-img {
-  flex-shrink: 0;
+.card-horizontal {
+  display: flex;
+  flex: 1 1 auto;
 }
 
-.book-title {
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  color: #ffffff;
-  font-weight: 600;
-  font-size: larger;
+.card-body-wrap {
+  display: flex;
 }
 
-.book-author {
-  margin-top: 3px;
-  font-size: 18px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-.book-content {
-  padding: 0 20px;
-  color: #ffffff;
-  overflow: hidden;
-}
-
-.book-voters {
-  color: #fff;
-  vertical-align: sub;
-  font-size: 18px;
-  margin-left: 7px;
-  white-space: nowrap;
-  margin-top: 7px;
-}
-
-.book-see {
-  margin-top: 10px;
-  text-align: center;
-  background-color: #fff;
+.card-title {
+  font-family: "Sora", sans-serif;
+  font-size: large;
   color: #d7722c;
-  font-weight: 600;
-  padding: 8px;
-  font-size: 14px;
-  width: 160px;
-  border-radius: 20px;
 }
 
-.book-see:hover {
-  color: black;
+.card::before,
+.card::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: scale3d(0, 0, 1);
+  transition: transform 0.3s ease-out 0s;
+  content: "";
+  pointer-events: none;
 }
 
-@media (max-width: 1103px) {
-  .book-cell {
-    width: 60%;
-  }
+.card::before {
+  transform-origin: left top;
 }
 
-@media (max-width: 765px) {
-  .book-cell {
-    width: 80%;
-  }
+.card::after {
+  transform-origin: right bottom;
 }
 
-@media (max-width: 575px) {
-  .book-cell {
-    width: 100%;
-  }
-}
-
-@media (max-width: 458px) {
-  .book-photo {
-    width: 180px;
-  }
-}
-
-@media (max-width: 421px) {
-  .book-see {
-    width: 120px;
-    font-size: 13px;
-  }
-  .book-photo {
-    width: 130px;
-  }
-  .more-details {
-    font-size: 13px !important;
-  }
-  .rating-block {
-    font-size: 13px !important;
-  }
+.card:hover::before,
+.card:hover::after,
+.card:focus::before,
+.card:focus::after {
+  transform: scale3d(1, 1, 1);
 }
 
 .more-details {
@@ -137,12 +136,11 @@
   background-color: #3d348b;
   color: #fff;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 11px;
   border-radius: 20px;
   position: absolute;
-  right: 20%;
-  position: absolute;
-  margin-top: 20%;
+  bottom: 10px;
+  right: 2%;
 }
 
 .more-details:hover {
@@ -150,20 +148,16 @@
 }
 
 .rating-block {
+  display: inline-block;
   text-align: center;
   background-color: #31c2cf;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 11px;
   border-radius: 20px;
-  padding: 5px;
-  bottom: 10px;
   position: absolute;
-  padding-left: 18px;
-  padding-right: 18px;
-}
-
-.more-details {
-  padding-left: -2px;
+  padding: 8px;
+  bottom: 10px;
+  left: 7%;
 }
 
 .rating-block:hover {
@@ -171,6 +165,56 @@
   transition: all 0.4s ease 0s;
 }
 
-.rateYo {
-  display: none;
+.card-text {
+  font-family: "Courgette", cursive;
+  color: black;
+  font-weight: bold;
+  font-size: 15px;
+  padding-bottom: 1px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+
+@media (max-width: 420px) {
+  .cover-img-size {
+    margin-left: 53px;
+  }
+  .content {
+    margin-left: 53px;
+  }
+  .hide {
+    display: block;
+  }
+  .rating-block {
+    margin-left: 5%;
+  }
+  .more-details {
+    right: 15%;
+  }
+  .large-screen {
+    display: none;
+  }
+  .small-screen {
+    display: inline;
+  }
+  .card, .card-deck{ 
+    margin: auto;
+  }
+  .cover-img-size{
+    margin: auto;
+    margin-top: 8%;
+  }
+  .row{
+    margin-bottom: 5%;
+  }
+}
+
+@media (max-width: 390px){
+  .card, .card-deck{ 
+    margin-left: -1.5%;
+  }
 }
