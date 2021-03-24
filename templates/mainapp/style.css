@@ -1,0 +1,113 @@
+<style>
+*
+{
+    padding:0;
+    margin:0;
+}
+body{
+    font-family: 'Times New Roman', Times, serif;
+}
+.err
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+h1{
+    font-size: 60px;
+}
+p{
+    font-size:25px;
+}
+a
+{
+    font-size:18px;
+    text-decoration: none;
+    color:violet
+}
+a:visited{
+    color:teal;
+}
+a:hover{
+    color: black;
+}
+@media only screen and (max-width: 600px) {
+    .err
+{
+    margin-top: 30%;
+    margin-left: 25%;
+}
+h1{
+    font-size: 40px;
+}
+p{
+    font-size:20px;
+    margin-left:7%;
+}
+a
+{
+    margin-left: 20%;
+}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .err
+{
+    margin-top: 30%;
+    margin-left: 25%;
+}
+h1{
+    font-size: 40px;
+}
+p{
+    font-size:20px;
+    margin-left:7%;
+}
+a
+{
+    margin-left: 20%;
+}
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .err
+{
+    margin-top: 20%;
+    margin-left: 35%;
+}
+h1{
+    font-size: 50px;
+}
+p{
+    font-size:25px;
+    margin-left:5%;
+}
+a
+{
+    margin-left: 17%;
+    font-size: 25px;
+}
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+.err
+{
+    display: flex;
+    align-items: center;
+}
+h1{
+    font-size: 60px;
+}
+p{
+    font-size:25px;
+    margin-left:7%;
+}
+a
+{
+    margin-left: 12%;
+}
+}
+</style>
