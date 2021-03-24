@@ -22,12 +22,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'RANDOM_KEY'#os.environ.get('KITABE_SECRET_KEY')
+SECRET_KEY = os.environ.get('KITABE_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['kitabe-app.herokuapp.com','localhost',]
+ALLOWED_HOSTS = ['kitabe-app.herokuapp.com']
 
 
 # Application definition
@@ -186,6 +186,6 @@ MESSAGE_TAGS = {
 }
 
 # Django Heroku Settings
-#if '/app' in os.environ['HOME']:
-#    import django_heroku
-#    django_heroku.settings(locals())
+if '/app' in os.environ['HOME']:
+    import django_heroku
+    django_heroku.settings(locals())
