@@ -66,7 +66,7 @@ def book_recommendations(request):
         bookid = best_user_ratings[0].bookid
         already_rated_books = set(get_rated_bookids(user_ratings))
         # Get bookids based on Count Vectorizer
-        cv_bookids = set(count_vectorizer_recommendations(bookid))
+        tfidf_bookids = set(count_vectorizer_recommendations(bookid))
 
         # Shuffle again for randomness for second approach
         random.shuffle(user_ratings)
@@ -74,7 +74,7 @@ def book_recommendations(request):
         # Get Top 10 bookids based on embedding
         embedding_bookids = set(embedding_recommendations(best_user_ratings))
 
-        best_bookids = combine_ids(cv_bookids, embedding_bookids, already_rated_books)
+        best_bookids = combine_ids(tfidf_bookids, embedding_bookids, already_rated_books)
         all_books_dict = get_book_dict(best_bookids)
     else:
         return redirect('index')
