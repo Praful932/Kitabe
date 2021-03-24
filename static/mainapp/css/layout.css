@@ -117,6 +117,18 @@ body {
 .modal-footer {
   color: white;
 }
+
+.rating-block-modal {
+  display: inline-block;
+  text-align: center;
+  background-color: #31c2cf;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 20px;
+  bottom: 10px;
+  right: 35%;
+}
+
 /*  -------------------------------------------------------------------------------fotter css -------------------------------------------------*/
 /*FOOTER*/
 

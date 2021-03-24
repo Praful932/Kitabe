@@ -128,12 +128,13 @@
                             {% if user.is_authenticated %}
                             <div class='rating-block-modal' id='rating-block-' onmouseover="startRatingModal(this)" 
                             onclick='rateBookModal(this)' onmouseout='finishRatesModal(this)'>
-                                <div id='rateYo' class="rate-" style="display: block"></div>
+                                <div id='rateYo-modal' class="rate-" style="display: block"></div>
                             </div>
                             {% else %}
-                            <div class="prompt-login">
-                                <p>Please <a href="{% url 'account_signup' %}">Login</a> to Continue Rating</p>
-                            </div>
+                            <div class='rating-block-modal btn' onclick="location.href='{% url 'account_signup' %}'">
+				                <div id='button-text'>Rate <i class="fa fa-heart" style="color:red"></i> This Book</a>
+				                </div>
+				            </div>
                             {% endif %}
                         </div>
 
@@ -224,7 +225,7 @@
             $('#booktitle').text(bookName);
             $('#bookauthors').text(authors);
             $('#bookimage').attr('src', imageurl);
-            $("#rateYo").rateYo({
+            $("#rateYo-modal").rateYo({
                 rating: averagerating
             });
             $('#bookModal').modal('show');
@@ -297,6 +298,16 @@
 
         });
 
+        $(function () {
+
+            $("#rateYo-modal").rateYo({
+                rating: 0,
+                starWidth: "25px",
+                fullStar: true
+            });
+
+        });
+
 
         function startRatingModal(obj) {
             var bookid = obj.getAttribute('data-book-id');
@@ -335,7 +346,8 @@
         function rateBook(obj) {
             var bookid = obj.getAttribute('data-book-id');
             var bookrating = $('#rate-' + bookid).rateYo('rating');
-            $('#rating-block-' + bookid).css('transition', '2s ease');
+            $('#rating-block-' + bookid).css('transition', 'background-color 2s ease');
+            $('#rating-block-' + bookid).css('background-color', '#29BF12');
             $.ajax({
                 data: {
                     'bookid': bookid,
