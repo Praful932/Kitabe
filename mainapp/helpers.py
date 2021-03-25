@@ -100,8 +100,6 @@ def genre_wise(genre, n_books=16, percentile=0.85):
     '''
         Returns top genre books according to a cutoff percentile to be listed in Top Books
     '''
-    # To return double the number of books required
-    n_books = n_books * 2
     min_genre_book_count = 48
 
     qualified = df_book[df_book.genre.str.contains(genre.lower())]
@@ -114,7 +112,7 @@ def genre_wise(genre, n_books=16, percentile=0.85):
     qualified = qualified.assign(weighted_rating=W)
     qualified.sort_values('weighted_rating', ascending=False, inplace=True)
 
-    return qualified[cols].head(min_genre_book_count).sample(n_books)
+    return qualified[cols].head(min_genre_book_count).sample(2*n_books)
 
 
 def count_vectorizer_recommendations(bookid):
@@ -220,10 +218,8 @@ def most_common_genre_recommendations(best_bookids, already_rated, best_bookids_
 
     # Recommendations list, listing n or more unique bookids
     genre_recommendations = set()
-    while len(genre_recommendations) < n:
-        genre_recommendations = set(genre_wise(most_common_genre, n).book_id.to_numpy())
-        genre_recommendations = genre_recommendations.difference(books)
-    genre_recommendations = list(genre_recommendations)
+    genre_recommendations = set(genre_wise(most_common_genre, n).book_id.to_numpy())
+    genre_recommendations = list(genre_recommendations.difference(books))
 
     # Slicing the first n bookids from the list obtained to avoid duplicates and insufficient value
     return genre_recommendations[:n]
