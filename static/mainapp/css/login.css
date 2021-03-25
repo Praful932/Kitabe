@@ -32,7 +32,7 @@
 .welcome {
   font-family: "Pacifico", cursive;
   position: relative;
-  top: 4%;
+  top: 12%;
   left: 28%;
   border-radius: 50px;
   font-size: 2.2rem;
@@ -49,7 +49,7 @@ label {
   padding: 6% 8% 8% 8%;
   position: relative;
   display: inline-block;
-  top: 34px;
+  top: 80px;
   color: black;
  
 }
@@ -64,7 +64,7 @@ label {
   font-family: "Fredoka One", cursive;
   padding: 8px 10px 5px 10px;
   font-size:1rem;
-  margin-bottom: 13%;
+  margin-bottom: 20%;
   margin-top: 9%;
   border: 2px solid white;
   box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.5);
@@ -90,7 +90,7 @@ label {
   text-decoration: none !important;
   box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.5);
   border:3px solid #fff;
-  bottom: 7%;
+  bottom: -1%;
 }
 .forgotpassword {
   font-size: 15px;
@@ -109,6 +109,10 @@ strong {
   .img-block {
     display: none;
   }
+  .googlebutton{
+    bottom:2%;
+  }
+
 }
 @media only screen and (max-width: 900px) {
   
@@ -130,7 +134,7 @@ strong {
       left: 30%;
     }
     .googlebutton{
-      bottom: 13%;
+      bottom: 5%;
     }
   
 }
