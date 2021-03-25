@@ -33,42 +33,72 @@
   font-family: "Pacifico", cursive;
   position: relative;
   top: 12%;
+  left: 28%;
+  border-radius: 50px;
+  font-size: 2.2rem;
+  background-color: #ffdab9;
+  width: 44%;
+
 }
 label {
   font-family: "Kalam", cursive;
   font-size: 1.2em;
 }
 .form-group {
+  border: 3px solid #ffdab9;
+  padding: 6% 8% 8% 8%;
   position: relative;
   display: inline-block;
-  top: 110px;
+  top: 80px;
+  color: black;
+ 
 }
 #id_login,
 #id_password {
-  background-color: transparent;
   border-top: none;
   border-left: none;
   border-right: none;
+  color: #000;
 }
 .loginbutton {
   font-family: "Fredoka One", cursive;
-  padding: 5px 10px 5px 10px;
-  background-color: #09bc8a;
-  color: white;
+  padding: 8px 10px 5px 10px;
+  font-size:1rem;
+  margin-bottom: 20%;
+  margin-top: 9%;
   border: 2px solid white;
-  border-radius: 10px;
+  box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.5);
+  border:3px solid #fff;
+  color:#fff;
+  background:rgba(1,1,1);
+  border-radius: 15px;
+  outline:none;
+}
+.loginbutton:hover{
+  background-color: #ffdab9;
+  color:black;
+  border: 3px solid black;
 }
 .googlebutton {
   position: relative;
-  top: 110px;
   background-color: #f25f5c;
   font-family: "Fredoka One", cursive;
   color: white;
   padding: 5px 10px 5px 10px;
   border: 2px solid white;
-  border-radius: 10px;
+  border-radius: 15px;
   text-decoration: none !important;
+  box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.5);
+  border:3px solid #fff;
+  bottom: -1%;
 }
+.forgotpassword {
+  font-size: 15px;
+  position: relative;
+  left: 62px;
+  top: 10px;
+}
+
 .googlebutton:hover {
   color: white;
 }
@@ -79,9 +109,71 @@ strong {
   .img-block {
     display: none;
   }
+  .googlebutton{
+    bottom:2%;
+  }
+
 }
-.forgotpassword {
-  font-size: 10px;
-  position: relative;
-  left: 62px;
+@media only screen and (max-width: 900px) {
+  
+    .form-group {
+     border: 3px solid #ffdab9;
+     padding: 10% 5% 15% 5%;
+    }
+    .account-block {
+      margin: auto;
+      height: 70%;
+      background-color: white;
+    }
+    .forgotpassword{
+      left: 35%;
+    }
+    .welcome{
+      font-size: 1.5rem;
+      width: 40%;
+      left: 30%;
+    }
+    .googlebutton{
+      bottom: 5%;
+    }
+  
+}
+
+@media only screen and (max-width: 600px) {
+  .loginbutton {
+    font-family: "Fredoka One", cursive;
+    padding: 8px 10px 5px 10px;
+    font-size:1rem;
+    margin-bottom: 30%;
+    margin-top: 9%;
+   }
+   .welcome {
+     font-size: 1.75rem;
+     }
+     .form-group {
+      border: 3px solid #ffdab9;
+      padding: 7% 5% 5% 5%;
+     }
+     .forgotpassword {
+      font-size: 16px;
+      position: relative;
+      left:30px;
+      top: 10px;
+    }
+    .loginbutton{
+      margin-bottom:50%;
+    }
+    .welcome{
+      font-size: 1.5rem;
+      width: 60%;
+      left: 20%;
+    }
+  
+    
+}
+
+::placeholder{
+  color: #000;
+  font-weight: normal;
+
 }
