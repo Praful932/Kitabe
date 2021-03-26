@@ -41,7 +41,7 @@ def explore_books(request):
     '''
     N = 150
     sample = get_top_n().sample(N).to_dict('records')
-    return render(request, 'mainapp/explore.html', {'book': sample})
+    return render(request, 'mainapp/layout.html', {'book': sample})
 
 
 @login_required

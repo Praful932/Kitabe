@@ -1,3 +1,86 @@
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+  display: block; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  background-color: #fff; }
+
+html.dark {
+    background-color: #17191a !important;
+}
+html.dark, body.dark, input.dark, textarea.dark, select.dark, button.dark {
+    background-color: #17191a;
+}
+html.dark, body.dark, input.dark, textarea.dark, select.dark, button.dark {
+    border-color: #535353;
+    color: #dcdbd8;
+}
+a.dark {
+    color: #308af2;
+}
+table.dark {
+    border-color: #484848;
+}
+
+::placeholder.dark {
+    color: #b1aca2;
+}
+::selection.dark {
+    background-color: #0057c2;
+    color: #f2f2f2;
+}
+::-moz-selection.dark {
+    background-color: #0057c2;
+    color: #f2f2f2;
+}
+input:-webkit-autofill.dark,
+textarea:-webkit-autofill.dark,
+select:-webkit-autofill.dark {
+    background-color: #505600 !important;
+    color: #dcdbd8 !important;
+}
+::-webkit-scrollbar.dark {
+    background-color: #1b1c1d;
+    color: #bbb7b0;
+}
+::-webkit-scrollbar-thumb.dark {
+    background-color: #282a2c;
+}
+::-webkit-scrollbar-thumb:hover.dark {
+    background-color: #2f3234;
+}
+::-webkit-scrollbar-thumb:active.dark {
+    background-color: #3a3d40;
+}
+::-webkit-scrollbar-corner.dark {
+    background-color: #17191a;
+}
+*.dark {
+    scrollbar-color: #282a2c #1b1c1d;
+}
+
+h1, h2, h3, h4, h5,
+.h1, .h2, .h3, .h4, .h5 {
+  line-height: 1.4;
+  color: #3c4858;
+  font-weight: 300; }
+
+h1.dark, h2.dark, h3.dark, h4.dark, h5.dark,
+.h1.dark, .h2.dark, .h3.dark, .h4.dark, .h5.dark {
+  color: #ffffff }
+
 .genre-head,
 .topbook-head {
   font-family: "Lobster", cursive;

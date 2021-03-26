@@ -35,6 +35,29 @@
 </head>
 
 <body>
+<li class="nav-item">
+  <a class="nav-link icon d-flex align-items-center" href="#"
+    onclick="DarkMode()"><i
+      class="ion-ios-contrast mr-2"></i></a>
+</li>
+<script>
+  document.addEventListener('DOMContentLoaded', (event) => {
+    ((localStorage.getItem('mode') || 'dark') === 'dark') ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')
+    ((localStorage.getItem('mode') || 'dark') === 'dark') ? document.querySelector('h1').classList.add('dark') : document.querySelector('h1').classList.remove('dark')
+    ((localStorage.getItem('mode') || 'dark') === 'dark') ? document.querySelector('h2').classList.add('dark') : document.querySelector('h2').classList.remove('dark')
+    ((localStorage.getItem('mode') || 'dark') === 'dark') ? document.querySelector('a').classList.add('dark') : document.querySelector('a').classList.remove('dark')
+    ((localStorage.getItem('mode') || 'dark') === 'dark') ? document.querySelector('table').classList.add('dark') : document.querySelector('table').classList.remove('dark')
+  })
+
+  function DarkMode() {
+    localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark');
+    localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')
+    localStorage.getItem('mode') === 'dark' ? document.querySelector('h1').classList.add('dark') : document.querySelector('h1').classList.remove('dark')
+    localStorage.getItem('mode') === 'dark' ? document.querySelector('h2').classList.add('dark') : document.querySelector('h2').classList.remove('dark')
+    localStorage.getItem('mode') === 'dark' ? document.querySelector('a').classList.add('dark') : document.querySelector('a').classList.remove('dark')
+    localStorage.getItem('mode') === 'dark' ? document.querySelector('table').classList.add('dark') : document.querySelector('table').classList.remove('dark')
+  }
+</script>
     <header>
 	<a name='top'>
         <div id="topheader">
@@ -372,7 +395,7 @@
     } else {
         document.getElementById("topBtn").style.display = "none";
     }
-     });  
+     });
     </script>
     <!-- End Search Bar Script -->
     {% block script %}
