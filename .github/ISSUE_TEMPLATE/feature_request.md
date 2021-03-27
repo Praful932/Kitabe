@@ -1,22 +1,26 @@
 ---
 name: Feature request
 about: Suggest an idea for this project
-title: ''
+title: 'Fixing size to display content'
 labels: ''
 assignees: ''
 
 ---
 
 **Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+Yes. In one of the book tile, the complete description is not visible as that particular description is quite long and also due to the same size of all the tiles.
 
 **Describe the solution you'd like**
-A clear and concise description of what you want to happen.
+Three things can be done:
+1. The image of book can be reduced to maintain the uniform size of all book tiles
+2. The spacing between the description can be reduced so they fit on in that space
+3. Size of that book tile can be increased so as to make complete description visible
 
-**Are you willing to contribute to this issue?** [Yes/No]
+**Are you willing to contribute to this issue?** [Yes/No] 
+Yes
 
 **Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
+
 
 **Additional context**
 Add any other context or screenshots about the feature request here.
