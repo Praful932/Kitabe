@@ -112,10 +112,10 @@ def genre_wise(genre, n_books=16, percentile=0.85):
     qualified = qualified.assign(weighted_rating=W)
     qualified.sort_values('weighted_rating', ascending=False, inplace=True)
 
-    return qualified[cols].head(min_genre_book_count).sample(2*n_books)
+    return qualified[cols].head(min_genre_book_count).sample(n_books)
 
 
-def count_vectorizer_recommendations(bookid):
+def tfidf_recommendations(bookid):
     '''
         Returns recommened book ids based on book details
     '''
@@ -213,16 +213,20 @@ def most_common_genre_recommendations(best_bookids, already_rated, best_bookids_
     for book in books:
         genre_frequency.extend(df_book[df_book['book_id'] == book]['genre'].values[0].split(", "))
 
-    # The most common genre among the bookids in `books` variable
-    most_common_genre = Counter(genre_frequency).most_common(1)[0][0]
+    if genre_frequency:
+        # The most common genre among the bookids in `books` variable
+        most_common_genre = Counter(genre_frequency).most_common(1)[0][0]
+    else:
+        most_common_genre = False
 
-    # Recommendations list, listing n or more unique bookids
-    genre_recommendations = set()
-    genre_recommendations = set(genre_wise(most_common_genre, n).book_id.to_numpy())
-    genre_recommendations = list(genre_recommendations.difference(books))
+    genre_recommendations = list()
+    if most_common_genre:
+        # Recommendations list, listing 2n bookids
+        genre_recommendations = set(genre_wise(most_common_genre, 2*(n)).book_id.to_numpy())
+        # Removing common bookids from `books` and Slicing out the first n bookids
+        genre_recommendations = list(genre_recommendations.difference(books))[:n]
 
-    # Slicing the first n bookids from the list obtained to avoid duplicates and insufficient value
-    return genre_recommendations[:n]
+    return genre_recommendations
 
 
 def get_top_n(top_n=400):
