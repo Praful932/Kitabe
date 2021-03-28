@@ -37,7 +37,7 @@
 
 /* Genre wise */
 .carousel-indicators{
-  bottom: -30px;
+  bottom: -28px;
 }
 
 ol.carousel-indicators li{
@@ -71,18 +71,9 @@ ol.carousel-indicators li.active {
 #carousel-2 .carousel-control-next {
   width: 50px;
   height: 50px;
+  top: 50%;
   border-radius: 50%;
   background-color: #dc3545;
-}
-
-#carousel-2 .carousel-control-prev {
-  place-items: center;
-  transform: translate(30%, 5px);
-}
-
-#carousel-2 .carousel-control-next {
-  place-items: center;
-  transform: translate(-30%, 5px);
 }
 
 @media screen and (min-width: 992px) {
