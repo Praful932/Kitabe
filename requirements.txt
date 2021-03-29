@@ -39,3 +39,6 @@ sqlparse==0.4.1
 toml==0.10.2
 urllib3==1.25.11
 whitenoise==5.2.0
+
+
+# brew install postgresql

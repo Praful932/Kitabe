@@ -26,6 +26,8 @@
     <link rel="stylesheet" href="{% static 'mainapp/css/layout.css' %}">
     <!-- icon -->
     <link rel="icon" href="{% static 'mainapp/png/logo.png' %}" />
+    <!--fontawesome-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
     <title>
         {% block title %}
         {% endblock title %}
@@ -38,58 +40,96 @@
     <header>
 	<a name='top'>
         <div id="topheader">
-            <nav class="navbar navbar-expand-md navbar-light">
+            <nav class="navbar navbar-expand-md navbar-light" style="padding: 0.1rem 1rem;" >
                 <a class="navbar-brand" href="/"><img class="navbrandimg" src="{% static 'mainapp/png/brand-img.png' %}"></a>
-                <!-- Search Bar -->
-                <div class="searchbar" id="searchdropdown">
-                    <input type="text" id="bookName" onkeyup="myFunction()" placeholder="Search for books"
-                        title="Type in a name" style="outline: none;">
-                    <div class="dropdown-content" id="search-dropdown">
+                <!-- Search Bar with icon-->
+                <div class="searchbar" id="searchdropdown"> 
+                   <input type="text"
+                     id="bookName" onkeyup="myFunction()"
+                     placeholder="&#xf002; Search for books"
+                     title="Type in a name" style="font-family:'Kumbh Sans',FontAwesome,sans-serif ;outline: none;">
+                      <div class="dropdown-content" id="search-dropdown">
                     </div>
-                </div>
+                      </div>
+                    
                 <!-- End Search Bar -->
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button"
+                 data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false"
+                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul class="navbar-nav text-center">
+                        <!-- links with tooltips  -->
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'index' %}">
-                                <i class="nav-icon-s fa fa-home fa-2x" aria-hidden="true"></i><br>Home
-                            </a>
+                                <a class="nav-link" href="{% url 'index' %}" >
+                                <i class="nav-icon-s fa fa-home fa-2x"
+                                data-toggle="tooltip"
+                                data-placement="bottom"
+                                data-original-title="Home"
+                                class="tooltipIcon"></i></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'explore_books' %}">
-                                <i class="nav-icon-s fa fa-globe fa-2x" aria-hidden="true"></i><br>Explore
+                                <i class="nav-icon-s fa fa-globe fa-2x"
+                                data-toggle="tooltip"
+                                data-placement="bottom"
+                                data-original-title="Explore"
+                                class="tooltipIcon" aria-hidden="true"></i>
                             </a>
                         </li>
                         {% if user.is_authenticated %}
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'book_recommendations' %}">
-                                <i class="nav-icon-s fa fa-book fa-2x" aria-hidden="true"></i><br>Your Read
+                                <i class="nav-icon-s fa fa-book fa-2x"
+                                data-toggle="tooltip"
+                                data-placement="bottom"
+                                data-original-title="Your Read"
+                                class="tooltipIcon" 
+                                aria-hidden="true"></i>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'read_books' %}">
-                                <i class="nav-icon-s fa fa-bookmark fa-2x" aria-hidden="true"></i><br>Library
+                                <i class="nav-icon-s fa fa-bookmark fa-2x" 
+                                data-toggle="tooltip"
+                                data-placement="bottom"
+                                data-original-title="Library"
+                                class="tooltipIcon" 
+                                aria-hidden="true"></i>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'account_logout' %}">
-                                <i class="nav-icon-s fa fa-sign-in fa-2x" aria-hidden="true"></i><br>Logout
+                                <i class="nav-icon-s fa fa-sign-in fa-2x" 
+                                data-toggle="tooltip"
+                                data-placement="bottom"
+                                data-original-title="Logout"
+                                class="tooltipIcon" 
+                                aria-hidden="true"></i>
                             </a>
                         </li>
                         {% else %}
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'account_login' %}">
-                                <i class="nav-icon-s fa fa-sign-in fa-2x" aria-hidden="true"></i><br>Login
+                                <i class="nav-icon-s fa fa-sign-in fa-2x" 
+                                data-toggle="tooltip"
+                                data-placement="bottom"
+                                data-original-title="Login"
+                                class="tooltipIcon" 
+                                aria-hidden="true"></i>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'account_signup' %}">
-                                <i class="nav-icon-s fa fa-user fa-2x" aria-hidden="true"></i><br>Signup
+                                <i class="nav-icon-s fa fa-user fa-2x"
+                                data-toggle="tooltip"
+                                data-placement="bottom"
+                                data-original-title="Signup"
+                                class="tooltipIcon" 
+                                aria-hidden="true"></i>
                             </a>
                         </li>
                         {% endif %}
@@ -184,7 +224,9 @@
             document.getElementById('bookName').value = "";
         }
         $(document).ready(init);
-
+        $(document).ready(function() {
+        $('[data-toggle="tooltip"]').tooltip();
+        });
         // get book summary
         function getsummary(bookid) {
             $.ajax({
@@ -265,14 +307,17 @@
                     type: 'POST',
                     success: function (response) {
                         displayResults(JSON.parse(response['top5_result']));
+                        // $('#bookName').val('')
                     },
                     error: function (response) {
                         console.log(response);
                     }
                 });
+            
             }
             else
                 $('#search-dropdown').empty();
+        
         }
 
         $("#bookName").focus(function () {

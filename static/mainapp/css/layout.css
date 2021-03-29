@@ -6,6 +6,7 @@ body {
   overflow-x: hidden;
 }
 
+
 #navbarNav {
   float: right;
 }
@@ -20,10 +21,18 @@ body {
   width: 94px;
 }
 
+
+.nav-item:not(:last-child)
+{
+    margin-right: 5px;
+}
+
 .navbar-toggler {
   border-color: black;
   background-color: white;
 }
+
+
 
 .img-book {
   height: 200px !important;
@@ -46,17 +55,18 @@ body {
 
 #bookName {
   border-radius: 10px;
+  
 }
 
 #searchdropdown {
-  margin-left: 50%;
+  margin-left:30%;
   width: 260px;
 }
 
 #searchdropdown #bookName {
   width: 100%;
   font-size: 16px;
-  padding: 12px 16px;
+  padding: 10px 14px;
   border: 1px solid #ddd;
 }
 
