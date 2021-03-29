@@ -22,8 +22,8 @@ Genre
         <div class="row no-gutters">
             <img class="card-img  mt-4 " src="{{book.image_url}}" alt="book Card">
             <div class="card-body text-center">
-                <h5 class="card-title">{{book.original_title}}</h5>
-                <p class="card-text"><i>by {{book.authors}}</i></p>
+                <h5 class="card-title">{{book.original_title|truncatechars:35}}</h5>
+                <p class="card-text"><i>by {{book.authors|truncatechars:25}}</i></p>
             </div>
         </div><br>
         <a href="javascript:;" onclick='bookDetails(this)' class="btn more-details"

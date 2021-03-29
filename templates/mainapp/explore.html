@@ -21,8 +21,8 @@ Explore
                 <img class=" card-img  mt-4 " src="{{book.image_url}}" alt="book Card">
                 
                 <div class="content text-center">
-                    <div class="card-title">{{ book.original_title }}</div>
-                    <div class="card-text">by {{ book.authors}}</div>
+                    <div class="card-title">{{ book.original_title|truncatechars:30 }}</div>
+                    <div class="card-text">by {{ book.authors|truncatechars:25}}</div>
                 </div>
             </div><br>
             <a href="javascript:;" onclick='bookDetails(this)' class="btn more-details"
@@ -65,8 +65,8 @@ Explore
                             <img class=" cover-img-size" src="{{book.image_url}}" alt="book Card">
                             
                             <div class="card-body text-center">
-                                <div class="card-title">{{ book.original_title }}</div>
-                                <div class="card-text">by {{ book.authors}}</div>
+                                <div class="card-title">{{ book.original_title|truncatechars:30 }}</div>
+                                <div class="card-text">by {{ book.authors|truncatechars:30}}</div>
                             </div>
                         </div><br>
                         <a href="javascript:;" onclick='bookDetails(this)' class="btn more-details"
@@ -118,8 +118,8 @@ Explore
                             <img class=" cover-img-size" src="{{book.image_url}}" alt="book Card">
                             
                             <div class="card-body text-center">
-                                <div class="card-title">{{ book.original_title }}</div>
-                                <div class="card-text">by {{ book.authors}}</div>
+                                <div class="card-title">{{ book.original_title|truncatechars:30 }}</div>
+                                <div class="card-text">by {{ book.authors|truncatechars:30}}</div>
                             </div>
                         </div><br>
                         <a href="javascript:;" onclick='bookDetails(this)' class="btn more-details"
@@ -170,8 +170,8 @@ Explore
                             <img class=" cover-img-size" src="{{book.image_url}}" alt="book Card">
                             
                             <div class="card-body text-center">
-                                <div class="card-title">{{ book.original_title }}</div>
-                                <div class="card-text">by {{ book.authors}}</div>
+                                <div class="card-title">{{ book.original_title |truncatechars:30}}</div>
+                                <div class="card-text">by {{ book.authors|truncatechars:30}}</div>
                             </div>
                         </div><br>
                         <a href="javascript:;" onclick='bookDetails(this)' class="btn more-details"
