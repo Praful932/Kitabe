@@ -5,7 +5,9 @@
 <head>     
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <meta name="viewport" content=
+        "width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />zzz
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Sora&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
@@ -26,15 +28,25 @@
     <link rel="stylesheet" href="{% static 'mainapp/css/layout.css' %}">
     <!-- icon -->
     <link rel="icon" href="{% static 'mainapp/png/logo.png' %}" />
+
     <title>
         {% block title %}
         {% endblock title %}
     </title>
     {% block head %}
     {% endblock head %}
+
 </head>
 
 <body>
+    <button onclick="myFunction()">Switch mode</button>
+
+    <script>
+        function myFunction() {
+        var element = document.body;
+        element.classList.toggle("dark");
+        }
+    </script>
     <header>
 	<a name='top'>
         <div id="topheader">

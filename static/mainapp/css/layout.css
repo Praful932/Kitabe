@@ -1,10 +1,5 @@
 html,
-body {
-  background-color: #ffdab9;
-  height: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-}
+
 
 #navbarNav {
   float: right;
@@ -210,4 +205,24 @@ body {
 #topBtn:hover {
   background-color: #ff6666;
 }
+   body{
+        padding:3% 10% 3%;
+        text-align:center;
+        }
+        h1{
+        color: #32a852;
+        margin-top:30px;
+        }
+
+        button{
+            cursor: pointer;
+            border: 1px solid #555;
+            text-align: center;
+            padding: 5px;
+            margin-left: 8px;
+        }
+        .dark{
+            background-color: #222;
+            color: #e6e6e6;
+        }
 }
