@@ -126,15 +126,15 @@
                             </p>
 
                             {% if user.is_authenticated %}
-                            <div class='rating-block-modal' id='rating-block-' onmouseover="startRatingModal(this)" 
+                            <div class='rating-block-modal' id='rating-block-modal'
                             onclick='rateBookModal(this)' onmouseout='finishRatesModal(this)'>
-                                <div id='rateYo-modal' class="rate-" style="display: block"></div>
+                                <div id='rateYo-modal' class="rate" style="display: block"></div>
                             </div>
                             {% else %}
-                            <div class='rating-block-modal btn' onclick="location.href='{% url 'account_signup' %}'">
-				                <div id='button-text'>Rate <i class="fa fa-heart" style="color:red"></i> This Book</a>
-				                </div>
-				            </div>
+                            <div class='rating-block-btn btn' onclick="location.href='{% url 'account_signup' %}'">
+                                <div id='button-text'>Rate <i class="fa fa-heart" style="color:red"></i> This Book</a>
+                                </div>
+                            </div>
                             {% endif %}
                         </div>
 
@@ -290,6 +290,15 @@
         //for rating a book
         $(function () {
 
+            $("#rateYo-modal").rateYo({
+                rating: 0,
+                starWidth: "25px",
+                fullStar: true
+            });
+
+        });
+        $(function () {
+
             $("#rateYo").rateYo({
                 rating: 0,
                 starWidth: "20px",
@@ -298,21 +307,6 @@
 
         });
 
-        $(function () {
-
-            $("#rateYo-modal").rateYo({
-                rating: 0,
-                starWidth: "25px",
-                fullStar: true
-            });
-
-        });
-
-
-        function startRatingModal(obj) {
-            var bookid = obj.getAttribute('data-book-id');
-            $('#rate-' + bookid).css('display', 'block');
-        }
 
         // when hover over rate
         function rateStart(obj) {
@@ -323,7 +317,7 @@
         // onclick rate
         function rateBookModal(obj) {
             var bookid = obj.getAttribute('data-book-id');
-            var bookrating = $('#rateYo').rateYo('rating');
+            var bookrating = $('#rateYo-modal').rateYo('rating');
             $('#rating-block-' + book__id).css('transition', '2s ease');
             $.ajax({
                 data: {
@@ -409,9 +403,8 @@
                     $('#booktitle').text(bookName);
                     $('#bookauthors').text(authors);
                     $('#bookimage').attr('src', imageurl);
-                    $("#rateYo").rateYo({
+                    $("#rateYo-modal").rateYo({
                         rating: averagerating,
-                        readOnly: true
                     });
                     $('#bookModal').modal('show');
                     $('#search-dropdown').empty();

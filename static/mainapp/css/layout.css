@@ -121,12 +121,20 @@ body {
 .rating-block-modal {
   display: inline-block;
   text-align: center;
+  font-weight: 600;
+  font-size: 25px;
+  border-radius: 20px;
+  bottom: 10px;
+  right: 35%;
+}
+
+.rating-block-btn {
+  display: inline-block;
+  text-align: center;
   background-color: #31c2cf;
   font-weight: 600;
   font-size: 14px;
   border-radius: 20px;
-  bottom: 10px;
-  right: 35%;
 }
 
 /*  -------------------------------------------------------------------------------fotter css -------------------------------------------------*/
