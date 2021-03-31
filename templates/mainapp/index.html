@@ -7,6 +7,21 @@
 
 
 {% block main %}
+
+<!-- preloader -->
+<div class="preloader-container">
+    <div class="spinner">
+        <div class="rec">
+            <div class="rect1"><img src="{% static 'mainapp/png/book.svg' %}" alt="book"></div>
+            <div class="rect2"><img src="{% static 'mainapp/png/book.svg' %}" alt="book"></div>
+            <div class="rect3"><img src="{% static 'mainapp/png/book.svg' %}" alt="book"></div>
+            <div class="rect4"><img src="{% static 'mainapp/png/book.svg' %}" alt="book"></div>
+            <div class="rect5"><img src="{% static 'mainapp/png/book.svg' %}" alt="book"></div>
+        </div>
+        <div class="stand"> </div>
+    </div>
+</div>
+
 <!---------------------------------------------------------------   adding Carousel (sliding banner) -------------------------------------------------------------------->
 <!-- carousel 1 -->
 
@@ -343,6 +358,43 @@
 {% endblock main %} {% block script %}
 
 <script type="text/javascript">
+
+/* preloader */
+$(window).on('load', function () {
+        if (readCookie('referer') == null) {
+            $('.preloader-container').delay(700).fadeOut('slow');
+            createCookie('referer', 1, 0);
+
+        }
+
+        if (readCookie('referer') != null) {
+
+            $('.preloader-container').hide();
+        }
+    });
+
+/* functions to create and read cookies */
+    function createCookie(name, value, days) {
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            var expires = "; expires=" + date.toGMTString();
+        } else var expires = "";
+        document.cookie = name + "=" + value + expires + "; path=/";
+    }
+
+    function readCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
+
+    
     /* 2 carousel */
     $('#carousel-2').carousel({
         interval: 6000,
