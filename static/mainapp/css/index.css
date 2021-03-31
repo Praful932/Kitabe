@@ -2,6 +2,7 @@
 
 .carousel img {
   width: 100%;
+  height: auto;
 }
 
 .genre-head,
@@ -33,6 +34,66 @@
 .navbar-nav .nav-link {
   color: black;
 }
+
+/* Genre wise */
+.carousel-indicators{
+  bottom: -28px;
+}
+
+ol.carousel-indicators li{
+  width: 7px;
+  height: 7px;
+  border: none;
+  border-radius: 10px;
+  background-color: #dc3545;
+  opacity: 0.6;
+  margin: 0 5px;
+}
+
+ol.carousel-indicators li.active {
+  height: 7px;
+  width: 20px;
+}
+
+.inner-row {
+  place-content: center;
+  height: auto;
+  min-width: auto;
+}
+
+.genre-img {
+  width: 80%; 
+  height: auto;
+  margin: 1rem auto;
+}
+
+#carousel-2 .carousel-control-prev,
+#carousel-2 .carousel-control-next {
+  width: 50px;
+  height: 50px;
+  top: 50%;
+  border-radius: 50%;
+  background-color: #dc3545;
+}
+
+@media screen and (min-width: 992px) {
+  .carousel-indicators{
+    bottom: -8px;  
+  }
+
+  .inner-row {
+    height: 17rem;
+    min-width: 57rem;
+  }
+
+  #carousel-2 .carousel-control-prev,
+  #carousel-2 .carousel-control-next {
+    top: 6.5rem;
+    transform: translateY(0px);
+  }
+}
+
+
 /*---------------------------------------- book card ----------------------------------*/
 
 .card {
