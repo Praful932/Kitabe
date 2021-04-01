@@ -56,40 +56,40 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul class="navbar-nav text-center">
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'index' %}">
-                                <i class="nav-icon-s fa fa-home fa-2x" aria-hidden="true"></i><br>Home
+                            <a class="nav-link flex-row " href="{% url 'index' %}">
+                                <i class="nav-icon-s fa fa-home fa-2x" aria-hidden="true"></i><div>Home</div>
                             </a>
-                        </li>
+                        </li>   
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'explore_books' %}">
-                                <i class="nav-icon-s fa fa-globe fa-2x" aria-hidden="true"></i><br>Explore
+                            <a class="nav-link flex-row" href="{% url 'explore_books' %}">
+                                <i class="nav-icon-s fa fa-globe fa-2x" aria-hidden="true"></i><div>Explore</div>
                             </a>
                         </li>
                         {% if user.is_authenticated %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'book_recommendations' %}">
-                                <i class="nav-icon-s fa fa-book fa-2x" aria-hidden="true"></i><br>Your Read
+                            <a class="nav-link flex-row" href="{% url 'book_recommendations' %}">
+                                <i class="nav-icon-s fa fa-book fa-2x" aria-hidden="true"></i><div>Your Read</div>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'read_books' %}">
-                                <i class="nav-icon-s fa fa-bookmark fa-2x" aria-hidden="true"></i><br>Library
+                            <a class="nav-link flex-row" href="{% url 'read_books' %}">
+                                <i class="nav-icon-s fa fa-bookmark fa-2x" aria-hidden="true"></i><div>Library</div>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'account_logout' %}">
-                                <i class="nav-icon-s fa fa-sign-in fa-2x" aria-hidden="true"></i><br>Logout
+                        <li class="nav-item logout">
+                            <a class="nav-link flex-row" href="{% url 'account_logout' %}">
+                                <i class="nav-icon-s fa fa-sign-in fa-2x" aria-hidden="true"></i><div>Logout</div>
                             </a>
                         </li>
                         {% else %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'account_login' %}">
-                                <i class="nav-icon-s fa fa-sign-in fa-2x" aria-hidden="true"></i><br>Login
+                        <li class="nav-item login">
+                            <a class="nav-link flex-row" href="{% url 'account_login' %}">
+                                <i class="nav-icon-s fa fa-sign-in fa-2x" aria-hidden="true"></i><div>Login</div>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'account_signup' %}">
-                                <i class="nav-icon-s fa fa-user fa-2x" aria-hidden="true"></i><br>Signup
+                        <li class="nav-item signup">
+                            <a class="nav-link flex-row" href="{% url 'account_signup' %}">
+                                <i class="nav-icon-s fa fa-user fa-2x" aria-hidden="true"></i><div>Signup</div>
                             </a>
                         </li>
                         {% endif %}
