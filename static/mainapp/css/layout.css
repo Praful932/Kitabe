@@ -9,6 +9,19 @@ body {
 #navbarNav {
   float: right;
 }
+
+/* Custom Scrollbar */
+body::-webkit-scrollbar
+{
+	width: 13px;
+	background-color: #F5F5F5;
+}
+
+body::-webkit-scrollbar-thumb
+{
+	background-color: #ffdab9;	
+}
+
 /* nav bar css */
 
 .nav-item {
