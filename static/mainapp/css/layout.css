@@ -170,7 +170,7 @@ footer a:hover {
 }
 /* media query */
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   #searchdropdown {
     margin-left: 8%;
     padding-left: 0%;
@@ -198,7 +198,12 @@ footer a:hover {
   .nav-link:hover {
     text-decoration: underline;
     font-weight: 100;
+  } 
+  body::-webkit-scrollbar
+  {
+	  width: 5px;
   }
+  
 }
 body {
 	scroll-behavior:smooth;
