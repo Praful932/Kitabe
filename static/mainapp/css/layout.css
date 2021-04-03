@@ -45,11 +45,11 @@ body {
 }
 
 #bookName {
-  border-radius: 70px;
+  border-radius: 10px;
 }
 
 #searchdropdown {
-  margin-left: 57%;
+  margin-left: 50%;
   width: 260px;
 }
 
