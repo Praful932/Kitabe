@@ -9,6 +9,24 @@ body {
 #navbarNav {
   float: right;
 }
+
+/* Custom Scrollbar */
+body::-webkit-scrollbar
+{
+	width: 13px;
+	background-color: #fff;
+}
+
+body::-webkit-scrollbar-thumb
+{
+  border-radius: 10px;
+	background-color: #FE7D6A;	
+}
+body::-webkit-scrollbar-thumb:hover
+{
+	background-color: #f86751;	
+}
+
 /* nav bar css */
 
 .nav-item {
@@ -152,7 +170,7 @@ footer a:hover {
 }
 /* media query */
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   #searchdropdown {
     margin-left: 8%;
     padding-left: 0%;
@@ -180,7 +198,12 @@ footer a:hover {
   .nav-link:hover {
     text-decoration: underline;
     font-weight: 100;
+  } 
+  body::-webkit-scrollbar
+  {
+	  width: 5px;
   }
+  
 }
 body {
 	scroll-behavior:smooth;
