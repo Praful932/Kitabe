@@ -30,6 +30,7 @@ body::-webkit-scrollbar-thumb:hover
 /* nav bar css */
 
 .nav-item {
+  padding: 0 3px;
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
@@ -42,6 +43,7 @@ body::-webkit-scrollbar-thumb:hover
   border-color: black;
   background-color: white;
 }
+
 
 .img-book {
   height: 200px !important;
@@ -188,13 +190,13 @@ footer a:hover {
   .img-book {
     height: 140px !important;
   }
-  .nav-icon-s {
+  /* .nav-icon-s {
     display: none;
   }
-  .nav-link {
+.nav-link {
     margin-top: -2px;
     margin-top: -25px;
-  }
+  } */
   .nav-link:hover {
     text-decoration: underline;
     font-weight: 100;
@@ -224,6 +226,7 @@ body {
   border-radius: 30rem;
   font-size: 1.2rem;
 }
+
 @media screen and (max-width: 760px) {
 	#topBtn {
 		right: 1rem;

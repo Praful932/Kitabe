@@ -42,7 +42,7 @@
                 <a class="navbar-brand" href="/"><img class="navbrandimg" src="{% static 'mainapp/png/brand-img.png' %}"></a>
                 <!-- Search Bar -->
                 <div class="searchbar" id="searchdropdown">
-                    <input type="text" id="bookName" onkeyup="myFunction()" placeholder="&#xf002    Search for books"
+                    <input type="text" id="bookName" onkeyup="myFunction()" placeholder="&#xf002  Search for books"
                         title="Type in a name" style="outline: none;font-family:FontAwesome, kumbh sans;">
                     <div class="dropdown-content" id="search-dropdown">
                     </div>
@@ -54,43 +54,58 @@
                 </button>
                 </button>
 
+
+                <!-- tooltip to navbar icons -->
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul class="navbar-nav text-center">
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'index' %}">
-                                <i class="nav-icon-s fa fa-home fa-2x" aria-hidden="true"></i><br>Home
+                            <a class="nav-link" href="{% url 'index' %}"
+                            data-toggle="tooltip" title="Home" data-placement="bottom">
+                                <i class="nav-icon-s fa fa-home fa-2x"
+                                 aria-hidden="true"> </i>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'explore_books' %}">
-                                <i class="nav-icon-s fa fa-globe fa-2x" aria-hidden="true"></i><br>Explore
+                            <a class="nav-link" href="{% url 'explore_books' %}"
+                            data-toggle="tooltip" title="Explore" data-placement="bottom">
+                                <i class="nav-icon-s fa fa-globe fa-2x" 
+                                aria-hidden="true"></i>
+                            </a>
+                                <!-- <i class="nav-icon-s 
+                                    fa fa-globe fa-2x" aria-hidden="true"></i><br>Explore -->
                             </a>
                         </li>
                         {% if user.is_authenticated %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'book_recommendations' %}">
-                                <i class="nav-icon-s fa fa-book fa-2x" aria-hidden="true"></i><br>Your Read
+                            <a class="nav-link" href="{% url 'book_recommendations' %}"
+                            data-toggle="tootlip" title="Your Read" data-placement="bottom">
+                                <i class="nav-icon-s fa fa-book fa-2x" aria-hidden="true"></i>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'read_books' %}">
-                                <i class="nav-icon-s fa fa-bookmark fa-2x" aria-hidden="true"></i><br>Library
+                            <a class="nav-link" href="{% url 'read_books' %}"
+                            data-toggle="tootlip" title="Library" data-placement="bottom">
+                                <i class="nav-icon-s fa fa-bookmark fa-2x" aria-hidden="true">
+                                </i><br>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'account_logout' %}">
-                                <i class="nav-icon-s fa fa-sign-in fa-2x" aria-hidden="true"></i><br>Logout
+                            <a class="nav-link" href="{% url 'account_logout' %}"
+                            data-toggle="tooltip" title="Logout" data-placement="bottom">
+                                <i class="nav-icon-s fa fa-sign-in fa-2x" aria-hidden="true"></i><br>
                             </a>
                         </li>
                         {% else %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'account_login' %}">
-                                <i class="nav-icon-s fa fa-sign-in fa-2x" aria-hidden="true"></i><br>Login
+                            <a class="nav-link" href="{% url 'account_login' %}"
+                            data-toggle="tooltip" title="Login" data-placement="bottom">
+                                <i class="nav-icon-s fa fa-sign-in fa-2x" aria-hidden="true"></i><br>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'account_signup' %}">
-                                <i class="nav-icon-s fa fa-user fa-2x" aria-hidden="true"></i><br>Signup
+                            <a class="nav-link" href="{% url 'account_signup' %}"
+                            data-toggle="tooltip" title="Signup" data-placement="bottom">
+                                <i class="nav-icon-s fa fa-user fa-2x" aria-hidden="true"></i><br>
                             </a>
                         </li>
                         {% endif %}
@@ -180,6 +195,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
     <!-- Search Bar Script -->
     <script>    
+
+    //tooltip creation
+
+        $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();   
+        });
+
         // clear forms
         function init() {
             document.getElementById('bookName').value = "";
