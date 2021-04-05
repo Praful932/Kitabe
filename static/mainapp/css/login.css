@@ -55,6 +55,7 @@ label {
 }
 #id_login,
 #id_password {
+  font-family: 'Raleway', sans-serif;
   border-top: none;
   border-left: none;
   border-right: none;
@@ -93,6 +94,7 @@ label {
   bottom: -1%;
 }
 .forgotpassword {
+  font-family: 'Raleway', sans-serif;
   font-size: 15px;
   position: relative;
   left: 62px;

@@ -72,6 +72,7 @@ label {
 #id_email,
 #id_password1,
 #id_password2 {
+  font-family: 'Raleway', sans-serif;
   border-top: none;
   border-left: none;
   border-right: none;
