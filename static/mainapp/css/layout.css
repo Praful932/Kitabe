@@ -33,6 +33,7 @@ body::-webkit-scrollbar-thumb:hover
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
+  font-family: 'Lato', sans-serif;
 }
 .navbrandimg{
   width: 94px;
