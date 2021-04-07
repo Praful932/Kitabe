@@ -63,7 +63,7 @@ body::-webkit-scrollbar-thumb:hover
 }
 
 #bookName {
-  border-radius: 10px;
+  border-radius: 50px;
 }
 
 #searchdropdown {
