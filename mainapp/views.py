@@ -5,7 +5,6 @@ from mainapp.helpers import genre_wise, count_vectorizer_recommendations, get_bo
 from mainapp.models import UserRating
 from django.contrib import messages
 from django.core.paginator import Paginator
-from django.template import RequestContext
 
 
 import random
@@ -105,11 +104,13 @@ def read_books(request):
     return render(request, 'mainapp/read.html', {'page_obj': page_obj, 'num': num})
 
 def handler404(request, *args, **argv):
-    response = render_to_response('mainapp/404.html')
+    response = render(request,'mainapp/404.html')
     response.status_code = 404
     return response
 
-def handler500(request, *args, **argv):
+
+def handler500(request,*args,**argv):
     response = render(request,'mainapp/404.html')
     response.status_code = 500
     return response
+
