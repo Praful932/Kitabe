@@ -109,7 +109,7 @@ def handler404(request, *args, **argv):
     return response
 
 
-def handler500(request,*args,**argv):
+def handler500(request,*args, **argv):
     response = render(request,'mainapp/404.html')
     response.status_code = 500
     return response
