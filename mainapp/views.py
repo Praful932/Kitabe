@@ -113,6 +113,3 @@ def handler500(request, *args, **argv):
     response = render(request,'mainapp/404.html')
     response.status_code = 500
     return response
-
-# def dummy(request):
-#     return render(request,'mainapp/404.html')
