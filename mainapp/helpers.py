@@ -220,7 +220,7 @@ def most_common_genre_recommendations(best_bookids, already_rated, best_bookids_
         max_value = max(genre_count.values())
 
         # Cut out dictionary containing the highest frequency of genre
-        most_common_dict = {u : v for u , v in genre_count.items() if v == max_value}
+        most_common_dict = {u: v for u, v in genre_count.items() if v == max_value}
 
         # Sort genre with same frequency based on priority list
         index_map = {v: i for i, v in enumerate(priority_list)}
