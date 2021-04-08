@@ -55,7 +55,6 @@ label {
 }
 #id_login,
 #id_password {
-  font-family: 'Raleway', sans-serif;
   border-top: none;
   border-left: none;
   border-right: none;
@@ -80,12 +79,15 @@ label {
   color:black;
   border: 3px solid black;
 }
+fa-google{
+  padding-right: 5px;
+}
 .googlebutton {
   position: relative;
   background-color: #f25f5c;
   font-family: "Fredoka One", cursive;
   color: white;
-  padding: 7px;
+  padding: 7px 5px;
   border: 2px solid white;
   border-radius: 15px;
   text-decoration: none !important;
