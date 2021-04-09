@@ -22,7 +22,7 @@ fa-google{
   box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.5);
   border:3px solid #fff;
   bottom: 10%;
-  left: 4px;
+  left: 1px;
 }
 .googlebutton:hover {
   color: white;
