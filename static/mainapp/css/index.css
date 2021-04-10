@@ -286,6 +286,7 @@ ol.carousel-indicators li.active {
   position: absolute;
   bottom: 10px;
   right: 35%;
+  padding: 7px;
 }
 
 .rating-block:hover {

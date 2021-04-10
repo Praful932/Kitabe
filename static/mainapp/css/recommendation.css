@@ -13,10 +13,6 @@
   color: white;
 }
 
-.cover-img {
-  max-width: 100%;
-}
-
 .book-cell {
   position: relative;
   display: flex;
@@ -27,7 +23,7 @@
 }
 
 .book-photo {
-  width: 180px;
+  max-height: 200px !important;
   flex-shrink: 0;
   bottom: -35px;
   left: 35px;
@@ -133,16 +129,16 @@
 }
 
 .more-details {
+  display: inline-block;
   text-align: center;
   background-color: #3d348b;
   color: #fff;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 13px;
   border-radius: 20px;
   position: absolute;
-  right: 20%;
-  position: absolute;
-  margin-top: 20%;
+  margin-top: 26.5%;
+  margin-left: 21px;
 }
 
 .more-details:hover {
@@ -150,18 +146,14 @@
 }
 
 .rating-block {
+  margin-top: 20%;
   text-align: center;
   background-color: #31c2cf;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 14px;
   border-radius: 20px;
   padding: 5px;
-  bottom: 10px;
   position: absolute;
-}
-
-.more-details {
-  padding-left: -2px;
 }
 
 .rating-block:hover {
