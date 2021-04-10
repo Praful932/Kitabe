@@ -114,8 +114,11 @@ body::-webkit-scrollbar-thumb:hover
 	padding-top: 2%;
 }
 
+
 #bookrating {
 	padding-top: 2%;
+#bookName {
+  border-radius: 50px;
 }
 
 #searchdropdown {
@@ -314,6 +317,7 @@ body {
 		right: 1rem;
 	}
 }
+
 @media screen and (min-width: 800px) {
 	#topBtn:hover {
 		background-color: #ff6666;
