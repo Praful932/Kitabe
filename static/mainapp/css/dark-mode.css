@@ -1,4 +1,3 @@
-
 .dark-mode-btn{
     background-color: #ffdab9;
     padding: 8px 20px; 
@@ -8,18 +7,27 @@
     z-index: 100;
     font-size: 42px;
     cursor: pointer;
-    color:black;
+    color:#121212;
     border-radius: 23%;
 }
 
-.dark-mode{
-    background-color: black;
+.dark-mode,
+.dark-mode .card{
+    background-color: #121212;
 }
-.dark-mode .dark-mode-btn{
-    background-color: black;
+.dark-mode .googlebutton,
+.dark-mode .loginbutton{
+    background-color: #272727;
+    color: white;
+}
+.dark-mode .dark-mode-btn
+{
+    background-color: #121212;
     color: white;
 }
 
+.dark-mode a,
+.dark-mode .card-text,
 .dark-mode .text-center{
   color: white;
 }
@@ -27,3 +35,16 @@
 .dark-mode .navbar-light .navbar-nav .nav-link{
   color: white;
 }
+
+.dark-mode .bg-danger{
+    background-color: #c02739!important;
+}
+
+.dark-mode .signin-block,
+.dark-mode .signup-block{
+    background-color: #c02739;
+}
+
+
+
+
