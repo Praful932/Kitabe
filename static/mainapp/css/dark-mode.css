@@ -19,3 +19,11 @@
     background-color: black;
     color: white;
 }
+
+.dark-mode .text-center{
+  color: white;
+}
+
+.dark-mode .navbar-light .navbar-nav .nav-link{
+  color: white;
+}
