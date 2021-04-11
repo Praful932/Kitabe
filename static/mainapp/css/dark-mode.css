@@ -1,0 +1,21 @@
+
+.dark-mode-btn{
+    background-color: #ffdab9;
+    padding: 8px 20px; 
+    position:sticky;
+    top:1px;
+    left:150px;
+    z-index: 100;
+    font-size: 42px;
+    cursor: pointer;
+    color:black;
+    border-radius: 23%;
+}
+
+.dark-mode{
+    background-color: black;
+}
+.dark-mode .dark-mode-btn{
+    background-color: black;
+    color: white;
+}
