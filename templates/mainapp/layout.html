@@ -24,8 +24,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
     <!-- css -->
     <link rel="stylesheet" href="{% static 'mainapp/css/layout.css' %}">
+    <link rel="stylesheet" href="{% static 'mainapp/css/dark-mode.css' %}">
     <!-- icon -->
-    <link rel="icon" href="{% static 'mainapp/png/logo.webp' %}" />
+    <link rel="icon" href="{% static 'mainapp/png/logo.png' %}" />
     <title>
         {% block title %}
         {% endblock title %}
@@ -36,13 +37,14 @@
 
 <body>
     <header>
+        
 	<a name='top'>
         <div id="topheader">
             <nav class="navbar navbar-expand-md navbar-light">
-                <a class="navbar-brand" href="/"><img class="navbrandimg" src="{% static 'mainapp/png/brand-img.webp' %}"></a>
-		 <!-- Dark mode -->
+                <a class="navbar-brand" href="/"><img class="navbrandimg" src="{% static 'mainapp/png/brand-img.png' %}"></a>
+                <!-- Dark mode -->
                 <div class="dark-mode-btn">
-                    <i class="fa fa-moon-o" aria-hidden="true"></i>
+                    <img src="/static/mainapp/png/sun.png" id="icon">
                  </div>
                 <!-- Search Bar -->
                 <div class="searchbar" id="searchdropdown">
@@ -97,6 +99,7 @@
                             </a>
                         </li>
                         {% endif %}
+                        
                     </ul>
                 </div>
             </nav>
@@ -376,22 +379,31 @@
     } else {
         document.getElementById("topBtn").style.display = "none";
     }
-     });
+     });  
+
      //dark-mode
      const body=document.querySelector('body');
      const darkModeBtn = document.querySelector('.dark-mode-btn');
      if (localStorage.getItem('darkModeStatus')){
             body.classList.add('dark-mode');
+            icon.src="/static/mainapp/png/moon.png";
+            
          }
      darkModeBtn.addEventListener('click',function() {
 
          if (localStorage.getItem('darkModeStatus')){
             body.classList.remove('dark-mode');
             localStorage.removeItem('darkModeStatus');
+            icon.src="/static/mainapp/png/sun.png";
+            
+            
          }else{
              body.classList.add('dark-mode');
              localStorage.setItem('darkModeStatus','true');
+             icon.src="/static/mainapp/png/moon.png";
+             
          }
+         
      });
     </script>
     <!-- End Search Bar Script -->
@@ -400,3 +412,4 @@
 </body>
 
 </html>
+
