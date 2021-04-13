@@ -1,0 +1,70 @@
+ .dark-mode-btn{
+    background-color: #ffdab9;
+    z-index: 100;
+    cursor: pointer;
+    
+} 
+.dark-mode .genre-container, 
+.dark-mode .top-books{
+    background-image: url("/static/mainapp/png/stars.jpg");
+    
+}
+.dark-mode .bg-danger{
+    background-color:#252324!important;
+  }
+ .dark-mode .rating-block{
+     background-color: red;
+ }
+
+ 
+.dark-mode #carousel-2 .carousel-control-prev, #carousel-2 .carousel-control-next,
+.dark-mode #carousel-2 .carousel-control-prev, #carousel-2 .carousel-control-next{
+    background-color:red;
+}
+.dark-mode{
+    background-color: #121212;
+}
+.dark-mode .more-details,
+.dark-mode .rating-block{
+    background-color:transparent ;
+    border-width: 2px;
+    border-color: #ff6800;
+    color: white;
+}
+.dark-mode .more-details,
+.dark-mode .card-title{
+color: #ff6800;
+}
+.dark-mode .card{
+    background:transparent;
+}
+.dark-mode .googlebutton,
+.dark-mode .loginbutton{
+    background-color: #272727;
+    color: white;
+}
+.dark-mode .dark-mode-btn
+{
+    background-color: #121212;
+    color: white;
+}
+
+.dark-mode a,
+.dark-mode .card-text,
+.dark-mode .text-center{
+  color: white;
+}
+
+.dark-mode .navbar-light .navbar-nav .nav-link{
+  color: white;
+}
+
+
+
+.dark-mode .signin-block,
+.dark-mode .signup-block{
+    background-color: #c02739;
+}
+
+
+
