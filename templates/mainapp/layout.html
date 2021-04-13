@@ -7,7 +7,422 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
     <!-- fonts -->
+ <!doctype html>
+{% load static %}
+<html lang="en">
+
+<head>     
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <!-- fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Sora&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kalam&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- font awesome ion-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Rating CSS -->
+    <!-- Reset styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
+    <!-- css -->
+    <link rel="stylesheet" href="{% static 'mainapp/css/layout.css' %}">
+    <link rel="stylesheet" href="{% static 'mainapp/css/dark-mode.css' %}">
+    <!-- icon -->
+    <link rel="icon" href="{% static 'mainapp/png/logo.png' %}" />
+    <title>
+        {% block title %}
+        {% endblock title %}
+    </title>
+    {% block head %}
+    {% endblock head %}
+</head>
+
+<body>
+    <header>
+        
+	<a name='top'>
+        <div id="topheader">
+            <nav class="navbar navbar-expand-md navbar-light">
+                <a class="navbar-brand" href="/"><img class="navbrandimg" src="{% static 'mainapp/png/brand-img.png' %}"></a>
+                <!-- Dark mode -->
+                <div class="dark-mode-btn">
+                    <img src="/static/mainapp/png/moon.png" id="icon">
+                 </div>
+                <!-- Search Bar -->
+                <div class="searchbar" id="searchdropdown">
+                    <input type="text" id="bookName" onkeyup="myFunction()" placeholder="&#xf002    Search for books"
+                        title="Type in a name" style="outline: none;font-family:FontAwesome, kumbh sans;">
+                    <div class="dropdown-content" id="search-dropdown">
+                    </div>
+                </div>
+                <!-- End Search Bar -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav text-center">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'index' %}">
+                                <i class="nav-icon-s fa fa-home fa-2x" aria-hidden="true"></i><br>Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'explore_books' %}">
+                                <i class="nav-icon-s fa fa-globe fa-2x" aria-hidden="true"></i><br>Explore
+                            </a>
+                        </li>
+                        {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'book_recommendations' %}">
+                                <i class="nav-icon-s fa fa-book fa-2x" aria-hidden="true"></i><br>Your Read
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'read_books' %}">
+                                <i class="nav-icon-s fa fa-bookmark fa-2x" aria-hidden="true"></i><br>Library
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'account_logout' %}">
+                                <i class="nav-icon-s fa fa-sign-in fa-2x" aria-hidden="true"></i><br>Logout
+                            </a>
+                        </li>
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'account_login' %}">
+                                <i class="nav-icon-s fa fa-sign-in fa-2x" aria-hidden="true"></i><br>Login
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'account_signup' %}">
+                                <i class="nav-icon-s fa fa-user fa-2x" aria-hidden="true"></i><br>Signup
+                            </a>
+                        </li>
+                        {% endif %}
+                        
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- Messages -->
+    {% for message in messages %}
+    <div class="alert {{ message.tags }} alert-dismissible text-center" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        {{ message }}
+    </div>
+    {% endfor %}
+    <!-- Bootstrap modal -->
+    <div class="modal fade" id="bookModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="booktitle">Basic Modal</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+
+                        <div class="col-8">
+                            <strong>Summary: </strong><br>
+                            <img id="loading" src="{% static 'mainapp/gif/loading.gif' %}">
+                            <p id="booksummary">
+
+                            </p>
+                            <strong>Authors:</strong>
+                            <p id="bookauthors">
+                            </p>
+
+                            <div id="bookrating"></div>
+                        </div>
+
+                        <div class="col-4">
+                            <img class="img-book" src="" id="bookimage">
+                        </div>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+	
+	<a href='#top'>
+	<button  id="topBtn" title="Go to top"><i class="fa fa-angle-up"></i></button></a>
+    <!-- End boostrap modal -->
+    {% block main %}
+    {% endblock main %}
+
+    <footer class="mainfooter" role="contentinfo">
+	
+        <div class="footer-content">
+            <div class="footer-icon">
+                <a href="mailto:kitabeaurkahaniya@gmail.com" target="_blank"><i class="fa fa-google fa-2x"
+                        aria-hidden="true"></i></a>
+                <a href="https://github.com/Praful932/Kitabe"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a>
+                <div class=" copy pt-1">
+                    <p class="text-center">&copy; Copyright 2020 - <strong>Kitabe</strong> All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+    <!-- Rating JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
+    <!-- Search Bar Script -->
+    <script>    
+        // clear forms
+        function init() {
+            document.getElementById('bookName').value = "";
+        }
+        $(document).ready(init);
+
+        // get book summary
+        function getsummary(bookid) {
+            $.ajax({
+                data: {
+                    'bookid': bookid,
+                    'csrfmiddlewaretoken': Cookies.get('csrftoken')
+                },
+                dataType: 'json',
+                url: "{% url 'summary_ajax' %}",
+                type: 'POST',
+                success: function (response) {
+                    $('#loading').hide();
+                    $('#booksummary').text(response['booksummary']);
+                },
+                error: function (response) {
+                    console.log(response)
+                }
+            })
+        }
+        // display book boostrap modal when clicked
+        function openModal(obj) {
+            $('#booksummary').text("");
+            $('#loading').show();
+            var bookid = obj.getAttribute('data-bookid');
+            var summary = getsummary(bookid);
+            var bookName = obj.innerHTML;
+            var authors = obj.getAttribute('data-authors');
+            var imageurl = obj.getAttribute('data-imageurl');
+            var averagerating = obj.getAttribute('data-averagerating');
+            $('#booktitle').text(bookName);
+            $('#bookauthors').text(authors);
+            $('#bookimage').attr('src', imageurl);
+            $("#bookrating").rateYo({
+                rating: averagerating,
+                readOnly: true
+            });
+            $('#bookModal').modal('show');
+            $('#search-dropdown').empty();
+        }
+
+        // add search results
+        function displayResults(books) {
+            var searchdiv = document.getElementById('search-dropdown');
+            if (books.length == 0 && searchdiv.childElementCount == 0) {
+                var info = document.createElement('a');
+                info.innerHTML = 'No search results match your query';
+                info.setAttribute('href', '#');
+                searchdiv.appendChild(info);
+            }
+            else if (searchdiv.childElementCount <= 5) {
+                $('#search-dropdown').empty();
+                books.forEach(function (book, index, array) {
+                    var booktoadd = document.createElement('a');
+                    booktoadd.innerHTML = book['original_title'];
+                    booktoadd.setAttribute('data-bookid', book['book_id']);
+                    booktoadd.setAttribute('data-authors', book['authors']);
+                    booktoadd.setAttribute('data-imageurl', book['image_url']);
+                    booktoadd.setAttribute('data-averagerating', book['average_rating']);
+                    booktoadd.setAttribute('href', 'javascript:;');
+                    booktoadd.setAttribute('onclick', 'openModal(this)');
+                    searchdiv.appendChild(booktoadd);
+                });
+            }
+        }
+        // get search results
+
+        function myFunction() {
+            var input = document.getElementById('bookName');
+            var text = input.value.toLowerCase();
+            if (text != '') {
+                $.ajax({
+                    data: {
+                        'bookName': text,
+                        'csrfmiddlewaretoken': Cookies.get('csrftoken')
+                    },
+                    dataType: 'json',
+                    url: "{% url 'search_ajax' %}",
+                    type: 'POST',
+                    success: function (response) {
+                        displayResults(JSON.parse(response['top5_result']));
+                    },
+                    error: function (response) {
+                        console.log(response);
+                    }
+                });
+            }
+            else
+                $('#search-dropdown').empty();
+        }
+
+        $("#bookName").focus(function () {
+            $('#search-dropdown').show();
+        }).blur(function () {
+            $('#search-dropdown').hide(150);
+        })
+        //for rating a book
+        $(function () {
+
+            $(".rateYo").rateYo({
+                rating: 0,
+                starWidth: "20px",
+                fullStar: true
+            });
+
+        });
+        // when hover over rate
+        function rateStart(obj) {
+            var bookid = obj.getAttribute('data-book-id');
+            $('#button-text-' + bookid).css('display', 'none');
+            $('#rate-' + bookid).css('display', 'block');
+        }
+        // onclick rate
+        function rateBook(obj) {
+            var bookid = obj.getAttribute('data-book-id');
+            var bookrating = $('#rate-' + bookid).rateYo('rating');
+            $('#rating-block-' + bookid).css('transition', 'background-color 2s ease');
+            $('#rating-block-' + bookid).css('background-color', '#29BF12');
+            console.log('#rating-block-' + bookid);
+            $.ajax({
+                data: {
+                    'bookid': bookid,
+                    'bookrating': bookrating,
+                    'csrfmiddlewaretoken': Cookies.get('csrftoken')
+                },
+                dataType: 'json',
+                url: "{% url 'user_rate_book' %}",
+                type: 'POST',
+                success: function (response) {
+
+                },
+                error: function (response) {
+                    console.log(response);
+                }
+            });
+        }
+        // when hover out rate
+        function finishRate(obj) {
+            var bookid = obj.getAttribute('data-book-id');
+            setTimeout(function () {
+                $('#rate-' + bookid).css('display', 'none');
+                $('#button-text-' + bookid).css('display', 'block');
+                $('#rating-block-' + bookid).css('transition', 'background-color 2s ease');
+                $('#rating-block-' + bookid).css('background-color', '#31c2cf');
+            }, 4000);
+        }
+
+        // Retrieve and display book details in Modal
+        function bookDetails(obj) {
+            var bookid = obj.getAttribute('data-book-id');
+            $.ajax({
+                data: {
+                    'bookid': bookid,
+                    'csrfmiddlewaretoken': Cookies.get('csrftoken')
+                },
+                dataType: 'json',
+                url: "{% url 'book_details' %}",
+                type: 'POST',
+                success: function (response) {
+                    var book_details = JSON.parse(response['book_details'])[0];
+                    $('#booksummary').text("");
+                    $('#loading').show();
+                    var summary = getsummary(bookid);
+                    var bookName = book_details.original_title;
+                    var authors = book_details.authors;
+                    var imageurl = book_details.image_url;
+                    var averagerating = book_details.average_rating;
+                    $('#booktitle').text(bookName);
+                    $('#bookauthors').text(authors);
+                    $('#bookimage').attr('src', imageurl);
+                    $("#bookrating").rateYo({
+                        rating: averagerating,
+                        readOnly: true
+                    });
+                    $('#bookModal').modal('show');
+                    $('#search-dropdown').empty();
+                },
+                error: function (response) {
+                    console.log(response);
+                }
+            });
+        }
+	 document.body.addEventListener('scroll',()=>{
+    if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
+        document.getElementById("topBtn").style.display = "block";
+    } else {
+        document.getElementById("topBtn").style.display = "none";
+    }
+     });  
+
+     //dark-mode
+     const body=document.querySelector('body');
+     const darkModeBtn = document.querySelector('.dark-mode-btn');
+     if (localStorage.getItem('darkModeStatus')){
+            body.classList.add('dark-mode');
+            icon.src="/static/mainapp/png/sun.png";
+            
+         }
+     darkModeBtn.addEventListener('click',function() {
+
+         if (localStorage.getItem('darkModeStatus')){
+            body.classList.remove('dark-mode');
+            localStorage.removeItem('darkModeStatus');
+            icon.src="/static/mainapp/png/moon.png";
+            
+            
+         }else{
+             body.classList.add('dark-mode');
+             localStorage.setItem('darkModeStatus','true');
+             icon.src="/static/mainapp/png/sun.png";
+             
+         }
+         
+     });
+    </script>
+    <!-- End Search Bar Script -->
+    {% block script %}
+    {% endblock script %}
+</body>
+
+</html>
+
+   <link href="https://fonts.googleapis.com/css2?family=Sora&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300&display=swap" rel="stylesheet">
