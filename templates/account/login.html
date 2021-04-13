@@ -39,14 +39,14 @@ Login
                     <strong>{{ error|escape }}</strong><br><br>
                     {% endfor %}
                     {% endif %}
-                    <button class="loginbutton primaryAction" type="submit">{% trans "SIGN IN" %}</button>
+                    <button class="loginbutton primaryAction" type="submit">{% trans "Sign In" %}</button>
                     <br>
 
 
                 </div>
             </form>
             <a href="{% provider_login_url 'google' %}"><button class="googlebutton"><i class="fa fa-google fa-x"
-                aria-hidden="true"></i> SIGN IN WITH GOOGLE</button></a>
+                aria-hidden="true"></i> Sign In With Google</button></a>
 
         </div>
         <div class="h-100 hidden-sm col-xl-4 img-block mw-100" style="background-image : url('{% static "mainapp/png/BookSignUp.webp" %}')">
