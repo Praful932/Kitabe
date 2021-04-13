@@ -44,7 +44,7 @@
                 <a class="navbar-brand" href="/"><img class="navbrandimg" src="{% static 'mainapp/png/brand-img.png' %}"></a>
                 <!-- Dark mode -->
                 <div class="dark-mode-btn">
-                    <img src="/static/mainapp/png/sun.png" id="icon">
+                    <img src="/static/mainapp/png/moon.png" id="icon">
                  </div>
                 <!-- Search Bar -->
                 <div class="searchbar" id="searchdropdown">
@@ -386,7 +386,7 @@
      const darkModeBtn = document.querySelector('.dark-mode-btn');
      if (localStorage.getItem('darkModeStatus')){
             body.classList.add('dark-mode');
-            icon.src="/static/mainapp/png/moon.png";
+            icon.src="/static/mainapp/png/sun.png";
             
          }
      darkModeBtn.addEventListener('click',function() {
@@ -394,13 +394,13 @@
          if (localStorage.getItem('darkModeStatus')){
             body.classList.remove('dark-mode');
             localStorage.removeItem('darkModeStatus');
-            icon.src="/static/mainapp/png/sun.png";
+            icon.src="/static/mainapp/png/moon.png";
             
             
          }else{
              body.classList.add('dark-mode');
              localStorage.setItem('darkModeStatus','true');
-             icon.src="/static/mainapp/png/moon.png";
+             icon.src="/static/mainapp/png/sun.png";
              
          }
          
