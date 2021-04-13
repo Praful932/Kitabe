@@ -23,6 +23,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-# to handle error
+# error handler
 handler404 = 'mainapp.views.handler404'
 handler500 = 'mainapp.views.handler500'
