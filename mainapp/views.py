@@ -6,6 +6,7 @@ from mainapp.models import UserRating
 from django.contrib import messages
 from django.core.paginator import Paginator
 
+
 import random
 import operator
 
