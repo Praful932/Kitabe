@@ -5,12 +5,8 @@ from mainapp.helpers import genre_wise, count_vectorizer_recommendations, get_bo
 from mainapp.models import UserRating
 from django.contrib import messages
 from django.core.paginator import Paginator
-
-
 import random
 import operator
-
-
 @ensure_csrf_cookie
 def index(request):
     '''
@@ -18,8 +14,6 @@ def index(request):
     '''
     books = popular_among_users()
     return render(request, 'mainapp/index.html', {'books': books})
-
-
 @ensure_csrf_cookie
 def genre_books(request, genre):
     '''
