@@ -104,7 +104,6 @@ def read_books(request):
     return render(request, 'mainapp/read.html', {'page_obj': page_obj, 'num': num})
 
 
-
 def handler404(request, *args, **argv):
     response = render(request, 'mainapp/error_handler.html')
     response.status_code = 404
