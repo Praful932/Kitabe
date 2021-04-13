@@ -187,6 +187,6 @@ MESSAGE_TAGS = {
 
 # Django Heroku Settings
 if 'CHECK_HEROKU' in os.environ:
-    DEBUG = False
+    DEBUG = os.environ.get('KITABE_DEBUG')
     import django_heroku
     django_heroku.settings(locals())
