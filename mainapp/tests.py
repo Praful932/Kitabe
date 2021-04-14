@@ -3,7 +3,12 @@ from django.test import TestCase, Client
 from mainapp import views
 from django.contrib.auth.models import User
 from mainapp.models import UserRating
-
+from mainapp.helpers import most_common_genre_recommendations
+from collections import Counter
+import BookRecSystem.settings as settings
+import pandas as pd
+import math
+import os
 
 class HomeTests(TestCase):
     '''
@@ -209,3 +214,36 @@ class UserRateBookTestCase(TestCase):
         self.assertEquals(rating.bookrating, valid_bookrating)
         self.assertEquals(rating.user, self.user)
         self.client.logout()
+
+class MostCommonGenreTestCase(TestCase):
+    '''
+    Test most common genre books when recommendations are short
+    '''
+    def common_genre(self,books):
+        gfq = []
+        for book in books:
+            gfq.extend(self.df_book[self.df_book['book_id'] == book]['genre'].values[0].split(", "))
+        genre_count = dict(Counter(gfq))
+        max_value = max(genre_count.values())
+        most_common_dict = {u:v for u,v in genre_count.items() if v == max_value}
+        index_map = {v: i for i, v in enumerate(self.priority_list)}
+        final_list = sorted(most_common_dict.items(), key=lambda pair: index_map[pair[0]])
+        most_common_genre = final_list[0][0]
+        return most_common_genre
+
+    def setUp(self):
+        self.df_book = pd.read_csv(os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/dataset/books.csv'))
+        self.priority_list = ['fiction', 'fantasy', 'classics', 'contemporary', 'mystery', 'nonfiction', 'paranormal', 'romance', 'history', 'thriller', 'horror', 'memoir', 'comics', 'biography', 'philosophy', 'science', 'crime', 'psychology', 'christian', 'business', 'poetry', 'music', 'religion', 'manga', 'art', 'spirituality', 'cookbooks', 'travel', 'ebooks', 'sports', 'suspense']
+    
+    def test_1(self):
+        already_rated = [469901,16093188,16124019,1225261,207802]
+        best_bookids = []
+        n1 = math.ceil((9-len(best_bookids))/2)
+        n2 = math.floor((9-len(best_bookids))/2)
+        best_bookids_tfidf = [534255,22465597,141019,5422154,612188]  # length n1 = 5
+
+        genre_recomm_bookids = most_common_genre_recommendations(best_bookids, already_rated, best_bookids_tfidf, n2)  #length n2 = 4
+        genre = self.common_genre(best_bookids + already_rated + best_bookids_tfidf)
+
+        for bookid in genre_recomm_bookids:
+            self.assertEquals([False,genre][genre in self.df_book[self.df_book['book_id'] == bookid]['genre'].values[0].split(", ")],genre)
