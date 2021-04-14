@@ -1,3 +1,4 @@
+"""import the modules."""
 import pandas as pd
 import numpy as np
 import os
@@ -7,17 +8,31 @@ import random
 import BookRecSystem.settings as settings
 import mainapp.models
 
-book_path = os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/dataset/books.csv')
+book_path = os.path.join(
+    settings.STATICFILES_DIRS[0] +
+    '/mainapp/dataset/books.csv')
 
 # For Count Vectorizer
-cosin_sim_path = os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/model_files/cv/cosine_rating_sim.npz')
-book_indices_path = os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/model_files/cv/indices.pkl')
+cosin_sim_path = os.path.join(
+    settings.STATICFILES_DIRS[0] +
+    '/mainapp/model_files/cv/cosine_rating_sim.npz')
+book_indices_path = os.path.join(
+    settings.STATICFILES_DIRS[0] +
+    '/mainapp/model_files/cv/indices.pkl')
 
 # For Embedding
-book_id_map_path = os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/model_files/surprise/book_raw_to_inner_id.pickle')
-book_raw_map_path = os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/model_files/surprise/book_inner_id_to_raw.pickle')
-book_embed_path = os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/model_files/surprise/book_embedding.npy')
-sim_books_path = os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/model_files/surprise/sim_books.pickle')
+book_id_map_path = os.path.join(
+    settings.STATICFILES_DIRS[0] +
+    '/mainapp/model_files/surprise/book_raw_to_inner_id.pickle')
+book_raw_map_path = os.path.join(
+    settings.STATICFILES_DIRS[0] +
+    '/mainapp/model_files/surprise/book_inner_id_to_raw.pickle')
+book_embed_path = os.path.join(
+    settings.STATICFILES_DIRS[0] +
+    '/mainapp/model_files/surprise/book_embedding.npy')
+sim_books_path = os.path.join(
+    settings.STATICFILES_DIRS[0] +
+    '/mainapp/model_files/surprise/sim_books.pickle')
 
 with open(book_id_map_path, 'rb') as handle:
     book_raw_to_inner_id = pickle.load(handle)
@@ -37,6 +52,7 @@ total_books = df_book.shape[0]
 
 
 def is_rating_invalid(rating):
+    """:param rating: ."""
     if not rating or not rating.isdigit():
         return True
     if int(rating) > 5:
@@ -45,6 +61,7 @@ def is_rating_invalid(rating):
 
 
 def is_bookid_invalid(bookid):
+    """:param bookid: ."""
     if not bookid or not bookid.isdigit():
         return True
     elif sum(df_book['book_id'] == int(bookid)) == 0:
@@ -54,24 +71,30 @@ def is_bookid_invalid(bookid):
 
 
 def get_book_title(bookid):
-    '''
-    Returns book title given bookid
-    '''
+    """Return book title given bookid.
+
+    :param bookid:
+
+    """
     return df_book[df_book['book_id'] == bookid]['original_title'].values[0]
 
 
 def get_book_ids(index_list):
-    '''
-    Returns bookids given list of indexes
-    '''
+    """Return bookids given list of indexes.
+
+    :param index_list:
+
+    """
     bookid_list = list(df_book.loc[index_list].book_id.values)
     return bookid_list
 
 
 def get_rated_bookids(user_ratings):
-    '''
-    Returns list of already rated bookids
-    '''
+    """Return list of already rated bookids.
+
+    :param user_ratings:
+
+    """
     already_rated = []
     for rating in user_ratings:
         book_id = rating.bookid
@@ -80,25 +103,33 @@ def get_rated_bookids(user_ratings):
 
 
 def get_raw_id(book_id):
-    '''
-        Returns raw_id given book_id
-    '''
+    """Return raw_id given book_id.
+
+    :param book_id:
+
+    """
     raw_id = df_book[df_book.book_id == book_id]['r_index'].values[0]
     return raw_id
 
 
 def get_bookid(raw_id_list):
-    '''
-        Returns bookid list given rawid list
-    '''
-    bookid_list = list(df_book[df_book.r_index.isin(raw_id_list)]['book_id'].values)
+    """Return bookid list given rawid list.
+
+    :param raw_id_list:
+
+    """
+    bookid_list = list(
+        df_book[df_book.r_index.isin(raw_id_list)]['book_id'].values)
     return bookid_list
 
 
 def genre_wise(genre, percentile=0.85):
-    '''
-        Returns top genre books according to a cutoff percentile to be listed in Top Books
-    '''
+    """Return top genre books according to a cutoff to be listed in Top Books.
+
+    :param genre:
+    :param percentile:  (Default value = 0.85)
+
+    """
     n_books = 16
     min_genre_book_count = 48
 
@@ -108,7 +139,7 @@ def genre_wise(genre, percentile=0.85):
     m = qualified['ratings_count'].quantile(percentile)
     R = qualified['average_rating']
     C = qualified['average_rating'].mean()
-    W = (R*v + C*m) / (v + m)
+    W = (R * v + C * m) / (v + m)
     qualified = qualified.assign(weighted_rating=W)
     qualified.sort_values('weighted_rating', ascending=False, inplace=True)
 
@@ -116,16 +147,19 @@ def genre_wise(genre, percentile=0.85):
 
 
 def count_vectorizer_recommendations(bookid):
-    '''
-        Returns recommened book ids based on book details
-    '''
+    """Return recommened book ids based on book details.
+
+    :param bookid:
+
+    """
     indices = pd.read_pickle(book_indices_path)
     cosine_sim = np.load(cosin_sim_path)['array1']
     book_title = get_book_title(bookid)
     book_title = book_title.replace(' ', '').lower()
     idx = indices[book_title]
 
-    # Get this books similarity with all other books, enum to keep track of book index
+    # Get this books similarity with all other books, enum to keep track of
+    # book index
     sim_scores = list(enumerate(cosine_sim[idx]))
     sim_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)
     sim_scores = sim_scores[1:10]
@@ -136,9 +170,11 @@ def count_vectorizer_recommendations(bookid):
 
 
 def embedding_recommendations(sorted_user_ratings):
-    '''
-        Returns recommended book ids based on embeddings
-    '''
+    """Return recommended book ids based on embeddings.
+
+    :param sorted_user_ratings:
+
+    """
     best_user_books = []
     similar_bookid_list = []
     max_user_rating_len = 10
@@ -154,7 +190,8 @@ def embedding_recommendations(sorted_user_ratings):
 
     for book in best_user_books:
         raw_id = get_raw_id(book)
-        top_sim_books = [book for book, similiarity in sim_books_dict[raw_id][:top_similiar]]
+        top_sim_books = [book for book,
+                         similiarity in sim_books_dict[raw_id][:top_similiar]]
         similar_bookid_list.extend(top_sim_books)
 
     similar_bookid_list = get_bookid(similar_bookid_list)
@@ -163,19 +200,32 @@ def embedding_recommendations(sorted_user_ratings):
 
 
 def get_book_dict(bookid_list):
-    '''
-        Returns book details based on provided bookids
-    '''
-    rec_books_dict = df_book[df_book['book_id'].isin(bookid_list)][cols].to_dict('records')
+    """Return book details based on provided bookids.
+
+    :param bookid_list:
+
+    """
+    rec_books_dict = df_book[df_book['book_id'].isin(
+        bookid_list)][cols].to_dict('records')
     return rec_books_dict
 
 
-def combine_ids(cv_bookids, embedding_bookids, already_rated, recommendations=9):
-    '''
-        Returns best bookids combining both approaches
+def combine_ids(
+        cv_bookids,
+        embedding_bookids,
+        already_rated,
+        recommendations=9):
+    """Return best bookids combining both approaches.
+
         Embedding - Top 6
         CV - Top 3
-    '''
+
+    :param cv_bookids:
+    :param embedding_bookids:
+    :param already_rated:
+    :param recommendations:  (Default value = 9)
+
+    """
     cv_bookids = list(cv_bookids.difference(already_rated))
     top_3_cv = set(cv_bookids[:3])
     embedding_bookids = embedding_bookids.difference(already_rated)
@@ -186,20 +236,23 @@ def combine_ids(cv_bookids, embedding_bookids, already_rated, recommendations=9)
 
     if len(best_bookids) < recommendations:
         # If not enough recommendations
-        best_bookids = best_bookids + cv_bookids[3:(recommendations + 3 - len(best_bookids))]
+        best_bookids = best_bookids + \
+            cv_bookids[3:(recommendations + 3 - len(best_bookids))]
     return best_bookids
 
 
 def get_top_n(top_n=400):
-    """
-        Returns a sample of top N books
+    """Return a sample of top N books.
+
+    :param top_n:  (Default value = 400)
+
     """
     df_books_copy = df_book.copy()
     v = df_books_copy['ratings_count']
     m = df_books_copy['ratings_count'].quantile(0.95)
     R = df_books_copy['average_rating']
     C = df_books_copy['average_rating'].mean()
-    W = (R*v + C*m) / (v + m)
+    W = (R * v + C * m) / (v + m)
     df_books_copy = df_books_copy.assign(weighted_rating=W)
     qualified = df_books_copy.sort_values(
         'weighted_rating', ascending=False)[cols].head(top_n)
@@ -207,15 +260,21 @@ def get_top_n(top_n=400):
 
 
 def popular_among_users(N=15):
-    '''
-        Returns Popular Books Among Users in the
-        rating range 4-5.
+    """Return Popular Books Among Users in the rating range 4-5.
+
         If enough books are not available, top books are
         sampled randomly.
-    '''
-    all_ratings = list(mainapp.models.UserRating.objects.all().order_by('-bookrating'))
+
+    :param N:  (Default value = 15)
+
+    """
+    all_ratings = list(
+        mainapp.models.UserRating.objects.all().order_by('-bookrating'))
     random.shuffle(all_ratings)
-    best_user_ratings = sorted(all_ratings, key=operator.attrgetter('bookrating'), reverse=True)
+    best_user_ratings = sorted(
+        all_ratings,
+        key=operator.attrgetter('bookrating'),
+        reverse=True)
 
     filtered_books = set()
     for i, rating in enumerate(best_user_ratings):
@@ -226,7 +285,9 @@ def popular_among_users(N=15):
 
     remaining_books_nos = N - len(filtered_books)
     if remaining_books_nos >= 0:
-        rem_books = get_top_n(2*N)['book_id'].tolist()
-        filtered_books = list(filtered_books) + list((set(rem_books) - filtered_books))[:remaining_books_nos]
+        rem_books = get_top_n(2 * N)['book_id'].tolist()
+        filtered_books = list(
+            filtered_books) + list(
+            (set(rem_books) - filtered_books))[:remaining_books_nos]
 
     return get_book_dict(filtered_books)
