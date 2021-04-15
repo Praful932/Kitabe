@@ -2,9 +2,10 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import ensure_csrf_cookie
 from mainapp.helpers import genre_wise, count_vectorizer_recommendations, get_book_dict, get_rated_bookids, combine_ids, embedding_recommendations, get_top_n, popular_among_users
-from mainapp.models import UserRating
+from mainapp.models import UserRating, SaveForLater
 from django.contrib import messages
 from django.core.paginator import Paginator
+from django.http import HttpResponseRedirect
 
 
 import random
@@ -114,3 +115,40 @@ def handler500(request, *args, **argv):
     response = render(request, 'mainapp/error_handler.html')
     response.status_code = 500
     return response
+
+
+def save(request, id):
+    "View To Save Book in List"
+    later = SaveForLater()
+    later.user = request.user
+    later.bookid = id
+    later.save()
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
+
+def remove(request, id):
+    "View To Remove Book from List"
+    later = SaveForLater.objects.filter(user=request.user, bookid=id)
+    later.delete()
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
+
+def SaveList(request):
+    "View to render to_read page"
+    user_ratings = list(UserRating.objects.filter(user=request.user).order_by('-bookrating'))
+    rated_books = set(get_rated_bookids(user_ratings))
+    book = set(SaveForLater.objects.filter(user=request.user).values_list('bookid', flat=True))
+    book_id = list(book)
+    for i in range(len(book_id)):
+        if book_id[i] in rated_books:
+            later = SaveForLater.objects.filter(user=request.user, bookid=book_id[i]).first()
+            later.delete()
+    if len(book_id) == 0:
+        messages.info(request, 'Please Add Some Books')
+        return redirect('index')
+    books = get_book_dict(book_id)
+    num = len(books)
+    paginator = Paginator(books, 10)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return render(request, 'mainapp/save.html', {'page_obj': page_obj, 'num': num})

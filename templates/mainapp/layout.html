@@ -74,9 +74,15 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'read_books' %}">
-                                <i class="nav-icon-s fa fa-bookmark fa-2x" aria-hidden="true"></i><br>Library
-                            </a>
+                            <div class="dropdown show">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"  aria-expanded="false">
+                                <i class=" nav-icon-s fa fa-bookmark fa-2x" aria-hidden="true"  ></i><br>Library 
+                                </a>
+                                <ul class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" href="{% url 'read_books' %}">Your Reads</a></li>
+                                <div class="dropdown-divider"></div>
+                                <li><a class="dropdown-item" href="{% url 'to_read' %}">Saved for Later</a></li>
+                            </ul>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'account_logout' %}">
@@ -138,7 +144,9 @@
                         <div class="col-4">
                             <img class="img-book" src="" id="bookimage">
                         </div>
-
+                        {% if user.is_authenticated %}
+                        <button id = "mybutton" class = "btn">Save for Later</button>
+                        {%endif%}
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -362,6 +370,13 @@
                     });
                     $('#bookModal').modal('show');
                     $('#search-dropdown').empty();
+                    $('#mybutton').on('click', function() {
+    var url = "{% url 'save' 99999 %}";
+    
+    var bookid = obj.getAttribute('data-book-id');
+    // Construct the full URL with "id"
+    window.location.href = url.replace('99999', bookid);
+});
                 },
                 error: function (response) {
                     console.log(response);
