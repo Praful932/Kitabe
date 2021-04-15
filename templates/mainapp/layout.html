@@ -210,8 +210,6 @@
             })
         }
 
-        var book__id;
-
         // display book boostrap modal when clicked
         function openModal(obj) {
             $('#booksummary').text("");
@@ -318,10 +316,10 @@
         function rateBookModal(obj) {
             var bookid = obj.getAttribute('data-book-id');
             var bookrating = $('#rateYo-modal').rateYo('rating');
-            $('#rating-block-' + book__id).css('transition', '2s ease');
+            $('#rating-block-' + bookid).css('transition', '2s ease');
             $.ajax({
                 data: {
-                    'bookid': book__id,
+                    'bookid': bookid,
                     'bookrating': bookrating,
                     'csrfmiddlewaretoken': Cookies.get('csrftoken')
                 },
@@ -382,7 +380,8 @@
         // Retrieve and display book details in Modal
         function bookDetails(obj) {
             var bookid = obj.getAttribute('data-book-id');
-            book__id = bookid;
+            $("#rating-block-modal").attr("data-book-id", bookid);
+            $("#rating-block-modal").addClass("rating-block-" + bookid)
             $.ajax({
                 data: {
                     'bookid': bookid,
