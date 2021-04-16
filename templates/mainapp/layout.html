@@ -14,6 +14,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Kalam&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+    
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -25,7 +27,7 @@
     <!-- css -->
     <link rel="stylesheet" href="{% static 'mainapp/css/layout.css' %}">
     <!-- icon -->
-    <link rel="icon" href="{% static 'mainapp/png/logo.png' %}" />
+    <link rel="icon" href="{% static 'mainapp/png/logo.webp' %}" />
     <title>
         {% block title %}
         {% endblock title %}
@@ -39,11 +41,11 @@
 	<a name='top'>
         <div id="topheader">
             <nav class="navbar navbar-expand-md navbar-light">
-                <a class="navbar-brand" href="/"><img class="navbrandimg" src="{% static 'mainapp/png/brand-img.png' %}"></a>
+                <a class="navbar-brand" href="/"><img class="navbrandimg" src="{% static 'mainapp/png/brand-img.webp' %}"></a>
                 <!-- Search Bar -->
                 <div class="searchbar" id="searchdropdown">
-                    <input type="text" id="bookName" onkeyup="myFunction()" placeholder="Search for books"
-                        title="Type in a name" style="outline: none;">
+                    <input type="text" id="bookName" onkeyup="myFunction()" placeholder="&#xf002    Search for books"
+                        title="Type in a name" style="outline: none;font-family:FontAwesome, kumbh sans;">
                     <div class="dropdown-content" id="search-dropdown">
                     </div>
                 </div>
@@ -69,6 +71,11 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'book_recommendations' %}">
                                 <i class="nav-icon-s fa fa-book fa-2x" aria-hidden="true"></i><br>Your Read
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'read_books' %}">
+                                <i class="nav-icon-s fa fa-bookmark fa-2x" aria-hidden="true"></i><br>Library
                             </a>
                         </li>
                         <li class="nav-item">

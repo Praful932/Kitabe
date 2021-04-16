@@ -74,7 +74,7 @@ def get_rated_bookids(user_ratings):
     '''
     already_rated = []
     for rating in user_ratings:
-        book_id = rating.bookrating
+        book_id = rating.bookid
         already_rated.append(book_id)
     return already_rated
 

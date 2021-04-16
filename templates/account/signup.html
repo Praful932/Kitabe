@@ -1,6 +1,8 @@
 {% extends 'mainapp/layout.html' %}
 {% load i18n %}
 {% load static %}
+{% load account socialaccount %}
+{% get_providers as socialaccount_providers %}
 
 {% block title %}
 Sign Up
@@ -41,10 +43,15 @@ Sign Up
                     {% endif %}
                     <button class="signupbutton" type="submit">{% trans "Sign Up" %}</button>
                     <br>
+
                 </div>
+
             </form>
+            <a href="{% provider_login_url 'google' %}"><button class="googlebutton"><i class="fa fa-google fa-x"
+                aria-hidden="true"></i> Sign Up With Google</button></a>
+
         </div>
-        <div class="h-100 hidden-sm col-xl-4 img-block mw-100" style="background-image : url('{% static "mainapp/png/BookSignIn.png" %}')">
+        <div class="h-100 hidden-sm col-xl-4 img-block mw-100" style="background-image : url('{% static "mainapp/png/BookSignIn.webp" %}')">
             <a class="btn-bot" href="{% url 'account_login' %}">SIGN IN</a>
         </div>
     </div>

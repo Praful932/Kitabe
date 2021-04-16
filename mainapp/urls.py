@@ -5,6 +5,7 @@ urlpatterns = [
     path('genre_books/<genre>', views.genre_books, name='genre_books'),
     path('explore_books/', views.explore_books, name='explore_books'),
     path('book_recommendations/', views.book_recommendations, name='book_recommendations'),
+    path('library/read_books', views.read_books, name='read_books')
 ]
 
 # Ajax Views
