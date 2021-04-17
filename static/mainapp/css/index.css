@@ -88,9 +88,19 @@
 
 /* ---------------------- banner ------------------------------------- */
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 250px) {
   .banner .carousel-item {
-    height: 190px;
+    height: 180px;
+  }
+  .banner .banner-img {
+    height: 82%;
+    object-fit: cover;
+  }
+}
+
+@media screen and (min-width: 620px) {
+  .banner .carousel-item {
+    height: 240px;
   }
 
   .banner .banner-img {
@@ -99,6 +109,11 @@
   }
 }
 
+@media screen and (min-width:1000px) {
+  .banner .carousel-item, .banner .banner-img{
+    height: auto;
+  }
+}
 /* ---------------------- carousel -------------------------------------*/
 
 .carousel img {
