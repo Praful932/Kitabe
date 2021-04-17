@@ -37,22 +37,6 @@ total_books = df_book.shape[0]
 
 
 def is_rating_invalid(rating):
-    """Return a boolean value.
-
-    Corresponding to whether the rating is valid.
-
-    Parameters
-    ----------
-    rating :  int
-        Rating of a book, which should be a digit <= 5.
-
-
-    Returns
-    -------
-    bool
-        True if the rating is invalid, else False.
-
-    """
     if not rating or not rating.isdigit():
         return True
     if int(rating) > 5:
@@ -61,22 +45,6 @@ def is_rating_invalid(rating):
 
 
 def is_bookid_invalid(bookid):
-    """Return a boolean value.
-
-    Corresponding to whether the bookid is valid.
-
-    Parameters
-    ----------
-    bookid :  int
-        book-id of the book to be checked for existence.
-
-
-    Returns
-    -------
-    bool
-        True if the bookid exists, else False.
-
-    """
     if not bookid or not bookid.isdigit():
         return True
     elif sum(df_book['book_id'] == int(bookid)) == 0:
@@ -86,56 +54,24 @@ def is_bookid_invalid(bookid):
 
 
 def get_book_title(bookid):
-    """Return book title given bookid.
-
-    Parameters
-    ----------
-    bookid :  int
-        book-id of a book whose title needs to be determined.
-
-
-    Returns
-    -------
-        Title of the book corresponding the given book id.
-
-    """
+    '''
+    Returns book title given bookid
+    '''
     return df_book[df_book['book_id'] == bookid]['original_title'].values[0]
 
 
 def get_book_ids(index_list):
-    """Return bookids given list of indexes.
-
-    Parameters
-    ----------
-    index_list :  list
-        list of indexes for which the book-ids are to be determined.
-
-
-    Returns
-    -------
-    list
-        List of bookids corresponding to given list of indexes.
-
-    """
+    '''
+    Returns bookids given list of indexes
+    '''
     bookid_list = list(df_book.loc[index_list].book_id.values)
     return bookid_list
 
 
 def get_rated_bookids(user_ratings):
-    """Return list of already rated bookids.
-
-    Parameters
-    ----------
-    user_ratings :  list
-        List of ratings by the users.
-
-
-    Returns
-    -------
-    list
-        List of book-ids, corresponding to the books already rated by the users.
-
-    """
+    '''
+    Returns list of already rated bookids
+    '''
     already_rated = []
     for rating in user_ratings:
         book_id = rating.bookid
@@ -144,61 +80,25 @@ def get_rated_bookids(user_ratings):
 
 
 def get_raw_id(book_id):
-    """Return raw_id given book_id.
-
-    Parameters
-    ----------
-    book_id :  int
-        Integer to determine the raw-id of a book.
-
-
-    Returns
-    -------
-    df : pandas.core.frame.DataFrame
-        Dataframe of shape `(1,1)` having the raw-id.
-
-    """
+    '''
+        Returns raw_id given book_id
+    '''
     raw_id = df_book[df_book.book_id == book_id]['r_index'].values[0]
     return raw_id
 
 
 def get_bookid(raw_id_list):
-    """Return bookid list given rawid list.
-
-    Parameters
-    ----------
-    raw_id_list :  list
-        List containing raw-ids to determine respective book-ids.
-
-
-    Returns
-    -------
-    list
-        List of bookids corresponding to raw ids.
-
-    """
+    '''
+        Returns bookid list given rawid list
+    '''
     bookid_list = list(df_book[df_book.r_index.isin(raw_id_list)]['book_id'].values)
     return bookid_list
 
 
 def genre_wise(genre, percentile=0.85):
-    """Return top genre books according to a cutoff percentile to be listed in Top Books.
-
-    Parameters
-    ----------
-    genre : str
-        Genre of the book in string format.
-
-    percentile :    float
-         (Default value = 0.85)
-         Float determinig the cutoff percentile.
-
-    Returns
-    -------
-    df : pandas.core.frame.DataFrame
-        Top genre books to be listed in Top Books according to a cutoff percentile.
-
-    """
+    '''
+        Returns top genre books according to a cutoff percentile to be listed in Top Books
+    '''
     n_books = 16
     min_genre_book_count = 48
 
@@ -216,20 +116,9 @@ def genre_wise(genre, percentile=0.85):
 
 
 def count_vectorizer_recommendations(bookid):
-    """Return recommened book ids based on book details.
-
-    Parameters
-    ----------
-    bookid :  int
-        Integer which needs to be passed in order to get book-title.
-
-
-    Returns
-    -------
-    list
-        List of bookids based on book details.
-
-    """
+    '''
+        Returns recommened book ids based on book details
+    '''
     indices = pd.read_pickle(book_indices_path)
     cosine_sim = np.load(cosin_sim_path)['array1']
     book_title = get_book_title(bookid)
@@ -247,20 +136,9 @@ def count_vectorizer_recommendations(bookid):
 
 
 def embedding_recommendations(sorted_user_ratings):
-    """Return recommended book ids based on embeddings.
-
-    Parameters
-    ----------
-    sorted_user_ratings :  list
-        List containing the ratings given by user.
-
-
-    Returns
-    -------
-    list
-        A list of recommended book ids based on embeddings.
-
-    """
+    '''
+        Returns recommended book ids based on embeddings
+    '''
     best_user_books = []
     similar_bookid_list = []
     max_user_rating_len = 10
@@ -285,51 +163,19 @@ def embedding_recommendations(sorted_user_ratings):
 
 
 def get_book_dict(bookid_list):
-    """Return book details based on provided bookids.
-
-    Parameters
-    ----------
-    bookid_list :  list
-        List containing book-ids which needs to be passed to determine book-details.
-
-
-    Returns
-    -------
-    dict
-        Dictionary of book details based on provided list of bookids.
-
-    """
+    '''
+        Returns book details based on provided bookids
+    '''
     rec_books_dict = df_book[df_book['book_id'].isin(bookid_list)][cols].to_dict('records')
     return rec_books_dict
 
 
 def combine_ids(cv_bookids, embedding_bookids, already_rated, recommendations=9):
-    """Return best bookids combining both approaches.
-
+    '''
+        Returns best bookids combining both approaches
         Embedding - Top 6
         CV - Top 3
-
-    Parameters
-    ----------
-    cv_bookids :  list
-        List containing book-ids of books based on book-details.
-
-    embedding_bookids : list
-        List containing book-ids of books rated by users.
-
-    already_rated : list
-        List containing book-ids of already rated books.
-
-    recommendations :   int
-         (Default value = 9)
-         Integer denoting the number of recommendations.
-
-    Returns
-    -------
-    list
-        List containing bookids of top books based on embeddings, ratings, and book details.
-
-    """
+    '''
     cv_bookids = list(cv_bookids.difference(already_rated))
     top_3_cv = set(cv_bookids[:3])
     embedding_bookids = embedding_bookids.difference(already_rated)
@@ -345,18 +191,8 @@ def combine_ids(cv_bookids, embedding_bookids, already_rated, recommendations=9)
 
 
 def get_top_n(top_n=400):
-    """Return a sample of top N books.
-
-    Parameters
-    ----------
-    top_n : int
-         (Default value = 400)
-         Number of samples to be returned.
-
-    Returns
-    -------
-        Sample of top N books.
-
+    """
+        Returns a sample of top N books
     """
     df_books_copy = df_book.copy()
     v = df_books_copy['ratings_count']
@@ -371,24 +207,12 @@ def get_top_n(top_n=400):
 
 
 def popular_among_users(N=15):
-    """Return Popular Books Among Users in the rating range 4-5.
-
+    '''
+        Returns Popular Books Among Users in the
+        rating range 4-5.
         If enough books are not available, top books are
         sampled randomly.
-
-    Parameters
-    ----------
-    N : int
-         (Default value = 15)
-         Number of samples to be returned.
-
-    Returns
-    -------
-    dict
-        Dictionary of book details.
-
-        Value based on the value returned from the called function
-    """
+    '''
     all_ratings = list(mainapp.models.UserRating.objects.all().order_by('-bookrating'))
     random.shuffle(all_ratings)
     best_user_ratings = sorted(all_ratings, key=operator.attrgetter('bookrating'), reverse=True)
