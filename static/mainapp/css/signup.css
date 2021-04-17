@@ -120,12 +120,10 @@ strong {
     width: 35%;
     left: 32%;
   }
-
 }
 @media only screen and (max-width: 600px) {
   .signupbutton{
     margin-bottom: 40%;
-
   }
   .welcome{
     font-size: 1.5rem;
@@ -145,8 +143,7 @@ strong {
     padding: 4% 3% 3% 3%;
   }
   .signupbutton{
-    margin-bottom: 45%;
-
+    margin-bottom: 5rem;
   }
   .account-block{
     width: 70%;
