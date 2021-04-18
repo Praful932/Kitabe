@@ -1,5 +1,5 @@
 .dark-mode-btn{
-    background-color: #ffdab9;
+    background-color: transparent;
     z-index: 10;
     cursor: pointer;
     transition-delay: 10s;
