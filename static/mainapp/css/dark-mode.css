@@ -33,7 +33,7 @@
 }
 .dark-mode .more-details,
 .dark-mode .card-title{
-color: #ff6800;
+    color: #ff6800;
 }
 .dark-mode .card{
     background:transparent;
@@ -61,7 +61,7 @@ color: #ff6800;
 
 
 .dark-mode .signin-block{
-    background: #121212;
+        background: #121212;
 	box-shadow: -5px -5px 8px rgba(255,255,255,0.1),
 	 5px 5px 15px rgba(0,0,0,0.8);
 	padding: 50px 20px 60px;
@@ -71,7 +71,7 @@ color: #ff6800;
 }
 
 .dark-mode .signup-block{
-    background: #121212;
+        background: #121212;
 	padding: 50px 20px 60px;
 	position: relative;
 	text-align: center;
@@ -82,9 +82,9 @@ color: #ff6800;
 }
 
 .dark-mode .welcome{
-    background-color: #091921;
-    color:white;
-    font-family:'Poppins', sans-serif;
+        background-color: #091921;
+        color:white;
+        font-family:'Poppins', sans-serif;
 	font-size: 28px;
 	font-weight: 700;
 	text-shadow: 0 0 7px white;
@@ -100,7 +100,7 @@ color: #ff6800;
 .dark-mode #id_email,
 .dark-mode #id_password1,
 .dark-mode #id_password2{
-    background: #091921;
+        background: #091921;
 	border: none;
 	border-radius: 10px;
 	box-shadow:inset -3px -3px 6px rgba(255,255,255,0.1),
@@ -112,6 +112,12 @@ color: #ff6800;
 	padding: 5px 15px;
 	width: 100%;
 }
+.dark-mode #id_login,
+.dark-mode #id_password,
+.dark-mode #id_username,
+.dark-mode #id_email,
+.dark-mode #id_password1,
+.dark-mode #id_password2,
 .dark-mode #id_login:focus,
 .dark-mode #id_password:focus{
 text-shadow: 0 0 300px white;
@@ -124,8 +130,8 @@ text-shadow: 0 0 300px white;
 }
 
 .dark-mode .h-100 .welcome{
-    color:white;
-    font-family:'Poppins', sans-serif;
+        color:white;
+        font-family:'Poppins', sans-serif;
 	font-size: 28px;
 	font-weight: 700;
 	text-shadow: 0 0 px white;
