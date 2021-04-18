@@ -2,7 +2,7 @@
     background-color: #ffdab9;
     z-index: 100;
     cursor: pointer;
-    
+    display:none;
 } 
 .dark-mode .genre-container, 
 .dark-mode .top-books{
