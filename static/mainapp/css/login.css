@@ -129,7 +129,8 @@ strong {
   }
   .form-group {
     border: 3px solid #ffdab9;
-    padding: 10% 5% 15% 5%;
+    padding: 5% 5% 13% 5%;
+    margin-top: -1rem;
   }
   .account-block {
     margin: auto;
@@ -156,10 +157,12 @@ strong {
   }
   .welcome {
     font-size: 1.75rem;
+    position: fixed;
   }
   .form-group {
     border: 3px solid #ffdab9;
     padding: 7% 5% 5% 5%;
+    margin-top: -1rem;
   }
   .forgotpassword {
     font-size: 16px;
