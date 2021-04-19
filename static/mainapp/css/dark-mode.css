@@ -3,7 +3,7 @@
     z-index: 10;
     cursor: pointer;
     transition-delay: 10s;
-    size : 20px;
+    border-radius:5px;
 } 
 .dark-mode .genre-container, 
 .dark-mode .top-books{
