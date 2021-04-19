@@ -64,7 +64,7 @@
   color: white;
 }
 
-
+.dark-mode .signup-block,
 .dark-mode .signin-block{
         background: #121212;
 	box-shadow: -5px -5px 8px rgba(255,255,255,0.1),
@@ -75,13 +75,6 @@
 	width: 370px;
 }
 
-.dark-mode .signup-block{
-        background: #121212;
-	padding: 50px 20px 60px;
-	position: relative;
-	text-align: center;
-	width: 370px;
-}
 .dark-mode .signup-block .googlebutton{
     margin-top: -10px;
 }
