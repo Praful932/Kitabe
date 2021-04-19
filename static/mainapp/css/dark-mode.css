@@ -3,6 +3,7 @@
     z-index: 10;
     cursor: pointer;
     transition-delay: 10s;
+    size : 20px;
 } 
 .dark-mode .genre-container, 
 .dark-mode .top-books{
@@ -90,8 +91,6 @@
 	text-shadow: 0 0 7px white;
 	text-transform: uppercase;
 }
-
-
 
 
 .dark-mode #id_login,
