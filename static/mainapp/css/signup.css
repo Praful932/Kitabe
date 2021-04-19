@@ -129,6 +129,7 @@ strong {
     font-size: 1.5rem;
     width: 60%;
     left: 20%;
+    margin-top: 2rem;
   }
   .form-group {
     border: 3px solid #ffdab9;
@@ -141,6 +142,7 @@ strong {
 @media only screen and (max-width: 450px) {
   .form-group{
     padding: 4% 3% 3% 3%;
+    margin-top: 2rem;
   }
   .signupbutton{
     margin-bottom: 5rem;

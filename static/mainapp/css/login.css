@@ -157,12 +157,11 @@ strong {
   }
   .welcome {
     font-size: 1.75rem;
-    position: fixed;
+    margin-top: -2rem;
   }
   .form-group {
     border: 3px solid #ffdab9;
     padding: 7% 5% 5% 5%;
-    margin-top: -1rem;
   }
   .forgotpassword {
     font-size: 16px;
