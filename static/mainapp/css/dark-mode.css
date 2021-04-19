@@ -1,11 +1,11 @@
 .dark-mode-btn{
-    background-color:transparent
+    background-color:transparent;
     z-index: 100;
     cursor: pointer;
     transition-delay: 10s;
     max-width: 100%;
     height: auto;
-} 
+}
 .dark-mode .genre-container, 
 .dark-mode .top-books{
     background-image: url("/static/mainapp/png/stars.jpg");
