@@ -58,6 +58,7 @@ fa-google{
   font-size: 2.5rem;
   background-color: #ffdab9;
   width: 35%;
+  margin-top: 2rem;
 }
 label {
   font-family: "Kalam", cursive;
@@ -70,7 +71,7 @@ label {
   display: inline-block;
   top: 25px;
   color: black;
-
+  margin-top: 2rem;
 }
 #id_username,
 #id_email,
@@ -129,7 +130,6 @@ strong {
     font-size: 1.5rem;
     width: 60%;
     left: 20%;
-    margin-top: 2rem;
   }
   .form-group {
     border: 3px solid #ffdab9;
@@ -142,7 +142,6 @@ strong {
 @media only screen and (max-width: 450px) {
   .form-group{
     padding: 4% 3% 3% 3%;
-    margin-top: 2rem;
   }
   .signupbutton{
     margin-bottom: 5rem;
