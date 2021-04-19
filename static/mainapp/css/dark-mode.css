@@ -137,6 +137,8 @@ text-shadow: 0 0 300px white;
 	text-shadow: 0 0 px white;
 	text-transform: uppercase;
 }
+.dark-mode .genre-head, 
+.dark-mode .topbook-head,
 .dark-mode .heading,
 .dark-mode .book-cell,
 .dark-mode .alert{
