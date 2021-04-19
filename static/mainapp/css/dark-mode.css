@@ -6,6 +6,9 @@
     max-width: 100%;
     height: auto;
 }
+.dark-mode .dark-mode-btn{
+	background-color:transparent;
+}
 .dark-mode .genre-container, 
 .dark-mode .top-books{
     background-image: url("/static/mainapp/png/stars.jpg");
