@@ -66,9 +66,7 @@
 
 .dark-mode .signup-block,
 .dark-mode .signin-block{
-        background: #121212;
-	box-shadow: -5px -5px 8px rgba(255,255,255,0.1),
-	 5px 5px 15px rgba(0,0,0,0.8);
+        background: #121212
 	padding: 50px 20px 60px;
 	position: relative;
 	text-align: center;
