@@ -5,7 +5,6 @@ from mainapp.helpers import genre_wise, count_vectorizer_recommendations, get_bo
 from mainapp.models import UserRating, SaveForLater
 from django.contrib import messages
 from django.core.paginator import Paginator
-from django.http import HttpResponseRedirect
 
 
 import random
@@ -117,22 +116,6 @@ def handler500(request, *args, **argv):
     return response
 
 
-def save(request, id):
-    "View To Save Book in List"
-    later = SaveForLater()
-    later.user = request.user
-    later.bookid = id
-    later.save()
-    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
-
-
-def remove(request, id):
-    "View To Remove Book from List"
-    later = SaveForLater.objects.filter(user=request.user, bookid=id)
-    later.delete()
-    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
-
-
 def SaveList(request):
     "View to render to_read page"
     user_ratings = list(UserRating.objects.filter(user=request.user).order_by('-bookrating'))
@@ -141,7 +124,7 @@ def SaveList(request):
     book_id = list(book)
     for i in range(len(book_id)):
         if book_id[i] in rated_books:
-            later = SaveForLater.objects.filter(user=request.user, bookid=book_id[i]).first()
+            later = SaveForLater.objects.filter(user=request.user, bookid=book_id[i])
             later.delete()
     if len(book_id) == 0:
         messages.info(request, 'Please Add Some Books')

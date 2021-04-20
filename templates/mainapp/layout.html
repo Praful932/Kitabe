@@ -79,7 +79,7 @@
                                 <i class=" nav-icon-s fa fa-bookmark fa-2x" aria-hidden="true"  ></i><br>Library 
                                 </a>
                                 <ul class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" href="{% url 'read_books' %}">Your Reads</a></li>
+                                <li><a class="dropdown-item" href="{% url 'read_books' %}">Rated Books</a></li>
                                 <div class="dropdown-divider"></div>
                                 <li><a class="dropdown-item" href="{% url 'to_read' %}">Saved for Later</a></li>
                             </ul>
@@ -370,19 +370,31 @@
                     });
                     $('#bookModal').modal('show');
                     $('#search-dropdown').empty();
-                    $('#mybutton').on('click', function() {
-    var url = "{% url 'save' 99999 %}";
-    
-    var bookid = obj.getAttribute('data-book-id');
-    // Construct the full URL with "id"
-    window.location.href = url.replace('99999', bookid);
-});
+                    $('#mybutton').on('click', function(){
+                        var bookid = obj.getAttribute('data-book-id');
+                        $.ajax({
+                                data: {
+                                    'bookid': bookid,
+                                    'csrfmiddlewaretoken': Cookies.get('csrftoken')
+                                },
+                                dataType: 'json',
+                                url: "{% url 'save_book' %}",
+                                type: 'POST',
+                                success: function (response){
+
+                                },
+                                error: function (response) {
+                                console.log(response);
+                                }
+                            })
+                    })
                 },
                 error: function (response) {
                     console.log(response);
                 }
             });
         }
+    
 	 document.body.addEventListener('scroll',()=>{
     if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
         document.getElementById("topBtn").style.display = "block";

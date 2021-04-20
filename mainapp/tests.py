@@ -249,22 +249,36 @@ class AddBooksTestCase(TestCase):
         self.user.set_password('foopassword')
         self.user.save()
 
-    def test_redirect_after_save(self):
-        """Test the status code of save
+    def test_save_book_status(self):
+        """Test the status code of save_book
         When a book is Saved
         """
+        book_id = 2
         self.client.login(username='test_user', password='foopassword')
-        response = self.client.get(reverse('save', args=[2]))
-        self.assertEquals(response.status_code, 302)
+
+        response = self.client.post(
+            reverse('save_book'),
+            data={'bookid': book_id},
+            HTTP_X_REQUESTED_WITH='XMLHttpRequest'
+        )
+        self.assertEquals(response.status_code, 200)
+        self.assertIn('true', response.content.decode("utf-8"))
         self.client.logout()
 
-    def test_redirect_after_remove(self):
-        """Test the status code of remove
-        When a book is removed
+    def test_after_remove(self):
+        """Test the status code of
+        remove_saved_book When a book is removed
         """
+        book_id = 2
         self.client.login(username='test_user', password='foopassword')
-        response = self.client.get(reverse('remove', args=[2]))
-        self.assertEquals(response.status_code, 302)
+
+        response = self.client.post(
+            reverse('remove_saved_book'),
+            data={'bookid': book_id},
+            HTTP_X_REQUESTED_WITH='XMLHttpRequest'
+        )
+        self.assertEquals(response.status_code, 200)
+        self.assertIn('true', response.content.decode("utf-8"))
         self.client.logout()
 
     def test_redirect_if_not_saved(self):

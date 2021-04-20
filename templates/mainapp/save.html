@@ -40,11 +40,11 @@ Library
 {% endblock head %}
 {% block main %}
 
-<h1 class="genre-head text-center pt-3 pb-3">Saved for Later({{num}})</h1>
+<h1 id = "title" class="genre-head text-center pt-3 pb-3">Saved for Later({{num}})</h1>
 
     {% for book in page_obj %}
 
-    <div class="card  mb-4" style="max-width:700px;">
+    <div id = "book-{{book.book_id}}"class="card  mb-4" style="max-width:700px;">
         <div class="row g-0">
             <div class="col-md-4 ">
             <img class = "img-fluid card-img" src="{{book.image_url}}" alt="book Card">
@@ -62,7 +62,7 @@ Library
             <div class='rateYo' id='rate-{{ book.book_id }}'></div>
             
         </div>
-        <a class = "btn remove" href = "{%url 'remove' book.book_id%}">Remove from List</a>
+        <a href ="javascript:;" class = "btn remove"  onclick='removeBook(this)' data-book-id="{{ book.book_id }}">Remove from List</a>
             </div>
         </div><br>       
             </div>
@@ -84,3 +84,27 @@ Library
     
 
 {% endblock main %}
+{% block script %}
+<script>
+    function removeBook(obj){
+        var bookid = obj.getAttribute('data-book-id');
+        console.log(bookid)
+        $.ajax({
+            data : {
+                'bookid' : bookid,
+                'csrfmiddlewaretoken': Cookies.get('csrftoken')
+            },
+            dataType: 'json',
+            url : '{%url "remove_saved_book" %}',
+            type: 'POST',
+            success: function (response){
+            $("#book-" + bookid).remove();
+            },
+            error: function (response) {
+            console.log(response);
+            }
+        })
+
+    }
+</script>
+{% endblock script %}
