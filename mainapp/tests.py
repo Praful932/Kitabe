@@ -6,6 +6,7 @@ from mainapp.models import UserRating
 from mainapp.helpers import most_common_genre_recommendations
 from collections import Counter
 import BookRecSystem.settings as settings
+import random
 import pandas as pd
 import math
 import os
@@ -226,23 +227,68 @@ class MostCommonGenreTestCase(TestCase):
         genre_count = dict(Counter(gfq))
         max_value = max(genre_count.values())
         most_common_dict = {u:v for u,v in genre_count.items() if v == max_value}
-        index_map = {v: i for i, v in enumerate(self.priority_list)}
-        final_list = sorted(most_common_dict.items(), key=lambda pair: index_map[pair[0]])
-        most_common_genre = final_list[0][0]
+        highest_book_count = {}
+        for genre in most_common_dict.keys():
+            highest_book_count[genre] = sum(self.df_book.genre.str.contains(genre.lower()))
+        max_value = max(highest_book_count.values())
+        final_dict = {u:v for u,v in highest_book_count.items() if v == max_value}
+        most_common_genre = list(final_dict.items())[0][0]
         return most_common_genre
 
     def setUp(self):
         self.df_book = pd.read_csv(os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/dataset/books.csv'))
-        self.priority_list = ['fiction', 'fantasy', 'classics', 'contemporary', 'mystery', 'nonfiction', 'paranormal', 'romance', 'history', 'thriller', 'horror', 'memoir', 'comics', 'biography', 'philosophy', 'science', 'crime', 'psychology', 'christian', 'business', 'poetry', 'music', 'religion', 'manga', 'art', 'spirituality', 'cookbooks', 'travel', 'ebooks', 'sports', 'suspense']
-    
+
     def test_1(self):
-        already_rated = [469901,16093188,16124019,1225261,207802]
+        books = random.sample(self.df_book.book_id.to_list(),10)
+        already_rated = books[:5]
         best_bookids = []
         n1 = math.ceil((9-len(best_bookids))/2)
         n2 = math.floor((9-len(best_bookids))/2)
-        best_bookids_tfidf = [534255,22465597,141019,5422154,612188]  # length n1 = 5
+        best_bookids_tfidf = books[5:]
 
-        genre_recomm_bookids = most_common_genre_recommendations(best_bookids, already_rated, best_bookids_tfidf, n2)  #length n2 = 4
+        genre_recomm_bookids = most_common_genre_recommendations(best_bookids, already_rated, best_bookids_tfidf, n2)
+        genre = self.common_genre(best_bookids + already_rated + best_bookids_tfidf)
+
+        for bookid in genre_recomm_bookids:
+            self.assertEquals([False,genre][genre in self.df_book[self.df_book['book_id'] == bookid]['genre'].values[0].split(", ")],genre)
+    
+    def test_2(self):
+        books = random.sample(self.df_book.book_id.to_list(),10)
+        already_rated = books[:5]
+        best_bookids = [books[5]]
+        n1 = math.ceil((9-len(best_bookids))/2)
+        n2 = math.floor((9-len(best_bookids))/2)
+        best_bookids_tfidf = books[6:]
+
+        genre_recomm_bookids = most_common_genre_recommendations(best_bookids, already_rated, best_bookids_tfidf, n2)
+        genre = self.common_genre(best_bookids + already_rated + best_bookids_tfidf)
+
+        for bookid in genre_recomm_bookids:
+            self.assertEquals([False,genre][genre in self.df_book[self.df_book['book_id'] == bookid]['genre'].values[0].split(", ")],genre)
+    
+    def test_3(self):
+        books = random.sample(self.df_book.book_id.to_list(),11)
+        already_rated = books[:5]
+        best_bookids = books[5:7]
+        n1 = math.ceil((9-len(best_bookids))/2)
+        n2 = math.floor((9-len(best_bookids))/2)
+        best_bookids_tfidf = books[7:]
+
+        genre_recomm_bookids = most_common_genre_recommendations(best_bookids, already_rated, best_bookids_tfidf, n2)
+        genre = self.common_genre(best_bookids + already_rated + best_bookids_tfidf)
+
+        for bookid in genre_recomm_bookids:
+            self.assertEquals([False,genre][genre in self.df_book[self.df_book['book_id'] == bookid]['genre'].values[0].split(", ")],genre)
+    
+    def test_4(self):
+        books = random.sample(self.df_book.book_id.to_list(),16)
+        already_rated = books[:9]
+        best_bookids = books[9:15]
+        n1 = math.ceil((9-len(best_bookids))/2)
+        n2 = math.floor((9-len(best_bookids))/2)
+        best_bookids_tfidf = books[15:]
+
+        genre_recomm_bookids = most_common_genre_recommendations(best_bookids, already_rated, best_bookids_tfidf, n2)
         genre = self.common_genre(best_bookids + already_rated + best_bookids_tfidf)
 
         for bookid in genre_recomm_bookids:

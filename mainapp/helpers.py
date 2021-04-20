@@ -32,7 +32,6 @@ with open(sim_books_path, 'rb') as handle:
     sim_books_dict = pickle.load(handle)
 
 cols = ['original_title', 'authors', 'average_rating', 'image_url', 'book_id']
-priority_list = ['fiction', 'fantasy', 'classics', 'contemporary', 'mystery', 'nonfiction', 'paranormal', 'romance', 'history', 'thriller', 'horror', 'memoir', 'comics', 'biography', 'philosophy', 'science', 'crime', 'psychology', 'christian', 'business', 'poetry', 'music', 'religion', 'manga', 'art', 'spirituality', 'cookbooks', 'travel', 'ebooks', 'sports', 'suspense']
 
 df_book = pd.read_csv(book_path)
 total_books = df_book.shape[0]
@@ -223,10 +222,13 @@ def most_common_genre_recommendations(best_bookids, already_rated, best_bookids_
         most_common_dict = {u: v for u, v in genre_count.items() if v == max_value}
 
         # Sort genre with same frequency based on priority list
-        index_map = {v: i for i, v in enumerate(priority_list)}
-        final_list = sorted(most_common_dict.items(), key=lambda pair: index_map[pair[0]])
+        highest_book_count = {}
+        for genre in most_common_dict.keys():
+            highest_book_count[genre] = sum(df_book.genre.str.contains(genre.lower()))
+        max_value = max(highest_book_count.values())
+        final_dict = {u:v for u,v in highest_book_count.items() if v == max_value}
 
-        most_common_genre = final_list[0][0]
+        most_common_genre = list(final_dict.items())[0][0]
     else:
         most_common_genre = False
 
