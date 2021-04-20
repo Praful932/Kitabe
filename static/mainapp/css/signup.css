@@ -124,7 +124,7 @@ strong {
 }
 @media only screen and (max-width: 600px) {
   .signupbutton{
-    margin-bottom: 40%;
+    margin-bottom: 3.8rem;
     margin-top: 0.5rem;
   }
   .welcome{
