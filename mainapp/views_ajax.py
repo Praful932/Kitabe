@@ -121,6 +121,6 @@ def remove_saved_book(request):
         if is_bookid_invalid(bookid):
             return JsonResponse({'success': False}, status=200)
 
-        later = SaveForLater.objects.filter(user=request.user, bookid=bookid)
-        later.delete()
+        saved_book = SaveForLater.objects.filter(user=request.user, bookid=bookid)
+        saved_book.delete()
         return JsonResponse({'success': True}, status=200)

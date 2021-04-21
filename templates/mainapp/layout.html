@@ -145,7 +145,7 @@
                             <img class="img-book" src="" id="bookimage">
                         </div>
                         {% if user.is_authenticated %}
-                        <button id = "mybutton" class = "btn">Save for Later</button>
+                        <button id = "save-book-button" class = "btn">Save for Later</button>
                         {%endif%}
                     </div>
                 </div>
@@ -370,7 +370,7 @@
                     });
                     $('#bookModal').modal('show');
                     $('#search-dropdown').empty();
-                    $('#mybutton').on('click', function(){
+                    $('#save-book-button').on('click', function(){
                         var bookid = obj.getAttribute('data-book-id');
                         $.ajax({
                                 data: {
