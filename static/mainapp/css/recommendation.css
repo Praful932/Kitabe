@@ -140,9 +140,10 @@
   font-size: 15px;
   border-radius: 20px;
   position: absolute;
-  right: 20%;
+  right: 2%;
   position: absolute;
   margin-top: 20%;
+  bottom: 10px;
 }
 
 .more-details:hover {
@@ -155,9 +156,10 @@
   font-weight: 600;
   font-size: 15px;
   border-radius: 20px;
-  padding: 5px;
+  padding: 8px;
   bottom: 10px;
   position: absolute;
+  left: 45%;
 }
 
 .more-details {
@@ -172,3 +174,5 @@
 .rateYo {
   display: none;
 }
+
+
