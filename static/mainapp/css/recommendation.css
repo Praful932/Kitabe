@@ -140,8 +140,7 @@
   font-size: 15px;
   border-radius: 20px;
   position: absolute;
-  right: 34%;
-  position: absolute;
+  left: 240px;
   margin-top: 20%;
   bottom: 70px;
   margin-right: -12px;
@@ -160,7 +159,7 @@
   padding: 8px;
   bottom: 10px;
   position: absolute;
-  left: 45%;
+  left: 230px;
   margin-right: -12px;
 }
 
