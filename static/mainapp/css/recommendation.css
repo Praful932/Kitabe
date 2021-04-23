@@ -140,7 +140,7 @@
   font-size: 15px;
   border-radius: 20px;
   position: absolute;
-  left: 240px;
+  right: 26%;
   margin-top: 20%;
   bottom: 70px;
   margin-right: -12px;
@@ -159,8 +159,7 @@
   padding: 8px;
   bottom: 10px;
   position: absolute;
-  left: 230px;
-  margin-right: -12px;
+  left: 50%;
 }
 
 .more-details {
