@@ -140,10 +140,10 @@
   font-size: 15px;
   border-radius: 20px;
   position: absolute;
-  right: 2%;
+  right: 26%;
   position: absolute;
   margin-top: 20%;
-  bottom: 10px;
+  bottom: 70px;
 }
 
 .more-details:hover {
@@ -159,7 +159,7 @@
   padding: 8px;
   bottom: 10px;
   position: absolute;
-  left: 45%;
+  left: 50%;
 }
 
 .more-details {
