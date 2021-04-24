@@ -128,6 +128,7 @@ Kitabe
 - [Cleaning and Embedding Notebook](https://drive.google.com/file/d/1wlKiSvYQEXG7xtru5jDQWQwxffaVd9Ap/view?usp=sharing)
 - [Fix Missing Images Notebook](https://drive.google.com/file/d/1S0pd5t9oU9a63EdmlXmxhNWGc228W3ke/view?usp=sharing)
 - [Genre Wise & Count Vectorizer Notebook](https://drive.google.com/file/d/1LRr4Nm2I2HRJUTXbRea3sK5A1Bvp_lav/view?usp=sharing)
+- [Adding description to the Model](https://colab.research.google.com/drive/1tFbXkkMrYrDfWHU2F6tnMucRXC4zqoxy?usp=sharing)
 
 ### References 😇
 
