@@ -126,6 +126,7 @@
   }
   .more-details {
     font-size: 13px !important;
+    right: 22% !important;
   }
   .rating-block {
     font-size: 13px !important;
@@ -140,9 +141,10 @@
   font-size: 15px;
   border-radius: 20px;
   position: absolute;
-  right: 20%;
-  position: absolute;
+  right: 26%;
   margin-top: 20%;
+  bottom: 70px;
+  margin-right: -12px;
 }
 
 .more-details:hover {
@@ -155,9 +157,10 @@
   font-weight: 600;
   font-size: 15px;
   border-radius: 20px;
-  padding: 5px;
+  padding: 8px;
   bottom: 10px;
   position: absolute;
+  left: 50%;
 }
 
 .more-details {
