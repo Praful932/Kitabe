@@ -220,6 +220,9 @@ class MostCommonGenreTestCase(TestCase):
     '''
     Test most common genre books when recommendations are short
     '''
+    def setUp(self):
+        self.df_book = pd.read_csv(os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/dataset/books.csv'))
+
     def common_genre(self,books):
         gfq = []
         for book in books:
@@ -235,61 +238,35 @@ class MostCommonGenreTestCase(TestCase):
         most_common_genre = list(final_dict.items())[0][0]
         return most_common_genre
 
-    def setUp(self):
-        self.df_book = pd.read_csv(os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/dataset/books.csv'))
+    def test(self):
+        self.template(10,5,1)
+        self.template(10,5,2)
+        self.template(10,5,3)
+        self.template(10,5,4)
+        self.template(10,5,5)
+        self.template(10,6,1)
+        self.template(10,6,2)
+        self.template(10,6,3)
+        self.template(10,6,4)
+        self.template(10,7,1)
+        self.template(10,7,2)
+        self.template(10,7,3)
+        self.template(10,8,1)
+        self.template(10,8,2)
+        self.template(10,9,1)
+        self.template(10,10,0)
 
-    def test_1(self):
-        books = random.sample(self.df_book.book_id.to_list(),10)
-        already_rated = books[:5]
-        best_bookids = []
+    def template(self,tnum,already_slice,bestbookids_slice):
+        books = random.sample(self.df_book.book_id.to_list(),tnum)
+        already_rated = books[:already_slice]
+        best_bookids = books[already_slice:already_slice+bestbookids_slice]
         n1 = math.ceil((9-len(best_bookids))/2)
         n2 = math.floor((9-len(best_bookids))/2)
-        best_bookids_tfidf = books[5:]
+        best_bookids_tfidf = books[tnum-n1+1:]
 
         genre_recomm_bookids = most_common_genre_recommendations(best_bookids, already_rated, best_bookids_tfidf, n2)
         genre = self.common_genre(best_bookids + already_rated + best_bookids_tfidf)
 
         for bookid in genre_recomm_bookids:
-            self.assertEquals([False,genre][genre in self.df_book[self.df_book['book_id'] == bookid]['genre'].values[0].split(", ")],genre)
-    
-    def test_2(self):
-        books = random.sample(self.df_book.book_id.to_list(),10)
-        already_rated = books[:5]
-        best_bookids = [books[5]]
-        n1 = math.ceil((9-len(best_bookids))/2)
-        n2 = math.floor((9-len(best_bookids))/2)
-        best_bookids_tfidf = books[6:]
-
-        genre_recomm_bookids = most_common_genre_recommendations(best_bookids, already_rated, best_bookids_tfidf, n2)
-        genre = self.common_genre(best_bookids + already_rated + best_bookids_tfidf)
-
-        for bookid in genre_recomm_bookids:
-            self.assertEquals([False,genre][genre in self.df_book[self.df_book['book_id'] == bookid]['genre'].values[0].split(", ")],genre)
-    
-    def test_3(self):
-        books = random.sample(self.df_book.book_id.to_list(),11)
-        already_rated = books[:5]
-        best_bookids = books[5:7]
-        n1 = math.ceil((9-len(best_bookids))/2)
-        n2 = math.floor((9-len(best_bookids))/2)
-        best_bookids_tfidf = books[7:]
-
-        genre_recomm_bookids = most_common_genre_recommendations(best_bookids, already_rated, best_bookids_tfidf, n2)
-        genre = self.common_genre(best_bookids + already_rated + best_bookids_tfidf)
-
-        for bookid in genre_recomm_bookids:
-            self.assertEquals([False,genre][genre in self.df_book[self.df_book['book_id'] == bookid]['genre'].values[0].split(", ")],genre)
-    
-    def test_4(self):
-        books = random.sample(self.df_book.book_id.to_list(),16)
-        already_rated = books[:9]
-        best_bookids = books[9:15]
-        n1 = math.ceil((9-len(best_bookids))/2)
-        n2 = math.floor((9-len(best_bookids))/2)
-        best_bookids_tfidf = books[15:]
-
-        genre_recomm_bookids = most_common_genre_recommendations(best_bookids, already_rated, best_bookids_tfidf, n2)
-        genre = self.common_genre(best_bookids + already_rated + best_bookids_tfidf)
-
-        for bookid in genre_recomm_bookids:
+            #FOR REVIEWER print(self.df_book[self.df_book['book_id'] == bookid]['genre']," - - - - - ",genre)
             self.assertEquals([False,genre][genre in self.df_book[self.df_book['book_id'] == bookid]['genre'].values[0].split(", ")],genre)

@@ -202,8 +202,22 @@ def combine_ids(tfidf_bookids, embedding_bookids, already_rated, recommendations
 
 
 def most_common_genre_recommendations(best_bookids, already_rated, best_bookids_tfidf, n):
-    '''
-        Returns n top rated of the most_common_genre among all lists taken as input
+    '''Returns n top rated of the most_common_genre among all lists taken as input
+
+    Parameters
+    ----------
+    best_bookids : list
+        List containing book-ids of books based on tf-idf and embedding recommendations.
+    already_rated : set
+        List containing book-ids of books rated by users.
+    best_bookids_tfidf : list
+        List containing book-ids of books taken from remaining tf-idf recommendations.
+    n : int
+        Integer denoting the number of books required (Default value = 9).
+    Returns
+    -------
+    genre_recommendations : list
+        List containing n number of books of the most common genre among all the input books.
     '''
     # Final list of bookids to be recommended
     books = set(best_bookids+list(already_rated)+best_bookids_tfidf)
@@ -213,31 +227,26 @@ def most_common_genre_recommendations(best_bookids, already_rated, best_bookids_
     for book in books:
         genre_frequency.extend(df_book[df_book['book_id'] == book]['genre'].values[0].split(", "))
 
-    if genre_frequency:
-        # The most common genre among the bookids in `books` variable
-        genre_count = dict(Counter(genre_frequency))
-        max_value = max(genre_count.values())
+    # The most common genre among the bookids in `books` variable
+    genre_count = dict(Counter(genre_frequency))
+    max_value = max(genre_count.values())
 
-        # Cut out dictionary containing the highest frequency of genre
-        most_common_dict = {u: v for u, v in genre_count.items() if v == max_value}
+    # Cut out dictionary containing the highest frequency of genre
+    most_common_dict = {u: v for u, v in genre_count.items() if v == max_value}
 
-        # Sort genre with same frequency based on priority list
-        highest_book_count = {}
-        for genre in most_common_dict.keys():
-            highest_book_count[genre] = sum(df_book.genre.str.contains(genre.lower()))
-        max_value = max(highest_book_count.values())
-        final_dict = {u:v for u,v in highest_book_count.items() if v == max_value}
+    # Sort genre with same frequency based on priority list
+    highest_book_count = {}
+    for genre in most_common_dict.keys():
+        highest_book_count[genre] = sum(df_book.genre.str.contains(genre.lower()))
+    max_value = max(highest_book_count.values())
+    final_dict = {u:v for u,v in highest_book_count.items() if v == max_value}
 
-        most_common_genre = list(final_dict.items())[0][0]
-    else:
-        most_common_genre = False
+    most_common_genre = list(final_dict.items())[0][0]
 
-    genre_recommendations = list()
-    if most_common_genre:
-        # Recommendations list, listing 2n bookids
-        genre_recommendations = set(genre_wise(most_common_genre, 2*(n)).book_id.to_numpy())
-        # Removing common bookids from `books` and Slicing out the first n bookids
-        genre_recommendations = list(genre_recommendations.difference(books))[:n]
+    # Recommendations list, listing 2n bookids
+    genre_recommendations = set(genre_wise(most_common_genre, 2*(n)).book_id.to_numpy())
+    # Removing common bookids from `books` and Slicing out the first n bookids
+    genre_recommendations = list(genre_recommendations.difference(books))[:n]
 
     return genre_recommendations
 
