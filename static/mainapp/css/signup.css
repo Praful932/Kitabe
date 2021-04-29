@@ -141,6 +141,9 @@ strong {
   .account-block{
     width: 60%;
   }
+  .strong{
+    font-size: 0.6rem;
+  }
 }
 @media only screen and (max-width: 450px) {
   .form-group{
@@ -148,9 +151,23 @@ strong {
     margin-top: 0rem;
   }
   .signupbutton{
-    margin-bottom: 4rem;
+    margin-bottom: 3.5rem;
   }
   .account-block{
     width: 70%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .form-group{
+    padding: 4% 3% 3% 3%;
+    margin-top: 0rem;
+  }
+  .signupbutton{
+    margin-bottom: 3rem;
+    margin-top: 1.5rem;
+  }
+  .googlebutton{
+    margin-top: 1rem;
   }
 }
