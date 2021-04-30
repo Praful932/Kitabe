@@ -11,6 +11,7 @@ import pandas as pd
 import math
 import os
 
+
 class HomeTests(TestCase):
     '''
         Index View Test Case
@@ -216,6 +217,7 @@ class UserRateBookTestCase(TestCase):
         self.assertEquals(rating.user, self.user)
         self.client.logout()
 
+
 class MostCommonGenreTestCase(TestCase):
     '''
     Test most common genre books when recommendations are short
@@ -223,41 +225,41 @@ class MostCommonGenreTestCase(TestCase):
     def setUp(self):
         self.df_book = pd.read_csv(os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/dataset/books.csv'))
 
-    def common_genre(self,books):
+    def common_genre(self, books):
         gfq = []
         for book in books:
             gfq.extend(self.df_book[self.df_book['book_id'] == book]['genre'].values[0].split(", "))
         genre_count = dict(Counter(gfq))
         max_value = max(genre_count.values())
-        most_common_dict = {u:v for u,v in genre_count.items() if v == max_value}
+        most_common_dict = {u: v for u, v in genre_count.items() if v == max_value}
         highest_book_count = {}
         for genre in most_common_dict.keys():
             highest_book_count[genre] = sum(self.df_book.genre.str.contains(genre.lower()))
         max_value = max(highest_book_count.values())
-        final_dict = {u:v for u,v in highest_book_count.items() if v == max_value}
+        final_dict = {u: v for u, v in highest_book_count.items() if v == max_value}
         most_common_genre = list(final_dict.items())[0][0]
         return most_common_genre
 
     def test(self):
-        self.template(10,5,1)
-        self.template(10,5,2)
-        self.template(10,5,3)
-        self.template(10,5,4)
-        self.template(10,5,5)
-        self.template(10,6,1)
-        self.template(10,6,2)
-        self.template(10,6,3)
-        self.template(10,6,4)
-        self.template(10,7,1)
-        self.template(10,7,2)
-        self.template(10,7,3)
-        self.template(10,8,1)
-        self.template(10,8,2)
-        self.template(10,9,1)
-        self.template(10,10,0)
+        self.template(10, 5, 1)
+        self.template(10, 5, 2)
+        self.template(10, 5, 3)
+        self.template(10, 5, 4)
+        self.template(10, 5, 5)
+        self.template(10, 6, 1)
+        self.template(10, 6, 2)
+        self.template(10, 6, 3)
+        self.template(10, 6, 4)
+        self.template(10, 7, 1)
+        self.template(10, 7, 2)
+        self.template(10, 7, 3)
+        self.template(10, 8, 1)
+        self.template(10, 8, 2)
+        self.template(10, 9, 1)
+        self.template(10, 10, 0)
 
-    def template(self,tnum,already_slice,bestbookids_slice):
-        books = random.sample(self.df_book.book_id.to_list(),tnum)
+    def template(self, tnum, already_slice, bestbookids_slice):
+        books = random.sample(self.df_book.book_id.to_list(), tnum)
         already_rated = books[:already_slice]
         best_bookids = books[already_slice:already_slice+bestbookids_slice]
         n1 = math.ceil((9-len(best_bookids))/2)
@@ -268,8 +270,8 @@ class MostCommonGenreTestCase(TestCase):
         genre = self.common_genre(best_bookids + already_rated + best_bookids_tfidf)
 
         for bookid in genre_recomm_bookids:
-            #FOR REVIEWER print(self.df_book[self.df_book['book_id'] == bookid]['genre']," - - - - - ",genre)
-            self.assertEquals([False,genre][genre in self.df_book[self.df_book['book_id'] == bookid]['genre'].values[0].split(", ")],genre)
+            self.assertEquals([False, genre][genre in self.df_book[self.df_book['book_id'] == bookid]['genre'].values[0].split(", ")], genre)
+
 
 class RatedBooksTestCase(TestCase):
     """Already Read Books View Test Case"""

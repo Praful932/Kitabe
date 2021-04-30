@@ -209,7 +209,7 @@ def genre_wise(genre, percentile=0.85):
     return qualified[cols].head(min_genre_book_count).sample(n_books)
 
 
-def count_vectorizer_recommendations(bookid):
+def tfidf_recommendations(bookid):
     """Return recommenedations based on count vectorizer.
 
     Parameters
@@ -321,7 +321,7 @@ def combine_ids(cv_bookids, embedding_bookids, already_rated, recommendations=9)
 
     """
     cv_bookids = list(cv_bookids.difference(already_rated))
-    top_3_cv = set(cv_bookids[:3])
+    top_3_tfidf = set(cv_bookids[:3])
     embedding_bookids = embedding_bookids.difference(already_rated)
     embedding_bookids = list(embedding_bookids.difference(top_3_tfidf))
     top_3_tfidf = list(top_3_tfidf)
@@ -334,7 +334,7 @@ def combine_ids(cv_bookids, embedding_bookids, already_rated, recommendations=9)
         n1, n2 = math.ceil(two_n/2), math.floor(two_n/2)
 
         # n1 number of books from remaining tf_idf dataset
-        best_bookids_tfidf = tfidf_bookids[3: (3*2)+n1]
+        best_bookids_tfidf = cv_bookids[3: (3*2)+n1]
         best_bookids_tfidf = list(set(best_bookids_tfidf).difference(set(best_bookids)))[:n1]
 
         # n2 number of books from list of top rated books of the most common genre among the books yet recommended
@@ -364,7 +364,7 @@ def most_common_genre_recommendations(best_bookids, already_rated, best_bookids_
         List containing n number of books of the most common genre among all the input books.
     '''
     # Final list of bookids to be recommended
-    books = set(best_bookids+list(already_rated)+best_bookids_tfidf)
+    books = set(best_bookids+ list(already_rated)+ best_bookids_tfidf)
 
     # Accumulation of all the genres listed in `books` variable
     genre_frequency = []
@@ -383,14 +383,14 @@ def most_common_genre_recommendations(best_bookids, already_rated, best_bookids_
     for genre in most_common_dict.keys():
         highest_book_count[genre] = sum(df_book.genre.str.contains(genre.lower()))
     max_value = max(highest_book_count.values())
-    final_dict = {u:v for u,v in highest_book_count.items() if v == max_value}
+    final_dict = {u: v for u, v in highest_book_count.items() if v == max_value}
 
     most_common_genre = list(final_dict.items())[0][0]
 
     # Recommendations list, listing 2n bookids
-    genre_recommendations = set(genre_wise(most_common_genre, 2*(n)).book_id.to_numpy())
+    genre_recommendations = genre_wise(most_common_genre).book_id.to_list()[:2*n]
     # Removing common bookids from `books` and Slicing out the first n bookids
-    genre_recommendations = list(genre_recommendations.difference(books))[:n]
+    genre_recommendations = list(set(genre_recommendations).difference(books))[:n]
 
     return genre_recommendations
 
