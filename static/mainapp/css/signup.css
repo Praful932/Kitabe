@@ -142,7 +142,7 @@ strong {
     width: 60%;
   }
   strong{
-    font-size: 0.6rem;
+    font-size: 0.45rem;
   }
 }
 @media only screen and (max-width: 450px) {
@@ -155,9 +155,6 @@ strong {
   }
   .account-block{
     width: 70%;
-  }
-  strong{
-    font-size: 0.45rem;
   }
 }
 
