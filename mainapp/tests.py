@@ -241,24 +241,18 @@ class MostCommonGenreTestCase(TestCase):
         return most_common_genre
 
     def test(self):
-        self.template(10, 5, 1)
-        self.template(10, 5, 2)
-        self.template(10, 5, 3)
-        self.template(10, 5, 4)
-        self.template(10, 5, 5)
-        self.template(10, 6, 1)
-        self.template(10, 6, 2)
-        self.template(10, 6, 3)
-        self.template(10, 6, 4)
-        self.template(10, 7, 1)
-        self.template(10, 7, 2)
-        self.template(10, 7, 3)
-        self.template(10, 8, 1)
-        self.template(10, 8, 2)
-        self.template(10, 9, 1)
-        self.template(10, 10, 0)
+        test_cases = [(10, 5, 1), (10, 5, 2), (10, 5, 2), (10, 5, 3), (10, 5, 4),(10, 5, 5), (10, 6, 1), (10, 6, 1), (10, 6, 2), (10, 6, 3), (10, 6, 4), (10, 7, 1), (10, 7, 2), (10, 7, 3), (10, 8, 1), (10, 8, 2), (10, 9, 1), (10, 10, 0)]
+        for tnum, already_slice, bestbookids_slice in test_cases:
+            self.template(tnum, already_slice, bestbookids_slice )
 
     def template(self, tnum, already_slice, bestbookids_slice):
+        """
+            Generates `tnum` random bookids, divides the bookids into 3 input variables of the function `most_common_genre_recommendations`
+            The variables store,
+            already_rated - books rated by user
+            best_bookids - books recommended consisting of top 6 bookids from embedding_bookids and top 3 from tfidf recommendations
+            best_bookids_tfidf - `n1` books taken from remaining tfidf recommendations
+        """
         books = random.sample(self.df_book.book_id.to_list(), tnum)
         already_rated = books[:already_slice]
         best_bookids = books[already_slice:already_slice+bestbookids_slice]

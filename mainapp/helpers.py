@@ -294,7 +294,7 @@ def get_book_dict(bookid_list):
     return rec_books_dict
 
 
-def combine_ids(cv_bookids, embedding_bookids, already_rated, recommendations=9):
+def combine_ids(tfidf_bookids, embedding_bookids, already_rated, recommendations=9):
     """Return best bookids combining both approaches.
 
         Embedding - Top 6
@@ -302,7 +302,7 @@ def combine_ids(cv_bookids, embedding_bookids, already_rated, recommendations=9)
 
     Parameters
     ----------
-    cv_bookids : list
+    tfidf_bookids : list
         List containing book-ids of books based on count vectorizer.
 
     embedding_bookids : list
@@ -320,8 +320,8 @@ def combine_ids(cv_bookids, embedding_bookids, already_rated, recommendations=9)
         List containing bookids of top books based on embeddings and countvectorizer.
 
     """
-    cv_bookids = list(cv_bookids.difference(already_rated))
-    top_3_tfidf = set(cv_bookids[:3])
+    tfidf_bookids = list(tfidf_bookids.difference(already_rated))
+    top_3_tfidf = set(tfidf_bookids[:3])
     embedding_bookids = embedding_bookids.difference(already_rated)
     embedding_bookids = list(embedding_bookids.difference(top_3_tfidf))
     top_3_tfidf = list(top_3_tfidf)
@@ -334,7 +334,7 @@ def combine_ids(cv_bookids, embedding_bookids, already_rated, recommendations=9)
         n1, n2 = math.ceil(two_n/2), math.floor(two_n/2)
 
         # n1 number of books from remaining tf_idf dataset
-        best_bookids_tfidf = cv_bookids[3: (3*2)+n1]
+        best_bookids_tfidf = tfidf_bookids[3: (3*2)+n1]
         best_bookids_tfidf = list(set(best_bookids_tfidf).difference(set(best_bookids)))[:n1]
 
         # n2 number of books from list of top rated books of the most common genre among the books yet recommended
