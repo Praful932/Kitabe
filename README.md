@@ -39,7 +39,7 @@ For Contributing 💜 and setting Up head [here](https://github.com/Praful932/Ki
 
 ### Objective ✍
 Our objective is to build an application for all Book Lovers ♥ like us out there where all you have to 
-do is rate some of your favorite books and the application will do it's **voodoo magic** 🧙‍♂️ and give you some more books that you may **love😍 to read**.
+do is rate some of your favorite books and the application will do its **voodoo magic** 🧙‍♂️ and give you some more books that you may **love😍 to read**.
 
 ### Dataset 🧾
 The Dataset that we used for this task is the [goodbooks-10k](https://github.com/zygmuntz/goodbooks-10k) dataset. It consists of 10k books with a total of 6 million ratings. That's huge right! 😮. There are some more huge datasets such as [Book-Crossings](http://www2.informatik.uni-freiburg.de/~cziegler/BX/) but they are kinda old 😬.
@@ -55,7 +55,7 @@ GoodBooks10k
 ```
 
 ### PreProcessing 🛠
-Since this is a recommendation problem, we have to make sure that the `books.csv` is as clean as possible and only consider those ratings whose book-id is present, same goes for vice versa.
+Since this is a recommendation problem, we have to make sure that the `books.csv` is as clean as possible and only consider those ratings whose book-id is present, the same goes for vice versa.
 
 More Cleaning for `books.csv`
 - Missing Book Image URLs
@@ -69,10 +69,10 @@ For Recommendation Problems there are multiple approaches that are possible:
 
 We experimented with several methods and chose Embedding Matrix & Term Frequency.
 
-- **Embedding Matrix** - This method is often called [FunkSVD](https://www.coursera.org/lecture/matrix-factorization/deriving-funksvd-lyTpD) which won the Netflix Prize back in 2004. Since it is a gradient based function minimization approach we like to call it as Embedding Matrix. Calling it SVD [confuses](https://www.quora.com/What-is-the-difference-between-SVD-and-matrix-factorization-in-context-of-recommendation-engine/answer/Luis-Argerich) it with the one in Linear Algebra. This Embedding Matrix constructs a vector for each user and each book, such that when the product is applied with additional constraints it gives us the rating. For more elaborate info on FunkSVD refer [this](http://sifter.org/~simon/journal/20061211.html). 
-We used the book embedding as a representation of the books to infer underlying patterns. This led to the embedding able to detect books from the same authors and also infer genres such as Fiction, Autobiography and more.
+- **Embedding Matrix** - This method is often called [FunkSVD](https://www.coursera.org/lecture/matrix-factorization/deriving-funksvd-lyTpD) which won the Netflix Prize back in 2004. Since it is a gradient-based function minimization approach we like to call it Embedding Matrix. Calling it SVD [confuses](https://www.quora.com/What-is-the-difference-between-SVD-and-matrix-factorization-in-context-of-recommendation-engine/answer/Luis-Argerich) it with the one in Linear Algebra. This Embedding Matrix constructs a vector for each user and each book, such that when the product is applied with additional constraints it gives us the rating. For more elaborate info on FunkSVD refer [this](http://sifter.org/~simon/journal/20061211.html). 
+We used the book embedding as a representation of the books to infer underlying patterns. This led to the embedding able to detect books from the same authors and also infer genres such as Fiction, Autobiography, and more.
 
-- **Term Frequency** - This method is like a helper function to above, it shines where embedding fails. Term Frequency takes into account the tokens in a book title be it the book title itself, the name of authors and also rating. Taking into consideration it finds books which match closely with the tokens in the rated book.
+- **Term Frequency** - This method is like a helper function to above, it shines where embedding fails. Term Frequency takes into account the tokens in a book title be it the book title itself, the name of authors, and also rating. Taking into consideration it finds books that match closely with the tokens in the rated book.
 
 > 🛠 Code for every step can be found in the [Notebooks and Files](#notebooks-and-files) Section.
 
@@ -84,18 +84,18 @@ The [Image](https://coggle.it/diagram/X6TOUxlMvSl8FBM4/t/dataset/7083ac4f2de3951
 
 ### Project Structure 💁‍♀️
 ```
-Kitabe
+Kitab
 │   
 ├───BookRecSystem               # Main Project Directory
 │       
-├───mainapp                     # Project Main App Directory
+├───main app                     # Project Main App Directory
 │   │   
 │   └───migrations              # Migrations
 │           
 ├───static          
 |   |                           # Static Directory
-│   └───mainapp
-│       ├───css                 # CSS Files  
+│   └───main app
+│       ├───CSS                 # CSS Files  
 |       |                         
 │       ├───dataset             # Dataset Files
 │       │       
@@ -113,7 +113,7 @@ Kitabe
     |
     ├───account                 # Account App Templates
     │       
-    └───mainapp                 # Project Main App Templates
+    └───main app                 # Project Main App Templates
                
 ```            
 
@@ -157,8 +157,10 @@ copies or substantial portions of the Software.
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
+
+
