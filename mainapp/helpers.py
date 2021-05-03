@@ -303,7 +303,7 @@ def combine_ids(tfidf_bookids, embedding_bookids, already_rated, recommendations
     Parameters
     ----------
     tfidf_bookids : list
-        List containing book-ids of books based on count vectorizer.
+        List containing book-ids of books based on Tf-Idf.
 
     embedding_bookids : list
         List containing book-ids of books rated by users.
@@ -317,7 +317,7 @@ def combine_ids(tfidf_bookids, embedding_bookids, already_rated, recommendations
     Returns
     -------
     best_bookids : list
-        List containing bookids of top books based on embeddings and countvectorizer.
+        List containing bookids of top books based on embeddings and tfidf.
 
     """
     tfidf_bookids = list(tfidf_bookids.difference(already_rated))
