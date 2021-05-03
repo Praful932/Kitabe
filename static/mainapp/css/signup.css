@@ -15,7 +15,7 @@ fa-google{
   background-color: #f25f5c;
   font-family: "Fredoka One", cursive;
   color: white;
-  padding: 7px 5px;
+  padding: 6px 5px;
   border: 2px solid white;
   border-radius: 15px;
   text-decoration: none !important;
@@ -65,7 +65,7 @@ label {
 }
 .form-group {
   border: 3px solid #ffdab9;
-  padding: 6% 8% 8% 8%;
+  padding: 3% 4% 4% 3%;
   position: relative;
   display: inline-block;
   top: 25px;
@@ -101,6 +101,7 @@ label {
 }
 strong {
   color: red;
+  font-size: 0.9rem;
 }
 
 ::placeholder {
@@ -164,7 +165,7 @@ strong {
     margin-top: 0rem;
   }
   .signupbutton{
-    margin-bottom: 3rem;
+    margin-bottom: 2.3rem;
     margin-top: 1.5rem;
   }
   .googlebutton{
