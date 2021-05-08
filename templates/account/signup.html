@@ -34,11 +34,11 @@ Sign Up
                     {% if form.errors %}
                     {% for field in form %}
                     {% for error in field.errors %}
-                    <strong>{{ error|escape }}</strong><br><br>
+                    <strong>{{ error|escape }}</strong><br>
                     {% endfor %}
                     {% endfor %}
                     {% for error in form.non_field_errors %}
-                    <strong>{{ error|escape }}</strong><br><br>
+                    <strong>{{ error|escape }}</strong><br>
                     {% endfor %}
                     {% endif %}
                     <button class="signupbutton" type="submit">{% trans "Sign Up" %}</button>
