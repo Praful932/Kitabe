@@ -2,7 +2,10 @@ from django.urls import reverse, resolve
 from django.test import TestCase, Client
 from mainapp import views
 from django.contrib.auth.models import User
-from mainapp.models import UserRating
+from mainapp.models import UserRating, SaveForLater
+import pandas as pd
+import os
+import BookRecSystem.settings as settings
 
 
 class HomeTests(TestCase):
@@ -237,5 +240,68 @@ class RatedBooksTestCase(TestCase):
         self.userRating.save()
         self.client.login(username='test_user', password='foopassword')
         response = self.client.get(self.url)
+        self.assertEquals(response.status_code, 200)
+        self.client.logout()
+
+
+class AddBooksTestCase(TestCase):
+    """Saved For Later Books View Test Case"""
+    def setUp(self):
+        self.client = Client()
+        self.user = User.objects.create_user(username='test_user', email='qwe@gmail.com')
+        self.user.set_password('foopassword')
+        self.user.save()
+        self.book = pd.read_csv(os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/dataset/books.csv'))
+        self.bookid = self.book.iloc[0]['book_id']
+
+    def test_save_book_status(self):
+        """Test the status code of save_book
+        When a book is Saved
+        """
+        book_id = self.bookid
+        self.client.login(username='test_user', password='foopassword')
+
+        response = self.client.post(
+            reverse('save_book'),
+            data={'bookid': book_id},
+            HTTP_X_REQUESTED_WITH='XMLHttpRequest'
+        )
+        self.assertEquals(response.status_code, 200)
+        self.assertIn('true', response.content.decode("utf-8"))
+        self.client.logout()
+
+    def test_after_remove(self):
+        """Test the status code of
+        remove_saved_book When a book is removed
+        """
+        book_id = self.bookid
+        self.client.login(username='test_user', password='foopassword')
+
+        response = self.client.post(
+            reverse('remove_saved_book'),
+            data={'bookid': book_id},
+            HTTP_X_REQUESTED_WITH='XMLHttpRequest'
+        )
+        self.assertEquals(response.status_code, 200)
+        self.assertIn('true', response.content.decode("utf-8"))
+        self.client.logout()
+
+    def test_redirect_if_not_saved(self):
+        """Test If The to_read Redirects
+        Accordingly When No Book Is Saved
+        """
+        self.client.login(username='test_user', password='foopassword')
+        response = self.client.get(reverse('to_read'))
+        self.assertRedirects(response, reverse('index'))
+        self.client.logout()
+
+    def test_to_read_status_if_saved(self):
+        """Test the status code of to_read
+        When a book is Saved
+        """
+        self.client.login(username='test_user', password='foopassword')
+        self.saveLater = SaveForLater.objects.create(user=self.user, bookid='2')
+        self.saveLater.save()
+        response = self.client.get(reverse('to_read'))
         self.assertEquals(response.status_code, 200)
         self.client.logout()

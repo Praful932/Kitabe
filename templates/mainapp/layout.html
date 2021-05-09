@@ -73,10 +73,17 @@
                                 <i class="nav-icon-s fa fa-book fa-2x" aria-hidden="true"></i><br>Your Read
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'read_books' %}">
-                                <i class="nav-icon-s fa fa-bookmark fa-2x" aria-hidden="true"></i><br>Library
-                            </a>
+                        <li class="nav-item dropdown">
+                            <div class = "dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class=" nav-icon-s fa fa-bookmark fa-2x" aria-hidden="true"></i><br>Library 
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="{% url 'read_books' %}">Rated Books</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{% url 'to_read' %}">Saved for Later</a>
+                                </div>
+                            </div>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'account_logout' %}">
@@ -138,7 +145,9 @@
                         <div class="col-4">
                             <img class="img-book" src="" id="bookimage">
                         </div>
-
+                        {% if user.is_authenticated %}
+                        <button id = "save-book-button" class = "btn">Save for Later</button>
+                        {%endif%}
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -362,12 +371,39 @@
                     });
                     $('#bookModal').modal('show');
                     $('#search-dropdown').empty();
+                    $('#save-book-button').on('click', function(){
+                        var bookid = obj.getAttribute('data-book-id');
+                        $('#save-book-button').css('transition', 'background-color 2s ease');
+                        $('#save-book-button').css('background-color', '#ffa007');
+                        $('#save-book-button').text('Saved!');
+                        setTimeout(function(){
+                            $('#save-book-button').text('Save for Later');
+                            $('#save-book-button').css('transition', 'background-color 2s ease');
+                            $('#save-book-button').css('background-color', '#ffc107');  
+                        },3000);
+                        $.ajax({
+                                data: {
+                                    'bookid': bookid,
+                                    'csrfmiddlewaretoken': Cookies.get('csrftoken')
+                                },
+                                dataType: 'json',
+                                url: "{% url 'save_book' %}",
+                                type: 'POST',
+                                success: function (response){
+
+                                },
+                                error: function (response) {
+                                console.log(response);
+                                }
+                            })
+                    })
                 },
                 error: function (response) {
                     console.log(response);
                 }
             });
         }
+    
 	 document.body.addEventListener('scroll',()=>{
     if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
         document.getElementById("topBtn").style.display = "block";

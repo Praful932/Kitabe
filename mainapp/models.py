@@ -17,3 +17,11 @@ class UserRating(models.Model):
 
     def __str__(self):
         return self.user.username.capitalize() + '- ' + get_book_title(self.bookid) + '  - ' + str(self.bookrating)
+
+
+class SaveForLater(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    bookid = models.IntegerField()
+
+    def __str__(self):
+        return self.user.username.capitalize() + '- ' + get_book_title(self.bookid)

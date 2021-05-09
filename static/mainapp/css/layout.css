@@ -53,6 +53,12 @@ body::-webkit-scrollbar-thumb:hover
   margin-bottom: 12px !important;
   margin-top: 12px !important;
 }
+
+.dropdown-item.active, .dropdown-item:active {
+  color: #fff;
+  background-color: #d7722c;
+}
+
 /* -------------------------search bar-----------------------  */
 
 .searchbar {
@@ -136,6 +142,20 @@ body::-webkit-scrollbar-thumb:hover
 .modal-footer {
   color: white;
 }
+
+#save-book-button{
+  display: inline-block;
+  text-align: center;
+  background-color:#ffc107;
+  font-weight: 600;
+  font-size: 11px;
+  border-radius: 20px;
+  padding: 8px;
+  margin-left:10px;
+  margin-bottom:10px;
+  margin-top: 10px;
+}
+
 /*  -------------------------------------------------------------------------------fotter css -------------------------------------------------*/
 /*FOOTER*/
 
