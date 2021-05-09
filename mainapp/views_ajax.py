@@ -1,8 +1,8 @@
 from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
-from mainapp.helpers import is_bookid_invalid, is_rating_invalid
+from mainapp.helpers import is_bookid_invalid, is_rating_invalid, get_rated_bookids
 import BookRecSystem.settings as settings
-from mainapp.models import UserRating
+from mainapp.models import UserRating, SaveForLater
 from bs4 import BeautifulSoup
 import pandas as pd
 import os
@@ -98,4 +98,29 @@ def user_rate_book(request):
             rating_object = query[0]
             rating_object.bookrating = bookrating
             rating_object.save()
+        return JsonResponse({'success': True}, status=200)
+
+
+def save_book(request):
+    """AJAX request when user saves book"""
+    if request.method == 'POST' and request.is_ajax():
+        bookid = request.POST.get('bookid', None)
+        user_ratings = list(UserRating.objects.filter(user=request.user))
+        rated_books = set(get_rated_bookids(user_ratings))
+        if is_bookid_invalid(bookid) or bookid in rated_books:
+            return JsonResponse({'success': False}, status=200)
+
+        SaveForLater.objects.create(user=request.user, bookid=bookid)
+        return JsonResponse({'success': True}, status=200)
+
+
+def remove_saved_book(request):
+    """AJAX request when user removes book"""
+    if request.method == 'POST' and request.is_ajax():
+        bookid = request.POST.get('bookid', None)
+        if is_bookid_invalid(bookid):
+            return JsonResponse({'success': False}, status=200)
+
+        saved_book = SaveForLater.objects.filter(user=request.user, bookid=bookid)
+        saved_book.delete()
         return JsonResponse({'success': True}, status=200)
