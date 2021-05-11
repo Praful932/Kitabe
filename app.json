@@ -1,0 +1,10 @@
+{
+    "buildpacks": [
+      {
+        "url": "https://github.com/raxod502/heroku-buildpack-git-lfs"
+      },
+      {
+        "url": "heroku/python"
+      }
+    ]
+  }
