@@ -357,10 +357,11 @@ ol.carousel-indicators li.active {
   }
   .card-body {
     margin-top: -220px;
-    margin-left: 115px;
+    margin-left: 130px;
   }
   .card-title {
     font-size: 18px;
+    margin-top: 2.5rem;
   }
   .rating-block {
     padding-top: 1px;
