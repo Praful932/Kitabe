@@ -45,7 +45,6 @@ label {
   font-size: 1.2em;
 }
 .form-group {
-  border: 3px solid #ffdab9;
   padding: 6% 8% 8% 8%;
   position: relative;
   display: inline-block;
@@ -128,7 +127,6 @@ strong {
     margin-top: 1rem;
   }
   .form-group {
-    border: 3px solid #ffdab9;
     padding: 5% 5% 13% 5%;
     margin-top: -1rem;
   }
@@ -154,13 +152,13 @@ strong {
     font-size:1rem;
     margin-bottom: 5rem;
     margin-top: 1rem;
+    margin-left: -1rem;
   }
   .welcome {
     font-size: 1.75rem;
     margin-top: -2rem;
   }
   .form-group {
-    border: 3px solid #ffdab9;
     padding: 7% 5% 5% 5%;
   }
   .forgotpassword {
