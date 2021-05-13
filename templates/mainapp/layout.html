@@ -21,6 +21,8 @@
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <!-- font awesome ion-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- icon from google-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- Rating CSS -->
     <!-- Reset styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
@@ -69,20 +71,17 @@
                         </li>
                         {% if user.is_authenticated %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'book_recommendations' %}">
-                                <i class="nav-icon-s fa fa-book fa-2x" aria-hidden="true"></i><br>Your Read
-                            </a>
-                        </li>
-                        <li class="nav-item dropdown">
                             <div class = "dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class=" nav-icon-s fa fa-bookmark fa-2x" aria-hidden="true"></i><br>Library 
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="{% url 'read_books' %}">Rated Books</a>
+                            <i class="nav-icon-s fa fa-bookmark fa-2x" aria-hidden="true"></i><br>Library 
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="{% url 'book_recommendations' %}"><i class="material-icons" style="vertical-align: -6px;">auto_stories</i>&nbsp; Your Read</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="{% url 'to_read' %}">Saved for Later</a>
-                                </div>
+                                <a class="dropdown-item" href="{% url 'to_read' %}"><i class="material-icons" style="vertical-align: -6px;">push_pin</i>&nbsp; Saved for Later</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{% url 'read_books' %}"><i class="material-icons" style="vertical-align: -6px;">star</i>&nbsp; Rated Books</a>
+                            </div>
                             </div>
                         </li>
                         <li class="nav-item">
