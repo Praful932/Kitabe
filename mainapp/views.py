@@ -40,7 +40,7 @@ def explore_books(request):
         View to Render Explore Page
         Renders Top N Books
     '''
-    N = 150
+    N = 152
     sample = get_top_n().sample(N).to_dict('records')
     return render(request, 'mainapp/explore.html', {'book': sample})
 

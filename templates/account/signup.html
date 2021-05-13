@@ -30,20 +30,21 @@ Sign Up
                     {{ form.password1 }}
                     <br><br>
                     {{ form.password2 }}
-                    <br><br>
+                    <div class="error_div">
                     {% if form.errors %}
                     {% for field in form %}
                     {% for error in field.errors %}
-                    <strong>{{ error|escape }}</strong><br>
+                    <strong>{{ error|escape }}</strong>
                     {% endfor %}
                     {% endfor %}
                     {% for error in form.non_field_errors %}
-                    <strong>{{ error|escape }}</strong><br>
+                    <strong>{{ error|escape }}</strong>
                     {% endfor %}
+                    <br>
                     {% endif %}
                     <button class="signupbutton" type="submit">{% trans "Sign Up" %}</button>
                     <br>
-
+                    </div>
                 </div>
 
             </form>
