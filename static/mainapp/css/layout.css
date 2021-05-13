@@ -54,10 +54,16 @@ body::-webkit-scrollbar-thumb:hover
   margin-top: 12px !important;
 }
 
-.dropdown-item.active, .dropdown-item:active {
-  color: #fff;
-  background-color: #d7722c;
+/*-------------------------Drop down library -----------------------*/
+
+.dropdown:hover .dropdown-menu {
+  display: block;
 }
+
+.dropdown-item:hover{
+  text-shadow: 2px 2px 5px #d7722c;
+  background-color: peachpuff;
+} 
 
 /* -------------------------search bar-----------------------  */
 
