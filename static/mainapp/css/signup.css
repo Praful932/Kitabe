@@ -21,7 +21,7 @@ fa-google{
   text-decoration: none !important;
   box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.5);
   border:3px solid #fff;
-  bottom: 10%;
+  bottom: 9%;
   left: 1px;
 }
 .googlebutton:hover {
@@ -64,7 +64,6 @@ label {
   font-size: 1.2em;
 }
 .form-group {
-  border: 3px solid #ffdab9;
   padding: 3% 4% 4% 3%;
   position: relative;
   display: inline-block;
@@ -109,6 +108,10 @@ strong {
   font-weight: normal;
 }
 
+.error_div{
+  margin-top: 10px !important;
+}
+
 @media only screen and (max-width: 1200px) {
   .img-block {
     display: none;
@@ -135,15 +138,11 @@ strong {
     margin-top: -0.5rem;
   }
   .form-group {
-    border: 3px solid #ffdab9;
     padding: 3% 6% 3% 3%;
     margin-top: 1rem;
    }
   .account-block{
     width: 60%;
-  }
-  strong{
-    font-size: 0.45rem;
   }
 }
 @media only screen and (max-width: 450px) {
