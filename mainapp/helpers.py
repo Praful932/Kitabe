@@ -228,7 +228,7 @@ def count_vectorizer_recommendations(bookid):
 
     """
     indices = pd.read_pickle(book_indices_path)
-    cosine_sim = np.load(cosin_sim_path)['array1']
+    cosine_sim = np.load(cosine_sim_path)['array1']
     book_title = get_book_title(bookid)
     book_title = book_title.replace(' ', '').lower()
     idx = indices[book_title]
