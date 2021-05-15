@@ -6,11 +6,16 @@ import operator
 import random
 import BookRecSystem.settings as settings
 import mainapp.models
+import gdown
 
 book_path = os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/dataset/books.csv')
 
 # For Count Vectorizer
-cosin_sim_path = os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/model_files/cv/cosine_rating_sim.npz')
+url = 'https://drive.google.com/uc?id=11FW0Vu_K5-o6KkwLnqBarAg1usbLOCm8'
+cosine_sim_path = os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/model_files/cv/cosine_rating_sim.npz')
+if not os.path.exists(cosine_sim_path):
+    gdown.download(url, cosine_sim_path, quiet=False) 
+#cosin_sim_path = os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/model_files/cv/cosine_rating_sim.npz')
 book_indices_path = os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/model_files/cv/indices.pkl')
 
 # For Embedding
