@@ -11,7 +11,7 @@ import gdown
 book_path = os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/dataset/books.csv')
 
 # For Count Vectorizer
-url = 'https://drive.google.com/uc?id=13wGwx845l4f4DtU3PZGxI_Pqvn-sEh5E'
+url = 'https://drive.google.com/uc?id=11FW0Vu_K5-o6KkwLnqBarAg1usbLOCm8'
 cosine_sim_path = os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/model_files/cv/cosine_rating_sim.npz')
 if not os.path.exists(cosine_sim_path):
     gdown.download(url, cosine_sim_path, quiet=False)
