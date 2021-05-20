@@ -85,7 +85,12 @@
       transform: translateY(0%);
     }
   }
-
+/* For Firefox */
+:root {
+	overflow-y: scroll;
+	scrollbar-color: #ec7812 rgb(255, 255, 255);
+	scrollbar-width: 5px;
+} 
 /* ---------------------- banner ------------------------------------- */
 
 @media screen and (min-width: 250px) {
