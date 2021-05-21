@@ -32,17 +32,15 @@ Login
                     {% if form.errors %}
                     {% for field in form %}
                     {% for error in field.errors %}
-                    <strong>{{ error|escape }}</strong><br><br>
+                    <br><strong>{{ error|escape }}</strong><br>
                     {% endfor %}
                     {% endfor %}
                     {% for error in form.non_field_errors %}
-                    <strong>{{ error|escape }}</strong><br><br>
+                    <br><strong>{{ error|escape }}</strong><br>
                     {% endfor %}
                     {% endif %}
                     <button class="loginbutton primaryAction" type="submit">{% trans "Sign In" %}</button>
                     <br>
-
-
                 </div>
             </form>
             <a href="{% provider_login_url 'google' %}"><button class="googlebutton"><i class="fa fa-google fa-x"
