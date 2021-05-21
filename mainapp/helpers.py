@@ -6,16 +6,15 @@ import operator
 import random
 import BookRecSystem.settings as settings
 import mainapp.models
-import gdown
+from scipy import sparse
+from sklearn.metrics.pairwise import cosine_similarity
 
 book_path = os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/dataset/books.csv')
 
 # For Count Vectorizer
 url = 'https://drive.google.com/uc?id=11FW0Vu_K5-o6KkwLnqBarAg1usbLOCm8'
-cosine_sim_path = os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/model_files/cv/cosine_rating_sim.npz')
-if not os.path.exists(cosine_sim_path):
-    gdown.download(url, cosine_sim_path, quiet=False)
-book_indices_path = os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/model_files/cv/indices.pkl')
+tf_matrix_path = os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/model_files/tf-idf/tfmatrix.npz')
+book_indices_path = os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/model_files/tf-idf/indices.pkl')
 
 # For Embedding
 book_id_map_path = os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/model_files/surprise/book_raw_to_inner_id.pickle')
@@ -227,13 +226,16 @@ def count_vectorizer_recommendations(bookid):
 
     """
     indices = pd.read_pickle(book_indices_path)
-    cosine_sim = np.load(cosine_sim_path)['array1']
+    tf_matrix = sparse.load_npz(tf_matrix_path)
     book_title = get_book_title(bookid)
     book_title = book_title.replace(' ', '').lower()
     idx = indices[book_title]
+    cosine_sim = []
+    for i in range(total_books):
+        cosine_sim.append(cosine_similarity(tf_matrix[idx], tf_matrix[i]).squeeze())
 
     # Get this books similarity with all other books, enum to keep track of book index
-    sim_scores = list(enumerate(cosine_sim[idx]))
+    sim_scores = list(enumerate(cosine_sim))
     sim_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)
     sim_scores = sim_scores[1:10]
 
