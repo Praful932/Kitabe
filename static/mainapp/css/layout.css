@@ -26,7 +26,12 @@ body::-webkit-scrollbar-thumb:hover
 {
 	background-color: #f86751;	
 }
-
+/* For Firefox */
+body {
+	overflow-y: scroll;
+	scrollbar-color: #ec9108 rgb(255, 255, 255);
+	scrollbar-width: thin;
+}  
 /* nav bar css */
 
 .nav-item {
