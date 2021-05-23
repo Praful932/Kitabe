@@ -10,6 +10,20 @@ Login
 
 {% block head %}
 <link rel="stylesheet" href="{% static 'mainapp/css/login.css' %}">
+<script>
+    let timer;
+
+      document.addEventListener('input', e => {
+        const el = e.target;
+
+        if (el.matches('[data-color]')) {
+          clearTimeout(timer);
+          timer = setTimeout(() => {
+            document.documentElement.style.setProperty(`--color-${el.dataset.color}`, el.value);
+          }, 100)
+        }
+      })
+    </script>
 {% endblock head %}
 
 {% block main %}
@@ -21,12 +35,18 @@ Login
                 {% csrf_token %}
                 <div class="form-group">
                     <!-- <label for="id_login">Username</label><br> -->
-                    {{ form.login }}<br><br>
+                    <label class="id">
+                        <input class="id_login" type="text" placeholder=" " {{ form.login }} </input>
+                        <span class="id__label">Username</span>
+                      </label><br><br>
                     {% if redirect_field_value %}
                     <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                     {% endif %}
                     <!-- <label for="id_password"> Password</label><br> -->
-                    {{ form.password }}<br>
+                    <label class="id">
+                        <input class="id_login" type="text" placeholder=" "  {{ form.password }} </input>
+                        <span class="id__label">Password</span>
+                      </label><br>
                     <a class="forgotpassword" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
                     <br>
                     {% if form.errors %}
