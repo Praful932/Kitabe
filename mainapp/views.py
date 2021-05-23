@@ -40,7 +40,7 @@ def explore_books(request):
         View to Render Explore Page
         Renders Top N Books
     '''
-    N = 150
+    N = 152
     sample = get_top_n().sample(N).to_dict('records')
     return render(request, 'mainapp/explore.html', {'book': sample})
 
@@ -114,3 +114,25 @@ def handler500(request, *args, **argv):
     response = render(request, 'mainapp/error_handler.html')
     response.status_code = 500
     return response
+
+
+def SaveList(request):
+    """View to render Saved books page"""
+    user_ratings = list(UserRating.objects.filter(user=request.user).order_by('-bookrating'))
+    rated_books = set(get_rated_bookids(user_ratings))
+    book = set(SaveForLater.objects.filter(user=request.user).values_list('bookid', flat=True))
+    book_id = list(book)
+    for i in range(len(book_id)):
+        if book_id[i] in rated_books:
+            saved_book = SaveForLater.objects.filter(user=request.user, bookid=book_id[i])
+            saved_book.delete()
+            book_id.remove(book_id[i])
+    if len(book_id) == 0:
+        messages.info(request, 'Please Add Some Books')
+        return redirect('index')
+    books = get_book_dict(book_id)
+    total_books = len(books)
+    paginator = Paginator(books, 10)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return render(request, 'mainapp/saved_book.html', {'page_obj': page_obj, 'num': total_books})

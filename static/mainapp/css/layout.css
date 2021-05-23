@@ -26,7 +26,12 @@ body::-webkit-scrollbar-thumb:hover
 {
 	background-color: #f86751;	
 }
-
+/* For Firefox */
+body {
+	overflow-y: scroll;
+	scrollbar-color: #ec9108 rgb(255, 255, 255);
+	scrollbar-width: thin;
+}  
 /* nav bar css */
 
 .nav-item {
@@ -53,6 +58,18 @@ body::-webkit-scrollbar-thumb:hover
   margin-bottom: 12px !important;
   margin-top: 12px !important;
 }
+
+/*-------------------------Drop down library -----------------------*/
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-item:hover{
+  text-shadow: 2px 2px 5px #d7722c;
+  background-color: peachpuff;
+} 
+
 /* -------------------------search bar-----------------------  */
 
 .searchbar {
@@ -136,6 +153,20 @@ body::-webkit-scrollbar-thumb:hover
 .modal-footer {
   color: white;
 }
+
+#save-book-button{
+  display: inline-block;
+  text-align: center;
+  background-color:#ffc107;
+  font-weight: 600;
+  font-size: 11px;
+  border-radius: 20px;
+  padding: 8px;
+  margin-left:10px;
+  margin-bottom:10px;
+  margin-top: 10px;
+}
+
 /*  -------------------------------------------------------------------------------fotter css -------------------------------------------------*/
 /*FOOTER*/
 

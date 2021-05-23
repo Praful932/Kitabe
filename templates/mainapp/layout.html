@@ -21,6 +21,8 @@
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <!-- font awesome ion-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- icon from google-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- Rating CSS -->
     <!-- Reset styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
@@ -69,14 +71,18 @@
                         </li>
                         {% if user.is_authenticated %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'book_recommendations' %}">
-                                <i class="nav-icon-s fa fa-book fa-2x" aria-hidden="true"></i><br>Your Read
+                            <div class = "dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="nav-icon-s fa fa-bookmark fa-2x" aria-hidden="true"></i><br>Library 
                             </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'read_books' %}">
-                                <i class="nav-icon-s fa fa-bookmark fa-2x" aria-hidden="true"></i><br>Library
-                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="{% url 'book_recommendations' %}"><i class="material-icons" style="vertical-align: -6px;">auto_stories</i>&nbsp; Your Read</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{% url 'to_read' %}"><i class="material-icons" style="vertical-align: -6px;">push_pin</i>&nbsp; Saved for Later</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{% url 'read_books' %}"><i class="material-icons" style="vertical-align: -6px;">star</i>&nbsp; Rated Books</a>
+                            </div>
+                            </div>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'account_logout' %}">
@@ -138,7 +144,9 @@
                         <div class="col-4">
                             <img class="img-book" src="" id="bookimage">
                         </div>
-
+                        {% if user.is_authenticated %}
+                        <button id = "save-book-button" class = "btn">Save for Later</button>
+                        {%endif%}
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -362,12 +370,39 @@
                     });
                     $('#bookModal').modal('show');
                     $('#search-dropdown').empty();
+                    $('#save-book-button').on('click', function(){
+                        var bookid = obj.getAttribute('data-book-id');
+                        $('#save-book-button').css('transition', 'background-color 2s ease');
+                        $('#save-book-button').css('background-color', '#ffa007');
+                        $('#save-book-button').text('Saved!');
+                        setTimeout(function(){
+                            $('#save-book-button').text('Save for Later');
+                            $('#save-book-button').css('transition', 'background-color 2s ease');
+                            $('#save-book-button').css('background-color', '#ffc107');  
+                        },3000);
+                        $.ajax({
+                                data: {
+                                    'bookid': bookid,
+                                    'csrfmiddlewaretoken': Cookies.get('csrftoken')
+                                },
+                                dataType: 'json',
+                                url: "{% url 'save_book' %}",
+                                type: 'POST',
+                                success: function (response){
+
+                                },
+                                error: function (response) {
+                                console.log(response);
+                                }
+                            })
+                    })
                 },
                 error: function (response) {
                     console.log(response);
                 }
             });
         }
+    
 	 document.body.addEventListener('scroll',()=>{
     if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
         document.getElementById("topBtn").style.display = "block";

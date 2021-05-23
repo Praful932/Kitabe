@@ -37,7 +37,7 @@
 }
 
 .author {
-  font-family: "Courgette", cursive;
+  font-family: "Rockwell", serif;
   font-weight: bold;
 }
 
@@ -155,9 +155,11 @@
   font-size: 11px;
   border-radius: 20px;
   position: absolute;
-  padding: 8px;
   bottom: 10px;
-  left: 7%;
+  left: 4%;
+}
+.rating-block.btn,.btn.more-details{
+  padding: 8px;
 }
 
 .rating-block:hover {
@@ -166,7 +168,7 @@
 }
 
 .card-text {
-  font-family: "Courgette", cursive;
+  font-family: "Rockwell", serif;
   color: black;
   font-weight: bold;
   font-size: 15px;
