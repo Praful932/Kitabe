@@ -226,13 +226,13 @@ class MostCommonGenreTestCase(TestCase):
         self.df_book = pd.read_csv(os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/dataset/books.csv'))
 
     def test_genre_driver(self):
-        test_cases = [(10, 5, 1), (10, 5, 2), (10, 5, 2), (10, 5, 3), (10, 5, 4), (10, 5, 5), (10, 6, 1), (10, 6, 1), (10, 6, 2), (10, 6, 3), (10, 6, 4), (10, 7, 1), (10, 7, 2), (10, 7, 3), (10, 8, 1), (10, 8, 2), (10, 9, 1), (10, 10, 0)]
+        test_cases = [(10, 5, 1), (10, 5, 2), (10, 5, 3), (10, 5, 4), (10, 5, 5), (10, 6, 1), (10, 6, 1), (10, 6, 2), (10, 6, 3), (10, 6, 4), (10, 7, 1), (10, 7, 2), (10, 7, 3), (10, 8, 1), (10, 8, 2), (10, 9, 1), (10, 10, 0)]
         for tnum, already_slice, bestbookids_slice in test_cases:
             all_books, n2 = self.template(tnum, already_slice, bestbookids_slice)
             genre_recomm_bookids = most_common_genre_recommendations(all_books, n2)
-            if len(all_books) < 9:
+            if n2:
                 genre_recomm_bookids = most_common_genre_recommendations(all_books, n2)
-                self.assertEqual(len(genre_recomm_bookids), 9 - len(all_books))
+                self.assertEqual(len(genre_recomm_bookids), n2)
 
     def template(self, tnum, already_slice, bestbookids_slice):
         """
