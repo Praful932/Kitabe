@@ -298,7 +298,7 @@ def combine_ids(tfidf_bookids, embedding_bookids, already_rated, recommendations
     """Return best bookids combining both approaches.
 
         Embedding - Top 6
-        CV - Top 3
+        Tf-Idf - Top 3
 
     Parameters
     ----------
