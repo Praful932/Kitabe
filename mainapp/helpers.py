@@ -328,34 +328,31 @@ def combine_ids(tfidf_bookids, embedding_bookids, already_rated, recommendations
     top_6_embed = list(embedding_bookids[:6])
     best_bookids = top_3_tfidf + top_6_embed
 
+    # If not enough recommendations
     if len(best_bookids) < recommendations:
-        # If not enough recommendations
         two_n = (recommendations - len(best_bookids))
+        # Divide remaining recommendations into two parts
         n1, n2 = math.ceil(two_n/2), math.floor(two_n/2)
 
-        # n1 number of books from remaining tf_idf dataset
+        # n1 number of books from remaining tf_idf books
         best_bookids_tfidf = tfidf_bookids[3: (3*2)+n1]
         best_bookids_tfidf = list(set(best_bookids_tfidf).difference(set(best_bookids)))[:n1]
 
         # n2 number of books from list of top rated books of the most common genre among the books yet recommended
-        genre_recomm_bookids = most_common_genre_recommendations(best_bookids, already_rated, best_bookids_tfidf, n2)
+        genre_recomm_bookids = most_common_genre_recommendations(best_bookids + already_rated + best_bookids_tfidf, n2)
 
         # number of recommendations = len(best_bookids) + n1 + n2 = len(best_bookids) + two_n
         best_bookids = best_bookids + best_bookids_tfidf + genre_recomm_bookids
     return best_bookids
 
 
-def most_common_genre_recommendations(best_bookids, already_rated, best_bookids_tfidf, n):
+def most_common_genre_recommendations(books, n):
     '''Returns n top rated of the most_common_genre among all lists taken as input
 
     Parameters
     ----------
-    best_bookids : list
-        List containing book-ids of books based on tf-idf and embedding recommendations.
-    already_rated : set
-        List containing book-ids of books rated by users.
-    best_bookids_tfidf : list
-        List containing book-ids of books taken from remaining tf-idf recommendations.
+    books : list
+        List of books to find common genre for
     n : int
         Integer denoting the number of books required (Default value = 9).
     Returns
@@ -363,29 +360,13 @@ def most_common_genre_recommendations(best_bookids, already_rated, best_bookids_
     genre_recommendations : list
         List containing n number of books of the most common genre among all the input books.
     '''
-    # Final list of bookids to be recommended
-    books = set(best_bookids+ list(already_rated)+ best_bookids_tfidf)
 
-    # Accumulation of all the genres listed in `books` variable
+    # Accumulation of all the genres listed from books
     genre_frequency = []
     for book in books:
-        genre_frequency.extend(df_book[df_book['book_id'] == book]['genre'].values[0].split(", "))
+        genre_frequency.append(df_book[df_book['book_id'] == book]['genre'].values[0].split(", ")[0])
 
-    # The most common genre among the bookids in `books` variable
-    genre_count = dict(Counter(genre_frequency))
-    max_value = max(genre_count.values())
-
-    # Cut out dictionary containing the highest frequency of genre
-    most_common_dict = {u: v for u, v in genre_count.items() if v == max_value}
-
-    # Sort genre with same frequency based on priority list
-    highest_book_count = {}
-    for genre in most_common_dict.keys():
-        highest_book_count[genre] = sum(df_book.genre.str.contains(genre.lower()))
-    max_value = max(highest_book_count.values())
-    final_dict = {u: v for u, v in highest_book_count.items() if v == max_value}
-
-    most_common_genre = list(final_dict.items())[0][0]
+    most_common_genre = sorted(Counter(genre_frequency).most_common())[0][0]
 
     # Recommendations list, listing 2n bookids
     genre_recommendations = genre_wise(most_common_genre).book_id.to_list()[:2*n]

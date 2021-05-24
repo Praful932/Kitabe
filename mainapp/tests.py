@@ -4,7 +4,6 @@ from mainapp import views
 from django.contrib.auth.models import User
 from mainapp.models import UserRating, SaveForLater
 from mainapp.helpers import most_common_genre_recommendations
-from collections import Counter
 import pandas as pd
 import os
 import random
@@ -223,27 +222,17 @@ class MostCommonGenreTestCase(TestCase):
     Test most common genre books when recommendations are short
     '''
     def setUp(self):
+        self.SEED = 42
         self.df_book = pd.read_csv(os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/dataset/books.csv'))
 
-    def common_genre(self, books):
-        gfq = []
-        for book in books:
-            gfq.extend(self.df_book[self.df_book['book_id'] == book]['genre'].values[0].split(", "))
-        genre_count = dict(Counter(gfq))
-        max_value = max(genre_count.values())
-        most_common_dict = {u: v for u, v in genre_count.items() if v == max_value}
-        highest_book_count = {}
-        for genre in most_common_dict.keys():
-            highest_book_count[genre] = sum(self.df_book.genre.str.contains(genre.lower()))
-        max_value = max(highest_book_count.values())
-        final_dict = {u: v for u, v in highest_book_count.items() if v == max_value}
-        most_common_genre = list(final_dict.items())[0][0]
-        return most_common_genre
-
-    def test(self):
-        test_cases = [(10, 5, 1), (10, 5, 2), (10, 5, 2), (10, 5, 3), (10, 5, 4),(10, 5, 5), (10, 6, 1), (10, 6, 1), (10, 6, 2), (10, 6, 3), (10, 6, 4), (10, 7, 1), (10, 7, 2), (10, 7, 3), (10, 8, 1), (10, 8, 2), (10, 9, 1), (10, 10, 0)]
+    def test_genre_driver(self):
+        test_cases = [(10, 5, 1), (10, 5, 2), (10, 5, 2), (10, 5, 3), (10, 5, 4), (10, 5, 5), (10, 6, 1), (10, 6, 1), (10, 6, 2), (10, 6, 3), (10, 6, 4), (10, 7, 1), (10, 7, 2), (10, 7, 3), (10, 8, 1), (10, 8, 2), (10, 9, 1), (10, 10, 0)]
         for tnum, already_slice, bestbookids_slice in test_cases:
-            self.template(tnum, already_slice, bestbookids_slice )
+            all_books, n2 = self.template(tnum, already_slice, bestbookids_slice)
+            genre_recomm_bookids = most_common_genre_recommendations(all_books, n2)
+            if len(all_books) < 9:
+                genre_recomm_bookids = most_common_genre_recommendations(all_books, n2)
+                self.assertEqual(len(genre_recomm_bookids), 9 - len(all_books))
 
     def template(self, tnum, already_slice, bestbookids_slice):
         """
@@ -253,18 +242,15 @@ class MostCommonGenreTestCase(TestCase):
             best_bookids - books recommended consisting of top 6 bookids from embedding_bookids and top 3 from tfidf recommendations
             best_bookids_tfidf - `n1` books taken from remaining tfidf recommendations
         """
+        random.seed(self.SEED)
         books = random.sample(self.df_book.book_id.to_list(), tnum)
         already_rated = books[:already_slice]
         best_bookids = books[already_slice:already_slice+bestbookids_slice]
         n1 = math.ceil((9-len(best_bookids))/2)
         n2 = math.floor((9-len(best_bookids))/2)
         best_bookids_tfidf = books[tnum-n1+1:]
-
-        genre_recomm_bookids = most_common_genre_recommendations(best_bookids, already_rated, best_bookids_tfidf, n2)
-        genre = self.common_genre(best_bookids + already_rated + best_bookids_tfidf)
-
-        for bookid in genre_recomm_bookids:
-            self.assertEquals([False, genre][genre in self.df_book[self.df_book['book_id'] == bookid]['genre'].values[0].split(", ")], genre)
+        all_books = best_bookids + already_rated + best_bookids_tfidf
+        return all_books, n2
 
 
 class RatedBooksTestCase(TestCase):
