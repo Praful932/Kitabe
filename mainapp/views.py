@@ -66,7 +66,7 @@ def book_recommendations(request):
     if best_user_ratings:
         # If one or more book is rated
         bookid = best_user_ratings[0].bookid
-        already_rated_books = set(get_rated_bookids(user_ratings))
+        already_rated_books = get_rated_bookids(user_ratings)
         # Get bookids based on TF-IDF weighing
         tfidf_bookids = set(tfidf_recommendations(bookid))
 
