@@ -1,9 +1,11 @@
 import pandas as pd
 import numpy as np
 import os
+import math
 import pickle
 import operator
 import random
+from collections import Counter
 import BookRecSystem.settings as settings
 import mainapp.models
 
@@ -28,7 +30,6 @@ book_embedding = np.load(book_embed_path)
 
 with open(sim_books_path, 'rb') as handle:
     sim_books_dict = pickle.load(handle)
-
 
 cols = ['original_title', 'authors', 'average_rating', 'image_url', 'book_id']
 
@@ -208,7 +209,7 @@ def genre_wise(genre, percentile=0.85):
     return qualified[cols].head(min_genre_book_count).sample(n_books)
 
 
-def count_vectorizer_recommendations(bookid):
+def tfidf_recommendations(bookid):
     """Return recommenedations based on count vectorizer.
 
     Parameters
@@ -293,16 +294,16 @@ def get_book_dict(bookid_list):
     return rec_books_dict
 
 
-def combine_ids(cv_bookids, embedding_bookids, already_rated, recommendations=9):
+def combine_ids(tfidf_bookids, embedding_bookids, already_rated, recommendations=9):
     """Return best bookids combining both approaches.
 
         Embedding - Top 6
-        CV - Top 3
+        Tf-Idf - Top 3
 
     Parameters
     ----------
-    cv_bookids : list
-        List containing book-ids of books based on count vectorizer.
+    tfidf_bookids : list
+        List containing book-ids of books based on Tf-Idf.
 
     embedding_bookids : list
         List containing book-ids of books rated by users.
@@ -316,21 +317,63 @@ def combine_ids(cv_bookids, embedding_bookids, already_rated, recommendations=9)
     Returns
     -------
     best_bookids : list
-        List containing bookids of top books based on embeddings and countvectorizer.
+        List containing bookids of top books based on embeddings and tfidf.
 
     """
-    cv_bookids = list(cv_bookids.difference(already_rated))
-    top_3_cv = set(cv_bookids[:3])
+    tfidf_bookids = list(tfidf_bookids.difference(already_rated))
+    top_3_tfidf = set(tfidf_bookids[:3])
     embedding_bookids = embedding_bookids.difference(already_rated)
-    embedding_bookids = list(embedding_bookids.difference(top_3_cv))
-    top_3_cv = list(top_3_cv)
+    embedding_bookids = list(embedding_bookids.difference(top_3_tfidf))
+    top_3_tfidf = list(top_3_tfidf)
     top_6_embed = list(embedding_bookids[:6])
-    best_bookids = top_3_cv + top_6_embed
+    best_bookids = top_3_tfidf + top_6_embed
 
+    # If not enough recommendations
     if len(best_bookids) < recommendations:
-        # If not enough recommendations
-        best_bookids = best_bookids + cv_bookids[3:(recommendations + 3 - len(best_bookids))]
+        two_n = (recommendations - len(best_bookids))
+        # Divide remaining recommendations into two parts
+        n1, n2 = math.ceil(two_n/2), math.floor(two_n/2)
+
+        # n1 number of books from remaining tf_idf books
+        best_bookids_tfidf = tfidf_bookids[3: (3*2)+n1]
+        best_bookids_tfidf = list(set(best_bookids_tfidf).difference(set(best_bookids)))[:n1]
+
+        # n2 number of books from list of top rated books of the most common genre among the books yet recommended
+        genre_recomm_bookids = most_common_genre_recommendations(best_bookids + already_rated + best_bookids_tfidf, n2)
+
+        # number of recommendations = len(best_bookids) + n1 + n2 = len(best_bookids) + two_n
+        best_bookids = best_bookids + best_bookids_tfidf + genre_recomm_bookids
     return best_bookids
+
+
+def most_common_genre_recommendations(books, n):
+    '''Returns n top rated of the most_common_genre among all lists taken as input
+
+    Parameters
+    ----------
+    books : list
+        List of books to find common genre for
+    n : int
+        Integer denoting the number of books required (Default value = 9).
+    Returns
+    -------
+    genre_recommendations : list
+        List containing n number of books of the most common genre among all the input books.
+    '''
+
+    # Accumulation of all the genres listed from books
+    genre_frequency = []
+    for book in books:
+        genre_frequency.append(df_book[df_book['book_id'] == book]['genre'].values[0].split(", ")[0])
+
+    most_common_genre = sorted(Counter(genre_frequency).most_common())[0][0]
+
+    # Recommendations list, listing 2n bookids
+    genre_recommendations = genre_wise(most_common_genre).book_id.to_list()[:2*n]
+    # Removing common bookids from `books` and Slicing out the first n bookids
+    genre_recommendations = list(set(genre_recommendations).difference(books))[:n]
+
+    return genre_recommendations
 
 
 def get_top_n(top_n=400):

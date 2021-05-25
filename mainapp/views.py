@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import ensure_csrf_cookie
-from mainapp.helpers import genre_wise, count_vectorizer_recommendations, get_book_dict, get_rated_bookids, combine_ids, embedding_recommendations, get_top_n, popular_among_users
+from mainapp.helpers import genre_wise, tfidf_recommendations, get_book_dict, get_rated_bookids, combine_ids, embedding_recommendations, get_top_n, popular_among_users
 from mainapp.models import UserRating, SaveForLater
 from django.contrib import messages
 from django.core.paginator import Paginator
@@ -66,9 +66,9 @@ def book_recommendations(request):
     if best_user_ratings:
         # If one or more book is rated
         bookid = best_user_ratings[0].bookid
-        already_rated_books = set(get_rated_bookids(user_ratings))
-        # Get bookids based on Count Vectorizer
-        cv_bookids = set(count_vectorizer_recommendations(bookid))
+        already_rated_books = get_rated_bookids(user_ratings)
+        # Get bookids based on TF-IDF weighing
+        tfidf_bookids = set(tfidf_recommendations(bookid))
 
         # Shuffle again for randomness for second approach
         random.shuffle(user_ratings)
@@ -76,7 +76,7 @@ def book_recommendations(request):
         # Get Top 10 bookids based on embedding
         embedding_bookids = set(embedding_recommendations(best_user_ratings))
 
-        best_bookids = combine_ids(cv_bookids, embedding_bookids, already_rated_books)
+        best_bookids = combine_ids(tfidf_bookids, embedding_bookids, already_rated_books)
         all_books_dict = get_book_dict(best_bookids)
     else:
         return redirect('index')
