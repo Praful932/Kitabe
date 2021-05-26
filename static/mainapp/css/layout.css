@@ -201,7 +201,32 @@ footer a:hover {
   font-size: 12px;
 }
 /* media query */
+@media screen and (max-width: 768px) and (min-width: 600px){
+  #searchdropdown #bookName {
+    position: relative;
+    top: 0px;
+    right: 75px;
+    margin: 10px;
+  }
 
+  .navbar-light .navbar-toggler {
+    position: absolute;
+    right: 1rem;
+    top: 1.4rem;
+  }
+
+  .navbrandimg {
+    position: absolute;
+    top: 15px;
+  }
+  .nav-icon-s {
+    display: none;
+  }
+  li.nav-item {
+    margin-top: -25px;
+    margin-bottom: 15px;
+  }
+}
 @media screen and (max-width: 600px) {
   #searchdropdown {
     margin-left: 8%;
