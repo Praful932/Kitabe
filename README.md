@@ -127,7 +127,7 @@ Kitabe
 - [All Dataset & Model Files](https://drive.google.com/drive/folders/1SvuCvfiSxwuF21EvmKyhSkuwjgK7KU6S?usp=sharing)
 - [Cleaning and Embedding Notebook](https://drive.google.com/file/d/1wlKiSvYQEXG7xtru5jDQWQwxffaVd9Ap/view?usp=sharing)
 - [Fix Missing Images Notebook](https://drive.google.com/file/d/1S0pd5t9oU9a63EdmlXmxhNWGc228W3ke/view?usp=sharing)
-- [Genre Wise & Count Vectorizer Notebook](https://drive.google.com/file/d/1LRr4Nm2I2HRJUTXbRea3sK5A1Bvp_lav/view?usp=sharing)
+- [Genre Wise & Tfidf Vectorizer Notebook](https://drive.google.com/file/d/1LRr4Nm2I2HRJUTXbRea3sK5A1Bvp_lav/view?usp=sharing)
 
 ### References 😇
 
