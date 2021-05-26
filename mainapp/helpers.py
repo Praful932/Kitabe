@@ -12,8 +12,8 @@ import mainapp.models
 book_path = os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/dataset/books.csv')
 
 # For Count Vectorizer
-cosin_sim_path = os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/model_files/cv/cosine_rating_sim.npz')
-book_indices_path = os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/model_files/cv/indices.pkl')
+cosine_sim_path = os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/model_files/tf-idf/cosine_rating_sim.npz')
+book_indices_path = os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/model_files/tf-idf/indices.pkl')
 
 # For Embedding
 book_id_map_path = os.path.join(settings.STATICFILES_DIRS[0] + '/mainapp/model_files/surprise/book_raw_to_inner_id.pickle')
@@ -224,7 +224,7 @@ def tfidf_recommendations(bookid):
 
     """
     indices = pd.read_pickle(book_indices_path)
-    cosine_sim = np.load(cosin_sim_path)['array1']
+    cosine_sim = np.load(cosine_sim_path)['array1']
     book_title = get_book_title(bookid)
     book_title = book_title.replace(' ', '').lower()
     idx = indices[book_title]
