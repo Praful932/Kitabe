@@ -291,3 +291,20 @@ body {
   background-color: #ff6666;
 }
 }
+
+@media screen and (max-width: 400px) {
+  nav {
+    flex-wrap: nowrap !important;
+  }
+
+  .navbar-toggler {
+    padding: 0.10rem 0.15rem !important;
+    margin-left: 5px;
+  }
+
+  #searchdropdown #bookName {
+    padding: 5px 16px !important;
+    font-size: 14px;
+  }
+}
+
