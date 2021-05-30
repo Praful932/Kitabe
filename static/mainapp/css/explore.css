@@ -144,7 +144,10 @@
 }
 
 .more-details:hover {
-  color: white;
+  color: blue;
+  background: white;
+  border: 2px solid blue;
+  box-shadow: 2px 2px 3px grey;
 }
 
 .rating-block {
