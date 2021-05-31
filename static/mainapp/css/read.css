@@ -79,6 +79,9 @@
   }
 
   .more-details:hover {
+    background:white;
+    color:blue
+    border:2px solid blue;
     text-shadow: 2px 2px 6px #8377eb;
   } 
   .rating-block {
