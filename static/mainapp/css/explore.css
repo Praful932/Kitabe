@@ -144,10 +144,7 @@
 }
 
 .more-details:hover {
-  color: blue;
-  background: white;
-  border: 2px solid blue;
-  box-shadow: 2px 2px 3px grey;
+ 
   text-shadow: 2px 2px 6px #8377eb;
 }
 
@@ -167,10 +164,8 @@
 }
 
 .rating-block.btn:hover {
-  color: #28c2c2;
-  background: #fdfefe;
-  border: 2px solid #45dbdb;
-  text-shadow: 1px 1px 3px #45dbdb;
+  color: white;
+  
 }
 
 .card-text {

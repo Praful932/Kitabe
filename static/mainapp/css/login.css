@@ -95,12 +95,7 @@ fa-google{
   bottom: -1%;
   left: 3px;
 }
-button.googlebutton:hover {
-  color: #d16b6b;
-  background: white;
-  border: 2px solid #d16b6b;
-  text-shadow: 1px 1px 2px #e18a8a;
-}
+
 .forgotpassword {
   font-family: 'Raleway', sans-serif;
   font-size: 15px;

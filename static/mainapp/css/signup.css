@@ -25,10 +25,7 @@ fa-google{
   left: 1px;
 }
 button.googlebutton:hover {
-  color: #d16b6b;
-  background: white;
-  border: 2px solid #d16b6b;
-  text-shadow: 1px 1px 2px #e18a8a;
+  color: white;
 }
 .img-block {
   color: white;
