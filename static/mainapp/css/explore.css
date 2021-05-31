@@ -148,6 +148,7 @@
   background: white;
   border: 2px solid blue;
   box-shadow: 2px 2px 3px grey;
+  text-shadow: 2px 2px 6px #8377eb;
 }
 
 .rating-block {
@@ -165,9 +166,11 @@
   padding: 8px;
 }
 
-.rating-block:hover {
-  text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
-  transition: all 0.4s ease 0s;
+.rating-block.btn:hover {
+  color: #28c2c2;
+  background: #fdfefe;
+  border: 2px solid #45dbdb;
+  text-shadow: 1px 1px 3px #45dbdb;
 }
 
 .card-text {

@@ -24,8 +24,11 @@ fa-google{
   bottom: 9%;
   left: 1px;
 }
-.googlebutton:hover {
-  color: white;
+button.googlebutton:hover {
+  color: #d16b6b;
+  background: white;
+  border: 2px solid #d16b6b;
+  text-shadow: 1px 1px 2px #e18a8a;
 }
 .img-block {
   color: white;
