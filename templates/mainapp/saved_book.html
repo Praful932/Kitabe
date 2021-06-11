@@ -8,7 +8,7 @@ Library
 {% endblock head %} 
 {% block main %}
 
-<h1 id="title" class="genre-head text-center pb-3">Saved for Later({{num}})</h1>
+<h1 id="title" class="genre-head text-center pt-3 pb-3">Saved for Later({{num}})</h1>
 <div class="card-deck pt-3">
 {% for book in page_obj %}
 <div id="book-{{book.book_id}}" class="obsu">
