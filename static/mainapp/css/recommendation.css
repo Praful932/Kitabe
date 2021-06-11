@@ -1,177 +1,180 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
 @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
 * {
-  outline: none;
-  box-sizing: border-box;
+    outline: none;
+    box-sizing: border-box;
 }
 
 .heading {
-  font-family: "Lobster", cursive;
-  font-size: 300%;
-  background-color: #d7722c;
-  margin-top: 0px;
-  color: white;
+    font-family: "Lobster", cursive;
+    font-size: 300%;
+    background-color: #d7722c;
+    margin-top: 0px;
+    color: white;
 }
 
 .cover-img {
-  max-width: 100%;
+    max-width: 100%;
 }
 
 .book-cell {
-  position: relative;
-  display: flex;
-  padding: 25px;
-  width: 33.33%;
-  height: 250px;
-  background-color: #133050;
+    position: relative;
+    display: flex;
+    padding: 25px;
+    width: 33.33%;
+    height: 250px;
+    background-color: #133050;
 }
 
 .book-photo {
-  width: 180px;
-  flex-shrink: 0;
-  bottom: -35px;
-  left: 35px;
-  border-radius: 2px;
-  box-shadow: -2px 6px 19px 0px #7f818e;
-  transition: 0.3s ease;
+    width: 180px;
+    flex-shrink: 0;
+    bottom: -35px;
+    left: 35px;
+    border-radius: 2px;
+    box-shadow: -2px 6px 19px 0px #7f818e;
+    transition: 0.3s ease;
 }
 
 .book-photo:hover {
-  transform: scale(1.03);
+    transform: scale(1.03);
 }
 
 .book-img {
-  flex-shrink: 0;
+    flex-shrink: 0;
 }
 
 .book-title {
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  color: #ffffff;
-  font-weight: 600;
-  font-size: larger;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: larger;
 }
 
 .book-author {
-  margin-top: 3px;
-  font-size: 18px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
+    margin-top: 3px;
+    font-size: 18px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .book-content {
-  padding: 0 20px;
-  color: #ffffff;
-  overflow: hidden;
+    padding: 0 20px;
+    color: #ffffff;
+    overflow: hidden;
 }
 
 .book-voters {
-  color: #fff;
-  vertical-align: sub;
-  font-size: 18px;
-  margin-left: 7px;
-  white-space: nowrap;
-  margin-top: 7px;
+    color: #fff;
+    vertical-align: sub;
+    font-size: 18px;
+    margin-left: 7px;
+    white-space: nowrap;
+    margin-top: 7px;
 }
 
 .book-see {
-  margin-top: 10px;
-  text-align: center;
-  background-color: #fff;
-  color: #d7722c;
-  font-weight: 600;
-  padding: 8px;
-  font-size: 14px;
-  width: 160px;
-  border-radius: 20px;
+    margin-top: 10px;
+    text-align: center;
+    background-color: #fff;
+    color: #d7722c;
+    font-weight: 600;
+    padding: 8px;
+    font-size: 14px;
+    width: 160px;
+    border-radius: 20px;
 }
 
 .book-see:hover {
-  color: black;
+    color: black;
 }
 
 @media (max-width: 1103px) {
-  .book-cell {
-    width: 60%;
-  }
+    .book-cell {
+        width: 60%;
+    }
 }
 
 @media (max-width: 765px) {
-  .book-cell {
-    width: 80%;
-  }
+    .book-cell {
+        width: 80%;
+    }
 }
 
 @media (max-width: 575px) {
-  .book-cell {
-    width: 100%;
-  }
+    .book-cell {
+        width: 100%;
+    }
 }
 
 @media (max-width: 458px) {
-  .book-photo {
-    width: 180px;
-  }
+    .book-photo {
+        width: 180px;
+    }
 }
 
 @media (max-width: 421px) {
-  .book-see {
-    width: 120px;
-    font-size: 13px;
-  }
-  .book-photo {
-    width: 130px;
-  }
-  .more-details {
-    font-size: 13px !important;
-    right: 22% !important;
-  }
-  .rating-block {
-    font-size: 13px !important;
-  }
+    .book-see {
+        width: 120px;
+        font-size: 13px;
+    }
+    .book-photo {
+        width: 130px;
+    }
+    .more-details {
+        font-size: 13px !important;
+        right: 22% !important;
+    }
+    .rating-block {
+        font-size: 13px !important;
+    }
 }
 
 .more-details {
-  text-align: center;
-  background-color: #3d348b;
-  color: #fff;
-  font-weight: 600;
-  font-size: 15px;
-  border-radius: 20px;
-  position: absolute;
-  right: 26%;
-  margin-top: 20%;
-  bottom: 70px;
-  margin-right: -12px;
+    text-align: center;
+    background-color: #3d348b;
+    color: #fff;
+    font-weight: 600;
+    font-size: 15px;
+    border-radius: 20px;
+    position: absolute;
+    right: 26%;
+    margin-top: 20%;
+    bottom: 70px;
+    margin-right: -12px;
 }
 
 .more-details:hover {
-  color: white;
+    color: #3d348b;
+    background: white;
+    border: 2px solid #3d348b;
+    text-shadow: 1px 1px 3px #727ff0;
 }
 
 .rating-block {
-  text-align: center;
-  background-color: #31c2cf;
-  font-weight: 600;
-  font-size: 15px;
-  border-radius: 20px;
-  padding: 8px;
-  bottom: 10px;
-  position: absolute;
-  left: 50%;
+    text-align: center;
+    background-color: #31c2cf;
+    font-weight: 600;
+    font-size: 15px;
+    border-radius: 20px;
+    padding: 8px;
+    bottom: 10px;
+    position: absolute;
+    left: 50%;
 }
 
 .more-details {
-  padding-left: -2px;
+    padding-left: -2px;
 }
 
 .rating-block:hover {
-  text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
-  transition: all 0.4s ease 0s;
+    text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+    transition: all 0.4s ease 0s;
 }
 
 .rateYo {
-  display: none;
+    display: none;
 }

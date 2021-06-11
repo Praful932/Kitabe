@@ -1,156 +1,156 @@
 .genre-head,
 .topbook-head {
-  font-family: "Lobster", cursive;
-  font-size: 300%;
-  background-color: #d7722c;
-  margin-top: 0px;
-  color: white;
+    font-family: "Lobster", cursive;
+    font-size: 300%;
+    background-color: #d7722c;
+    margin-top: 0px;
+    color: white;
 }
 
 .card-horizontal {
-  display: flex;
-  flex: 1 1 auto;
+    display: flex;
+    flex: 1 1 auto;
 }
 
 .card-img {
-  flex-shrink: 0;
-  bottom: -35px;
-  left: 35px;
-  border-radius: 3px;
-  box-shadow: -2px 6px 19px 0px #7f818e;
-  transition: 0.3s ease;
-  width: 85%;
-  height: 60%;
-  margin: 0 auto;
+    flex-shrink: 0;
+    bottom: -35px;
+    left: 35px;
+    border-radius: 3px;
+    box-shadow: -2px 6px 19px 0px #7f818e;
+    transition: 0.3s ease;
+    width: 85%;
+    height: 60%;
+    margin: 0 auto;
 }
 
 .card-img:hover {
-  transform: scale(1.07);
+    transform: scale(1.07);
 }
 
 .card-body-wrap {
-  display: flex;
+    display: flex;
 }
 
 .card {
-  transition: 0.5s;
-  cursor: pointer;
-  border-radius: 3px;
-  box-shadow: -2px 6px 19px 0px #7f818e;
+    transition: 0.5s;
+    cursor: pointer;
+    border-radius: 3px;
+    box-shadow: -2px 6px 19px 0px #7f818e;
 }
 
 .card-title {
-  font-family: "Sora", sans-serif;
-  font-size: large;
-  color: #d7722c;
+    font-family: "Sora", sans-serif;
+    font-size: large;
+    color: #d7722c;
 }
 
 .card-text {
-  font-family: "Rockwell", serif;
-  color: black;
-  font-weight: bold;
-  font-size: 15px;
-  padding-bottom: 1px;
+    font-family: "Rockwell", serif;
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+    padding-bottom: 1px;
 }
 
 .card::before,
 .card::after {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  transform: scale3d(0, 0, 1);
-  transition: transform 0.3s ease-out 0s;
-  content: "";
-  pointer-events: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: scale3d(0, 0, 1);
+    transition: transform 0.3s ease-out 0s;
+    content: "";
+    pointer-events: none;
 }
 
 .card::before {
-  transform-origin: left top;
+    transform-origin: left top;
 }
 
 .card::after {
-  transform-origin: right bottom;
+    transform-origin: right bottom;
 }
 
 .card:hover::before,
 .card:hover::after,
 .card:focus::before,
 .card:focus::after {
-  transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
 }
 
 .more-details {
-  text-align: center;
-  background-color: #3d348b;
-  color: #fff;
-  font-weight: 600;
-  font-size: 11px;
-  border-radius: 20px;
-  position: absolute;
-  bottom: 10px;
-  right: 10%;
+    text-align: center;
+    background-color: #3d348b;
+    color: #fff;
+    font-weight: 600;
+    font-size: 11px;
+    border-radius: 20px;
+    position: absolute;
+    bottom: 10px;
+    right: 10%;
 }
 
 .more-details:hover {
-  color: blue;
-  background: white;
-  border: 2px solid blue;
-  text-shadow: 1px 1px 3px #727ff0;
+    color: #3d348b;
+    background: white;
+    border: 2px solid #3d348b;
+    text-shadow: 1px 1px 3px #727ff0;
 }
 
 .rating-block {
-  display: inline-block;
-  text-align: center;
-  background-color: #31c2cf;
-  font-weight: 600;
-  font-size: 11px;
-  border-radius: 20px;
-  position: absolute;
-  padding: 8px;
-  bottom: 10px;
-  left: 10%;
+    display: inline-block;
+    text-align: center;
+    background-color: #31c2cf;
+    font-weight: 600;
+    font-size: 11px;
+    border-radius: 20px;
+    position: absolute;
+    padding: 8px;
+    bottom: 10px;
+    left: 10%;
 }
 
 .rating-block:hover {
-  text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
-  transition: all 0.4s ease 0s;
+    text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+    transition: all 0.4s ease 0s;
 }
 
 .rateYo {
-  display: none;
+    display: none;
 }
 
 .card-deck {
-  padding-left: 5%;
-  padding-right: 5%;
-  padding-bottom: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 2%;
 }
 
 .card-text {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  /* number of lines to show */
-  -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    /* number of lines to show */
+    -webkit-box-orient: vertical;
 }
 
 @media screen and (max-width: 600px) {
-  .card-text {
-    margin-bottom: 10px !important;
-  }
-  .rating-block {
-    left: 5%;
-    font-size: 12px;
-  }
-  .more-details {
-    right: 10px;
-    font-size: 12px;
-  }
-  .card-deck {
-    padding-right: 0;
-    padding-left: 8%;
-  }
+    .card-text {
+        margin-bottom: 10px !important;
+    }
+    .rating-block {
+        left: 5%;
+        font-size: 12px;
+    }
+    .more-details {
+        right: 10px;
+        font-size: 12px;
+    }
+    .card-deck {
+        padding-right: 0;
+        padding-left: 8%;
+    }
 }

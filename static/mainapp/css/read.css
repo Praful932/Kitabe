@@ -88,9 +88,9 @@
 }
 
 .more-details:hover {
-    color: blue;
+    color: #3d348b;
     background: white;
-    border: 2px solid blue;
+    border: 2px solid #3d348b;
     text-shadow: 1px 1px 3px #727ff0;
 }
 
