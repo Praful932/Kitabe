@@ -1,8 +1,8 @@
-<!doctype html>
+<!doctype html> 
 {% load static %}
 <html lang="en">
 
-<head>     
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
@@ -15,10 +15,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Kalam&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
-    
+
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <!-- font awesome ion-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- icon from google-->
@@ -31,87 +30,85 @@
     <!-- icon -->
     <link rel="icon" href="{% static 'mainapp/png/logo.webp' %}" />
     <title>
-        {% block title %}
+        {% block title %} 
         {% endblock title %}
     </title>
-    {% block head %}
+    {% block head %} 
     {% endblock head %}
 </head>
 
 <body>
     <header>
-	<a name='top'>
-        <div id="topheader">
-            <nav class="navbar navbar-expand-md navbar-light">
-                <a class="navbar-brand" href="/"><img class="navbrandimg" src="{% static 'mainapp/png/brand-img.webp' %}"></a>
-                <!-- Search Bar -->
-                <div class="searchbar" id="searchdropdown">
-                    <input type="text" id="bookName" onkeyup="myFunction()" placeholder="&#xf002    Search for books"
-                        title="Type in a name" style="outline: none;font-family:FontAwesome, kumbh sans;">
-                    <div class="dropdown-content" id="search-dropdown">
+        <a name='top'>
+            <div id="topheader">
+                <nav class="navbar navbar-expand-md navbar-light">
+                    <a class="navbar-brand" href="/"><img class="navbrandimg" src="{% static 'mainapp/png/brand-img.webp' %}"></a>
+                    <!-- Search Bar -->
+                    <div class="searchbar" id="searchdropdown">
+                        <input type="text" id="bookName" onkeyup="myFunction()" placeholder="&#xf002    Search for books" title="Type in a name" style="outline: none;font-family:FontAwesome, kumbh sans;">
+                        <div class="dropdown-content" id="search-dropdown">
+                        </div>
                     </div>
-                </div>
-                <!-- End Search Bar -->
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <!-- End Search Bar -->
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                </button>
-                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                    <ul class="navbar-nav text-center">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'index' %}">
-                                <i class="nav-icon-s fa fa-home fa-2x" aria-hidden="true"></i><br>Home
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'explore_books' %}">
-                                <i class="nav-icon-s fa fa-globe fa-2x" aria-hidden="true"></i><br>Explore
-                            </a>
-                        </li>
-                        {% if user.is_authenticated %}
-                        <li class="nav-item">
-                            <div class = "dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="nav-icon-s fa fa-bookmark fa-2x" aria-hidden="true"></i><br>Library 
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="{% url 'book_recommendations' %}"><i class="material-icons" style="vertical-align: -6px;">auto_stories</i>&nbsp; Your Read</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="{% url 'to_read' %}"><i class="material-icons" style="vertical-align: -6px;">push_pin</i>&nbsp; Saved for Later</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="{% url 'read_books' %}"><i class="material-icons" style="vertical-align: -6px;">star</i>&nbsp; Rated Books</a>
-                            </div>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'account_logout' %}">
-                                <i class="nav-icon-s fa fa-sign-in fa-2x" aria-hidden="true"></i><br>Logout
-                            </a>
-                        </li>
-                        {% else %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'account_login' %}">
-                                <i class="nav-icon-s fa fa-sign-in fa-2x" aria-hidden="true"></i><br>Login
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'account_signup' %}">
-                                <i class="nav-icon-s fa fa-user fa-2x" aria-hidden="true"></i><br>Signup
-                            </a>
-                        </li>
-                        {% endif %}
-                    </ul>
-                </div>
-            </nav>
-        </div>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                        <ul class="navbar-nav text-center">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'index' %}">
+                                    <i class="nav-icon-s fa fa-home fa-2x" aria-hidden="true"></i><br>Home
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'explore_books' %}">
+                                    <i class="nav-icon-s fa fa-globe fa-2x" aria-hidden="true"></i><br>Explore
+                                </a>
+                            </li>
+                            {% if user.is_authenticated %}
+                            <li class="nav-item">
+                                <div class="dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="nav-icon-s fa fa-bookmark fa-2x" aria-hidden="true"></i><br>Library
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                                        <a class="dropdown-item" href="{% url 'book_recommendations' %}"><i class="material-icons" style="vertical-align: -6px;">auto_stories</i>&nbsp; Your Read</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="{% url 'to_read' %}"><i class="material-icons" style="vertical-align: -6px;">push_pin</i>&nbsp; Saved for Later</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="{% url 'read_books' %}"><i class="material-icons" style="vertical-align: -6px;">star</i>&nbsp; Rated Books</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'account_logout' %}">
+                                    <i class="nav-icon-s fa fa-sign-in fa-2x" aria-hidden="true"></i><br>Logout
+                                </a>
+                            </li>
+                            {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'account_login' %}">
+                                    <i class="nav-icon-s fa fa-sign-in fa-2x" aria-hidden="true"></i><br>Login
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'account_signup' %}">
+                                    <i class="nav-icon-s fa fa-user fa-2x" aria-hidden="true"></i><br>Signup
+                                </a>
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </nav>
+            </div>
     </header>
     <!-- Messages -->
     {% for message in messages %}
     <div class="alert {{ message.tags }} alert-dismissible text-center" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
-        </button>
+        </button> 
         {{ message }}
     </div>
     {% endfor %}
@@ -145,7 +142,7 @@
                             <img class="img-book" src="" id="bookimage">
                         </div>
                         {% if user.is_authenticated %}
-                        <button id = "save-book-button" class = "btn">Save for Later</button>
+                        <button id="save-book-button" class="btn">Save for Later</button> 
                         {%endif%}
                     </div>
                 </div>
@@ -156,15 +153,15 @@
         </div>
     </div>
     </div>
-	
-	<a href='#top'>
-	<button  id="topBtn" title="Go to top"><i class="fa fa-angle-up"></i></button></a>
+
+    <a href='#top'>
+        <button id="topBtn" title="Go to top"><i class="fa fa-angle-up"></i></button></a>
     <!-- End boostrap modal -->
-    {% block main %}
+    {% block main %} 
     {% endblock main %}
 
     <footer class="mainfooter" role="contentinfo">
-	
+
         <div class="footer-content">
             <div class="footer-icon">
                 <a href="mailto:kitabeaurkahaniya@gmail.com" target="_blank"><i class="fa fa-google fa-2x"
@@ -178,17 +175,13 @@
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
     <!-- Rating JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
     <!-- Search Bar Script -->
-    <script>    
+    <script>
         // clear forms
         function init() {
             document.getElementById('bookName').value = "";
@@ -205,11 +198,11 @@
                 dataType: 'json',
                 url: "{% url 'summary_ajax' %}",
                 type: 'POST',
-                success: function (response) {
+                success: function(response) {
                     $('#loading').hide();
                     $('#booksummary').text(response['booksummary']);
                 },
-                error: function (response) {
+                error: function(response) {
                     console.log(response)
                 }
             })
@@ -243,10 +236,10 @@
                 info.innerHTML = 'No search results match your query';
                 info.setAttribute('href', '#');
                 searchdiv.appendChild(info);
-            }
+            } 
             else if (searchdiv.childElementCount <= 5) {
                 $('#search-dropdown').empty();
-                books.forEach(function (book, index, array) {
+                books.forEach(function(book, index, array) {
                     var booktoadd = document.createElement('a');
                     booktoadd.innerHTML = book['original_title'];
                     booktoadd.setAttribute('data-bookid', book['book_id']);
@@ -273,25 +266,25 @@
                     dataType: 'json',
                     url: "{% url 'search_ajax' %}",
                     type: 'POST',
-                    success: function (response) {
+                    success: function(response) {
                         displayResults(JSON.parse(response['top5_result']));
                     },
-                    error: function (response) {
+                    error: function(response) {
                         console.log(response);
                     }
                 });
-            }
+            } 
             else
                 $('#search-dropdown').empty();
         }
 
-        $("#bookName").focus(function () {
-            $('#search-dropdown').show();
-        }).blur(function () {
-            $('#search-dropdown').hide(150);
-        })
-        //for rating a book
-        $(function () {
+        $("#bookName").focus(function() {
+                $('#search-dropdown').show();
+            }).blur(function() {
+                $('#search-dropdown').hide(150);
+            })
+            //for rating a book
+        $(function() {
 
             $(".rateYo").rateYo({
                 rating: 0,
@@ -322,10 +315,10 @@
                 dataType: 'json',
                 url: "{% url 'user_rate_book' %}",
                 type: 'POST',
-                success: function (response) {
+                success: function(response) {
 
                 },
-                error: function (response) {
+                error: function(response) {
                     console.log(response);
                 }
             });
@@ -333,7 +326,7 @@
         // when hover out rate
         function finishRate(obj) {
             var bookid = obj.getAttribute('data-book-id');
-            setTimeout(function () {
+            setTimeout(function() {
                 $('#rate-' + bookid).css('display', 'none');
                 $('#button-text-' + bookid).css('display', 'block');
                 $('#rating-block-' + bookid).css('transition', 'background-color 2s ease');
@@ -352,7 +345,7 @@
                 dataType: 'json',
                 url: "{% url 'book_details' %}",
                 type: 'POST',
-                success: function (response) {
+                success: function(response) {
                     var book_details = JSON.parse(response['book_details'])[0];
                     $('#booksummary').text("");
                     $('#loading').show();
@@ -370,49 +363,49 @@
                     });
                     $('#bookModal').modal('show');
                     $('#search-dropdown').empty();
-                    $('#save-book-button').on('click', function(){
+                    $('#save-book-button').on('click', function() {
                         var bookid = obj.getAttribute('data-book-id');
                         $('#save-book-button').css('transition', 'background-color 2s ease');
                         $('#save-book-button').css('background-color', '#ffa007');
-                        $('#save-book-button').text('Saved!');
-                        setTimeout(function(){
+                        $('#save-book-button').text('Saved !');
+                        setTimeout(function() {
                             $('#save-book-button').text('Save for Later');
                             $('#save-book-button').css('transition', 'background-color 2s ease');
-                            $('#save-book-button').css('background-color', '#ffc107');  
-                        },3000);
+                            $('#save-book-button').css('background-color', '#ffc107');
+                        }, 3000);
                         $.ajax({
-                                data: {
-                                    'bookid': bookid,
-                                    'csrfmiddlewaretoken': Cookies.get('csrftoken')
-                                },
-                                dataType: 'json',
-                                url: "{% url 'save_book' %}",
-                                type: 'POST',
-                                success: function (response){
+                            data: {
+                                'bookid': bookid,
+                                'csrfmiddlewaretoken': Cookies.get('csrftoken')
+                            },
+                            dataType: 'json',
+                            url: "{% url 'save_book' %}",
+                            type: 'POST',
+                            success: function(response) {
 
-                                },
-                                error: function (response) {
+                            },
+                            error: function(response) {
                                 console.log(response);
-                                }
-                            })
+                            }
+                        })
                     })
                 },
-                error: function (response) {
+                error: function(response) {
                     console.log(response);
                 }
             });
         }
-    
-	 document.body.addEventListener('scroll',()=>{
-    if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
-        document.getElementById("topBtn").style.display = "block";
-    } else {
-        document.getElementById("topBtn").style.display = "none";
-    }
-     });  
+
+        document.body.addEventListener('scroll', ()=>{
+            if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
+                document.getElementById("topBtn").style.display = "block";
+            } else {
+                document.getElementById("topBtn").style.display = "none";
+            }
+        });
     </script>
     <!-- End Search Bar Script -->
-    {% block script %}
+    {% block script %} 
     {% endblock script %}
 </body>
 

@@ -1,173 +1,191 @@
 .account-block {
-  margin: auto;
-  height: 80%;
-  width: 70%;
-  background-color: white;
+    margin: auto;
+    height: 80%;
+    width: 70%;
+    background-color: white;
 }
+
 .signup-block {
-  text-align: center;
+    text-align: center;
 }
-fa-google{
-  padding-right: 5px;
+
+fa-google {
+    padding-right: 5px;
 }
+
 .googlebutton {
-  position: relative;
-  background-color: #f25f5c;
-  font-family: "Fredoka One", cursive;
-  color: white;
-  padding: 6px 5px;
-  border: 2px solid white;
-  border-radius: 15px;
-  text-decoration: none !important;
-  box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.5);
-  border:3px solid #fff;
-  bottom: 9%;
-  left: 1px;
+    position: relative;
+    background-color: #f25f5c;
+    font-family: "Fredoka One", cursive;
+    color: white;
+    padding: 6px 5px;
+    border: 2px solid white;
+    border-radius: 15px;
+    text-decoration: none !important;
+    box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.5);
+    border: 3px solid #fff;
+    bottom: 9%;
+    left: 1px;
 }
+
 .googlebutton:hover {
-  color: white;
+    color: #f25f5c;
+    background-color: white;
+    border: 3px solid #f25f5c;
 }
+
 .img-block {
-  color: white;
-  background-size: cover;
-  background-position: center;
+    color: white;
+    background-size: cover;
+    background-position: center;
 }
+
 .btn-bot {
-  font-family: "Fredoka One", cursive;
-  position: absolute;
-  margin-left: -45px;
-  left: 50%;
-  padding: 5px 10px 5px 10px;
-  border: 2px solid white;
-  border-radius: 25px;
-  bottom: 250px;
-  text-decoration: none !important;
-  color: white;
+    font-family: "Fredoka One", cursive;
+    position: absolute;
+    margin-left: -45px;
+    left: 50%;
+    padding: 5px 10px 5px 10px;
+    border: 2px solid white;
+    border-radius: 25px;
+    bottom: 250px;
+    text-decoration: none !important;
+    color: white;
 }
+
 .btn-bot:hover {
-  color: black;
-  border: 2px solid black;
-  background-color: rgba(255, 255, 255, 0.891);
+    color: black;
+    border: 2px solid black;
+    background-color: rgba(255, 255, 255, 0.891);
 }
+
 .welcome {
-  font-family: "Pacifico", cursive;
-  position: relative;
-  top: 4%;
-  left: 32%;
-  border-radius: 50px;
-  font-size: 2.5rem;
-  background-color: #ffdab9;
-  width: 35%;
+    font-family: "Pacifico", cursive;
+    position: relative;
+    top: 4%;
+    left: 32%;
+    border-radius: 50px;
+    font-size: 2.5rem;
+    background-color: #ffdab9;
+    width: 35%;
 }
+
 label {
-  font-family: "Kalam", cursive;
-  font-size: 1.2em;
+    font-family: "Kalam", cursive;
+    font-size: 1.2em;
 }
+
 .form-group {
-  padding: 3% 4% 4% 3%;
-  position: relative;
-  display: inline-block;
-  top: 25px;
-  color: black;
+    padding: 3% 4% 4% 3%;
+    position: relative;
+    display: inline-block;
+    top: 25px;
+    color: black;
 }
+
 #id_username,
 #id_email,
 #id_password1,
 #id_password2 {
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  color: #000;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    color: #000;
 }
+
 .signupbutton {
-  font-family: "Fredoka One", cursive;
-  padding: 8px 10px 5px 10px;
-  font-size:1rem;
-  margin-bottom: 3rem;
-  margin-top: 0.5rem;
-  border: 2px solid white;
-  box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.5);
-  border:3px solid #fff;
-  color:#fff;
-  background:rgba(1,1,1);
-  border-radius: 15px;
-  outline:none;
+    font-family: "Fredoka One", cursive;
+    padding: 8px 10px 5px 10px;
+    font-size: 1rem;
+    margin-bottom: 3rem;
+    margin-top: 0.5rem;
+    border: 2px solid white;
+    box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.5);
+    border: 3px solid #fff;
+    color: #fff;
+    background: rgba(1, 1, 1);
+    border-radius: 15px;
+    outline: none;
 }
-.signupbutton:hover{
-  background-color: #ffdab9;
-  color:black;
-  border: 3px solid black;
+
+.signupbutton:hover {
+    background-color: #ffdab9;
+    color: black;
+    border: 3px solid black;
 }
+
 strong {
-  color: red;
-  font-size: 0.9rem;
+    color: red;
+    font-size: 0.9rem;
 }
 
 ::placeholder {
-  color: #000;
-  font-weight: normal;
+    color: #000;
+    font-weight: normal;
 }
 
-.error_div{
-  margin-top: 10px !important;
+.error_div {
+    margin-top: 10px !important;
 }
 
 @media only screen and (max-width: 1200px) {
-  .img-block {
-    display: none;
-  }
-  .account-block{
-    width: 70%;
-  }
-  .welcome{
-    font-size: 2rem;
-    width: 35%;
-    left: 32%;
-    margin-top: -0.2rem;
-  }
+    .img-block {
+        display: none;
+    }
+    .account-block {
+        width: 70%;
+    }
+    .welcome {
+        font-size: 2rem;
+        width: 35%;
+        left: 32%;
+        margin-top: -0.2rem;
+    }
 }
+
 @media only screen and (max-width: 600px) {
-  .signupbutton{
-    margin-bottom: 3.8rem;
-    margin-top: 0.5rem;
-  }
-  .welcome{
-    font-size: 1.5rem;
-    width: 60%;
-    left: 20%;
-    margin-top: -0.5rem;
-  }
-  .form-group {
-    padding: 3% 6% 3% 3%;
-    margin-top: 1rem;
-   }
-  .account-block{
-    width: 60%;
-  }
+    .signupbutton {
+        margin-bottom: 3.8rem;
+        margin-top: 0.5rem;
+    }
+    .welcome {
+        font-size: 1.5rem;
+        width: 60%;
+        left: 20%;
+        margin-top: -0.5rem;
+    }
+    .form-group {
+        padding: 3% 6% 3% 3%;
+        margin-top: 1rem;
+    }
+    .account-block {
+        width: 60%;
+    }
 }
+
 @media only screen and (max-width: 450px) {
-  .form-group{
-    padding: 4% 3% 3% 3%;
-    margin-top: 0rem;
-  }
-  .signupbutton{
-    margin-bottom: 3.5rem;
-  }
-  .account-block{
-    width: 70%;
-  }
+    .form-group {
+        padding: 4% 3% 3% 3%;
+        margin-top: 0rem;
+    }
+    .signupbutton {
+        margin-bottom: 3.5rem;
+    }
+    .account-block {
+        width: 70%;
+    }
 }
 
 @media only screen and (min-width: 1200px) {
-  .form-group{
-    padding: 4% 3% 3% 3%;
-    margin-top: 0rem;
-  }
-  .signupbutton{
-    margin-bottom: 2.3rem;
-    margin-top: 1.5rem;
-  }
-  .googlebutton{
-    margin-top: 1rem;
-  }
+    .form-group {
+        padding: 4% 3% 3% 3%;
+        margin-top: 0rem;
+    }
+    .signupbutton {
+        margin-bottom: 2.3rem;
+        margin-top: 1.5rem;
+    }
+    .googlebutton {
+        margin-top: 1rem;
+    }
 }
