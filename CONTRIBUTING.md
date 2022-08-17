@@ -24,7 +24,7 @@ For Contributions we strictly follow [Github Flow](https://guides.github.com/int
   `git checkout -b [branch_name]`
 
 - If you don't have virtualenv already installed -
-  `pip install virtualenv`
+  [`pip`](https://www.scaler.com/topics/what-is-pip-in-python/) `install virtualenv`
 
 - Create a new environment -
   `virtualenv bookenv`
