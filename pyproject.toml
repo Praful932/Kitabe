@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "kitabe"
+version = "0.1.0"
+description = "Book Recommendation System"
+authors = ["maneprajakta <prajakta916mane1@gmail.com>", "Praful932 <praful.mohanan@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+Django = "^4.1.2"
+django-allauth = "^0.51.0"
+django-storages = "^1.13.1"
+pandas = "^1.5.0"
+numpy = "^1.23.3"
+bs4 = "^0.0.1"
+pre-commit = "^2.20.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
