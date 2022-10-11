@@ -1,0 +1,12 @@
+exclude: 'wip'
+repos:
+- repo: https://github.com/ambv/black
+  rev: 22.3.0
+  hooks:
+    - id: black
+      name: black-py
+- repo: https://github.com/asottile/pyupgrade
+  rev: v2.32.0
+  hooks:
+  -   id: pyupgrade
+      name: pyupgrade-py
