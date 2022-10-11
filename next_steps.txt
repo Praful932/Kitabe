@@ -1,9 +1,0 @@
-- this branch will close all 3 PRs
-- need to configure github actions so that pre-commit hooks run & then the inbuilt tests run
-- then setup railway deployment
-    - checkout whether they support staging deployment
-
-
-- backup whole db
-    - create a good-first-issue on pylinting the whole code
-    - heroku backup db to railway
