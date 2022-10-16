@@ -193,6 +193,10 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = "none"
 ACCOUNT_LOGOUT_ON_GET = True
 
+if not DEBUG:
+    # access via https in production
+    ACCOUNT_DEFAULT_HTTP_PROTOCOL = "https"
+
 MESSAGE_TAGS = {
     messages.DEBUG: "alert-info",
     messages.INFO: "alert-info",
