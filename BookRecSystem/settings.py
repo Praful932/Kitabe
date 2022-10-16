@@ -187,10 +187,3 @@ MESSAGE_TAGS = {
     messages.WARNING: "alert-warning",
     messages.ERROR: "alert-danger",
 }
-
-# Django Heroku Settings
-if "CHECK_HEROKU" in os.environ:
-    DEBUG = eval(os.environ.get("KITABE_DEBUG"))
-    import django_heroku
-
-    django_heroku.settings(locals())
