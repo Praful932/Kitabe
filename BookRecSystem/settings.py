@@ -25,14 +25,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("SECRET_KEY", "RANDOM_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = str(os.environ.get("DEBUG", True))  == "True"
+DEBUG = str(os.environ.get("DEBUG", True)) == "True"
 
 ALLOWED_HOSTS = [
-    "kitabe-app.herokuapp.com",
-    "kitabe.up.railway.app",
+    "https://kitabe-app.herokuapp.com",
+    "https://kitabe.up.railway.app",
     "127.0.0.1",
     "localhost",
 ]
+
+CSRF_TRUSTED_ORIGINS = ALLOWED_HOSTS[:2]
 
 
 # Application definition
