@@ -28,13 +28,16 @@ SECRET_KEY = os.environ.get("SECRET_KEY", "RANDOM_KEY")
 DEBUG = str(os.environ.get("DEBUG", True)) == "True"
 
 ALLOWED_HOSTS = [
-    "https://kitabe-app.herokuapp.com",
-    "https://kitabe.up.railway.app",
+    "kitabe-app.herokuapp.com",
+    "kitabe.up.railway.app",
     "127.0.0.1",
     "localhost",
 ]
 
-CSRF_TRUSTED_ORIGINS = ALLOWED_HOSTS[:2]
+CSRF_TRUSTED_ORIGINS = [
+    "https://kitabe-app.herokuapp.com",
+    "https://kitabe.up.railway.app",
+]
 
 
 # Application definition
