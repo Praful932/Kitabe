@@ -44,4 +44,5 @@ jobs:
           KITABE_SECRET_KEY: "RANDOM_KEY"
         run: |
           pre-commit run --all-files
+          python manage.py collectstatic --no-input
           python manage.py test
