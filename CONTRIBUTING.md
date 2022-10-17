@@ -10,43 +10,30 @@ For Contributions we strictly follow [Github Flow](https://guides.github.com/int
 
 ### Setting Up the Project
 
-- The Project works seamlessly on Python version `3.8.6`
+1. The Project works seamlessly on Python version `3.8.6`
 
-- [Fork](https://docs.github.com/en/github/getting-started-with-github/fork-a-repo#fork-an-example-repository) the Repository
+2. (Optional) [Fork](https://docs.github.com/en/github/getting-started-with-github/fork-a-repo#fork-an-example-repository) the Repository
 
-- Clone Your Forked copy -
-  `git clone https://github.com/[YOUR-USERNAME]/Kitabe.git`
+3. Clone Your Forked copy/the original repo - `git clone https://github.com/[YOUR-USERNAME]/Kitabe.git`
 
-- Navigate to the directory of project -
-  `cd Kitabe/`
+4.  Navigate to the directory of project -  `cd Kitabe/`
 
-- Create a new branch -
-  `git checkout -b [branch_name]`
 
-- If you don't have virtualenv already installed -
-  `pip install virtualenv`
+5. (Optional) If you're intending to raise an MR else you can skip this step, Create a new branch -  `git checkout -b [branch_name]`
 
-- Create a new environment -
-  `virtualenv bookenv`
+6. Install requirements from [poetry](https://python-poetry.org/docs/#installation) - `poetry install`
+    - If you prefer the vanilla route `poetry export -f requirements.txt --output requirements.txt --without-hashes` skip to step (8)
 
-- Activate the environment -
-  - For Linux/Unix OS : `source bookenv/bin/activate`
-  - For Windows OS: `bookenv\Scripts\activate`
 
-- Install requirements -
-  `pip install -r requirements.txt`
+7. Activate the environment -  `poetry shell`
 
-- Open `BookRecSystem/settings.py`
+8. Open `BookRecSystem/settings.py`
 
-- Set `SECRET_KEY = "RANDOM_KEY"`
+9. Make Migrations - `python manage.py migrate`
 
-- Set `ALLOWED_HOSTS = ['kitabe-app.herokuapp.com', '127.0.0.1', 'localhost']`
+10. `python manage.py runserver` - You're good to Go!!
 
-- Make Migrations -
-  `python manage.py migrate`
-
-- `python manage.py runserver` - You're good to Go!!
-
+📝 Raise an issue/start a discussion if you face difficulties while setting up the repo, we'll try to resolve it asap
 #### Optional
 
 - [Setting up Google Auth](https://django-allauth.readthedocs.io/en/latest/installation.html)
