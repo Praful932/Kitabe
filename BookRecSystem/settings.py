@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY", "RANDOM_KEY")
 DEBUG = str(os.environ.get("DEBUG", True)) == "True"
 
 # Check if production environment
-PROD_ENV = str(os.environ.get("DEBUG", False)) == "True"
+PROD_ENV = str(os.environ.get("PROD_ENV", False)) == "True"
 
 ALLOWED_HOSTS = [
     "kitabe-app.herokuapp.com",
