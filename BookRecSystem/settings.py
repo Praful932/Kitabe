@@ -27,6 +27,9 @@ SECRET_KEY = os.environ.get("SECRET_KEY", "RANDOM_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = str(os.environ.get("DEBUG", True)) == "True"
 
+# Check if production environment
+PROD_ENV = str(os.environ.get("PROD_ENV", False)) == "True"
+
 ALLOWED_HOSTS = [
     "kitabe-app.herokuapp.com",
     "kitabe.up.railway.app",
@@ -98,13 +101,24 @@ WSGI_APPLICATION = "BookRecSystem.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+if PROD_ENV:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.postgresql",
+            "NAME": os.environ.get("PGDATABASE"),
+            "USER": os.environ.get("PGUSER"),
+            "PASSWORD": os.environ.get("PGPASSWORD"),
+            "HOST": os.environ.get("PGHOST"),
+            "PORT": os.environ.get("PGPORT"),
+        }
     }
-}
+else:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": BASE_DIR / "db.sqlite3",
+        }
+    }
 
 
 # Password validation
